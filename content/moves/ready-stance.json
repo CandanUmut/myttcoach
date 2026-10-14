@@ -7,7 +7,7 @@
   "summary": "The stance you start every point in and come back to after every shot.",
   "whenToUse": "Always. Between every shot you return here, so the next ball never catches you upright or off balance.",
   "keyPoints": {
-    "stance": "Feet a little wider than your shoulders. Right-handers: right foot slightly back (left-handers: left foot back).",
+    "stance": "Feet a little wider than your shoulders, right foot slightly back (left foot if left-handed).",
     "bodyAction": "Knees bent, lean forward from the hips, weight on the balls of your feet so your heels are light.",
     "strokeLength": "No stroke here. This is the base every stroke starts from and ends in.",
     "timing": "Be set just as your opponent hits the ball. A tiny hop or settle at that moment helps you push off either way.",
@@ -17,24 +17,130 @@
     "recovery": "After each shot, bring the bat back in front and your feet back to this width.",
     "anticipation": "Watch your opponent's bat, not just the ball. Their swing tells you the spin and direction."
   },
-  "cues": ["Feet wide, knees soft", "Bat in front, at table height", "Weight forward, heels light"],
+  "cues": [
+    "Feet wide, knees soft",
+    "Bat in front, at table height",
+    "Weight forward, heels light"
+  ],
   "learningPath": [
-    { "stage": "see", "task": "Watch the 3D player settle into ready from the front and the side. Notice the knee bend and where the bat sits.", "passCheck": "You can name the three cues.", "drillIds": [] },
-    { "stage": "shadow", "task": "Copy the player: step into ready, hold for 3 seconds, stand up, repeat. Then add a small side step and come back to ready.", "passCheck": "10 reps, then answer the self-checks.", "drillIds": ["shadow-strokes", "side-shuffle-shadow"], "selfChecks": ["Are your feet wider than your shoulders?", "Can you lift your heels without falling backward?", "Is your bat in front of you, not at your side?"] },
-    { "stage": "feel", "task": "Play an easy rally and come back to ready after every single hit, even the easy ones.", "passCheck": "You return to ready after 10 hits in a row.", "drillIds": ["fh-diagonal-warmup", "bh-diagonal-warmup", "bat-bounce-control"] },
-    { "stage": "groove", "task": "Footwork with ready in between: two-point side steps, landing in ready each time.", "passCheck": "A full set without standing up straight.", "drillIds": ["two-point-footwork", "side-shuffle-shadow"] },
-    { "stage": "mix", "task": "Push then drive. The change of stroke is where people forget ready, so make it a habit there.", "passCheck": "7 of 10 patterns with a clear return to ready.", "drillIds": ["push-then-drive", "shadow-combos"] },
-    { "stage": "use", "task": "Play points and check yourself after each one: did you get back to ready before their shot?", "passCheck": "Ready in time for most balls in a game to 11.", "drillIds": ["push-drive-game", "rally-record"] },
-    { "stage": "own", "task": "Test: two-point footwork for 60 seconds, landing in ready each time.", "passCheck": "30 clean shots in 60 seconds, or 4 rounds of shadow steps staying low.", "drillIds": ["two-point-footwork", "side-shuffle-shadow"] }
+    {
+      "stage": "see",
+      "task": "Watch the 3D player settle into ready from the front and the side. Notice the knee bend and where the bat sits.",
+      "passCheck": "You can name the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Copy the player: step into ready, hold for 3 seconds, stand up, repeat. Then add a small side step and come back to ready.",
+      "passCheck": "10 reps, then answer the self-checks.",
+      "drillIds": [
+        "shadow-strokes",
+        "side-shuffle-shadow"
+      ],
+      "selfChecks": [
+        "Are your feet wider than your shoulders?",
+        "Can you lift your heels without falling backward?",
+        "Is your bat in front of you, not at your side?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "Play an easy rally and come back to ready after every single hit, even the easy ones.",
+      "passCheck": "You return to ready after 10 hits in a row.",
+      "drillIds": [
+        "fh-diagonal-warmup",
+        "bh-diagonal-warmup",
+        "bat-bounce-control"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Footwork with ready in between: two-point side steps, landing in ready each time.",
+      "passCheck": "A full set without standing up straight.",
+      "drillIds": [
+        "two-point-footwork",
+        "side-shuffle-shadow"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Push then drive. The change of stroke is where people forget ready, so make it a habit there.",
+      "passCheck": "7 of 10 patterns with a clear return to ready.",
+      "drillIds": [
+        "push-then-drive",
+        "shadow-combos"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Play points and check yourself after each one: did you get back to ready before their shot?",
+      "passCheck": "Ready in time for most balls in a game to 11.",
+      "drillIds": [
+        "push-drive-game",
+        "rally-record"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: two-point footwork for 60 seconds, landing in ready each time.",
+      "passCheck": "12 forehands in a row in two-point footwork, or 4 rounds of shadow steps staying low.",
+      "drillIds": [
+        "two-point-footwork",
+        "side-shuffle-shadow"
+      ]
+    }
   ],
   "gamePatterns": [
-    { "situation": "Right after your serve.", "how": "Step back into ready straight away. Most missed third balls start with standing still after serving.", "drillId": "push-drive-game" },
-    { "situation": "After a wide forehand.", "how": "Push off your outside foot and come back toward the middle in ready, because the next ball often goes to the other corner.", "drillId": "two-point-footwork" }
+    {
+      "situation": "Right after your serve.",
+      "how": "Step back into ready straight away. Most missed third balls start with standing still after serving.",
+      "drillId": "push-drive-game"
+    },
+    {
+      "situation": "After a wide forehand.",
+      "how": "Push off your outside foot and come back toward the middle in ready, because the next ball often goes to the other corner.",
+      "drillId": "two-point-footwork"
+    }
   ],
   "troubleshooting": [
-    { "symptom": "I feel slow to the ball", "causes": ["Weight on your heels", "Standing too upright", "Not resetting after your last shot"], "fixes": ["Lean forward until your heels feel light", "Bend your knees a little more", "Say 'back' to yourself after every hit"], "drillId": "side-shuffle-shadow" },
-    { "symptom": "I'm off balance when I hit", "causes": ["Feet too close together", "Reaching instead of stepping"], "fixes": ["Widen your stance", "Move your feet first, then swing"], "drillId": "two-point-footwork" },
-    { "symptom": "My bat is always late", "causes": ["Bat drops to your side between shots", "Watching only the ball, not the opponent"], "fixes": ["Keep the bat in front at table height", "Watch their bat to read the ball earlier"], "drillId": "shadow-strokes" }
+    {
+      "symptom": "I feel slow to the ball",
+      "causes": [
+        "Weight on your heels",
+        "Standing too upright",
+        "Not resetting after your last shot"
+      ],
+      "fixes": [
+        "Lean forward until your heels feel light",
+        "Bend your knees a little more",
+        "Say 'back' to yourself after every hit"
+      ],
+      "drillId": "side-shuffle-shadow"
+    },
+    {
+      "symptom": "I'm off balance when I hit",
+      "causes": [
+        "Feet too close together",
+        "Reaching instead of stepping"
+      ],
+      "fixes": [
+        "Widen your stance",
+        "Move your feet first, then swing"
+      ],
+      "drillId": "two-point-footwork"
+    },
+    {
+      "symptom": "My bat is always late",
+      "causes": [
+        "Bat drops to your side between shots",
+        "Watching only the ball, not the opponent"
+      ],
+      "fixes": [
+        "Keep the bat in front at table height",
+        "Watch their bat to read the ball earlier"
+      ],
+      "drillId": "shadow-strokes"
+    }
   ],
   "penholdNotes": "The same stance. Many penholders stand a bit more toward the backhand corner to cover more balls with the forehand.",
   "animationId": "ready-stance"

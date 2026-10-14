@@ -1,38 +1,220 @@
 {
   "sessions": [
-    { "length": 20, "blocks": [
-      { "phase": "physicalWarmup", "minutes": 3 }, { "phase": "tableWarmup", "minutes": 3 },
-      { "phase": "technique", "minutes": 8 }, { "phase": "footwork", "minutes": 4 },
-      { "phase": "cooldown", "minutes": 2 } ] },
-    { "length": 30, "blocks": [
-      { "phase": "physicalWarmup", "minutes": 4 }, { "phase": "tableWarmup", "minutes": 4 },
-      { "phase": "technique", "minutes": 10 }, { "phase": "footwork", "minutes": 5 },
-      { "phase": "serve", "minutes": 5 }, { "phase": "cooldown", "minutes": 2 } ] },
-    { "length": 45, "blocks": [
-      { "phase": "physicalWarmup", "minutes": 6 }, { "phase": "tableWarmup", "minutes": 5 },
-      { "phase": "technique", "minutes": 12 }, { "phase": "footwork", "minutes": 8 },
-      { "phase": "serve", "minutes": 4 }, { "phase": "receive", "minutes": 3 },
-      { "phase": "matchPlay", "minutes": 5 }, { "phase": "cooldown", "minutes": 2 } ] },
-    { "length": 60, "blocks": [
-      { "phase": "physicalWarmup", "minutes": 8 }, { "phase": "tableWarmup", "minutes": 7 },
-      { "phase": "technique", "minutes": 15 }, { "phase": "footwork", "minutes": 10 },
-      { "phase": "serve", "minutes": 4 }, { "phase": "receive", "minutes": 4 },
-      { "phase": "matchPlay", "minutes": 9 }, { "phase": "cooldown", "minutes": 3 } ] },
-    { "length": 90, "blocks": [
-      { "phase": "physicalWarmup", "minutes": 10 }, { "phase": "tableWarmup", "minutes": 8 },
-      { "phase": "technique", "minutes": 22 }, { "phase": "footwork", "minutes": 14 },
-      { "phase": "serve", "minutes": 7 }, { "phase": "receive", "minutes": 6 },
-      { "phase": "matchPlay", "minutes": 12 }, { "phase": "physical", "minutes": 6 },
-      { "phase": "mental", "minutes": 2 }, { "phase": "cooldown", "minutes": 3 } ] }
+    {
+      "length": 20,
+      "blocks": [
+        {
+          "phase": "physicalWarmup",
+          "minutes": 3
+        },
+        {
+          "phase": "tableWarmup",
+          "minutes": 3
+        },
+        {
+          "phase": "technique",
+          "minutes": 8
+        },
+        {
+          "phase": "footwork",
+          "minutes": 4
+        },
+        {
+          "phase": "cooldown",
+          "minutes": 2
+        }
+      ]
+    },
+    {
+      "length": 30,
+      "blocks": [
+        {
+          "phase": "physicalWarmup",
+          "minutes": 4
+        },
+        {
+          "phase": "tableWarmup",
+          "minutes": 4
+        },
+        {
+          "phase": "technique",
+          "minutes": 10
+        },
+        {
+          "phase": "footwork",
+          "minutes": 5
+        },
+        {
+          "phase": "serve",
+          "minutes": 5
+        },
+        {
+          "phase": "cooldown",
+          "minutes": 2
+        }
+      ]
+    },
+    {
+      "length": 45,
+      "blocks": [
+        {
+          "phase": "physicalWarmup",
+          "minutes": 6
+        },
+        {
+          "phase": "tableWarmup",
+          "minutes": 5
+        },
+        {
+          "phase": "technique",
+          "minutes": 12
+        },
+        {
+          "phase": "footwork",
+          "minutes": 8
+        },
+        {
+          "phase": "serve",
+          "minutes": 4
+        },
+        {
+          "phase": "receive",
+          "minutes": 3
+        },
+        {
+          "phase": "matchPlay",
+          "minutes": 5
+        },
+        {
+          "phase": "cooldown",
+          "minutes": 2
+        }
+      ]
+    },
+    {
+      "length": 60,
+      "blocks": [
+        {
+          "phase": "physicalWarmup",
+          "minutes": 6
+        },
+        {
+          "phase": "tableWarmup",
+          "minutes": 6
+        },
+        {
+          "phase": "technique",
+          "minutes": 15
+        },
+        {
+          "phase": "footwork",
+          "minutes": 10
+        },
+        {
+          "phase": "serve",
+          "minutes": 6
+        },
+        {
+          "phase": "receive",
+          "minutes": 5
+        },
+        {
+          "phase": "matchPlay",
+          "minutes": 9
+        },
+        {
+          "phase": "cooldown",
+          "minutes": 3
+        }
+      ]
+    },
+    {
+      "length": 90,
+      "blocks": [
+        {
+          "phase": "physicalWarmup",
+          "minutes": 8
+        },
+        {
+          "phase": "tableWarmup",
+          "minutes": 7
+        },
+        {
+          "phase": "technique",
+          "minutes": 22
+        },
+        {
+          "phase": "footwork",
+          "minutes": 14
+        },
+        {
+          "phase": "serve",
+          "minutes": 8
+        },
+        {
+          "phase": "receive",
+          "minutes": 6
+        },
+        {
+          "phase": "matchPlay",
+          "minutes": 14
+        },
+        {
+          "phase": "physical",
+          "minutes": 6
+        },
+        {
+          "phase": "mental",
+          "minutes": 2
+        },
+        {
+          "phase": "cooldown",
+          "minutes": 3
+        }
+      ]
+    }
   ],
-  "dropPriority": ["mental", "physical", "receive", "matchPlay", "serve", "footwork", "cooldown", "tableWarmup", "physicalWarmup", "technique"],
+  "dropPriority": [
+    "mental",
+    "physical",
+    "receive",
+    "matchPlay",
+    "serve",
+    "footwork",
+    "cooldown",
+    "tableWarmup",
+    "physicalWarmup",
+    "technique"
+  ],
   "workoutPhases": {
-    "technique": ["technique"],
-    "footwork": ["footwork"],
-    "serveReceive": ["serve", "receive"],
-    "matchPlay": ["matchPlay"],
-    "fitness": ["physical"],
-    "mental": ["mental"]
+    "technique": [
+      "technique"
+    ],
+    "footwork": [
+      "footwork"
+    ],
+    "serveReceive": [
+      "serve",
+      "receive"
+    ],
+    "matchPlay": [
+      "matchPlay"
+    ],
+    "fitness": [
+      "physical"
+    ],
+    "mental": [
+      "mental"
+    ]
   },
-  "noTablePhases": ["physicalWarmup", "tableWarmup", "technique", "footwork", "serve", "physical", "mental", "cooldown"]
+  "noTablePhases": [
+    "physicalWarmup",
+    "tableWarmup",
+    "technique",
+    "footwork",
+    "serve",
+    "physical",
+    "mental",
+    "cooldown"
+  ]
 }

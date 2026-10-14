@@ -1,34 +1,410 @@
 [
-  { "id": "t-grip-relax", "text": "Hold the bat like a bird: firm enough that it can't fly away, loose enough not to hurt it. Squeeze only at contact.", "skills": ["grip", "ball-control"], "levelMin": 1, "levelMax": 5, "tags": ["grip"] },
-  { "id": "t-grip-neutral", "text": "Keep a neutral grip with the V between thumb and finger on the bat's edge. Switching grips mid-rally costs you time.", "skills": ["grip"], "levelMin": 1, "levelMax": 3, "tags": ["grip"] },
-  { "id": "t-ready-heels", "text": "If you can lift your heels without wobbling, your weight is in the right place.", "skills": ["ready-position"], "levelMin": 1, "levelMax": 5, "tags": ["stance"] },
-  { "id": "t-ready-back", "text": "Most errors start one shot earlier: you didn't get back to ready in time.", "skills": ["ready-position", "basic-footwork"], "levelMin": 1, "levelMax": 5, "tags": ["recovery"] },
-  { "id": "t-watch-bat", "text": "Watch your opponent's bat at contact. Fast brushing means spin; a flat bump means little spin.", "skills": ["receive-basics", "ready-position"], "levelMin": 2, "levelMax": 5, "tags": ["reading"] },
-  { "id": "t-fh-turn", "text": "On the forehand, turn your waist before the ball arrives. If you turn when it lands, you are already late.", "skills": ["fh-drive", "fh-loop-backspin"], "levelMin": 1, "levelMax": 4, "tags": ["timing"] },
-  { "id": "t-fh-forehead", "text": "Finish the forehand drive near your forehead, like a salute. A finish above your head usually means the ball went long.", "skills": ["fh-drive"], "levelMin": 1, "levelMax": 3, "tags": ["technique"] },
-  { "id": "t-fh-same", "text": "Consistency comes from doing the same thing every time: same distance, same contact point, same finish.", "skills": ["fh-drive", "bh-drive"], "levelMin": 1, "levelMax": 3, "tags": ["consistency"] },
-  { "id": "t-bh-belly", "text": "Play the backhand in front of your belly button. If the ball is beside you, move your feet, not your elbow.", "skills": ["bh-drive"], "levelMin": 1, "levelMax": 4, "tags": ["technique"] },
-  { "id": "t-bh-elbow", "text": "Let your backhand elbow float forward a little. Tucked against your side, it makes the stroke cramped.", "skills": ["bh-drive"], "levelMin": 1, "levelMax": 3, "tags": ["technique"] },
-  { "id": "t-push-early", "text": "Push early. The longer you wait, the more the ball drops and the higher your return floats.", "skills": ["bh-push", "fh-push"], "levelMin": 1, "levelMax": 4, "tags": ["timing"] },
-  { "id": "t-push-deep", "text": "A long, fast push to the corner is a good attack in its own right. A slow, high push is a gift.", "skills": ["bh-push", "fh-push", "receive-basics"], "levelMin": 2, "levelMax": 5, "tags": ["tactics"] },
-  { "id": "t-push-foot", "text": "For short balls, step in with your playing-side foot. It brings your bat under the ball without reaching.", "skills": ["fh-push", "bh-push", "receive-basics"], "levelMin": 1, "levelMax": 4, "tags": ["footwork"] },
-  { "id": "t-loop-legs", "text": "Your loop starts in your legs. If your knees don't bend, your arm has to do all the work.", "skills": ["fh-loop-backspin"], "levelMin": 2, "levelMax": 5, "tags": ["technique"] },
-  { "id": "t-loop-spin-first", "text": "Against backspin, spin first and speed second. A slow, heavy loop that lands beats a fast one in the net.", "skills": ["fh-loop-backspin", "third-ball"], "levelMin": 2, "levelMax": 5, "tags": ["tactics"] },
-  { "id": "t-loop-relax", "text": "Relax your arm before the loop. You can only speed up sharply if you start loose.", "skills": ["fh-loop-backspin"], "levelMin": 2, "levelMax": 5, "tags": ["technique"] },
-  { "id": "t-serve-toss", "text": "Legal toss: ball resting on a flat open palm, thrown nearly straight up at least 16 cm, visible to your opponent the whole time.", "skills": ["serve-basics"], "levelMin": 1, "levelMax": 5, "tags": ["rules"] },
-  { "id": "t-serve-low", "text": "Make contact low, near table height. Low contact keeps your serve low over the net.", "skills": ["serve-basics"], "levelMin": 1, "levelMax": 5, "tags": ["serve"] },
-  { "id": "t-serve-same", "text": "Use the same motion for different serves. The less your opponent can tell them apart, the better.", "skills": ["serve-basics", "third-ball"], "levelMin": 3, "levelMax": 5, "tags": ["serve"] },
-  { "id": "t-serve-plan", "text": "Before you serve, decide where the return will probably go and be ready for it.", "skills": ["third-ball", "serve-basics"], "levelMin": 2, "levelMax": 5, "tags": ["tactics"] },
-  { "id": "t-receive-default", "text": "Not sure what spin it is? A push deep to their backhand is a safe default.", "skills": ["receive-basics"], "levelMin": 1, "levelMax": 3, "tags": ["receive"] },
-  { "id": "t-footwork-small", "text": "Take small steps rather than big ones. Small steps keep you balanced and ready to change direction.", "skills": ["basic-footwork"], "levelMin": 1, "levelMax": 4, "tags": ["footwork"] },
-  { "id": "t-footwork-first", "text": "Feet first, bat second. Get to the ball, then swing.", "skills": ["basic-footwork", "fh-drive"], "levelMin": 1, "levelMax": 5, "tags": ["footwork"] },
-  { "id": "t-elbow-target", "text": "The crossover point near your opponent's playing elbow is the hardest place to defend. Aim there when in doubt.", "skills": ["third-ball", "fh-drive", "fh-loop-backspin"], "levelMin": 3, "levelMax": 5, "tags": ["tactics"] },
-  { "id": "t-pace-change", "text": "Changing pace wins points: a slow spinny ball after two fast ones breaks the rhythm.", "skills": ["third-ball"], "levelMin": 3, "levelMax": 5, "tags": ["tactics"] },
-  { "id": "t-routine", "text": "Use the same short routine before every point. It moves the last point out of your head.", "skills": ["focus-routine"], "levelMin": 1, "levelMax": 5, "tags": ["mental"] },
-  { "id": "t-breathe", "text": "After a bad miss, turn away, breathe out slowly and decide one simple plan for the next point.", "skills": ["focus-routine"], "levelMin": 1, "levelMax": 5, "tags": ["mental"] },
-  { "id": "t-warmup", "text": "Warm up before you hit hard. Cold shoulders and wrists are the most common way to pick up a niggle.", "skills": ["physical-prep"], "levelMin": 1, "levelMax": 5, "tags": ["health"] },
-  { "id": "t-control-first", "text": "Control before speed. Add speed only when you can hit the same spot 10 times in a row.", "skills": ["fh-drive", "bh-drive", "ball-control"], "levelMin": 1, "levelMax": 3, "tags": ["consistency"] },
-  { "id": "t-three-points", "text": "Work on one thing at a time. Pick one cue for this drill and let the rest go.", "skills": ["fh-drive", "bh-drive", "bh-push", "fh-push", "fh-loop-backspin", "ball-control"], "levelMin": 1, "levelMax": 5, "tags": ["learning"] },
-  { "id": "t-soft-hands", "text": "Soft hands for short balls, firm hands for fast ones. Grip pressure is a hidden control dial.", "skills": ["ball-control", "grip"], "levelMin": 2, "levelMax": 5, "tags": ["grip"] },
-  { "id": "t-fun", "text": "Finish with a small game. A drill with a score sticks better than one without.", "skills": ["focus-routine"], "levelMin": 1, "levelMax": 5, "tags": ["learning"] }
+  {
+    "id": "t-grip-relax",
+    "text": "Hold the bat like a bird: firm enough that it can't fly away, loose enough not to hurt it. Squeeze only at contact.",
+    "skills": [
+      "grip",
+      "ball-control"
+    ],
+    "levelMin": 1,
+    "levelMax": 5,
+    "tags": [
+      "grip"
+    ]
+  },
+  {
+    "id": "t-grip-neutral",
+    "text": "Keep a neutral grip with the V between thumb and finger on the bat's edge. Switching grips mid-rally costs you time.",
+    "skills": [
+      "grip"
+    ],
+    "levelMin": 1,
+    "levelMax": 3,
+    "tags": [
+      "grip"
+    ]
+  },
+  {
+    "id": "t-ready-heels",
+    "text": "If you can lift your heels without wobbling, your weight is in the right place.",
+    "skills": [
+      "ready-position"
+    ],
+    "levelMin": 1,
+    "levelMax": 5,
+    "tags": [
+      "stance"
+    ]
+  },
+  {
+    "id": "t-ready-back",
+    "text": "Most errors start one shot earlier: you didn't get back to ready in time.",
+    "skills": [
+      "ready-position",
+      "basic-footwork"
+    ],
+    "levelMin": 1,
+    "levelMax": 5,
+    "tags": [
+      "recovery"
+    ]
+  },
+  {
+    "id": "t-watch-bat",
+    "text": "Watch your opponent's bat at contact. Fast brushing means spin; a flat bump means little spin.",
+    "skills": [
+      "receive-basics",
+      "ready-position"
+    ],
+    "levelMin": 2,
+    "levelMax": 5,
+    "tags": [
+      "reading"
+    ]
+  },
+  {
+    "id": "t-fh-turn",
+    "text": "On the forehand, turn your waist before the ball arrives. If you turn when it lands, you are already late.",
+    "skills": [
+      "fh-drive",
+      "fh-loop-backspin"
+    ],
+    "levelMin": 1,
+    "levelMax": 4,
+    "tags": [
+      "timing"
+    ]
+  },
+  {
+    "id": "t-fh-forehead",
+    "text": "Finish the forehand drive near your forehead, like a salute. A finish above your head usually means the ball went long.",
+    "skills": [
+      "fh-drive"
+    ],
+    "levelMin": 1,
+    "levelMax": 3,
+    "tags": [
+      "technique"
+    ]
+  },
+  {
+    "id": "t-fh-same",
+    "text": "Consistency comes from doing the same thing every time: same distance, same contact point, same finish.",
+    "skills": [
+      "fh-drive",
+      "bh-drive"
+    ],
+    "levelMin": 1,
+    "levelMax": 3,
+    "tags": [
+      "consistency"
+    ]
+  },
+  {
+    "id": "t-bh-belly",
+    "text": "Play the backhand in front of your belly button. If the ball is beside you, move your feet, not your elbow.",
+    "skills": [
+      "bh-drive"
+    ],
+    "levelMin": 1,
+    "levelMax": 4,
+    "tags": [
+      "technique"
+    ]
+  },
+  {
+    "id": "t-bh-elbow",
+    "text": "Let your backhand elbow float forward a little. Tucked against your side, it makes the stroke cramped.",
+    "skills": [
+      "bh-drive"
+    ],
+    "levelMin": 1,
+    "levelMax": 3,
+    "tags": [
+      "technique"
+    ]
+  },
+  {
+    "id": "t-push-early",
+    "text": "Push early. The longer you wait, the more the ball drops and the higher your return floats.",
+    "skills": [
+      "bh-push",
+      "fh-push"
+    ],
+    "levelMin": 1,
+    "levelMax": 4,
+    "tags": [
+      "timing"
+    ]
+  },
+  {
+    "id": "t-push-deep",
+    "text": "A long, fast push to the corner is a good attack in its own right. A slow, high push is a gift.",
+    "skills": [
+      "bh-push",
+      "fh-push",
+      "receive-basics"
+    ],
+    "levelMin": 2,
+    "levelMax": 5,
+    "tags": [
+      "tactics"
+    ]
+  },
+  {
+    "id": "t-push-foot",
+    "text": "For short balls, step in with your playing-side foot. It brings your bat under the ball without reaching.",
+    "skills": [
+      "fh-push",
+      "bh-push",
+      "receive-basics"
+    ],
+    "levelMin": 1,
+    "levelMax": 4,
+    "tags": [
+      "footwork"
+    ]
+  },
+  {
+    "id": "t-loop-legs",
+    "text": "Your loop starts in your legs. If your knees don't bend, your arm has to do all the work.",
+    "skills": [
+      "fh-loop-backspin"
+    ],
+    "levelMin": 2,
+    "levelMax": 5,
+    "tags": [
+      "technique"
+    ]
+  },
+  {
+    "id": "t-loop-spin-first",
+    "text": "Against backspin, spin first and speed second. A slow, heavy loop that lands beats a fast one in the net.",
+    "skills": [
+      "fh-loop-backspin",
+      "third-ball"
+    ],
+    "levelMin": 2,
+    "levelMax": 5,
+    "tags": [
+      "tactics"
+    ]
+  },
+  {
+    "id": "t-loop-relax",
+    "text": "Relax your arm before the loop. You can only speed up sharply if you start loose.",
+    "skills": [
+      "fh-loop-backspin"
+    ],
+    "levelMin": 2,
+    "levelMax": 5,
+    "tags": [
+      "technique"
+    ]
+  },
+  {
+    "id": "t-serve-toss",
+    "text": "Legal toss: ball resting on your flat, still, open palm, behind your end line and above table height. Toss it nearly straight up without spin, at least 16 cm, and hit it on the way down. Keep it visible and move your free arm away straight after the toss.",
+    "skills": [
+      "serve-basics"
+    ],
+    "levelMin": 1,
+    "levelMax": 5,
+    "tags": [
+      "rules"
+    ]
+  },
+  {
+    "id": "t-serve-low",
+    "text": "Contact low, just above table height. Low contact keeps the serve low over the net; hitting it below the table top is a fault.",
+    "skills": [
+      "serve-basics"
+    ],
+    "levelMin": 1,
+    "levelMax": 5,
+    "tags": [
+      "serve"
+    ]
+  },
+  {
+    "id": "t-serve-same",
+    "text": "Use the same motion for different serves. The less your opponent can tell them apart, the better.",
+    "skills": [
+      "serve-basics",
+      "third-ball"
+    ],
+    "levelMin": 3,
+    "levelMax": 5,
+    "tags": [
+      "serve"
+    ]
+  },
+  {
+    "id": "t-serve-plan",
+    "text": "Before you serve, decide where the return will probably go and be ready for it.",
+    "skills": [
+      "third-ball",
+      "serve-basics"
+    ],
+    "levelMin": 2,
+    "levelMax": 5,
+    "tags": [
+      "tactics"
+    ]
+  },
+  {
+    "id": "t-receive-default",
+    "text": "Not sure what spin it is? Push it deep to their backhand, with the bat a little less open than usual in case it's no-spin.",
+    "skills": [
+      "receive-basics"
+    ],
+    "levelMin": 1,
+    "levelMax": 3,
+    "tags": [
+      "receive"
+    ]
+  },
+  {
+    "id": "t-footwork-small",
+    "text": "Take small steps rather than big ones. Small steps keep you balanced and ready to change direction.",
+    "skills": [
+      "basic-footwork"
+    ],
+    "levelMin": 1,
+    "levelMax": 4,
+    "tags": [
+      "footwork"
+    ]
+  },
+  {
+    "id": "t-footwork-first",
+    "text": "Feet first, bat second. Get to the ball, then swing.",
+    "skills": [
+      "basic-footwork",
+      "fh-drive"
+    ],
+    "levelMin": 1,
+    "levelMax": 5,
+    "tags": [
+      "footwork"
+    ]
+  },
+  {
+    "id": "t-elbow-target",
+    "text": "The crossover point near your opponent's playing elbow is the hardest place to defend. Aim there when in doubt.",
+    "skills": [
+      "third-ball",
+      "fh-drive",
+      "fh-loop-backspin"
+    ],
+    "levelMin": 3,
+    "levelMax": 5,
+    "tags": [
+      "tactics"
+    ]
+  },
+  {
+    "id": "t-pace-change",
+    "text": "Changing pace wins points: a slow spinny ball after two fast ones breaks the rhythm.",
+    "skills": [
+      "third-ball"
+    ],
+    "levelMin": 3,
+    "levelMax": 5,
+    "tags": [
+      "tactics"
+    ]
+  },
+  {
+    "id": "t-routine",
+    "text": "Use the same short routine before every point. It moves the last point out of your head.",
+    "skills": [
+      "focus-routine"
+    ],
+    "levelMin": 1,
+    "levelMax": 5,
+    "tags": [
+      "mental"
+    ]
+  },
+  {
+    "id": "t-breathe",
+    "text": "After a bad miss, turn away, breathe out slowly and decide one simple plan for the next point.",
+    "skills": [
+      "focus-routine"
+    ],
+    "levelMin": 1,
+    "levelMax": 5,
+    "tags": [
+      "mental"
+    ]
+  },
+  {
+    "id": "t-warmup",
+    "text": "Warm up before you hit hard. Cold shoulders and wrists are the most common way to pick up a niggle.",
+    "skills": [
+      "physical-prep"
+    ],
+    "levelMin": 1,
+    "levelMax": 5,
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "t-control-first",
+    "text": "Control before speed. Add speed only when you can hit the same spot 10 times in a row.",
+    "skills": [
+      "fh-drive",
+      "bh-drive",
+      "ball-control"
+    ],
+    "levelMin": 1,
+    "levelMax": 3,
+    "tags": [
+      "consistency"
+    ]
+  },
+  {
+    "id": "t-three-points",
+    "text": "Work on one thing at a time. Pick one cue for this drill and let the rest go.",
+    "skills": [
+      "fh-drive",
+      "bh-drive",
+      "bh-push",
+      "fh-push",
+      "fh-loop-backspin",
+      "ball-control"
+    ],
+    "levelMin": 1,
+    "levelMax": 5,
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": "t-soft-hands",
+    "text": "Soft hands for short balls, firm hands for fast ones. Grip pressure is a hidden control dial.",
+    "skills": [
+      "ball-control",
+      "grip"
+    ],
+    "levelMin": 2,
+    "levelMax": 5,
+    "tags": [
+      "grip"
+    ]
+  },
+  {
+    "id": "t-fun",
+    "text": "Finish with a small game. A drill with a score sticks better than one without.",
+    "skills": [
+      "focus-routine"
+    ],
+    "levelMin": 1,
+    "levelMax": 5,
+    "tags": [
+      "learning"
+    ]
+  }
 ]

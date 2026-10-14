@@ -7,7 +7,7 @@
   "summary": "A short, controlled backspin return against backspin, played in front of the body.",
   "whenToUse": "Against short or half-long backspin to your backhand when you can't (or don't want to) attack it. It keeps the ball low and safe.",
   "keyPoints": {
-    "stance": "Square to the table. For short balls, step in under the table with your right foot (left-handers: left foot).",
+    "stance": "Square to the table. For short balls, step in under the table with your right foot (left foot if left-handed).",
     "bodyAction": "Lean in from the hips. The body stays quiet; the push is a small forearm movement.",
     "strokeLength": "Short. The bat moves forward and slightly down, finishing pointing at the target.",
     "timing": "Early: at the top of the bounce or just before, to keep the return low.",
@@ -17,25 +17,138 @@
     "recovery": "Step back out to ready after the push. Don't stay leaning over the table.",
     "anticipation": "Heavy backspin needs a more open bat and more forward push; light backspin needs a flatter bat."
   },
-  "cues": ["Open the face", "Forward and under", "Short finish, back to ready"],
+  "cues": [
+    "Open the face",
+    "Forward and under",
+    "Short finish, back to ready"
+  ],
   "learningPath": [
-    { "stage": "see", "task": "Watch the 3D player from the side so you can see the open bat face.", "passCheck": "You can say the three cues.", "drillIds": [] },
-    { "stage": "shadow", "task": "Follow-along mode: step in, push, step out.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"], "selfChecks": ["Was your bat face open at contact?", "Did the bat move forward, not just down?", "Did you step back out to ready?"] },
-    { "stage": "feel", "task": "First contact against slow backspin. Just keep the ball on the table.", "passCheck": "7 of 10 on the table.", "drillIds": ["easy-feed-contact", "bh-push-diagonal"] },
-    { "stage": "groove", "task": "Push rally until 20 in a row, every ball low over the net.", "passCheck": "20 in a row, all low.", "drillIds": ["bh-push-diagonal"] },
-    { "stage": "mix", "task": "Push, then drive when the ball comes long.", "passCheck": "7 of 10 patterns.", "drillIds": ["push-then-drive", "shadow-combos"] },
-    { "stage": "use", "task": "Receive serves with a push and play the point out.", "passCheck": "7 of 10 serves returned low.", "drillIds": ["push-receive", "push-drive-game"] },
-    { "stage": "own", "task": "Test: backhand pushes in a row.", "passCheck": "20 in a row, all low over the net.", "drillIds": ["bh-push-diagonal"] }
+    {
+      "stage": "see",
+      "task": "Watch the 3D player from the side so you can see the open bat face.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along mode: step in, push, step out.",
+      "passCheck": "3 sets of 10, then yes to all self-checks.",
+      "drillIds": [
+        "shadow-strokes"
+      ],
+      "selfChecks": [
+        "Was your bat face open at contact?",
+        "Did the bat move forward, not just down?",
+        "Did you step back out to ready?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "First contact against slow backspin. Just keep the ball on the table.",
+      "passCheck": "7 of 10 on the table.",
+      "drillIds": [
+        "easy-feed-contact",
+        "bh-push-diagonal"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Push rally until 20 in a row, every ball low over the net.",
+      "passCheck": "20 in a row, all low.",
+      "drillIds": [
+        "bh-push-diagonal"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Push, then drive when the ball comes long.",
+      "passCheck": "7 of 10 patterns.",
+      "drillIds": [
+        "push-then-drive",
+        "shadow-combos"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Receive serves with a push and play the point out.",
+      "passCheck": "7 of 10 serves returned low.",
+      "drillIds": [
+        "push-receive",
+        "push-drive-game"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: backhand pushes in a row.",
+      "passCheck": "20 in a row, all low over the net.",
+      "drillIds": [
+        "bh-push-diagonal"
+      ]
+    }
   ],
   "gamePatterns": [
-    { "situation": "A short backspin serve to your backhand.", "how": "Push it long and fast to their backhand corner, or short and low if they are waiting to attack.", "drillId": "push-receive" },
-    { "situation": "A push rally.", "how": "Push deep and to the corners. Wait for a long or high ball, then attack it.", "drillId": "push-drive-game" }
+    {
+      "situation": "A short backspin serve to your backhand.",
+      "how": "Push it long and fast to their backhand corner, or short and low if they are waiting to attack.",
+      "drillId": "push-receive"
+    },
+    {
+      "situation": "A push rally.",
+      "how": "Push deep and to the corners. Wait for a long or high ball, then attack it.",
+      "drillId": "push-drive-game"
+    }
   ],
   "troubleshooting": [
-    { "symptom": "The ball pops up high", "causes": ["Bat too open", "Contact too late, as the ball falls", "Chopping down too much"], "fixes": ["Close the bat a little", "Take the ball earlier", "Push forward more than down"], "drillId": "bh-push-diagonal" },
-    { "symptom": "The ball goes into the net", "causes": ["Bat not open enough for the backspin", "No forward movement"], "fixes": ["Open the face more against heavy backspin", "Push through the ball toward the target"], "drillId": "easy-feed-contact" },
-    { "symptom": "My push has no spin", "causes": ["Blocking the ball instead of brushing under it", "Grip too tight"], "fixes": ["Brush the lower back of the ball", "Relax your hand"], "drillId": "bh-push-diagonal" },
-    { "symptom": "The ball goes off the end", "causes": ["Pushing too hard", "Standing too far back for short balls"], "fixes": ["Softer, shorter push", "Step in so you play the ball close to the bounce"], "drillId": "push-receive" }
+    {
+      "symptom": "The ball pops up high",
+      "causes": [
+        "Bat too open",
+        "Contact too late, as the ball falls",
+        "Chopping down too much"
+      ],
+      "fixes": [
+        "Close the bat a little",
+        "Take the ball earlier",
+        "Push forward more than down"
+      ],
+      "drillId": "bh-push-diagonal"
+    },
+    {
+      "symptom": "The ball goes into the net",
+      "causes": [
+        "Bat not open enough for the backspin",
+        "No forward movement"
+      ],
+      "fixes": [
+        "Open the face more against heavy backspin",
+        "Push through the ball toward the target"
+      ],
+      "drillId": "easy-feed-contact"
+    },
+    {
+      "symptom": "My push has no spin",
+      "causes": [
+        "Blocking the ball instead of brushing under it",
+        "Grip too tight"
+      ],
+      "fixes": [
+        "Brush the lower back of the ball",
+        "Relax your hand"
+      ],
+      "drillId": "bh-push-diagonal"
+    },
+    {
+      "symptom": "The ball goes off the end",
+      "causes": [
+        "Pushing too hard",
+        "Standing too far back for short balls"
+      ],
+      "fixes": [
+        "Softer, shorter push",
+        "Step in so you play the ball close to the bounce"
+      ],
+      "drillId": "push-receive"
+    }
   ],
   "penholdNotes": "Use the same side of the bat with the wrist turned so the face opens; the forearm action is the same.",
   "animationId": "bh-push"

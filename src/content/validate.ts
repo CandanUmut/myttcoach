@@ -66,7 +66,10 @@ export function validateContent(c: Content, animationIds: Set<string> = new Set(
         const dr = drillMap.get(d);
         if (!dr) err(`move ${m.id}/${l.stage}: drill "${d}" not found`);
         else if (dr.levelMax < m.levelMin) err(`move ${m.id}/${l.stage}: drill "${d}" is below the move's level`);
+        else if (dr.levelMin > m.levelMin + 1) err(`move ${m.id}/${l.stage}: drill "${d}" starts too far above the move's level`);
       }
+      if (l.stage === 'mix' && !l.drillIds.some((d) => drillMap.get(d)?.regularity === 'semiIrregular'))
+        err(`move ${m.id}/mix: needs at least one semi-irregular drill`);
     }
     if (m.gamePatterns.length < 1) err(`move ${m.id}: needs at least 1 game pattern`);
     for (const g of m.gamePatterns) if (!drills.has(g.drillId)) err(`move ${m.id}: game pattern drill "${g.drillId}" not found`);

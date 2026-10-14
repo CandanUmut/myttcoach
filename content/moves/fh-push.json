@@ -7,34 +7,134 @@
   "summary": "A controlled backspin return on the forehand side, stepping in for short balls.",
   "whenToUse": "Against short backspin to your forehand when the ball is too low or short to attack.",
   "keyPoints": {
-    "stance": "Step in toward the ball with your right foot (left-handers: left foot), under the table for short balls.",
+    "stance": "Step in toward the ball with your right foot (left foot if left-handed), under the table for short balls.",
     "bodyAction": "Lean in from the hips; the body stays quiet.",
     "strokeLength": "Short: forward and slightly down, finishing toward the target.",
     "timing": "Early, at or just before the top of the bounce.",
     "tablePosition": "Close, stepping in.",
-    "freeArm": "Out to the side or resting near the table edge for balance.",
+    "freeArm": "Out to the side for balance. Never touch the table with it: that loses the point.",
     "batArm": "Elbow bent, forearm guides the bat forward. Bat face open, contact under the back of the ball.",
     "recovery": "Push off the front foot and step back to ready straight away.",
     "anticipation": "Short balls to the forehand often come from a serve. Watch the server's bat to judge the spin."
   },
-  "cues": ["Step in with your foot", "Open face, under the ball", "Push off back to ready"],
+  "cues": [
+    "Step in with your foot",
+    "Open face, under the ball",
+    "Push off back to ready"
+  ],
   "learningPath": [
-    { "stage": "see", "task": "Watch the 3D player step in and push. Notice the foot goes first.", "passCheck": "You can say the three cues.", "drillIds": [] },
-    { "stage": "shadow", "task": "Follow-along: step in, push, step out.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"], "selfChecks": ["Did your foot step in before the bat moved?", "Was the bat face open?", "Did you push off back to ready?"] },
-    { "stage": "feel", "task": "First contact with slow backspin to your forehand.", "passCheck": "7 of 10 on the table.", "drillIds": ["easy-feed-contact", "fh-push-diagonal"] },
-    { "stage": "groove", "task": "Forehand push rally until 20 in a row.", "passCheck": "20 in a row, all low.", "drillIds": ["fh-push-diagonal"] },
-    { "stage": "mix", "task": "Receive with pushes from both wings.", "passCheck": "7 of 10 low returns.", "drillIds": ["push-receive", "shadow-combos"] },
-    { "stage": "use", "task": "Play points where you must push the first short ball.", "passCheck": "Win 3 points after a good push.", "drillIds": ["push-drive-game", "push-receive"] },
-    { "stage": "own", "task": "Test: forehand pushes in a row.", "passCheck": "20 in a row.", "drillIds": ["fh-push-diagonal"] }
+    {
+      "stage": "see",
+      "task": "Watch the 3D player step in and push. Notice the foot goes first.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along: step in, push, step out.",
+      "passCheck": "3 sets of 10, then yes to all self-checks.",
+      "drillIds": [
+        "shadow-strokes"
+      ],
+      "selfChecks": [
+        "Did your foot step in before the bat moved?",
+        "Was the bat face open?",
+        "Did you push off back to ready?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "First contact with slow backspin to your forehand.",
+      "passCheck": "7 of 10 on the table.",
+      "drillIds": [
+        "easy-feed-contact",
+        "fh-push-diagonal"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Forehand push rally until 20 in a row.",
+      "passCheck": "20 in a row, all low.",
+      "drillIds": [
+        "fh-push-diagonal"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Receive with pushes from both wings.",
+      "passCheck": "7 of 10 low returns.",
+      "drillIds": [
+        "push-receive",
+        "shadow-combos"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Play points where you must push the first short ball.",
+      "passCheck": "Win 3 points after a good push.",
+      "drillIds": [
+        "push-drive-game",
+        "push-receive"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: forehand pushes in a row.",
+      "passCheck": "20 in a row.",
+      "drillIds": [
+        "fh-push-diagonal"
+      ]
+    }
   ],
   "gamePatterns": [
-    { "situation": "A short backspin serve to your forehand.", "how": "Step in and push it long to their backhand, or drop it short if they stand far back.", "drillId": "push-receive" },
-    { "situation": "Your opponent drops the ball short in a push rally.", "how": "Step in early and push long to a corner so they have to move.", "drillId": "push-drive-game" }
+    {
+      "situation": "A short backspin serve to your forehand.",
+      "how": "Step in and push it long to their backhand, or drop it short if they stand far back.",
+      "drillId": "push-receive"
+    },
+    {
+      "situation": "Your opponent drops the ball short in a push rally.",
+      "how": "Step in early and push long to a corner so they have to move.",
+      "drillId": "push-drive-game"
+    }
   ],
   "troubleshooting": [
-    { "symptom": "I can't reach short balls", "causes": ["Not stepping in", "Stepping with the wrong foot"], "fixes": ["Step under the table with your playing-side foot", "Move before the ball bounces"], "drillId": "fh-push-diagonal" },
-    { "symptom": "The ball pops up", "causes": ["Bat too open", "Late contact"], "fixes": ["Close the bat a little", "Take the ball earlier"], "drillId": "fh-push-diagonal" },
-    { "symptom": "I'm stuck at the table after the push", "causes": ["Leaning on the front foot", "No push-off"], "fixes": ["Push off the front foot after contact", "Say 'back' as you push"], "drillId": "push-receive" }
+    {
+      "symptom": "I can't reach short balls",
+      "causes": [
+        "Not stepping in",
+        "Stepping with the wrong foot"
+      ],
+      "fixes": [
+        "Step under the table with your playing-side foot",
+        "Move before the ball bounces"
+      ],
+      "drillId": "fh-push-diagonal"
+    },
+    {
+      "symptom": "The ball pops up",
+      "causes": [
+        "Bat too open",
+        "Late contact"
+      ],
+      "fixes": [
+        "Close the bat a little",
+        "Take the ball earlier"
+      ],
+      "drillId": "fh-push-diagonal"
+    },
+    {
+      "symptom": "I'm stuck at the table after the push",
+      "causes": [
+        "Leaning on the front foot",
+        "No push-off"
+      ],
+      "fixes": [
+        "Push off the front foot after contact",
+        "Say 'back' as you push"
+      ],
+      "drillId": "push-receive"
+    }
   ],
   "penholdNotes": "Penholders often find the forehand push natural; keep the wrist from over-turning so the ball stays low.",
   "animationId": null

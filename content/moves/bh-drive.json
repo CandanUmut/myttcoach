@@ -17,25 +17,137 @@
     "recovery": "Return the bat to the middle of your body straight away.",
     "anticipation": "Most backhand rallies are fast, so keep the bat high and in front: there is no time for a big backswing."
   },
-  "cues": ["Ball in front of your belly button", "Elbow forward, forearm swings", "Point the bat at the target"],
+  "cues": [
+    "Ball in front of your belly button",
+    "Elbow forward, forearm swings",
+    "Point the bat at the target"
+  ],
   "learningPath": [
-    { "stage": "see", "task": "Watch the 3D player from the front, then from the side. Notice how little the body moves.", "passCheck": "You can say the three cues.", "drillIds": [] },
-    { "stage": "shadow", "task": "Follow-along mode: short forearm swings in front of your body.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"], "selfChecks": ["Did the bat start in front of your stomach?", "Did your elbow stay in front of your body?", "Did the bat finish pointing forward, not across your body?"] },
-    { "stage": "feel", "task": "First contact with slow balls to your backhand. Just hit the table.", "passCheck": "7 of 10 on the table.", "drillIds": ["easy-feed-contact", "bh-diagonal-warmup"] },
-    { "stage": "groove", "task": "Backhand cross-court until 20 in a row, then aim deeper.", "passCheck": "20 in a row.", "drillIds": ["bh-drive-crosscourt"] },
-    { "stage": "mix", "task": "Mix backhand and forehand: random side, recover to the middle.", "passCheck": "14 of 20 back on the table.", "drillIds": ["random-fh-bh", "shadow-combos", "push-then-drive"] },
-    { "stage": "use", "task": "Rally record: use your backhand to keep the rally safe and steady.", "passCheck": "A rally of 25 or more using both wings.", "drillIds": ["rally-record", "push-drive-game"] },
-    { "stage": "own", "task": "Test: backhand drives in a row.", "passCheck": "30 in a row.", "drillIds": ["bh-drive-crosscourt"] }
+    {
+      "stage": "see",
+      "task": "Watch the 3D player from the front, then from the side. Notice how little the body moves.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along mode: short forearm swings in front of your body.",
+      "passCheck": "3 sets of 10, then yes to all self-checks.",
+      "drillIds": [
+        "shadow-strokes"
+      ],
+      "selfChecks": [
+        "Did the bat start in front of your stomach?",
+        "Did your elbow stay in front of your body?",
+        "Did the bat finish pointing forward, not across your body?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "First contact with slow balls to your backhand. Just hit the table.",
+      "passCheck": "7 of 10 on the table.",
+      "drillIds": [
+        "easy-feed-contact",
+        "bh-diagonal-warmup"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Backhand cross-court until 20 in a row, then aim deeper.",
+      "passCheck": "20 in a row.",
+      "drillIds": [
+        "bh-drive-crosscourt"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Switch between wings: 1 forehand, 1 backhand, then 2 backhands and 1 forehand. Recover to the middle.",
+      "passCheck": "16 shots in a row with clean switches.",
+      "drillIds": [
+        "fh-bh-alternate",
+        "shadow-combos",
+        "random-fh-bh"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Rally record: use your backhand to keep the rally safe and steady.",
+      "passCheck": "A rally of 25 or more using both wings.",
+      "drillIds": [
+        "rally-record",
+        "push-drive-game"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: backhand drives in a row.",
+      "passCheck": "30 in a row.",
+      "drillIds": [
+        "bh-drive-crosscourt"
+      ]
+    }
   ],
   "gamePatterns": [
-    { "situation": "A topspin ball to your backhand in a rally.", "how": "Drive it cross-court deep to keep them back, or straight down the line to their forehand when they cheat toward the backhand.", "drillId": "bh-drive-crosscourt" },
-    { "situation": "Your opponent's ball comes into your body.", "how": "Move your feet to make room, then play the backhand from the middle of your body.", "drillId": "random-fh-bh" }
+    {
+      "situation": "A topspin ball to your backhand in a rally.",
+      "how": "Drive it cross-court deep to keep them back, or straight down the line to their forehand when they cheat toward the backhand.",
+      "drillId": "bh-drive-crosscourt"
+    },
+    {
+      "situation": "Your opponent's ball comes into your body.",
+      "how": "Move your feet to make room, then play the backhand from the middle of your body.",
+      "drillId": "random-fh-bh"
+    }
   ],
   "troubleshooting": [
-    { "symptom": "The ball goes into the net", "causes": ["Bat too closed", "Contact too low, after the ball drops"], "fixes": ["Open the bat slightly", "Meet the ball at the top of the bounce"], "drillId": "easy-feed-contact" },
-    { "symptom": "The ball goes long", "causes": ["Bat too open", "Too much wrist flick"], "fixes": ["Close the bat a little", "Use the forearm; keep the wrist quiet"], "drillId": "bh-drive-crosscourt" },
-    { "symptom": "I feel cramped", "causes": ["Elbow stuck to your side", "Ball too close to your body"], "fixes": ["Push your elbow a little forward", "Take a small step back or sideways to make space"], "drillId": "shadow-strokes" },
-    { "symptom": "The ball sprays sideways", "causes": ["Contact to the side of your body", "Bat finishes across your body"], "fixes": ["Move so the ball is in front of your belly button", "Finish with the bat pointing at the target"], "drillId": "bh-diagonal-warmup" }
+    {
+      "symptom": "The ball goes into the net",
+      "causes": [
+        "Bat too closed",
+        "Contact too low, after the ball drops"
+      ],
+      "fixes": [
+        "Open the bat slightly",
+        "Meet the ball at the top of the bounce"
+      ],
+      "drillId": "easy-feed-contact"
+    },
+    {
+      "symptom": "The ball goes long",
+      "causes": [
+        "Bat too open",
+        "Too much wrist flick"
+      ],
+      "fixes": [
+        "Close the bat a little",
+        "Use the forearm; keep the wrist quiet"
+      ],
+      "drillId": "bh-drive-crosscourt"
+    },
+    {
+      "symptom": "I feel cramped",
+      "causes": [
+        "Elbow stuck to your side",
+        "Ball too close to your body"
+      ],
+      "fixes": [
+        "Push your elbow a little forward",
+        "Take a small step back or sideways to make space"
+      ],
+      "drillId": "shadow-strokes"
+    },
+    {
+      "symptom": "The ball sprays sideways",
+      "causes": [
+        "Contact to the side of your body",
+        "Bat finishes across your body"
+      ],
+      "fixes": [
+        "Move so the ball is in front of your belly button",
+        "Finish with the bat pointing at the target"
+      ],
+      "drillId": "bh-diagonal-warmup"
+    }
   ],
   "penholdNotes": "Traditional penholders block or punch with the same side of the bat; modern penholders use the reverse side, with a stroke much like the shakehand one.",
   "animationId": "bh-drive"

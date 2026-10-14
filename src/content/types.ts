@@ -81,7 +81,7 @@ export interface Drill {
   duration: { min: number; default: number; max: number };
   intensity: 1 | 2 | 3 | 4 | 5;
   impact: 'low' | 'high';
-  success: { type: 'consecutive' | 'outOf' | 'timed'; target: number; description: string };
+  success: { type: 'consecutive' | 'outOf' | 'timed'; target: number; of?: number; description: string };
   metricId?: string;
   progressionId?: string;
   regressionId?: string;

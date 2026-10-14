@@ -7,7 +7,7 @@
   "summary": "A short, compact topspin hit on your forehand side. The first attacking stroke to learn.",
   "whenToUse": "Against a topspin or no-spin ball that bounces up to your forehand side at a comfortable height. It's your bread-and-butter rally shot.",
   "keyPoints": {
-    "stance": "Feet a little wider than shoulders, right foot slightly back for right-handers (left foot for left-handers), knees bent.",
+    "stance": "Feet a little wider than shoulders, right foot slightly back (left foot if left-handed), knees bent.",
     "bodyAction": "Turn your waist and shoulders back as the ball comes, then turn forward into the ball. Weight moves from your back foot to your front foot.",
     "strokeLength": "Compact. The bat starts at about waist height beside you and finishes in front of your forehead.",
     "timing": "Contact at the top of the bounce, slightly in front of your body.",
@@ -17,25 +17,142 @@
     "recovery": "Let the bat finish, then bring it straight back to ready in front of you.",
     "anticipation": "Watch your opponent's bat. A topspin coming at you needs a slightly closed bat; a flatter ball needs a slightly more open one."
   },
-  "cues": ["Turn, then hit", "Top of the bounce, in front", "Finish near your forehead"],
+  "cues": [
+    "Turn, then hit",
+    "Top of the bounce, in front",
+    "Finish near your forehead"
+  ],
   "learningPath": [
-    { "stage": "see", "task": "Watch the 3D player at slow speed. Step through each phase: ready, backswing, contact, follow-through, recover.", "passCheck": "You can say the three cues without looking.", "drillIds": [] },
-    { "stage": "shadow", "task": "Follow-along mode: copy the player without a ball, slow and exact, then at normal speed.", "passCheck": "3 sets of 10, then yes to all three self-checks.", "drillIds": ["shadow-strokes"], "selfChecks": ["Did your waist turn back before the swing?", "Did the bat finish in front of your forehead?", "Did you come back to ready each time?"] },
-    { "stage": "feel", "task": "First contact with slow, regular balls to one spot. Just hit the table, any depth.", "passCheck": "7 of 10 on the table with the right shape.", "drillIds": ["easy-feed-contact", "fh-diagonal-warmup"] },
-    { "stage": "groove", "task": "Build a run: forehand cross-court until 20 in a row, then aim for the last third of the table.", "passCheck": "20 in a row, then 10 of 20 deep.", "drillIds": ["fh-drive-crosscourt", "fh-drive-targets"] },
-    { "stage": "mix", "task": "Combine it: push, then drive when the ball comes long. Then side-step between two points.", "passCheck": "7 of 10 patterns with both shots on the table.", "drillIds": ["push-then-drive", "two-point-footwork", "shadow-combos"] },
-    { "stage": "use", "task": "Play the push-and-drive game. Choose the drive only when the ball is long or high.", "passCheck": "Win 3 points with your forehand drive.", "drillIds": ["push-drive-game", "rally-record"] },
-    { "stage": "own", "task": "Test: forehand drives in a row.", "passCheck": "30 in a row.", "drillIds": ["fh-drive-crosscourt"] }
+    {
+      "stage": "see",
+      "task": "Watch the 3D player at slow speed. Step through each phase: ready, backswing, contact, follow-through, recover.",
+      "passCheck": "You can say the three cues without looking.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along mode: copy the player without a ball, slow and exact, then at normal speed.",
+      "passCheck": "3 sets of 10, then yes to all three self-checks.",
+      "drillIds": [
+        "shadow-strokes"
+      ],
+      "selfChecks": [
+        "Did your waist turn back before the swing?",
+        "Did the bat finish in front of your forehead?",
+        "Did you come back to ready each time?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "First contact with slow, regular balls to one spot. Just hit the table, any depth.",
+      "passCheck": "7 of 10 on the table with the right shape.",
+      "drillIds": [
+        "easy-feed-contact",
+        "fh-diagonal-warmup"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Build a run: forehand cross-court until 20 in a row, then aim for the last third of the table.",
+      "passCheck": "20 in a row, then 10 of 20 deep.",
+      "drillIds": [
+        "fh-drive-crosscourt",
+        "fh-drive-targets"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Combine it: push, then drive when the ball comes long. Then side-step between two points.",
+      "passCheck": "7 of 10 patterns with both shots on the table.",
+      "drillIds": [
+        "push-then-drive",
+        "two-point-footwork",
+        "shadow-combos"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Play the push-and-drive game. Choose the drive only when the ball is long or high.",
+      "passCheck": "Win 3 points with your forehand drive.",
+      "drillIds": [
+        "push-drive-game",
+        "rally-record"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: forehand drives in a row.",
+      "passCheck": "30 in a row.",
+      "drillIds": [
+        "fh-drive-crosscourt"
+      ]
+    }
   ],
   "gamePatterns": [
-    { "situation": "Your opponent's push comes long or a bit high to your forehand.", "how": "Step and drive it to their backhand corner. Don't rush: a steady drive deep is better than a wild one.", "drillId": "push-then-drive" },
-    { "situation": "A forehand rally, corner to corner.", "how": "Keep it cross-court and deep. When a ball lands short or high, change direction down the line.", "drillId": "fh-drive-targets" }
+    {
+      "situation": "Your opponent's push comes long or a bit high to your forehand.",
+      "how": "It is still backspin: open the bat slightly, lift more than a normal drive and aim deep to their backhand. If the push is low, loop it instead.",
+      "drillId": "push-then-drive"
+    },
+    {
+      "situation": "A forehand rally, corner to corner.",
+      "how": "Keep it cross-court and deep. When a ball lands short or high, change direction down the line.",
+      "drillId": "fh-drive-targets"
+    }
   ],
   "troubleshooting": [
-    { "symptom": "The ball goes into the net", "causes": ["Bat too closed", "Contact too late, when the ball is falling", "Swinging down instead of forward"], "fixes": ["Open the bat a little", "Hit at the top of the bounce, in front of you", "Swing forward and slightly up"], "drillId": "easy-feed-contact" },
-    { "symptom": "The ball goes long", "causes": ["Bat too open", "Swinging too hard", "Swinging too much upward"], "fixes": ["Close the bat slightly", "Shorter, calmer stroke", "Swing more forward, finish at your forehead not above your head"], "drillId": "fh-drive-crosscourt" },
-    { "symptom": "I'm off balance or reaching", "causes": ["Feet not moving", "Too close to or too far from the table"], "fixes": ["Move your feet first, then swing", "Find an arm's length from the ball at contact"], "drillId": "two-point-footwork" },
-    { "symptom": "No power, all arm", "causes": ["No waist turn", "Weight stays on the front foot"], "fixes": ["Turn back as the ball comes", "Feel the weight move from back foot to front foot"], "drillId": "shadow-strokes" }
+    {
+      "symptom": "The ball goes into the net",
+      "causes": [
+        "Bat too closed",
+        "Contact too late, when the ball is falling",
+        "Swinging down instead of forward"
+      ],
+      "fixes": [
+        "Open the bat a little",
+        "Hit at the top of the bounce, in front of you",
+        "Swing forward and slightly up"
+      ],
+      "drillId": "easy-feed-contact"
+    },
+    {
+      "symptom": "The ball goes long",
+      "causes": [
+        "Bat too open",
+        "Swinging too hard",
+        "Swinging too much upward"
+      ],
+      "fixes": [
+        "Close the bat slightly",
+        "Shorter, calmer stroke",
+        "Swing more forward, finish at your forehead not above your head"
+      ],
+      "drillId": "fh-drive-crosscourt"
+    },
+    {
+      "symptom": "I'm off balance or reaching",
+      "causes": [
+        "Feet not moving",
+        "Too close to or too far from the table"
+      ],
+      "fixes": [
+        "Move your feet first, then swing",
+        "Find an arm's length from the ball at contact"
+      ],
+      "drillId": "two-point-footwork"
+    },
+    {
+      "symptom": "No power, all arm",
+      "causes": [
+        "No waist turn",
+        "Weight stays on the front foot"
+      ],
+      "fixes": [
+        "Turn back as the ball comes",
+        "Feel the weight move from back foot to front foot"
+      ],
+      "drillId": "shadow-strokes"
+    }
   ],
   "penholdNotes": "Same body action. Keep the wrist a little firmer; the penhold grip makes it easy to over-use the wrist.",
   "animationId": "fh-drive"

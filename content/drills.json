@@ -3,577 +3,1935 @@
     "id": "dynamic-warmup",
     "name": "Moving warm-up",
     "purpose": "Raise your heart rate and loosen hips, shoulders and wrists before you hit a ball.",
-    "skills": [{ "id": "physical-prep", "weight": 1 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "physicalWarmup", "regularity": "regular",
-    "variants": [
-      { "setup": "shadow", "instructions": "One minute each: easy jog on the spot, side steps left and right, arm circles forward and back, hip circles, wrist rolls, then 10 slow lunges with a twist toward your forehand side." }
+    "skills": [
+      {
+        "id": "physical-prep",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 3, "default": 6, "max": 12 },
-    "intensity": 2, "impact": "low",
-    "success": { "type": "timed", "target": 1, "description": "You feel warm and slightly out of breath." },
-    "coachingPoints": ["Start slow and build up", "Big, easy movements, no bouncing stretches", "Finish in your ready position"],
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "physicalWarmup",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "One minute each: easy jog on the spot, side steps left and right, arm circles forward and back, hip circles, wrist rolls, then 10 slow lunges with a twist toward your forehand side."
+      }
+    ],
+    "duration": {
+      "min": 3,
+      "default": 6,
+      "max": 12
+    },
+    "intensity": 2,
+    "impact": "low",
+    "success": {
+      "type": "timed",
+      "target": 1,
+      "description": "You feel warm and slightly out of breath."
+    },
+    "coachingPoints": [
+      "Start slow and build up",
+      "Big, easy movements, no bouncing stretches",
+      "Finish in your ready position"
+    ],
     "moveIds": []
   },
   {
     "id": "skipping-warmup",
     "name": "Skip and shuffle warm-up",
     "purpose": "A livelier warm-up with small jumps to wake up the legs.",
-    "skills": [{ "id": "physical-prep", "weight": 1 }, { "id": "basic-footwork", "weight": 0.5 }],
-    "levelMin": 2, "levelMax": 5,
-    "phase": "physicalWarmup", "regularity": "regular",
-    "variants": [
-      { "setup": "shadow", "instructions": "Rope or imaginary rope: 3 rounds of 40 seconds skipping and 20 seconds rest. Then 2 rounds of fast side shuffles across 3 metres, touching the floor at each end. End with arm and wrist circles." }
+    "skills": [
+      {
+        "id": "physical-prep",
+        "weight": 1
+      },
+      {
+        "id": "basic-footwork",
+        "weight": 0.5
+      }
     ],
-    "duration": { "min": 4, "default": 7, "max": 12 },
-    "intensity": 3, "impact": "high",
+    "levelMin": 2,
+    "levelMax": 5,
+    "phase": "physicalWarmup",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "Rope or imaginary rope: 3 rounds of 40 seconds skipping and 20 seconds rest. Then 2 rounds of fast side shuffles across 3 metres, touching the floor at each end. End with arm and wrist circles."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 7,
+      "max": 12
+    },
+    "intensity": 3,
+    "impact": "high",
     "lowImpactId": "dynamic-warmup",
-    "success": { "type": "timed", "target": 1, "description": "Legs feel light and quick." },
-    "coachingPoints": ["Stay on the balls of your feet", "Land softly", "Keep your knees bent on the shuffles"],
+    "success": {
+      "type": "timed",
+      "target": 1,
+      "description": "Legs feel light and quick."
+    },
+    "coachingPoints": [
+      "Stay on the balls of your feet",
+      "Land softly",
+      "Keep your knees bent on the shuffles"
+    ],
     "moveIds": []
   },
   {
     "id": "bat-bounce-control",
     "name": "Ball on the bat",
     "purpose": "Build soft hands and ball feel: the ball should feel light on the bat.",
-    "skills": [{ "id": "ball-control", "weight": 1 }, { "id": "grip", "weight": 0.5 }],
-    "levelMin": 1, "levelMax": 2,
-    "phase": "tableWarmup", "regularity": "regular",
-    "variants": [
-      { "setup": "shadow", "instructions": "Bounce the ball up on the bat about 20 cm high. Then switch faces every bounce (red, black, red…). Then walk while you bounce. Count your best run of alternating bounces." },
-      { "setup": "wall", "instructions": "Stand one metre from the wall and tap the ball gently against it with your forehand, letting it bounce once on the floor if needed. Then switch to backhand." }
+    "skills": [
+      {
+        "id": "ball-control",
+        "weight": 1
+      },
+      {
+        "id": "grip",
+        "weight": 0.5
+      }
     ],
-    "duration": { "min": 3, "default": 5, "max": 10 },
-    "intensity": 1, "impact": "low",
-    "success": { "type": "consecutive", "target": 30, "description": "30 alternating bounces without dropping the ball." },
+    "levelMin": 1,
+    "levelMax": 2,
+    "phase": "tableWarmup",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "Bounce the ball up on the bat about 20 cm high. Then switch faces every bounce (red, black, red…). Then walk while you bounce. Count your best run of alternating bounces."
+      },
+      {
+        "setup": "wall",
+        "instructions": "Stand one metre from the wall and tap the ball gently against it with your forehand, letting it bounce once on the floor if needed. Then switch to backhand."
+      }
+    ],
+    "duration": {
+      "min": 3,
+      "default": 5,
+      "max": 10
+    },
+    "intensity": 1,
+    "impact": "low",
+    "success": {
+      "type": "consecutive",
+      "target": 30,
+      "description": "30 alternating bounces without dropping the ball."
+    },
     "metricId": "bounce-streak",
-    "coachingPoints": ["Loose grip, soft wrist", "Watch the ball onto the bat", "Small, quiet touches"],
+    "coachingPoints": [
+      "Loose grip, soft wrist",
+      "Watch the ball onto the bat",
+      "Small, quiet touches"
+    ],
     "moveIds": []
   },
   {
     "id": "fh-diagonal-warmup",
     "name": "Forehand warm-up rally",
     "purpose": "Find your rhythm and timing with easy forehand rallies.",
-    "skills": [{ "id": "fh-drive", "weight": 1 }, { "id": "ready-position", "weight": 0.3 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "tableWarmup", "regularity": "regular",
-    "variants": [
-      { "setup": "partner", "instructions": "Forehand to forehand, corner to corner, at a medium pace. Start slow and speed up a little each minute." },
-      { "setup": "multiball", "instructions": "Feeder sends easy topspin to your forehand corner, one ball every second and a half. Hit cross-court." , "feederInstructions": "Feed light topspin to their forehand corner at a steady rhythm. Same height and speed every ball." },
-      { "setup": "robot", "instructions": "Set the robot to light topspin, medium speed, one spot on your forehand. Hit cross-court." },
-      { "setup": "wall", "instructions": "With the rebound board up, hit easy forehands at it and back onto your half. Keep a steady rhythm." }
+    "skills": [
+      {
+        "id": "fh-drive",
+        "weight": 1
+      },
+      {
+        "id": "ready-position",
+        "weight": 0.3
+      }
     ],
-    "duration": { "min": 2, "default": 4, "max": 8 },
-    "intensity": 2, "impact": "low",
-    "success": { "type": "consecutive", "target": 20, "description": "20 forehands in a row at an easy pace." },
-    "coachingPoints": ["Relax first, speed later", "Turn your waist, don't just swing the arm", "Recover to ready after each hit"],
-    "moveIds": ["fh-drive"],
-    "diagram": { "placements": [{ "zone": "fh", "depth": "long", "order": 1 }], "arrows": [] }
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "tableWarmup",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Forehand to forehand, corner to corner, at a medium pace. Start slow and speed up a little each minute."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Feeder sends easy topspin to your forehand corner, one ball every second and a half. Hit cross-court.",
+        "feederInstructions": "Feed light topspin to their forehand corner at a steady rhythm. Same height and speed every ball."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Set the robot to light topspin, medium speed, one spot on your forehand. Hit cross-court."
+      },
+      {
+        "setup": "wall",
+        "instructions": "With the rebound board up, hit easy forehands at it and back onto your half. Keep a steady rhythm."
+      }
+    ],
+    "duration": {
+      "min": 2,
+      "default": 4,
+      "max": 8
+    },
+    "intensity": 2,
+    "impact": "low",
+    "success": {
+      "type": "consecutive",
+      "target": 20,
+      "description": "20 forehands in a row at an easy pace."
+    },
+    "coachingPoints": [
+      "Relax first, speed later",
+      "Turn your waist, don't just swing the arm",
+      "Recover to ready after each hit"
+    ],
+    "moveIds": [
+      "fh-drive"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "fh",
+          "depth": "long",
+          "order": 1
+        }
+      ],
+      "arrows": []
+    }
   },
   {
     "id": "bh-diagonal-warmup",
     "name": "Backhand warm-up rally",
     "purpose": "Settle the backhand with easy rallies before the real work.",
-    "skills": [{ "id": "bh-drive", "weight": 1 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "tableWarmup", "regularity": "regular",
-    "variants": [
-      { "setup": "partner", "instructions": "Backhand to backhand, corner to corner, at a medium pace." },
-      { "setup": "multiball", "instructions": "Feeder sends easy topspin to your backhand. Hit back diagonally.", "feederInstructions": "Feed light topspin to their backhand corner, same rhythm each ball." },
-      { "setup": "robot", "instructions": "Robot on light topspin to your backhand corner. Hit cross-court." },
-      { "setup": "wall", "instructions": "Rebound board up. Easy backhands against it, keeping the ball in front of your body." }
+    "skills": [
+      {
+        "id": "bh-drive",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 2, "default": 4, "max": 8 },
-    "intensity": 2, "impact": "low",
-    "success": { "type": "consecutive", "target": 20, "description": "20 backhands in a row at an easy pace." },
-    "coachingPoints": ["Bat in front of your belly button", "Elbow relaxed, slightly forward", "Short stroke, quick reset"],
-    "moveIds": ["bh-drive"],
-    "diagram": { "placements": [{ "zone": "bh", "depth": "long", "order": 1 }], "arrows": [] }
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "tableWarmup",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Backhand to backhand, corner to corner, at a medium pace."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Feeder sends easy topspin to your backhand. Hit back diagonally.",
+        "feederInstructions": "Feed light topspin to their backhand corner, same rhythm each ball."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot on light topspin to your backhand corner. Hit cross-court."
+      },
+      {
+        "setup": "wall",
+        "instructions": "Rebound board up. Easy backhands against it, keeping the ball in front of your body."
+      }
+    ],
+    "duration": {
+      "min": 2,
+      "default": 4,
+      "max": 8
+    },
+    "intensity": 2,
+    "impact": "low",
+    "success": {
+      "type": "consecutive",
+      "target": 20,
+      "description": "20 backhands in a row at an easy pace."
+    },
+    "coachingPoints": [
+      "Bat in front of your belly button",
+      "Elbow relaxed, slightly forward",
+      "Short stroke, quick reset"
+    ],
+    "moveIds": [
+      "bh-drive"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "bh",
+          "depth": "long",
+          "order": 1
+        }
+      ],
+      "arrows": []
+    }
   },
   {
     "id": "fh-drive-crosscourt",
     "name": "Forehand drive, cross-court",
     "purpose": "Groove a repeatable forehand drive: same swing, same contact, every ball.",
-    "skills": [{ "id": "fh-drive", "weight": 1 }],
-    "levelMin": 1, "levelMax": 3,
-    "phase": "technique", "regularity": "regular",
-    "variants": [
-      { "setup": "partner", "instructions": "Forehand cross-court rally. Count your longest run without a miss. When you reach the target, aim deeper: last 30 cm of the table." },
-      { "setup": "multiball", "instructions": "One ball at a time to your forehand. Hit each one cross-court, deep. Sets of 20 balls, short rest between sets.", "feederInstructions": "Light topspin to their forehand, one ball every 1.5 seconds. Keep it steady and the same height." },
-      { "setup": "robot", "instructions": "Robot to your forehand, light topspin, one spot, about 40 balls a minute. Hit cross-court and count your run." },
-      { "setup": "wall", "instructions": "Rebound board up. Forehand drives with a steady rhythm. Count your run without a miss." }
+    "skills": [
+      {
+        "id": "fh-drive",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 4, "default": 8, "max": 15 },
-    "intensity": 2, "impact": "low",
-    "success": { "type": "consecutive", "target": 30, "description": "30 forehand drives in a row." },
+    "levelMin": 1,
+    "levelMax": 3,
+    "phase": "technique",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Forehand cross-court rally. Count your longest run without a miss. When you reach the target, aim deeper: last 30 cm of the table."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "One ball at a time to your forehand. Hit each one cross-court, deep. Sets of 20 balls, short rest between sets.",
+        "feederInstructions": "Light topspin to their forehand, one ball every 1.5 seconds. Keep it steady and the same height."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot to your forehand, light topspin, one spot, about 40 balls a minute. Hit cross-court and count your run."
+      },
+      {
+        "setup": "wall",
+        "instructions": "Rebound board up. Forehand drives with a steady rhythm. Count your run without a miss."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 8,
+      "max": 15
+    },
+    "intensity": 2,
+    "impact": "low",
+    "success": {
+      "type": "consecutive",
+      "target": 30,
+      "description": "30 forehand drives in a row."
+    },
     "metricId": "fh-drive-streak",
     "progressionId": "fh-drive-targets",
     "regressionId": "easy-feed-contact",
-    "coachingPoints": ["Turn the waist back and through", "Contact at the top of the bounce, in front", "Finish with the bat near your forehead, then recover"],
-    "moveIds": ["fh-drive"],
-    "diagram": { "placements": [{ "zone": "fh", "depth": "long", "order": 1 }], "arrows": [] }
+    "coachingPoints": [
+      "Turn the waist back and through",
+      "Contact at the top of the bounce, in front",
+      "Finish with the bat near your forehead, then recover"
+    ],
+    "moveIds": [
+      "fh-drive"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "fh",
+          "depth": "long",
+          "order": 1
+        }
+      ],
+      "arrows": []
+    }
   },
   {
     "id": "bh-drive-crosscourt",
     "name": "Backhand drive, cross-court",
     "purpose": "A steady backhand drive you can trust in a rally.",
-    "skills": [{ "id": "bh-drive", "weight": 1 }],
-    "levelMin": 1, "levelMax": 3,
-    "phase": "technique", "regularity": "regular",
-    "variants": [
-      { "setup": "partner", "instructions": "Backhand cross-court rally. Count your longest run. Then aim deeper." },
-      { "setup": "multiball", "instructions": "Sets of 20 balls to your backhand. Hit each one diagonally and deep.", "feederInstructions": "Light topspin to their backhand, steady rhythm." },
-      { "setup": "robot", "instructions": "Robot to your backhand, light topspin, one spot. Hit cross-court and count your run." },
-      { "setup": "wall", "instructions": "Rebound board up. Backhand drives, ball in front of your body. Count your run." }
+    "skills": [
+      {
+        "id": "bh-drive",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 4, "default": 8, "max": 15 },
-    "intensity": 2, "impact": "low",
-    "success": { "type": "consecutive", "target": 30, "description": "30 backhand drives in a row." },
+    "levelMin": 1,
+    "levelMax": 3,
+    "phase": "technique",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Backhand cross-court rally. Count your longest run. Then aim deeper."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Sets of 20 balls to your backhand. Hit each one diagonally and deep.",
+        "feederInstructions": "Light topspin to their backhand, steady rhythm."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot to your backhand, light topspin, one spot. Hit cross-court and count your run."
+      },
+      {
+        "setup": "wall",
+        "instructions": "Rebound board up. Backhand drives, ball in front of your body. Count your run."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 8,
+      "max": 15
+    },
+    "intensity": 2,
+    "impact": "low",
+    "success": {
+      "type": "consecutive",
+      "target": 30,
+      "description": "30 backhand drives in a row."
+    },
     "metricId": "bh-drive-streak",
     "regressionId": "easy-feed-contact",
-    "coachingPoints": ["Bat starts in front of your stomach", "Forearm moves forward and slightly up", "Stop the bat pointing at your target"],
-    "moveIds": ["bh-drive"],
-    "diagram": { "placements": [{ "zone": "bh", "depth": "long", "order": 1 }], "arrows": [] }
+    "coachingPoints": [
+      "Bat starts in front of your stomach",
+      "Forearm moves forward and slightly up",
+      "Stop the bat pointing at your target"
+    ],
+    "moveIds": [
+      "bh-drive"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "bh",
+          "depth": "long",
+          "order": 1
+        }
+      ],
+      "arrows": []
+    }
   },
   {
     "id": "bh-push-diagonal",
     "name": "Backhand push rally",
     "purpose": "Keep a backspin ball low and safe with a short, controlled push.",
-    "skills": [{ "id": "bh-push", "weight": 1 }],
-    "levelMin": 1, "levelMax": 4,
-    "phase": "technique", "regularity": "regular",
-    "variants": [
-      { "setup": "partner", "instructions": "Backhand push to backhand push, diagonally. Keep every ball low over the net. Count your run." },
-      { "setup": "multiball", "instructions": "Feeder sends backspin to your backhand. Push each ball back diagonally and low.", "feederInstructions": "Feed backspin with a chopping action to their backhand, medium length." },
-      { "setup": "robot", "instructions": "Robot on backspin to your backhand, slow speed. Push back diagonally." }
+    "skills": [
+      {
+        "id": "bh-push",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 4, "default": 7, "max": 12 },
-    "intensity": 1, "impact": "low",
-    "success": { "type": "consecutive", "target": 20, "description": "20 pushes in a row, all low over the net." },
+    "levelMin": 1,
+    "levelMax": 4,
+    "phase": "technique",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Backhand push to backhand push, diagonally. Keep every ball low over the net. Count your run."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Feeder sends backspin to your backhand. Push each ball back diagonally and low.",
+        "feederInstructions": "Feed backspin with a chopping action to their backhand, medium length."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot on backspin to your backhand, slow speed. Push back diagonally."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 7,
+      "max": 12
+    },
+    "intensity": 1,
+    "impact": "low",
+    "success": {
+      "type": "consecutive",
+      "target": 20,
+      "description": "20 pushes in a row, all low over the net."
+    },
     "metricId": "push-streak",
     "regressionId": "easy-feed-contact",
-    "coachingPoints": ["Open the bat face", "Move forward and slightly down under the ball", "Short follow-through, then back to ready"],
-    "moveIds": ["bh-push"],
-    "diagram": { "placements": [{ "zone": "bh", "depth": "half", "order": 1 }], "arrows": [] }
+    "coachingPoints": [
+      "Open the bat face",
+      "Move forward and slightly down under the ball",
+      "Short follow-through, then back to ready"
+    ],
+    "moveIds": [
+      "bh-push"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "bh",
+          "depth": "half",
+          "order": 1
+        }
+      ],
+      "arrows": []
+    }
   },
   {
     "id": "fh-push-diagonal",
     "name": "Forehand push rally",
     "purpose": "A calm forehand push you can use against short backspin.",
-    "skills": [{ "id": "fh-push", "weight": 1 }],
-    "levelMin": 1, "levelMax": 4,
-    "phase": "technique", "regularity": "regular",
-    "variants": [
-      { "setup": "partner", "instructions": "Forehand push to forehand push, diagonally. Step in with your right foot (left if left-handed) for short balls." },
-      { "setup": "multiball", "instructions": "Backspin balls to your forehand. Push back diagonally and low.", "feederInstructions": "Backspin to their forehand, medium length." },
-      { "setup": "robot", "instructions": "Robot on backspin to your forehand. Push back diagonally." }
+    "skills": [
+      {
+        "id": "fh-push",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 4, "default": 7, "max": 12 },
-    "intensity": 1, "impact": "low",
-    "success": { "type": "consecutive", "target": 20, "description": "20 forehand pushes in a row." },
+    "levelMin": 1,
+    "levelMax": 4,
+    "phase": "technique",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Forehand push to forehand push, diagonally. Step in with your right foot (left foot if left-handed) for short balls."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Backspin balls to your forehand. Push back diagonally and low.",
+        "feederInstructions": "Backspin to their forehand, medium length."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot on backspin to your forehand. Push back diagonally."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 7,
+      "max": 12
+    },
+    "intensity": 1,
+    "impact": "low",
+    "success": {
+      "type": "consecutive",
+      "target": 20,
+      "description": "20 forehand pushes in a row."
+    },
     "regressionId": "easy-feed-contact",
-    "coachingPoints": ["Step in toward the ball", "Bat face open, contact under the back of the ball", "Return to ready, don't stay leaning in"],
-    "moveIds": ["fh-push"],
-    "diagram": { "placements": [{ "zone": "fh", "depth": "half", "order": 1 }], "arrows": [] }
+    "coachingPoints": [
+      "Step in toward the ball",
+      "Bat face open, contact under the back of the ball",
+      "Return to ready, don't stay leaning in"
+    ],
+    "moveIds": [
+      "fh-push"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "fh",
+          "depth": "half",
+          "order": 1
+        }
+      ],
+      "arrows": []
+    }
   },
   {
     "id": "easy-feed-contact",
     "name": "Easy feed, first contact",
     "purpose": "First hits with a new stroke: slow, regular balls to one spot so you can focus on the shape.",
-    "skills": [{ "id": "fh-drive", "weight": 0.5 }, { "id": "bh-drive", "weight": 0.5 }, { "id": "bh-push", "weight": 0.5 }, { "id": "fh-push", "weight": 0.5 }, { "id": "ball-control", "weight": 0.5 }],
-    "levelMin": 1, "levelMax": 3,
-    "phase": "technique", "regularity": "regular",
-    "variants": [
-      { "setup": "multiball", "instructions": "Play the stroke you are learning. Feeder sends one slow ball at a time to one spot. Sets of 10, a short pause, then check your shape against the three cues.", "feederInstructions": "Slow, easy balls to one spot. Wait until they are back in ready before the next ball." },
-      { "setup": "robot", "instructions": "Robot at its slowest speed, one spot, long gaps between balls. Play the stroke you are learning in sets of 10." },
-      { "setup": "partner", "instructions": "Your partner hits easy, slow balls to one spot with no pressure. Play the stroke you are learning, 10 at a time." },
-      { "setup": "wall", "instructions": "Drop the ball and play the stroke you are learning gently against the rebound board, one ball at a time. Reset each time." }
+    "skills": [
+      {
+        "id": "fh-drive",
+        "weight": 0.5
+      },
+      {
+        "id": "bh-drive",
+        "weight": 0.5
+      },
+      {
+        "id": "bh-push",
+        "weight": 0.5
+      },
+      {
+        "id": "fh-push",
+        "weight": 0.5
+      },
+      {
+        "id": "ball-control",
+        "weight": 0.5
+      }
     ],
-    "duration": { "min": 3, "default": 6, "max": 10 },
-    "intensity": 1, "impact": "low",
-    "success": { "type": "outOf", "target": 7, "description": "7 of 10 on the table with the right shape." },
-    "coachingPoints": ["Shape before speed", "One cue at a time", "Reset to ready between balls"],
-    "moveIds": ["fh-drive", "bh-drive", "bh-push", "fh-push"],
+    "levelMin": 1,
+    "levelMax": 3,
+    "phase": "technique",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "multiball",
+        "instructions": "Play the stroke you are learning. Feeder sends one slow ball at a time to one spot. Sets of 10, a short pause, then check your shape against the three cues.",
+        "feederInstructions": "Slow balls to one spot: light topspin for drives, light backspin (chopped) for pushes. Wait until they are back in ready before the next ball."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot at its slowest speed, one spot, long gaps between balls: light topspin for drives, light backspin for pushes. Sets of 10."
+      },
+      {
+        "setup": "partner",
+        "instructions": "Your partner plays easy, slow balls to one spot with no pressure: light topspin for drives, a gentle push for pushes. Play the stroke you are learning, 10 at a time."
+      },
+      {
+        "setup": "wall",
+        "instructions": "Drives only (for pushes use multiball, robot or a partner). Drop the ball and play the drive gently against the rebound board, one ball at a time. Reset each time."
+      }
+    ],
+    "duration": {
+      "min": 3,
+      "default": 6,
+      "max": 10
+    },
+    "intensity": 1,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 7,
+      "of": 10,
+      "description": "7 of 10 on the table with the right shape."
+    },
+    "coachingPoints": [
+      "Shape before speed",
+      "One cue at a time",
+      "Reset to ready between balls"
+    ],
+    "moveIds": [
+      "fh-drive",
+      "bh-drive",
+      "bh-push",
+      "fh-push"
+    ],
     "progressionId": "fh-drive-crosscourt"
   },
   {
     "id": "shadow-strokes",
     "name": "Shadow strokes with the 3D player",
     "purpose": "Learn the shape of a stroke without a ball by copying the 3D player.",
-    "skills": [{ "id": "fh-drive", "weight": 0.5 }, { "id": "bh-drive", "weight": 0.5 }, { "id": "bh-push", "weight": 0.5 }, { "id": "fh-push", "weight": 0.5 }, { "id": "fh-loop-backspin", "weight": 0.5 }, { "id": "ready-position", "weight": 0.5 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "technique", "regularity": "regular",
-    "variants": [
-      { "setup": "shadow", "instructions": "Open the move in follow-along mode. Copy the player in sets of 10 slow reps, holding your bat. Return to ready after every rep. If you have a mirror, check your shape side-on." }
+    "skills": [
+      {
+        "id": "fh-drive",
+        "weight": 0.5
+      },
+      {
+        "id": "bh-drive",
+        "weight": 0.5
+      },
+      {
+        "id": "bh-push",
+        "weight": 0.5
+      },
+      {
+        "id": "fh-push",
+        "weight": 0.5
+      },
+      {
+        "id": "fh-loop-backspin",
+        "weight": 0.5
+      },
+      {
+        "id": "ready-position",
+        "weight": 0.5
+      }
     ],
-    "duration": { "min": 3, "default": 6, "max": 12 },
-    "intensity": 1, "impact": "low",
-    "success": { "type": "outOf", "target": 3, "description": "Yes to all three self-checks." },
-    "coachingPoints": ["Slow and exact beats fast and sloppy", "Feel the turn of your waist", "Always end in ready"],
-    "moveIds": ["ready-stance", "fh-drive", "bh-drive", "bh-push", "fh-push", "fh-loop-backspin"]
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "technique",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "Open the move in follow-along mode. Copy the player in sets of 10 slow reps, holding your bat. Return to ready after every rep. If you have a mirror, check your shape side-on."
+      }
+    ],
+    "duration": {
+      "min": 3,
+      "default": 6,
+      "max": 12
+    },
+    "intensity": 1,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 3,
+      "of": 3,
+      "description": "Yes to all three self-checks."
+    },
+    "coachingPoints": [
+      "Slow and exact beats fast and sloppy",
+      "Feel the turn of your waist",
+      "Always end in ready"
+    ],
+    "moveIds": [
+      "ready-stance",
+      "fh-drive",
+      "bh-drive",
+      "bh-push",
+      "fh-push",
+      "fh-loop-backspin"
+    ]
   },
   {
     "id": "shadow-combos",
     "name": "Shadow combinations",
     "purpose": "Link strokes and steps without a ball: push, step, drive, recover.",
-    "skills": [{ "id": "basic-footwork", "weight": 0.6 }, { "id": "fh-drive", "weight": 0.4 }, { "id": "bh-push", "weight": 0.4 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "technique", "regularity": "semiIrregular",
-    "variants": [
-      { "setup": "shadow", "instructions": "Repeat this pattern for 45 seconds, rest 15: backhand push, side step to the forehand, forehand drive, side step back, backhand drive. Then make up your own 3-shot pattern." }
+    "skills": [
+      {
+        "id": "basic-footwork",
+        "weight": 0.6
+      },
+      {
+        "id": "fh-drive",
+        "weight": 0.4
+      },
+      {
+        "id": "bh-push",
+        "weight": 0.4
+      }
     ],
-    "duration": { "min": 3, "default": 6, "max": 10 },
-    "intensity": 3, "impact": "low",
-    "success": { "type": "timed", "target": 4, "description": "4 rounds with clean recovery every time." },
-    "coachingPoints": ["Feet move before the arm", "Stay low between strokes", "Breathe out on each stroke"],
-    "moveIds": ["fh-drive", "bh-drive", "bh-push"]
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "technique",
+    "regularity": "semiIrregular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "Repeat this pattern for 45 seconds, rest 15: backhand push, side step to the forehand, forehand drive, side step back, backhand drive. Then make up your own 3-shot pattern."
+      }
+    ],
+    "duration": {
+      "min": 3,
+      "default": 6,
+      "max": 10
+    },
+    "intensity": 3,
+    "impact": "low",
+    "success": {
+      "type": "timed",
+      "target": 4,
+      "description": "4 rounds with clean recovery every time."
+    },
+    "coachingPoints": [
+      "Feet move before the arm",
+      "Stay low between strokes",
+      "Breathe out on each stroke"
+    ],
+    "moveIds": [
+      "fh-drive",
+      "bh-drive",
+      "bh-push"
+    ]
   },
   {
     "id": "push-then-drive",
     "name": "Push, then drive",
     "purpose": "Switch from a push to an attacking stroke when the ball sits up.",
-    "skills": [{ "id": "bh-push", "weight": 0.6 }, { "id": "fh-drive", "weight": 0.8 }, { "id": "basic-footwork", "weight": 0.3 }],
-    "levelMin": 1, "levelMax": 3,
-    "phase": "technique", "regularity": "semiIrregular",
-    "variants": [
-      { "setup": "partner", "instructions": "Push rally on the backhand. After 3 to 5 pushes your partner pushes long to your forehand: drive it. Start again." },
-      { "setup": "multiball", "instructions": "Feeder sends 2 backspin balls to your backhand (push them), then 1 topspin ball to your forehand (drive it).", "feederInstructions": "2 backspin to the backhand, then 1 topspin to the forehand. Repeat." },
-      { "setup": "robot", "instructions": "Robot alternates backspin to the backhand and topspin to the forehand. Push, then drive." }
+    "skills": [
+      {
+        "id": "bh-push",
+        "weight": 0.6
+      },
+      {
+        "id": "fh-drive",
+        "weight": 0.8
+      },
+      {
+        "id": "basic-footwork",
+        "weight": 0.3
+      }
     ],
-    "duration": { "min": 4, "default": 8, "max": 12 },
-    "intensity": 3, "impact": "low",
-    "success": { "type": "outOf", "target": 7, "description": "7 of 10 patterns with both shots on the table." },
-    "coachingPoints": ["Recover to ready after the push", "Move your feet before the drive", "Change the bat angle: open for push, closed for drive"],
-    "moveIds": ["bh-push", "fh-drive"],
-    "diagram": { "placements": [{ "zone": "bh", "depth": "half", "order": 1 }, { "zone": "fh", "depth": "long", "order": 2 }], "arrows": [] }
+    "levelMin": 1,
+    "levelMax": 3,
+    "phase": "technique",
+    "regularity": "semiIrregular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Push rally on the backhand. After 3 to 5 pushes your partner pushes long to your forehand: open the bat a little and lift it with a slow topspin, swinging more upward than your normal drive. Start again."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Feeder sends 2 backspin balls to your backhand (push them), then 1 topspin ball to your forehand (drive it).",
+        "feederInstructions": "2 backspin to the backhand, then 1 topspin to the forehand. Repeat."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot alternates backspin to the backhand and topspin to the forehand. Push, then drive."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 8,
+      "max": 12
+    },
+    "intensity": 3,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 7,
+      "of": 10,
+      "description": "7 of 10 patterns with both shots on the table."
+    },
+    "coachingPoints": [
+      "Recover to ready after the push",
+      "Move your feet before the drive",
+      "Change the bat angle: open for the push, only slightly closed and lifting against the long push"
+    ],
+    "moveIds": [
+      "bh-push",
+      "fh-drive"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "bh",
+          "depth": "half",
+          "order": 1
+        },
+        {
+          "zone": "fh",
+          "depth": "long",
+          "order": 2
+        }
+      ],
+      "arrows": []
+    }
+  },
+  {
+    "id": "push-then-loop",
+    "name": "Push, then loop",
+    "purpose": "Push until the ball comes long, then open up with a loop against the backspin.",
+    "skills": [
+      {
+        "id": "fh-loop-backspin",
+        "weight": 1
+      },
+      {
+        "id": "bh-push",
+        "weight": 0.5
+      },
+      {
+        "id": "basic-footwork",
+        "weight": 0.3
+      }
+    ],
+    "levelMin": 2,
+    "levelMax": 5,
+    "phase": "technique",
+    "regularity": "semiIrregular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Push rally on the backhand. After 2 to 4 pushes your partner pushes long to your forehand: loop it, then play the point out."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "2 backspin balls to your backhand (push them), then 1 long backspin to your forehand (loop it).",
+        "feederInstructions": "2 backspin to their backhand, then 1 long backspin to their forehand. Repeat."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot on backspin, alternating backhand and long forehand. Push the backhand ball, loop the forehand ball."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 8,
+      "max": 12
+    },
+    "intensity": 3,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 7,
+      "of": 10,
+      "description": "7 of 10 patterns with the loop on the table."
+    },
+    "regressionId": "fh-loop-backspin-multiball",
+    "coachingPoints": [
+      "Recover to ready after the push",
+      "Bend your knees as soon as you see the long ball",
+      "Spin first, speed second"
+    ],
+    "moveIds": [
+      "bh-push",
+      "fh-loop-backspin"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "bh",
+          "depth": "half",
+          "order": 1
+        },
+        {
+          "zone": "bh",
+          "depth": "half",
+          "order": 2
+        },
+        {
+          "zone": "fh",
+          "depth": "long",
+          "order": 3
+        }
+      ],
+      "arrows": []
+    }
+  },
+  {
+    "id": "fh-bh-alternate",
+    "name": "Forehand, backhand switch",
+    "purpose": "Switch between wings in a set pattern, recovering to the middle each time.",
+    "skills": [
+      {
+        "id": "bh-drive",
+        "weight": 0.8
+      },
+      {
+        "id": "fh-drive",
+        "weight": 0.8
+      },
+      {
+        "id": "basic-footwork",
+        "weight": 0.4
+      }
+    ],
+    "levelMin": 1,
+    "levelMax": 3,
+    "phase": "technique",
+    "regularity": "semiIrregular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Your partner blocks one ball to your forehand, one to your backhand. Once that's steady, switch to 2 backhands then 1 forehand."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "1 ball to your forehand, 1 to your backhand. Then 2 backhand, 1 forehand.",
+        "feederInstructions": "Light topspin: forehand, backhand, repeat. Then backhand, backhand, forehand."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot oscillating between your forehand and backhand. Play forehand and backhand drives, back to the middle each time."
+      },
+      {
+        "setup": "wall",
+        "instructions": "Rebound board up. Alternate one forehand, one backhand. Then 2 backhands, 1 forehand."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 7,
+      "max": 12
+    },
+    "intensity": 2,
+    "impact": "low",
+    "success": {
+      "type": "consecutive",
+      "target": 16,
+      "description": "16 shots in a row with clean switches."
+    },
+    "progressionId": "random-fh-bh",
+    "regressionId": "bh-drive-crosscourt",
+    "coachingPoints": [
+      "Bat back to the middle after every shot",
+      "Small step, then hit",
+      "Decide early which wing"
+    ],
+    "moveIds": [
+      "fh-drive",
+      "bh-drive"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "fh",
+          "depth": "long",
+          "order": 1
+        },
+        {
+          "zone": "bh",
+          "depth": "long",
+          "order": 2
+        }
+      ],
+      "arrows": []
+    }
   },
   {
     "id": "fh-drive-targets",
     "name": "Forehand drive to targets",
     "purpose": "Move from consistency to placement: hit chosen spots, not just the table.",
-    "skills": [{ "id": "fh-drive", "weight": 1 }],
-    "levelMin": 1, "levelMax": 3,
-    "phase": "technique", "regularity": "regular",
-    "variants": [
-      { "setup": "partner", "instructions": "Put a towel or sheet of paper in your partner's forehand corner. Rally cross-court and count how many of 20 drives hit the target zone." },
-      { "setup": "multiball", "instructions": "Target in the far forehand corner. 20 balls; count the hits.", "feederInstructions": "Steady topspin to their forehand." },
-      { "setup": "robot", "instructions": "Target in the far forehand corner. 20 balls; count the hits." },
-      { "setup": "wall", "instructions": "Mark a spot on the rebound board with tape. Count how many of 20 drives hit near it." }
+    "skills": [
+      {
+        "id": "fh-drive",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 4, "default": 8, "max": 12 },
-    "intensity": 2, "impact": "low",
-    "success": { "type": "outOf", "target": 10, "description": "10 of 20 in the target zone." },
+    "levelMin": 1,
+    "levelMax": 3,
+    "phase": "technique",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Put a towel or sheet of paper in your partner's forehand corner. Rally cross-court and count how many of 20 drives hit the target zone."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Target in the far forehand corner. 20 balls; count the hits.",
+        "feederInstructions": "Steady topspin to their forehand."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Target in the far forehand corner. 20 balls; count the hits."
+      },
+      {
+        "setup": "wall",
+        "instructions": "Mark a spot on the rebound board with tape. Count how many of 20 drives hit near it."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 8,
+      "max": 12
+    },
+    "intensity": 2,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 10,
+      "of": 20,
+      "description": "10 of 20 in the target zone."
+    },
     "regressionId": "fh-drive-crosscourt",
-    "coachingPoints": ["Aim with your body turn, not your wrist", "Same rhythm as before", "Look at the target before the ball comes"],
-    "moveIds": ["fh-drive"],
-    "diagram": { "placements": [{ "zone": "fh", "depth": "long", "order": 1 }], "arrows": [] }
+    "coachingPoints": [
+      "Aim with your body turn, not your wrist",
+      "Same rhythm as before",
+      "Look at the target before the ball comes"
+    ],
+    "moveIds": [
+      "fh-drive"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "fh",
+          "depth": "long",
+          "order": 1
+        }
+      ],
+      "arrows": []
+    }
   },
   {
     "id": "fh-loop-backspin-multiball",
     "name": "Forehand loop against backspin",
     "purpose": "Lift backspin with a brushing, upward swing and land it deep.",
-    "skills": [{ "id": "fh-loop-backspin", "weight": 1 }],
-    "levelMin": 2, "levelMax": 5,
-    "phase": "technique", "regularity": "regular",
-    "variants": [
-      { "setup": "multiball", "instructions": "Backspin balls to your forehand, one at a time. Loop each ball onto the table, aiming deep. Sets of 10.", "feederInstructions": "Backspin to their forehand, half-long, with a clear chopping action. Wait until they recover." },
-      { "setup": "robot", "instructions": "Robot on backspin, slow-medium speed, to your forehand. Loop each ball, sets of 10." },
-      { "setup": "partner", "instructions": "Your partner pushes long to your forehand. Loop it, they block it, you play it out. Start each rally with a push from them." }
+    "skills": [
+      {
+        "id": "fh-loop-backspin",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 5, "default": 10, "max": 15 },
-    "intensity": 3, "impact": "low",
-    "success": { "type": "outOf", "target": 7, "description": "7 of 10 loops on the table." },
+    "levelMin": 2,
+    "levelMax": 5,
+    "phase": "technique",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "multiball",
+        "instructions": "Backspin balls to your forehand, one at a time. Loop each ball onto the table, aiming deep. Sets of 10.",
+        "feederInstructions": "Long backspin to their forehand, landing in the last third, with a clear chopping action. Wait until they recover."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot on backspin, slow-medium speed, long to your forehand. Loop each ball, sets of 10."
+      },
+      {
+        "setup": "partner",
+        "instructions": "Your partner pushes long to your forehand. Loop it, they block it, you play it out. Start each rally with a push from them."
+      }
+    ],
+    "duration": {
+      "min": 5,
+      "default": 10,
+      "max": 15
+    },
+    "intensity": 3,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 7,
+      "of": 10,
+      "description": "7 of 10 loops on the table."
+    },
     "metricId": "loop-backspin-10",
     "regressionId": "easy-feed-contact",
-    "coachingPoints": ["Drop the bat below the ball, knees bent", "Brush up and forward, legs push first", "Contact at the top of the bounce or just after"],
-    "moveIds": ["fh-loop-backspin"],
-    "diagram": { "placements": [{ "zone": "fh", "depth": "long", "order": 1 }], "arrows": [] }
+    "coachingPoints": [
+      "Drop the bat below the ball, knees bent",
+      "Brush up and forward, legs push first",
+      "Contact at the top of the bounce or just after"
+    ],
+    "moveIds": [
+      "fh-loop-backspin"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "fh",
+          "depth": "long",
+          "order": 1
+        }
+      ],
+      "arrows": []
+    }
   },
   {
     "id": "two-point-footwork",
     "name": "Two-point footwork",
     "purpose": "Side-to-side steps between forehand and middle, staying low and balanced.",
-    "skills": [{ "id": "basic-footwork", "weight": 1 }, { "id": "fh-drive", "weight": 0.4 }],
-    "levelMin": 1, "levelMax": 4,
-    "phase": "footwork", "regularity": "regular",
-    "variants": [
-      { "setup": "partner", "instructions": "Your partner blocks one ball to your forehand corner and one to the middle, alternating. Play forehands from both spots." },
-      { "setup": "multiball", "instructions": "Balls alternate between your forehand corner and the middle. Forehand from both.", "feederInstructions": "Alternate forehand corner and middle, steady pace. Speed up when they are comfortable." },
-      { "setup": "robot", "instructions": "Robot oscillating between two points: forehand corner and middle. Forehand from both." },
-      { "setup": "shadow", "instructions": "Two markers 1 metre apart. Side-step between them and play a shadow forehand at each, 30 seconds on, 15 off." }
+    "skills": [
+      {
+        "id": "basic-footwork",
+        "weight": 1
+      },
+      {
+        "id": "fh-drive",
+        "weight": 0.4
+      }
     ],
-    "duration": { "min": 4, "default": 8, "max": 12 },
-    "intensity": 3, "impact": "low",
-    "success": { "type": "timed", "target": 30, "description": "30 clean shots in 60 seconds." },
+    "levelMin": 1,
+    "levelMax": 4,
+    "phase": "footwork",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Your partner blocks one ball to your forehand corner and one to the middle, alternating. Play forehands from both spots."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Balls alternate between your forehand corner and the middle. Forehand from both.",
+        "feederInstructions": "Alternate forehand corner and middle, steady pace. Speed up when they are comfortable."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot oscillating between two points: forehand corner and middle. Forehand from both."
+      },
+      {
+        "setup": "shadow",
+        "instructions": "Two markers 1 metre apart. Side-step between them and play a shadow forehand at each. Count clean reps in a row, staying low."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 8,
+      "max": 12
+    },
+    "intensity": 3,
+    "impact": "low",
+    "success": {
+      "type": "consecutive",
+      "target": 12,
+      "description": "12 forehands in a row, alternating corner and middle."
+    },
     "metricId": "two-point-60",
     "progressionId": "falkenberg",
     "regressionId": "side-shuffle-shadow",
-    "coachingPoints": ["Small steps, don't cross your feet", "Stay at the same height", "Arrive before the ball"],
-    "moveIds": ["fh-drive"],
-    "diagram": { "placements": [{ "zone": "fh", "depth": "long", "order": 1 }, { "zone": "mid", "depth": "long", "order": 2 }], "arrows": [] }
+    "coachingPoints": [
+      "Small steps, don't cross your feet",
+      "Stay at the same height",
+      "Arrive before the ball"
+    ],
+    "moveIds": [
+      "fh-drive"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "fh",
+          "depth": "long",
+          "order": 1
+        },
+        {
+          "zone": "mid",
+          "depth": "long",
+          "order": 2
+        }
+      ],
+      "arrows": []
+    }
   },
   {
     "id": "side-shuffle-shadow",
     "name": "Side-step pattern",
     "purpose": "Learn the basic side step without a ball.",
-    "skills": [{ "id": "basic-footwork", "weight": 1 }, { "id": "ready-position", "weight": 0.5 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "footwork", "regularity": "regular",
-    "variants": [
-      { "setup": "shadow", "instructions": "From ready, take two small side steps to your forehand and back. Then add a shadow stroke at each end. 30 seconds on, 15 off." }
+    "skills": [
+      {
+        "id": "basic-footwork",
+        "weight": 1
+      },
+      {
+        "id": "ready-position",
+        "weight": 0.5
+      }
     ],
-    "duration": { "min": 3, "default": 5, "max": 10 },
-    "intensity": 2, "impact": "low",
-    "success": { "type": "timed", "target": 4, "description": "4 rounds staying low the whole time." },
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "footwork",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "From ready, take two small side steps to your forehand and back. Then add a shadow stroke at each end. 30 seconds on, 15 off."
+      }
+    ],
+    "duration": {
+      "min": 3,
+      "default": 5,
+      "max": 10
+    },
+    "intensity": 2,
+    "impact": "low",
+    "success": {
+      "type": "timed",
+      "target": 4,
+      "description": "4 rounds staying low the whole time."
+    },
     "progressionId": "two-point-footwork",
-    "coachingPoints": ["Push off the outside foot", "Keep feet wider than shoulders", "Head stays level"],
-    "moveIds": ["ready-stance"]
+    "coachingPoints": [
+      "Push off the foot further from where you're going",
+      "Keep feet wider than shoulders",
+      "Head stays level"
+    ],
+    "moveIds": [
+      "ready-stance"
+    ]
   },
   {
     "id": "falkenberg",
     "name": "Falkenberg drill",
     "purpose": "The classic 3-ball pattern: backhand, pivot forehand, wide forehand.",
-    "skills": [{ "id": "basic-footwork", "weight": 1 }, { "id": "fh-drive", "weight": 0.5 }, { "id": "bh-drive", "weight": 0.3 }],
-    "levelMin": 3, "levelMax": 5,
-    "phase": "footwork", "regularity": "regular",
-    "variants": [
-      { "setup": "partner", "instructions": "Your partner plays to your backhand, backhand again, then to your forehand. You: backhand, pivot and forehand from the backhand corner, then wide forehand. Repeat." },
-      { "setup": "multiball", "instructions": "Backhand, backhand (pivot forehand), forehand wide. Repeat.", "feederInstructions": "Backhand, backhand, forehand. Keep a steady rhythm." },
-      { "setup": "robot", "instructions": "Robot in a 3-ball pattern if it can: backhand, backhand, forehand. Backhand, pivot forehand, wide forehand." }
+    "skills": [
+      {
+        "id": "basic-footwork",
+        "weight": 1
+      },
+      {
+        "id": "fh-drive",
+        "weight": 0.5
+      },
+      {
+        "id": "bh-drive",
+        "weight": 0.3
+      }
     ],
-    "duration": { "min": 5, "default": 8, "max": 12 },
-    "intensity": 4, "impact": "low",
-    "success": { "type": "consecutive", "target": 5, "description": "5 full cycles without a miss." },
+    "levelMin": 3,
+    "levelMax": 5,
+    "phase": "footwork",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Your partner plays to your backhand, backhand again, then to your forehand. You: backhand, pivot and forehand from the backhand corner, then wide forehand. Repeat."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Backhand, backhand (pivot forehand), forehand wide. Repeat.",
+        "feederInstructions": "Backhand, backhand, forehand. Keep a steady rhythm."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot in a 3-ball pattern if it can: backhand, backhand, forehand. Backhand, pivot forehand, wide forehand."
+      }
+    ],
+    "duration": {
+      "min": 5,
+      "default": 8,
+      "max": 12
+    },
+    "intensity": 4,
+    "impact": "low",
+    "success": {
+      "type": "consecutive",
+      "target": 5,
+      "description": "5 full cycles without a miss."
+    },
     "regressionId": "two-point-footwork",
-    "coachingPoints": ["Pivot early with a big first step", "Recover to the middle after the wide forehand", "Stay low throughout"],
-    "moveIds": ["fh-drive", "bh-drive"],
-    "diagram": { "placements": [{ "zone": "bh", "depth": "long", "order": 1 }, { "zone": "bh", "depth": "long", "order": 2 }, { "zone": "fh", "depth": "long", "order": 3 }], "arrows": [] }
+    "coachingPoints": [
+      "Pivot early with a big first step",
+      "Recover to the middle after the wide forehand",
+      "Stay low throughout"
+    ],
+    "moveIds": [
+      "fh-drive",
+      "bh-drive"
+    ],
+    "diagram": {
+      "placements": [
+        {
+          "zone": "bh",
+          "depth": "long",
+          "order": 1
+        },
+        {
+          "zone": "bh",
+          "depth": "long",
+          "order": 2
+        },
+        {
+          "zone": "fh",
+          "depth": "long",
+          "order": 3
+        }
+      ],
+      "arrows": []
+    }
   },
   {
     "id": "random-fh-bh",
     "name": "Random forehand or backhand",
     "purpose": "Decide quickly: the ball can go to either side.",
-    "skills": [{ "id": "basic-footwork", "weight": 0.8 }, { "id": "fh-drive", "weight": 0.5 }, { "id": "bh-drive", "weight": 0.5 }],
-    "levelMin": 2, "levelMax": 5,
-    "phase": "footwork", "regularity": "irregular",
-    "variants": [
-      { "setup": "partner", "instructions": "Your partner blocks to anywhere on your half of the table. You play everything back to their backhand." },
-      { "setup": "multiball", "instructions": "Feeder sends balls randomly to your forehand or backhand.", "feederInstructions": "Random forehand or backhand, no pattern. Medium pace." },
-      { "setup": "robot", "instructions": "Robot on random placement across the table. Play every ball back." }
+    "skills": [
+      {
+        "id": "basic-footwork",
+        "weight": 0.8
+      },
+      {
+        "id": "fh-drive",
+        "weight": 0.5
+      },
+      {
+        "id": "bh-drive",
+        "weight": 0.5
+      }
     ],
-    "duration": { "min": 4, "default": 8, "max": 12 },
-    "intensity": 4, "impact": "low",
-    "success": { "type": "outOf", "target": 14, "description": "14 of 20 back on the table." },
-    "coachingPoints": ["Read the direction early", "Return to the middle after every ball", "Choose fast, then commit"],
-    "moveIds": ["fh-drive", "bh-drive"]
+    "levelMin": 2,
+    "levelMax": 5,
+    "phase": "footwork",
+    "regularity": "irregular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Your partner blocks to anywhere on your half of the table. You play everything back to their backhand."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Feeder sends balls randomly to your forehand or backhand.",
+        "feederInstructions": "Random forehand or backhand, no pattern. Medium pace."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot on random placement across the table. Play every ball back."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 8,
+      "max": 12
+    },
+    "intensity": 4,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 14,
+      "of": 20,
+      "description": "14 of 20 back on the table."
+    },
+    "coachingPoints": [
+      "Read the direction early",
+      "Return to the middle after every ball",
+      "Choose fast, then commit"
+    ],
+    "moveIds": [
+      "fh-drive",
+      "bh-drive"
+    ]
   },
   {
     "id": "backspin-serve-practice",
     "name": "Backspin serve practice",
     "purpose": "A legal serve with clear backspin and low height.",
-    "skills": [{ "id": "serve-basics", "weight": 1 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "serve", "regularity": "regular",
-    "variants": [
-      { "setup": "partner", "instructions": "Serve backspin to your partner. They push it back gently so you can see the spin. Aim for the ball to bounce twice on their side if they let it." },
-      { "setup": "multiball", "instructions": "Take a basket of balls and serve backspin. Watch if the ball stops or comes back after it bounces on the far side.", "feederInstructions": "No feeding needed; collect balls at the far end." },
-      { "setup": "robot", "instructions": "Robot off. Take a basket of balls and serve backspin. Watch if the ball stops or comes back." },
-      { "setup": "wall", "instructions": "Table half down. Serve backspin and check the ball's second bounce on the far side." },
-      { "setup": "shadow", "instructions": "No table: practise the legal toss. Ball on your flat, open palm, toss straight up at least 16 cm, and brush under it as it falls. 20 tosses." }
+    "skills": [
+      {
+        "id": "serve-basics",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 3, "default": 5, "max": 10 },
-    "intensity": 1, "impact": "low",
-    "success": { "type": "outOf", "target": 6, "description": "6 of 10 serves bounce twice on the far side." },
-    "coachingPoints": ["Toss straight up, at least 16 cm, ball visible", "Open bat, brush under the back of the ball", "Contact low, close to the table height"],
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "serve",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Serve backspin to your partner. They push it back gently so you can see the spin. Aim for the ball to bounce twice on their side if they let it."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Take a basket of balls and serve backspin. Watch if the ball stops or comes back after it bounces on the far side.",
+        "feederInstructions": "No feeding needed; collect balls at the far end."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot off. Take a basket of balls and serve backspin. Watch if the ball stops or comes back."
+      },
+      {
+        "setup": "wall",
+        "instructions": "Fold the table out to full length for serving, then use a basket of balls as in the multiball variant."
+      },
+      {
+        "setup": "shadow",
+        "instructions": "No table: practise the legal toss. Ball on your flat, open palm, toss straight up at least 16 cm, and brush under it as it falls. 20 tosses."
+      }
+    ],
+    "duration": {
+      "min": 3,
+      "default": 5,
+      "max": 10
+    },
+    "intensity": 1,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 6,
+      "of": 10,
+      "description": "6 of 10 legal serves that stop or spin back toward the net."
+    },
+    "coachingPoints": [
+      "Toss straight up, at least 16 cm, ball visible",
+      "Open bat, brush under the back of the ball",
+      "Contact low, but above table height"
+    ],
     "moveIds": []
   },
   {
     "id": "short-long-serve-targets",
     "name": "Short and long serve targets",
     "purpose": "Control length: the same motion, two very different serves.",
-    "skills": [{ "id": "serve-basics", "weight": 1 }, { "id": "third-ball", "weight": 0.3 }],
-    "levelMin": 2, "levelMax": 5,
-    "phase": "serve", "regularity": "semiIrregular",
-    "variants": [
-      { "setup": "partner", "instructions": "Two targets: a towel near the net (short) and one near the end line (long). Alternate short and long. Your partner tells you which landed." },
-      { "setup": "multiball", "instructions": "Basket of balls, two targets: short near the net and long near the end line. Alternate.", "feederInstructions": "Collect balls and tell them where each serve bounced." },
-      { "setup": "robot", "instructions": "Robot off. Basket of balls, two targets. Alternate short and long." },
-      { "setup": "wall", "instructions": "Table half down. Two targets. Alternate short and long." }
+    "skills": [
+      {
+        "id": "serve-basics",
+        "weight": 1
+      },
+      {
+        "id": "third-ball",
+        "weight": 0.3
+      }
     ],
-    "duration": { "min": 4, "default": 6, "max": 10 },
-    "intensity": 1, "impact": "low",
-    "success": { "type": "outOf", "target": 6, "description": "6 of 10 serves land in the right zone." },
+    "levelMin": 2,
+    "levelMax": 5,
+    "phase": "serve",
+    "regularity": "semiIrregular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Two targets: a towel near the net (short) and one near the end line (long). Alternate short and long. Your partner tells you which landed."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Basket of balls, two targets: short near the net and long near the end line. Alternate.",
+        "feederInstructions": "Collect balls and tell them where each serve bounced."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot off. Basket of balls, two targets. Alternate short and long."
+      },
+      {
+        "setup": "wall",
+        "instructions": "Fold the table out to full length for serving, then use a basket of balls as in the multiball variant."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 6,
+      "max": 10
+    },
+    "intensity": 1,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 6,
+      "of": 10,
+      "description": "6 of 10 serves land in the right zone."
+    },
     "metricId": "serve-target-10",
     "regressionId": "backspin-serve-practice",
-    "coachingPoints": ["Same toss and motion for both", "Short: first bounce near the net on your side", "Long: first bounce near your end line"],
+    "coachingPoints": [
+      "Same toss and motion for both",
+      "Short: first bounce near the net on your side",
+      "Long: first bounce near your end line"
+    ],
     "moveIds": []
   },
   {
     "id": "push-receive",
     "name": "Receive with a push",
     "purpose": "Read a backspin serve and push it back low and safe.",
-    "skills": [{ "id": "receive-basics", "weight": 1 }, { "id": "bh-push", "weight": 0.5 }, { "id": "fh-push", "weight": 0.4 }],
-    "levelMin": 1, "levelMax": 4,
-    "phase": "receive", "regularity": "semiIrregular",
-    "variants": [
-      { "setup": "partner", "instructions": "Your partner serves backspin anywhere. You push every serve back low and deep. Then swap roles." },
-      { "setup": "multiball", "instructions": "The feeder serves backspin from their end. Push each one back.", "feederInstructions": "Serve backspin from your end with a basket. Vary the placement." },
-      { "setup": "robot", "instructions": "Robot on backspin with random placement. Push each ball back low." }
+    "skills": [
+      {
+        "id": "receive-basics",
+        "weight": 1
+      },
+      {
+        "id": "bh-push",
+        "weight": 0.5
+      },
+      {
+        "id": "fh-push",
+        "weight": 0.4
+      }
     ],
-    "duration": { "min": 3, "default": 5, "max": 10 },
-    "intensity": 2, "impact": "low",
-    "success": { "type": "outOf", "target": 7, "description": "7 of 10 low returns." },
-    "coachingPoints": ["Watch the server's bat at contact", "Move in with your foot for short balls", "Push deep to their backhand by default"],
-    "moveIds": ["bh-push", "fh-push"]
+    "levelMin": 1,
+    "levelMax": 4,
+    "phase": "receive",
+    "regularity": "semiIrregular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Your partner serves backspin anywhere. You push every serve back low and deep. Then swap roles."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "The feeder serves backspin from their end. Push each one back.",
+        "feederInstructions": "Serve backspin from your end with a basket. Vary the placement."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Robot on backspin with random placement. Push each ball back low."
+      }
+    ],
+    "duration": {
+      "min": 3,
+      "default": 5,
+      "max": 10
+    },
+    "intensity": 2,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 7,
+      "of": 10,
+      "description": "7 of 10 low returns."
+    },
+    "coachingPoints": [
+      "Watch the server's bat at contact",
+      "Move in with your foot for short balls",
+      "Push deep to their backhand by default"
+    ],
+    "moveIds": [
+      "bh-push",
+      "fh-push"
+    ]
   },
   {
     "id": "push-drive-game",
     "name": "Push and drive game",
     "purpose": "A small game: push until someone can attack, then play it out.",
-    "skills": [{ "id": "bh-push", "weight": 0.6 }, { "id": "fh-drive", "weight": 0.6 }, { "id": "serve-basics", "weight": 0.3 }, { "id": "focus-routine", "weight": 0.3 }],
-    "levelMin": 1, "levelMax": 3,
-    "phase": "matchPlay", "regularity": "game",
-    "variants": [
-      { "setup": "partner", "instructions": "Games to 11. Serve backspin. Push until one of you gets a long or high ball, then attack it. A point won with your first attack counts 2." }
+    "skills": [
+      {
+        "id": "bh-push",
+        "weight": 0.6
+      },
+      {
+        "id": "fh-drive",
+        "weight": 0.6
+      },
+      {
+        "id": "serve-basics",
+        "weight": 0.3
+      },
+      {
+        "id": "focus-routine",
+        "weight": 0.3
+      }
     ],
-    "duration": { "min": 5, "default": 9, "max": 15 },
-    "intensity": 3, "impact": "low",
-    "success": { "type": "outOf", "target": 3, "description": "Win 3 points with your first attack." },
-    "coachingPoints": ["Be patient, wait for the right ball", "Recover after every push", "Use your pre-point routine"],
-    "moveIds": ["bh-push", "fh-drive"]
+    "levelMin": 1,
+    "levelMax": 3,
+    "phase": "matchPlay",
+    "regularity": "game",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Games to 11. Serve backspin. Push until one of you gets a long or high ball, then attack it. A point won with your first attack counts 2."
+      }
+    ],
+    "duration": {
+      "min": 5,
+      "default": 9,
+      "max": 15
+    },
+    "intensity": 3,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 3,
+      "description": "Win 3 points with your first attack."
+    },
+    "coachingPoints": [
+      "Be patient, wait for the right ball",
+      "Recover after every push",
+      "Use your pre-point routine"
+    ],
+    "moveIds": [
+      "bh-push",
+      "fh-drive"
+    ]
   },
   {
     "id": "rally-record",
     "name": "Rally record challenge",
     "purpose": "A solo game: beat your best rally count under a little pressure.",
-    "skills": [{ "id": "fh-drive", "weight": 0.5 }, { "id": "bh-drive", "weight": 0.5 }, { "id": "focus-routine", "weight": 0.4 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "matchPlay", "regularity": "game",
-    "variants": [
-      { "setup": "robot", "instructions": "Robot on random forehand/backhand. Three tries to beat your record. Between tries, do your pre-point routine." },
-      { "setup": "wall", "instructions": "Rebound board up. Alternate forehand and backhand. Three tries to beat your record." },
-      { "setup": "multiball", "instructions": "Feeder plays random topspin. Three tries to beat your record.", "feederInstructions": "Random forehand or backhand, a bit faster than in practice." },
-      { "setup": "partner", "instructions": "Cooperative: you both try to set a new rally record with forehand and backhand anywhere on the table." }
+    "skills": [
+      {
+        "id": "fh-drive",
+        "weight": 0.5
+      },
+      {
+        "id": "bh-drive",
+        "weight": 0.5
+      },
+      {
+        "id": "focus-routine",
+        "weight": 0.4
+      }
     ],
-    "duration": { "min": 4, "default": 8, "max": 12 },
-    "intensity": 3, "impact": "low",
-    "success": { "type": "consecutive", "target": 25, "description": "A rally of 25 or more." },
-    "coachingPoints": ["Treat every try like a match point", "Breathe out before you start", "Stay relaxed as the count grows"],
-    "moveIds": ["fh-drive", "bh-drive"]
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "matchPlay",
+    "regularity": "game",
+    "variants": [
+      {
+        "setup": "robot",
+        "instructions": "Robot on random forehand/backhand. Three tries to beat your record. Between tries, do your pre-point routine."
+      },
+      {
+        "setup": "wall",
+        "instructions": "Rebound board up. Alternate forehand and backhand. Three tries to beat your record."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Feeder plays random topspin. Three tries to beat your record.",
+        "feederInstructions": "Random forehand or backhand, a bit faster than in practice."
+      },
+      {
+        "setup": "partner",
+        "instructions": "Cooperative: you both try to set a new rally record with forehand and backhand anywhere on the table."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 8,
+      "max": 12
+    },
+    "intensity": 3,
+    "impact": "low",
+    "success": {
+      "type": "consecutive",
+      "target": 25,
+      "description": "A rally of 25 or more."
+    },
+    "coachingPoints": [
+      "Treat every try like a match point",
+      "Breathe out before you start",
+      "Stay relaxed as the count grows"
+    ],
+    "moveIds": [
+      "fh-drive",
+      "bh-drive"
+    ]
   },
   {
     "id": "serve-third-ball",
     "name": "Serve and attack the third ball",
     "purpose": "Short backspin serve, long push comes back, forehand attack.",
-    "skills": [{ "id": "third-ball", "weight": 1 }, { "id": "fh-loop-backspin", "weight": 0.6 }, { "id": "serve-basics", "weight": 0.5 }],
-    "levelMin": 3, "levelMax": 5,
-    "phase": "matchPlay", "regularity": "semiIrregular",
-    "variants": [
-      { "setup": "partner", "instructions": "Serve short backspin. Your partner pushes long anywhere on your half. Loop the third ball, then play the point out." },
-      { "setup": "multiball", "instructions": "Serve short; the feeder immediately sends a long backspin ball to your forehand or backhand. Attack it.", "feederInstructions": "After their serve, feed one long backspin ball to a random side." },
-      { "setup": "robot", "instructions": "Serve a shadow serve, then the robot sends long backspin. Loop it." }
+    "skills": [
+      {
+        "id": "third-ball",
+        "weight": 1
+      },
+      {
+        "id": "fh-loop-backspin",
+        "weight": 0.6
+      },
+      {
+        "id": "serve-basics",
+        "weight": 0.5
+      }
     ],
-    "duration": { "min": 5, "default": 9, "max": 15 },
-    "intensity": 4, "impact": "low",
-    "success": { "type": "outOf", "target": 6, "description": "6 of 10 third balls on the table." },
-    "coachingPoints": ["After the serve, step back into ready at once", "Expect the long push and be ready to move", "Loop with spin first, speed second"],
-    "moveIds": ["fh-loop-backspin"]
+    "levelMin": 3,
+    "levelMax": 5,
+    "phase": "matchPlay",
+    "regularity": "semiIrregular",
+    "variants": [
+      {
+        "setup": "partner",
+        "instructions": "Serve short backspin. Your partner pushes long anywhere on your half. Loop the third ball, then play the point out."
+      },
+      {
+        "setup": "multiball",
+        "instructions": "Serve short; the feeder immediately sends a long backspin ball to your forehand or backhand. Attack it.",
+        "feederInstructions": "After their serve, feed one long backspin ball to a random side."
+      },
+      {
+        "setup": "robot",
+        "instructions": "Serve a shadow serve, then the robot sends long backspin. Loop it."
+      }
+    ],
+    "duration": {
+      "min": 5,
+      "default": 9,
+      "max": 15
+    },
+    "intensity": 4,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 6,
+      "of": 10,
+      "description": "6 of 10 third balls on the table."
+    },
+    "coachingPoints": [
+      "After the serve, step back into ready at once",
+      "Expect the long push and be ready to move",
+      "Loop with spin first, speed second"
+    ],
+    "moveIds": [
+      "fh-loop-backspin"
+    ]
   },
   {
     "id": "lateral-hops",
     "name": "Lateral hops",
     "purpose": "Quick, springy legs for fast side-to-side movement.",
-    "skills": [{ "id": "physical-prep", "weight": 1 }, { "id": "basic-footwork", "weight": 0.5 }],
-    "levelMin": 2, "levelMax": 5,
-    "phase": "physical", "regularity": "regular",
-    "variants": [
-      { "setup": "shadow", "instructions": "Hop side to side over a line on two feet for 20 seconds, rest 20. Then single-leg hops, 10 each leg. 3 rounds." }
+    "skills": [
+      {
+        "id": "physical-prep",
+        "weight": 1
+      },
+      {
+        "id": "basic-footwork",
+        "weight": 0.5
+      }
     ],
-    "duration": { "min": 3, "default": 6, "max": 10 },
-    "intensity": 4, "impact": "high",
+    "levelMin": 2,
+    "levelMax": 5,
+    "phase": "physical",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "Hop side to side over a line on two feet for 20 seconds, rest 20. Then single-leg hops, 10 each leg. 3 rounds."
+      }
+    ],
+    "duration": {
+      "min": 3,
+      "default": 6,
+      "max": 10
+    },
+    "intensity": 4,
+    "impact": "high",
     "lowImpactId": "step-agility",
-    "success": { "type": "timed", "target": 3, "description": "3 rounds with soft, quiet landings." },
-    "coachingPoints": ["Land softly on the balls of your feet", "Knees over toes", "Stop if anything hurts"],
+    "success": {
+      "type": "timed",
+      "target": 3,
+      "description": "3 rounds with soft, quiet landings."
+    },
+    "coachingPoints": [
+      "Land softly on the balls of your feet",
+      "Knees over toes",
+      "Stop if anything hurts"
+    ],
     "moveIds": []
   },
   {
     "id": "step-agility",
     "name": "Quick steps",
     "purpose": "Fast feet without jumping.",
-    "skills": [{ "id": "physical-prep", "weight": 1 }, { "id": "basic-footwork", "weight": 0.5 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "physical", "regularity": "regular",
-    "variants": [
-      { "setup": "shadow", "instructions": "Fast small steps on the spot for 15 seconds, then a side step left and right for 15 seconds, then rest 15. 4 rounds." }
+    "skills": [
+      {
+        "id": "physical-prep",
+        "weight": 1
+      },
+      {
+        "id": "basic-footwork",
+        "weight": 0.5
+      }
     ],
-    "duration": { "min": 3, "default": 5, "max": 10 },
-    "intensity": 3, "impact": "low",
-    "success": { "type": "timed", "target": 4, "description": "4 rounds, staying low." },
-    "coachingPoints": ["Stay on the balls of your feet", "Arms relaxed", "Keep your chest up"],
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "physical",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "Fast small steps on the spot for 15 seconds, then a side step left and right for 15 seconds, then rest 15. 4 rounds."
+      }
+    ],
+    "duration": {
+      "min": 3,
+      "default": 5,
+      "max": 10
+    },
+    "intensity": 3,
+    "impact": "low",
+    "success": {
+      "type": "timed",
+      "target": 4,
+      "description": "4 rounds, staying low."
+    },
+    "coachingPoints": [
+      "Stay on the balls of your feet",
+      "Arms relaxed",
+      "Keep your chest up"
+    ],
     "moveIds": []
   },
   {
     "id": "core-shoulder-circuit",
     "name": "Core and shoulder care",
     "purpose": "A strong middle and healthy shoulders for a long playing life.",
-    "skills": [{ "id": "physical-prep", "weight": 1 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "physical", "regularity": "regular",
-    "variants": [
-      { "setup": "shadow", "instructions": "2 rounds: 30-second plank, 30-second side plank each side, 15 slow shoulder external rotations each arm (light band or water bottle), 10 wrist curls each way." }
+    "skills": [
+      {
+        "id": "physical-prep",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 4, "default": 6, "max": 12 },
-    "intensity": 2, "impact": "low",
-    "success": { "type": "timed", "target": 2, "description": "2 full rounds with good form." },
-    "coachingPoints": ["Straight line from head to heels", "Slow and controlled", "Light weight is enough"],
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "physical",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "2 rounds: 30-second plank, 30-second side plank each side, 15 slow shoulder external rotations each arm (light band or water bottle), 10 wrist curls each way."
+      }
+    ],
+    "duration": {
+      "min": 4,
+      "default": 6,
+      "max": 12
+    },
+    "intensity": 2,
+    "impact": "low",
+    "success": {
+      "type": "timed",
+      "target": 2,
+      "description": "2 full rounds with good form."
+    },
+    "coachingPoints": [
+      "Straight line from head to heels",
+      "Slow and controlled",
+      "Light weight is enough"
+    ],
     "moveIds": []
   },
   {
     "id": "pre-point-routine",
     "name": "Pre-point routine",
     "purpose": "The same short routine before every point, so you start each one calm and clear.",
-    "skills": [{ "id": "focus-routine", "weight": 1 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "mental", "regularity": "regular",
-    "variants": [
-      { "setup": "shadow", "instructions": "Build your routine: turn away from the table, one slow breath out, wipe the bat or touch the table, decide your serve and your plan for the next ball, then step in. Rehearse it 10 times." }
+    "skills": [
+      {
+        "id": "focus-routine",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 2, "default": 3, "max": 6 },
-    "intensity": 1, "impact": "low",
-    "success": { "type": "outOf", "target": 10, "description": "10 routines, each under 10 seconds." },
-    "coachingPoints": ["Same steps every time", "Decide one simple plan", "Let the last point go"],
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "mental",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "Build your routine: turn away from the table, one slow breath out, wipe the bat or touch the table, decide your serve and your plan for the next ball, then step in. Rehearse it 10 times."
+      }
+    ],
+    "duration": {
+      "min": 2,
+      "default": 3,
+      "max": 6
+    },
+    "intensity": 1,
+    "impact": "low",
+    "success": {
+      "type": "outOf",
+      "target": 10,
+      "of": 10,
+      "description": "10 routines, each under 10 seconds."
+    },
+    "coachingPoints": [
+      "Same steps every time",
+      "Decide one simple plan",
+      "Let the last point go"
+    ],
     "moveIds": []
   },
   {
     "id": "breathing-reset",
     "name": "Breathing reset",
     "purpose": "A tool to calm down after a mistake or before a big point.",
-    "skills": [{ "id": "focus-routine", "weight": 1 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "mental", "regularity": "regular",
-    "variants": [
-      { "setup": "shadow", "instructions": "Breathe in through your nose for 4 counts, hold for 2, breathe out slowly for 6. Do 6 rounds. Then do 2 rounds while picturing a tight game." }
+    "skills": [
+      {
+        "id": "focus-routine",
+        "weight": 1
+      }
     ],
-    "duration": { "min": 2, "default": 3, "max": 5 },
-    "intensity": 1, "impact": "low",
-    "success": { "type": "timed", "target": 6, "description": "6 calm rounds." },
-    "coachingPoints": ["The out-breath is longer than the in-breath", "Shoulders drop on every out-breath", "Use it between points"],
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "mental",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "Breathe in through your nose for 4 counts, hold for 2, breathe out slowly for 6. Do 6 rounds. Then do 2 rounds while picturing a tight game."
+      }
+    ],
+    "duration": {
+      "min": 2,
+      "default": 3,
+      "max": 5
+    },
+    "intensity": 1,
+    "impact": "low",
+    "success": {
+      "type": "timed",
+      "target": 6,
+      "description": "6 calm rounds."
+    },
+    "coachingPoints": [
+      "The out-breath is longer than the in-breath",
+      "Shoulders drop on every out-breath",
+      "Use it between points"
+    ],
     "moveIds": []
   },
   {
     "id": "cooldown-stretch",
     "name": "Cool-down",
     "purpose": "Bring your heart rate down and stretch the muscles you used.",
-    "skills": [{ "id": "physical-prep", "weight": 0.5 }],
-    "levelMin": 1, "levelMax": 5,
-    "phase": "cooldown", "regularity": "regular",
-    "variants": [
-      { "setup": "shadow", "instructions": "Slow walk for one minute. Then hold each stretch for 20 to 30 seconds: calves, thighs (front and back), hips, chest in a doorway, and the forearm of your playing arm." }
+    "skills": [
+      {
+        "id": "physical-prep",
+        "weight": 0.5
+      }
     ],
-    "duration": { "min": 2, "default": 3, "max": 8 },
-    "intensity": 1, "impact": "low",
-    "success": { "type": "timed", "target": 1, "description": "Breathing back to normal." },
-    "coachingPoints": ["Hold, don't bounce", "Breathe slowly", "Note one thing that went well today"],
+    "levelMin": 1,
+    "levelMax": 5,
+    "phase": "cooldown",
+    "regularity": "regular",
+    "variants": [
+      {
+        "setup": "shadow",
+        "instructions": "Slow walk for one minute. Then hold each stretch for 20 to 30 seconds: calves, thighs (front and back), hips, chest in a doorway, and the forearm of your playing arm."
+      }
+    ],
+    "duration": {
+      "min": 2,
+      "default": 3,
+      "max": 8
+    },
+    "intensity": 1,
+    "impact": "low",
+    "success": {
+      "type": "timed",
+      "target": 1,
+      "description": "Breathing back to normal."
+    },
+    "coachingPoints": [
+      "Hold, don't bounce",
+      "Breathe slowly",
+      "Note one thing that went well today"
+    ],
     "moveIds": []
   }
 ]

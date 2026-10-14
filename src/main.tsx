@@ -1,12 +1,9 @@
 import { render } from 'preact';
+import './design/fonts';
+import './design/tokens.css';
+import './design/base.css';
+import './ui/app.css';
+import './ui/screens/styleboard.css';
+import { App } from './ui/App';
 
-function Hello() {
-  return (
-    <main style={{ fontFamily: 'Georgia, serif', padding: '24px', maxWidth: '480px', margin: '0 auto' }}>
-      <h1>Third Ball</h1>
-      <p>Your table tennis coach is on the way. The pipeline works.</p>
-    </main>
-  );
-}
-
-render(<Hello />, document.getElementById('app')!);
+render(<App />, document.getElementById('app')!);

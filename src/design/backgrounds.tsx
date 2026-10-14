@@ -72,13 +72,14 @@ function Flights({ count, rising = false }: { count: number; rising?: boolean })
 }
 
 function NetShadow() {
+  // Looking along the net from the end: a faint mesh band at the very top
   return (
     <g>
-      <rect x="0" y="120" width="390" height="34" fill="var(--text)" opacity="0.035" />
-      <path d="M0 120 H390" stroke="var(--text)" stroke-width="2" opacity="0.08" />
+      <path d="M0 26 H390" stroke="var(--text)" stroke-width="2" opacity="0.08" />
       {Array.from({ length: 40 }, (_, i) => (
-        <path d={`M${i * 10} 120 V154`} stroke="var(--text)" stroke-width="0.7" opacity="0.05" />
+        <path d={`M${i * 10} 0 V26`} stroke="var(--text)" stroke-width="0.7" opacity="0.05" />
       ))}
+      <path d="M0 13 H390" stroke="var(--text)" stroke-width="0.7" opacity="0.05" />
     </g>
   );
 }

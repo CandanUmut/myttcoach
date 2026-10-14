@@ -1,0 +1,42 @@
+{
+  "id": "fh-loop-backspin",
+  "name": "Forehand loop against backspin",
+  "skillId": "fh-loop-backspin",
+  "wing": "FH",
+  "levelMin": 2,
+  "summary": "Lift a backspin ball with a brushing, upward swing driven by your legs.",
+  "whenToUse": "Against a long push or long backspin serve to your forehand. It's the main way to start your attack.",
+  "keyPoints": {
+    "stance": "Wider than for the drive, right foot further back (left-handers: left foot), knees well bent, weight on the back leg.",
+    "bodyAction": "Legs push up and the hips and shoulders turn forward. Weight moves from the back leg to the front leg.",
+    "strokeLength": "Longer than the drive and more upward: from about knee height to above your head.",
+    "timing": "At the top of the bounce or just as it starts to drop. Beginners: a little after the top gives you more time.",
+    "tablePosition": "About a metre from the end line.",
+    "freeArm": "Up for balance, then pulls back as you turn into the shot.",
+    "batArm": "Relaxed and fairly long at the start; speed up sharply at contact. Bat about vertical or slightly closed.",
+    "recovery": "Reset your legs and get back to ready fast: a block comes back quickly.",
+    "anticipation": "Read the length of their push early. Long push to the forehand = loop."
+  },
+  "cues": ["Drop the bat under the ball", "Legs first, brush up", "Contact as it starts to drop"],
+  "learningPath": [
+    { "stage": "see", "task": "Watch the 3D player in slow motion. Notice how low the bat starts and how the legs start the swing.", "passCheck": "You can say the three cues.", "drillIds": [] },
+    { "stage": "shadow", "task": "Follow-along mode: deep knee bend, low bat, swing up and forward.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"], "selfChecks": ["Did the bat start below the height of the table?", "Did your legs push before your arm swung?", "Did you finish above your head and come back to ready?"] },
+    { "stage": "feel", "task": "Slow backspin balls one at a time. Just lift them onto the table, any speed.", "passCheck": "5 of 10 on the table.", "drillIds": ["fh-loop-backspin-multiball"] },
+    { "stage": "groove", "task": "Sets of 10 loops; aim for depth and spin, not speed.", "passCheck": "7 of 10 on the table.", "drillIds": ["fh-loop-backspin-multiball"] },
+    { "stage": "mix", "task": "Push, then loop the long ball.", "passCheck": "7 of 10 patterns.", "drillIds": ["push-then-drive", "fh-loop-backspin-multiball"] },
+    { "stage": "use", "task": "Serve short backspin, loop the long push.", "passCheck": "6 of 10 third balls on the table.", "drillIds": ["serve-third-ball", "fh-loop-backspin-multiball"] },
+    { "stage": "own", "task": "Test: loops out of 10.", "passCheck": "8 of 10 on the table.", "drillIds": ["fh-loop-backspin-multiball"] }
+  ],
+  "gamePatterns": [
+    { "situation": "You serve short backspin and they push long.", "how": "Loop it with spin to their elbow or backhand. Spin first, speed second.", "drillId": "serve-third-ball" },
+    { "situation": "A long push comes to your forehand in a push rally.", "how": "Open up with a spinny loop deep to their backhand, then get ready for the block.", "drillId": "push-then-drive" }
+  ],
+  "troubleshooting": [
+    { "symptom": "The ball goes into the net", "causes": ["Not lifting enough against the backspin", "Bat too closed", "Contact too low and late"], "fixes": ["Swing more upward", "Open the bat slightly", "Bend your knees and meet the ball a bit earlier"], "drillId": "fh-loop-backspin-multiball" },
+    { "symptom": "The ball goes long", "causes": ["Hitting instead of brushing", "Swinging too much forward"], "fixes": ["Brush the back-top of the ball", "Swing more up than forward"], "drillId": "fh-loop-backspin-multiball" },
+    { "symptom": "Slow loop with no spin", "causes": ["Arm-only swing", "No acceleration at contact"], "fixes": ["Start with the legs and hips", "Relax, then speed up sharply right at contact"], "drillId": "shadow-strokes" },
+    { "symptom": "I'm off balance after the loop", "causes": ["Stance too narrow", "Leaning back"], "fixes": ["Widen your stance", "Finish with your weight on the front leg"], "drillId": "two-point-footwork" }
+  ],
+  "penholdNotes": "Same legs and body. Penholders tend to use more wrist; keep it under control until the shape is solid.",
+  "animationId": null
+}

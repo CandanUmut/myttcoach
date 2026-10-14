@@ -1,0 +1,100 @@
+[
+  {
+    "id": "grip", "name": "Grip", "category": "fundamental", "levelMin": 1, "levelMax": 5,
+    "prerequisites": [],
+    "styleWeights": {},
+    "summary": "How you hold the bat. A relaxed, neutral grip lets you play both wings without changing your hand.",
+    "moveIds": []
+  },
+  {
+    "id": "ready-position", "name": "Ready position", "category": "fundamental", "levelMin": 1, "levelMax": 5,
+    "prerequisites": [],
+    "styleWeights": { "closeAttacker": 1.2, "blocker": 1.2 },
+    "summary": "The athletic stance you return to after every shot: feet wide, knees bent, weight forward, bat in front.",
+    "moveIds": ["ready-stance"]
+  },
+  {
+    "id": "ball-control", "name": "Ball feel", "category": "fundamental", "levelMin": 1, "levelMax": 2,
+    "prerequisites": [],
+    "styleWeights": {},
+    "summary": "Soft hands and a feel for the ball on the bat. The base for touch, spin and control.",
+    "moveIds": []
+  },
+  {
+    "id": "basic-footwork", "name": "Basic footwork", "category": "footwork", "levelMin": 1, "levelMax": 5,
+    "prerequisites": ["ready-position"],
+    "styleWeights": { "midLooper": 1.4, "chopper": 1.4, "closeAttacker": 1.2 },
+    "summary": "Small side steps, the cross-over step and the pivot, so you hit every ball from a balanced position.",
+    "moveIds": []
+  },
+  {
+    "id": "fh-drive", "name": "Forehand drive", "category": "stroke", "levelMin": 1, "levelMax": 3,
+    "prerequisites": ["ready-position"],
+    "styleWeights": { "closeAttacker": 1.3, "allRoundAttacker": 1.2, "penholdAttacker": 1.3 },
+    "summary": "The first attacking stroke: a short, compact topspin hit on the forehand side.",
+    "moveIds": ["fh-drive"]
+  },
+  {
+    "id": "bh-drive", "name": "Backhand drive", "category": "stroke", "levelMin": 1, "levelMax": 3,
+    "prerequisites": ["ready-position"],
+    "styleWeights": { "closeAttacker": 1.3, "blocker": 1.3, "allRoundAttacker": 1.1 },
+    "summary": "A compact topspin hit in front of the body on the backhand side.",
+    "moveIds": ["bh-drive"]
+  },
+  {
+    "id": "bh-push", "name": "Backhand push", "category": "stroke", "levelMin": 1, "levelMax": 4,
+    "prerequisites": ["ready-position"],
+    "styleWeights": { "chopper": 1.3, "blocker": 1.2, "allRoundAttacker": 1.1 },
+    "summary": "A short backspin return against backspin. Keeps the ball low and safe.",
+    "moveIds": ["bh-push"]
+  },
+  {
+    "id": "fh-push", "name": "Forehand push", "category": "stroke", "levelMin": 1, "levelMax": 4,
+    "prerequisites": ["ready-position"],
+    "styleWeights": { "chopper": 1.2, "allRoundAttacker": 1.1 },
+    "summary": "The forehand version of the push: a controlled backspin return.",
+    "moveIds": ["fh-push"]
+  },
+  {
+    "id": "fh-loop-backspin", "name": "Forehand loop against backspin", "category": "stroke", "levelMin": 2, "levelMax": 5,
+    "prerequisites": ["fh-drive", "bh-push"],
+    "styleWeights": { "midLooper": 1.5, "allRoundAttacker": 1.4, "closeAttacker": 1.2, "penholdAttacker": 1.3 },
+    "summary": "Lift a backspin ball with an upward brushing swing. The main way to start an attack.",
+    "moveIds": ["fh-loop-backspin"]
+  },
+  {
+    "id": "serve-basics", "name": "Serving", "category": "serve", "levelMin": 1, "levelMax": 5,
+    "prerequisites": [],
+    "styleWeights": { "allRoundAttacker": 1.2, "penholdAttacker": 1.2 },
+    "summary": "Legal serves with clear spin and controlled length, so you start the point on your terms.",
+    "moveIds": []
+  },
+  {
+    "id": "receive-basics", "name": "Receiving", "category": "receive", "levelMin": 1, "levelMax": 5,
+    "prerequisites": ["bh-push"],
+    "styleWeights": { "allRoundAttacker": 1.2, "blocker": 1.1 },
+    "summary": "Read the serve's spin and length, then return it safely or attack it.",
+    "moveIds": []
+  },
+  {
+    "id": "third-ball", "name": "Serve and third-ball attack", "category": "tactic", "levelMin": 3, "levelMax": 5,
+    "prerequisites": ["serve-basics", "fh-loop-backspin"],
+    "styleWeights": { "allRoundAttacker": 1.4, "closeAttacker": 1.3, "penholdAttacker": 1.4, "midLooper": 1.2 },
+    "summary": "Serve so the return is predictable, then attack the third ball on purpose.",
+    "moveIds": []
+  },
+  {
+    "id": "physical-prep", "name": "Table tennis fitness", "category": "physical", "levelMin": 1, "levelMax": 5,
+    "prerequisites": [],
+    "styleWeights": { "midLooper": 1.2, "chopper": 1.3 },
+    "summary": "Warm-ups, quick legs, a strong core and healthy shoulders and wrists.",
+    "moveIds": []
+  },
+  {
+    "id": "focus-routine", "name": "Focus and routines", "category": "mental", "levelMin": 1, "levelMax": 5,
+    "prerequisites": [],
+    "styleWeights": {},
+    "summary": "A short routine before each point, breathing to reset, and calm under pressure.",
+    "moveIds": []
+  }
+]

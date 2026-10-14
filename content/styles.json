@@ -1,0 +1,72 @@
+[
+  {
+    "id": "closeAttacker",
+    "name": "Close-to-table attacker",
+    "summary": "Stands near the table and takes the ball early, on the rise.",
+    "howTheyPlay": "Hits fast and flat-ish topspin from just behind the end line. Wins by speed and taking time away, not by heavy spin.",
+    "strengths": ["Fast tempo", "Strong blocks and counters", "Short points"],
+    "watchOuts": ["Gets rushed if pushed back", "Needs very quick feet over short distances"],
+    "playingAgainst": "Vary the length and the spin. Heavy backspin and slow, spinny loops break their rhythm; wide angles pull them off the table.",
+    "quizHint": "You like being close and quick, and you would rather redirect speed than create it."
+  },
+  {
+    "id": "allRoundAttacker",
+    "name": "All-round attacker",
+    "summary": "Attacks from both wings and can also push, block and change pace.",
+    "howTheyPlay": "Builds the point with serve, receive and placement, then opens up with topspin when the ball allows it.",
+    "strengths": ["Few weak spots", "Adapts to opponents", "Good at reading the game"],
+    "watchOuts": ["Can lack one big weapon", "May hesitate between options"],
+    "playingAgainst": "Find the one shot they like least and keep going there. Force them to commit early.",
+    "quizHint": "You like a bit of everything and you think your way through points."
+  },
+  {
+    "id": "midLooper",
+    "name": "Mid-distance looper",
+    "summary": "Plays from a step or two back with big, spinny topspin.",
+    "howTheyPlay": "Uses the whole body to generate heavy topspin and counter-loops. Loves rallies with time to swing.",
+    "strengths": ["Heavy spin", "Power from distance", "Strong counter-loops"],
+    "watchOuts": ["Short balls and drop shots", "Needs good fitness and footwork"],
+    "playingAgainst": "Keep the ball short and low, change pace, and play into the body or the elbow so they can't swing freely.",
+    "quizHint": "You love big swings and long topspin rallies."
+  },
+  {
+    "id": "penholdAttacker",
+    "name": "Penhold attacker",
+    "summary": "Holds the bat like a pen and attacks, often with a strong forehand.",
+    "howTheyPlay": "Fast wrist and quick forehand. Modern penholders also use the reverse side for backhand topspin.",
+    "strengths": ["Short game and flicks", "Fast forehand", "Wrist control"],
+    "watchOuts": ["Backhand side can be harder", "Wide balls to the backhand"],
+    "playingAgainst": "Play long and deep to the backhand, then switch wide to the forehand.",
+    "quizHint": "You hold the bat like a pen."
+  },
+  {
+    "id": "chopper",
+    "name": "Attacking chopper (defender)",
+    "summary": "Stands back and chops the ball with heavy, varied backspin, then attacks loose balls.",
+    "howTheyPlay": "Returns topspin with backspin chops from distance, changes the amount of spin, and attacks when the opponent gives a weak ball.",
+    "strengths": ["Huge consistency", "Spin variation", "Patience"],
+    "watchOuts": ["Drop shots and short balls", "Needs a lot of movement"],
+    "playingAgainst": "Be patient, vary loop speed and spin, use the middle, and be ready for the sudden attack.",
+    "quizHint": "You enjoy defending far from the table and frustrating attackers."
+  },
+  {
+    "id": "blocker",
+    "name": "Close-to-table blocker / pips player",
+    "summary": "Stays close, blocks and punches, often with pimples on one side.",
+    "howTheyPlay": "Uses the opponent's pace and spin, changes the ball's spin with pips, and moves the ball around the table.",
+    "strengths": ["Awkward spin returns", "Placement", "Low error rate"],
+    "watchOuts": ["Slow, heavy backspin", "Has to create pace from nothing"],
+    "playingAgainst": "Give them little pace to use. Slow, spinny loops and pushes, then attack the loose ball.",
+    "quizHint": "You like to block, redirect and annoy, maybe with pimples."
+  },
+  {
+    "id": "balanced",
+    "name": "Not sure yet (balanced)",
+    "summary": "No style chosen yet. The plan builds a solid, even base.",
+    "howTheyPlay": "Works on every part of the game equally until a style shows up.",
+    "strengths": ["Open to every option"],
+    "watchOuts": ["Pick a style once you know what you like"],
+    "playingAgainst": "Play your best shots and notice which ones win you points.",
+    "quizHint": "You are still finding out what you like."
+  }
+]

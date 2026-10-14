@@ -1,0 +1,44 @@
+[
+  {
+    "id": "fh-drive-streak", "name": "Forehand drives in a row", "unit": "in a row",
+    "howToMeasure": "Forehand cross-court at a steady pace. Best of three tries; count every ball you hit onto the table.",
+    "testDrillId": "fh-drive-crosscourt", "higherIsBetter": true, "skillId": "fh-drive",
+    "levelTargets": { "1": 5, "2": 20, "3": 40, "4": 60, "5": 100 }
+  },
+  {
+    "id": "bh-drive-streak", "name": "Backhand drives in a row", "unit": "in a row",
+    "howToMeasure": "Backhand cross-court at a steady pace. Best of three tries.",
+    "testDrillId": "bh-drive-crosscourt", "higherIsBetter": true, "skillId": "bh-drive",
+    "levelTargets": { "1": 5, "2": 20, "3": 40, "4": 60, "5": 100 }
+  },
+  {
+    "id": "push-streak", "name": "Backhand pushes in a row", "unit": "in a row",
+    "howToMeasure": "Backhand push rally; only count balls that stay low over the net. Best of three tries.",
+    "testDrillId": "bh-push-diagonal", "higherIsBetter": true, "skillId": "bh-push",
+    "levelTargets": { "1": 5, "2": 15, "3": 30, "4": 50, "5": 80 }
+  },
+  {
+    "id": "loop-backspin-10", "name": "Loops against backspin on the table", "unit": "out of 10",
+    "howToMeasure": "10 backspin balls to your forehand, one at a time. Count the loops that land.",
+    "testDrillId": "fh-loop-backspin-multiball", "higherIsBetter": true, "skillId": "fh-loop-backspin",
+    "levelTargets": { "1": 2, "2": 4, "3": 6, "4": 8, "5": 9 }
+  },
+  {
+    "id": "serve-target-10", "name": "Serves in the target zone", "unit": "out of 10",
+    "howToMeasure": "Alternate short and long serves at two targets. Count the serves that land in the right zone.",
+    "testDrillId": "short-long-serve-targets", "higherIsBetter": true, "skillId": "serve-basics",
+    "levelTargets": { "1": 3, "2": 4, "3": 6, "4": 7, "5": 8 }
+  },
+  {
+    "id": "two-point-60", "name": "Two-point footwork in 60 seconds", "unit": "clean shots",
+    "howToMeasure": "Forehand from the forehand corner and the middle, alternating, for 60 seconds. Count shots that land.",
+    "testDrillId": "two-point-footwork", "higherIsBetter": true, "skillId": "basic-footwork",
+    "levelTargets": { "1": 15, "2": 25, "3": 35, "4": 45, "5": 55 }
+  },
+  {
+    "id": "bounce-streak", "name": "Alternating bounces on the bat", "unit": "in a row",
+    "howToMeasure": "Bounce the ball on your bat, switching faces every bounce. Best of three tries.",
+    "testDrillId": "bat-bounce-control", "higherIsBetter": true, "skillId": "ball-control",
+    "levelTargets": { "1": 10, "2": 30, "3": 60, "4": 100, "5": 150 }
+  }
+]

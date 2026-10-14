@@ -1,0 +1,81 @@
+[
+  {
+    "id": "basics",
+    "name": "Learn the basics",
+    "summary": "Grip, stance and the four basic strokes, done properly.",
+    "skillWeights": { "grip": 3, "ready-position": 3, "ball-control": 3, "fh-drive": 3, "bh-drive": 3, "bh-push": 2, "fh-push": 2, "basic-footwork": 2 },
+    "workoutShift": { "technique": 2 },
+    "suggestedMetricId": "fh-drive-streak"
+  },
+  {
+    "id": "consistency",
+    "name": "Consistency",
+    "summary": "Fewer easy mistakes. Longer, steadier rallies.",
+    "skillWeights": { "fh-drive": 3, "bh-drive": 3, "bh-push": 2, "fh-push": 2, "ball-control": 2, "focus-routine": 1 },
+    "workoutShift": { "technique": 2 },
+    "suggestedMetricId": "fh-drive-streak"
+  },
+  {
+    "id": "attack",
+    "name": "Attack and topspin",
+    "summary": "Open up with topspin and finish points.",
+    "skillWeights": { "fh-loop-backspin": 4, "fh-drive": 2, "basic-footwork": 2, "third-ball": 2 },
+    "workoutShift": { "technique": 2, "footwork": 1 },
+    "suggestedMetricId": "loop-backspin-10"
+  },
+  {
+    "id": "serveReceive",
+    "name": "Serve and receive",
+    "summary": "Win more points in the first three shots.",
+    "skillWeights": { "serve-basics": 4, "receive-basics": 4, "third-ball": 2, "bh-push": 1, "fh-push": 1 },
+    "workoutShift": { "serveReceive": 4 },
+    "suggestedMetricId": "serve-target-10"
+  },
+  {
+    "id": "footwork",
+    "name": "Footwork",
+    "summary": "Get to the ball early and in balance.",
+    "skillWeights": { "basic-footwork": 4, "ready-position": 2, "physical-prep": 1 },
+    "workoutShift": { "footwork": 4 },
+    "suggestedMetricId": "two-point-60"
+  },
+  {
+    "id": "defense",
+    "name": "Defense and blocking",
+    "summary": "Stay in the point under pressure.",
+    "skillWeights": { "bh-push": 2, "fh-push": 2, "bh-drive": 2, "ready-position": 2 },
+    "workoutShift": { "technique": 2 },
+    "suggestedMetricId": "bh-drive-streak"
+  },
+  {
+    "id": "tactics",
+    "name": "Match tactics",
+    "summary": "Make better choices: where, when and how.",
+    "skillWeights": { "third-ball": 3, "serve-basics": 2, "receive-basics": 2, "focus-routine": 2 },
+    "workoutShift": { "matchPlay": 4, "mental": 1 }
+  },
+  {
+    "id": "fitness",
+    "name": "Table tennis fitness",
+    "summary": "Quick legs, strong core, healthy shoulders.",
+    "skillWeights": { "physical-prep": 4, "basic-footwork": 2 },
+    "workoutShift": { "fitness": 4, "footwork": 1 },
+    "suggestedMetricId": "two-point-60"
+  },
+  {
+    "id": "comeback",
+    "name": "Coming back after a break",
+    "summary": "Rebuild feel and rhythm without getting hurt.",
+    "skillWeights": { "ball-control": 3, "fh-drive": 2, "bh-drive": 2, "physical-prep": 2 },
+    "workoutShift": { "technique": 2, "fitness": 1 },
+    "suggestedMetricId": "fh-drive-streak"
+  },
+  {
+    "id": "tournament",
+    "name": "Prepare for a tournament",
+    "summary": "Sharpen serve, receive and match play, and peak on the day.",
+    "skillWeights": { "serve-basics": 3, "receive-basics": 3, "third-ball": 3, "focus-routine": 3 },
+    "workoutShift": { "matchPlay": 4, "serveReceive": 2, "mental": 1 },
+    "suggestedMetricId": "serve-target-10"
+  }
+]

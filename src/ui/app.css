@@ -45,16 +45,6 @@
 .hero__meta { display: flex; gap: var(--s4); font-size: var(--t-s); opacity: 0.85; flex-wrap: wrap; }
 .hero__meta span { display: inline-flex; align-items: center; gap: 6px; }
 .hero .btn--primary { margin-top: var(--s2); }
-.hero__ply {
-  position: absolute;
-  right: -56px;
-  bottom: -56px;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 10px solid var(--c-ball);
-  opacity: 0.18;
-}
 
 /* Note: a coach's margin note, not a card */
 .note {
@@ -148,7 +138,7 @@
   place-items: center;
   align-content: center;
   gap: 2px;
-  font-size: 0.78rem;
+  font-size: var(--t-xs);
   font-weight: 700;
   color: var(--text-2);
   text-decoration: none;
@@ -170,3 +160,6 @@
   .screen { padding-left: var(--s6); padding-right: var(--s6); }
   h1 { font-size: 3rem; }
 }
+
+.feel-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
+.feel-row .btn { padding: 0 var(--s3); }

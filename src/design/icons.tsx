@@ -38,17 +38,19 @@ const paths: Record<IconName, JSX.Element> = {
   // Paddle, upright
   learn: (
     <>
-      <ellipse cx="12" cy="8.6" rx="6.6" ry="6.4" />
-      <path d="M10.3 14.8v5.4a1.7 1.7 0 0 0 3.4 0v-5.4" />
-      <path d="M8.6 6.4a3.6 3.6 0 0 1 2.6-1.6" stroke-width="1.25" />
+      <g transform="rotate(32 12 12)">
+        <ellipse cx="11" cy="8.2" rx="6.3" ry="6" />
+        <path d="M9.4 14v4.8a1.6 1.6 0 0 0 3.2 0V14" />
+      </g>
+      <Ball cx={19.2} cy={4.8} r={2} />
     </>
   ),
   // Ball bouncing on the floor
   session: (
     <>
-      <path d="M3 8.5c3.5-3 6 2 7.5 11.5 1.2-5.5 3.2-8.5 5.3-9.3" stroke-dasharray="1.6 2" />
-      <path d="M7.5 21h6" />
-      <Ball cx={18.4} cy={9.6} r={2.2} />
+      <path d="M3 7.5c3.2-2.5 5.6 2.5 7 12 1.4-4.5 3.4-7 5.6-7.6" stroke-dasharray="1.6 2" />
+      <path d="M3 20.5h18" />
+      <Ball cx={18.4} cy={11.6} r={2.2} />
     </>
   ),
   // Multiball basket
@@ -81,10 +83,12 @@ const paths: Record<IconName, JSX.Element> = {
   // Two footprints
   footwork: (
     <>
-      <path d="M7.6 21.2c-1.5 0-2.4-1.2-2.3-3l.3-4.4c.2-2.6 1-5 2.6-5s2.4 2.4 2.3 5l-.3 4.4c-.1 1.8-1.1 3-2.6 3z" />
-      <path d="M5.5 17.6h3.9" stroke-width="1.25" />
-      <path d="M16.4 14.7c-1.5 0-2.4-1.2-2.3-3l.3-4.4c.2-2.6 1-5 2.6-5s2.4 2.4 2.3 5l-.3 4.4c-.1 1.8-1.1 3-2.6 3z" />
-      <path d="M14.3 11.1h3.9" stroke-width="1.25" />
+      <path d="M7.6 21.5c-1.5 0-2.4-1.1-2.3-2.8l.3-3.9c.2-2.3 1-4.3 2.6-4.3s2.4 2.1 2.3 4.3l-.3 3.9c-.1 1.7-1.1 2.8-2.6 2.8z" />
+      <path d="M5.4 8.4h.01M7.6 7.6h.01M9.8 8.4h.01" stroke-width="2" />
+      <g transform="translate(0 2.4)">
+        <path d="M16.4 14.3c-1.5 0-2.4-1.1-2.3-2.8l.3-3.9c.2-2.3 1-4.3 2.6-4.3s2.4 2.1 2.3 4.3l-.3 3.9c-.1 1.7-1.1 2.8-2.6 2.8z" />
+        <path d="M14.2 1.2h.01M16.4.5h.01M18.6 1.2h.01" stroke-width="2" />
+      </g>
     </>
   ),
   // Ball toss from an open palm
@@ -120,9 +124,9 @@ const paths: Record<IconName, JSX.Element> = {
   goal: (
     <>
       <path d="M5 20l2.6-14h8.8L19 20z" />
-      <path d="M4.2 14.5h15.6" stroke-width="1.25" />
-      <ellipse cx="12" cy="9.3" rx="2.8" ry="1.5" />
-      <Ball cx={12} cy={9.3} r={0.9} />
+      <path d="M5.9 14.5h12.2" stroke-width="1.25" />
+      <ellipse cx="12" cy="9.6" rx="3.2" ry="1.9" />
+      <ellipse cx="12" cy="9.6" rx="1.3" ry="0.75" fill="currentColor" stroke="none" />
     </>
   ),
   play: <path d="M8 5.5v13l10.5-6.5z" />,

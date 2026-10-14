@@ -142,6 +142,14 @@ export function BounceStepper({
           </g>
         ))}
       </svg>
+      <p class="bounce-stepper__now">
+        <strong>{steps[current]}</strong>, stage {current + 1} of {n}
+      </p>
+      <ol class="bounce-stepper__wide" aria-hidden="true">
+        {steps.map((s, i) => (
+          <li class={i === current ? 'is-current' : ''}>{s}</li>
+        ))}
+      </ol>
       <ol class="bounce-stepper__labels">
         {steps.map((s, i) => (
           <li class={i === current ? 'is-current' : i < done ? 'is-done' : ''}>
@@ -242,19 +250,23 @@ export function TableDiagram({
       <rect x={x0} y={y0} width={tw} height={th} rx="3" class="table-diagram__surface" />
       <path d={`M${x0 + tw / 2} ${y0} V${y0 + th}`} class="table-diagram__centre" />
       <path d={`M${x0 - 6} ${y0 + th / 2} H${x0 + tw + 6}`} class="table-diagram__net" />
+      {pts.slice(1).map((p, i) => {
+        const prev = pts[i]!;
+        return (
+          <path
+            d={`M${zoneX(prev.zone)} ${depthY(prev.depth, 'near')} L${zoneX(p.zone)} ${depthY(p.depth, 'near')}`}
+            class="table-diagram__move"
+          />
+        );
+      })}
       {pts.map((p, i) => {
-        const x = zoneX(p.zone);
-        const y = depthY(p.depth, 'near');
-        const prev = i > 0 ? pts[i - 1]! : null;
+        // Same spot used twice: nudge the second one so both numbers show
+        const dup = pts.slice(0, i).filter((q) => q.zone === p.zone && q.depth === p.depth).length;
+        const x = zoneX(p.zone) + dup * 14;
+        const y = depthY(p.depth, 'near') - dup * 14;
         return (
           <g>
-            {prev ? (
-              <path
-                d={`M${zoneX(prev.zone)} ${depthY(prev.depth, 'near')} L${x} ${y}`}
-                class="table-diagram__move"
-              />
-            ) : null}
-            <circle cx={x} cy={y} r="11" class="table-diagram__spot" />
+            <circle cx={x} cy={y} r="12" class="table-diagram__spot" />
             <text x={x} y={y + 4.5} class="table-diagram__num">
               {p.order}
             </text>

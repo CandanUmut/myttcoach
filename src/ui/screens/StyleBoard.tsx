@@ -78,9 +78,9 @@ function Direction({ dir }: { dir: Dir }) {
         <h3 class="styleboard__label">{S.controls}</h3>
         <div class="stack">
           <Button icon="play" wide onClick={() => celebrate('Drill done. 20 in a row.')}>Start session</Button>
-          <div class="row">
-            <Button kind="strong">Too easy</Button>
-            <Button kind="quiet">Right</Button>
+          <div class="feel-row">
+            <Button kind="quiet">Too easy</Button>
+            <Button kind="strong">Right</Button>
             <Button kind="quiet">Too hard</Button>
           </div>
           <div class="row row--wrap">
@@ -115,7 +115,6 @@ function SampleToday() {
             <p class="muted">Tuesday. Week 2 of your 8-week plan.</p>
           </div>
           <div class="hero">
-            <div class="hero__ply" />
             <span class="hero__eyebrow">Tonight's session</span>
             <h2>Forehand loop against backspin</h2>
             <div class="hero__meta">

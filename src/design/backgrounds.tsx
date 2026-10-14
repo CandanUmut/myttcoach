@@ -24,10 +24,9 @@ export function Backdrop({ variant }: { variant: BackdropVariant }) {
 
 function TableCorner({ big = false }: { big?: boolean }) {
   // A corner of the table: surface tint, white edge line, faint centre line
-  const y = big ? 60 : 150;
+  const y = big ? 60 : 230;
   return (
     <g>
-      <path d={`M210 ${y} L390 ${y - 30} L390 320 L250 320 Z`} fill="var(--table)" opacity="0.045" />
       <path d={`M214 ${y + 4} L390 ${y - 25}`} stroke="var(--table)" stroke-width="3" opacity="0.18" fill="none" />
       <path d={`M218 ${y + 6} L252 318`} stroke="var(--table)" stroke-width="3" opacity="0.14" fill="none" />
       <path d={`M300 ${y - 10} L330 320`} stroke="var(--table)" stroke-width="1.2" opacity="0.12" stroke-dasharray="6 8" fill="none" />

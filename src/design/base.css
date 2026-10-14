@@ -41,7 +41,7 @@ button { font: inherit; color: inherit; }
 img, svg { display: block; }
 
 :focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--focus);
   outline-offset: 2px;
   border-radius: 6px;
 }
@@ -84,6 +84,7 @@ img, svg { display: block; }
   box-shadow: 0 2px 0 rgb(0 0 0 / 0.16);
   touch-action: manipulation;
   user-select: none;
+  white-space: nowrap;
 }
 
 .btn:active:not(:disabled) {
@@ -98,7 +99,7 @@ img, svg { display: block; }
 .btn--quiet {
   --btn-bg: transparent;
   --btn-fg: var(--text);
-  box-shadow: inset 0 0 0 2px var(--line);
+  box-shadow: inset 0 0 0 2px var(--line-strong);
 }
 .btn--ghost { --btn-bg: transparent; --btn-fg: var(--text); box-shadow: none; padding: 0 var(--s3); }
 .btn--danger { --btn-bg: transparent; --btn-fg: var(--warn); box-shadow: inset 0 0 0 2px currentColor; }
@@ -116,7 +117,7 @@ img, svg { display: block; }
   min-height: var(--tap);
   padding: 0 var(--s4);
   border-radius: var(--r-ball);
-  border: 2px solid var(--line);
+  border: 2px solid var(--line-strong);
   background: var(--surface);
   font-size: var(--t-s);
   font-weight: 600;
@@ -176,11 +177,12 @@ img, svg { display: block; }
 .bounce-stepper__dot.is-done circle { fill: var(--text); stroke: var(--text); }
 .bounce-stepper__dot.is-current circle { fill: var(--accent); stroke: var(--bg); stroke-width: 3; }
 .bounce-stepper__shadow { fill: var(--text); opacity: 0.12; stroke: none; }
-.bounce-stepper__dot.is-current circle { animation: hop 1.6s var(--ease-out) infinite; transform-box: fill-box; transform-origin: center bottom; }
+.bounce-stepper__dot.is-current circle { animation: hop 0.9s var(--ease-out) 1; transform-box: fill-box; transform-origin: center bottom; }
 @keyframes hop {
   0%, 60%, 100% { transform: translateY(0); }
   30% { transform: translateY(-10px); }
 }
+.bounce-stepper { position: relative; }
 .bounce-stepper__labels {
   list-style: none;
   margin: 0;
@@ -188,19 +190,26 @@ img, svg { display: block; }
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
-  font-size: 0.8rem;
-  color: var(--text-2);
-  text-align: center;
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 70px;
 }
-.bounce-stepper__labels li.is-current { color: var(--text); font-weight: 700; }
+.bounce-stepper__labels li > span,
+.bounce-stepper__labels button { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.bounce-stepper__labels li { position: relative; }
+.bounce-stepper__labels button { position: static; width: 100%; height: 100%; clip: auto; color: transparent; }
+.bounce-stepper__now { font-size: var(--t-s); color: var(--text-2); margin-top: var(--s1); }
+.bounce-stepper__now strong { color: var(--text); }
+@media (min-width: 700px) {
+  .bounce-stepper__wide { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; text-align: center; font-size: var(--t-xs); color: var(--text-2); margin: 0; padding: 0; list-style: none; }
+  .bounce-stepper__wide .is-current { color: var(--text); font-weight: 700; }
+}
+@media (max-width: 699px) { .bounce-stepper__wide { display: none; } }
 .bounce-stepper__labels button {
   background: none;
   border: 0;
-  padding: var(--s2) 0;
-  min-height: var(--tap);
-  width: 100%;
+  padding: 0;
   cursor: pointer;
-  color: inherit;
   font: inherit;
 }
 
@@ -211,7 +220,7 @@ img, svg { display: block; }
 
 /* ---------- Table diagram ---------- */
 
-.table-diagram { width: 100%; max-width: 160px; height: auto; }
+.table-diagram { flex: none; width: 120px; height: auto; }
 .table-diagram__surface { fill: var(--table); stroke: var(--table-line); stroke-width: 3; }
 .table-diagram__centre { stroke: var(--table-line); stroke-width: 1; opacity: 0.6; }
 .table-diagram__net { stroke: var(--text); stroke-width: 3; stroke-linecap: round; }

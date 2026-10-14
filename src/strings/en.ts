@@ -121,3 +121,86 @@ export const common = {
   showAll: (n: number) => `Show all ${n}`,
   watchMove: (name: string) => `Watch: ${name}`,
 };
+
+/* Engine text: reasons, coach notes and targets. Rule-chosen templates. */
+type VoiceSet = { calm: string; energetic: string; direct: string };
+export const engineText = {
+  addedPrereq: (pre: string, dep: string) => `Added ${pre} because ${dep} needs it.`,
+  reasonLearn: (move: string, stageN: number, stage: string) => `${move}, stage ${stageN} of 7: ${stage}.`,
+  reasonWatch: (move: string) => `First look at ${move}: watch it slowly, phase by phase.`,
+  reasonNoSetup: (move: string) => `${move}: this stage needs a table and a feed, so shadow it for now.`,
+  reasonFocus: (skill: string) => `Works on ${skill}, one of your focus skills.`,
+  reasonGoal: (goal: string) => `Part of your goal: ${goal.toLowerCase()}.`,
+  reasonMove: (move: string) => `Builds the ${move} you chose to work on.`,
+  reasonKeep: (skill: string) => `Keeps your ${skill.toLowerCase()} sharp.`,
+  reasonPhase: {
+    physicalWarmup: 'Gets your body ready to play.',
+    tableWarmup: 'Finds your timing before the main work.',
+    cooldown: 'Brings your heart rate down and helps you recover.',
+    physical: 'Builds the legs and core table tennis needs.',
+    mental: 'Trains the calm, clear head you need in matches.',
+  } as Record<string, string>,
+  reasonTest: (metric: string) => `Test: ${metric}. Your result goes on your goal curve.`,
+  reasonRandom: 'Random placement this week, to read and react like in a match.',
+  swapProgress: (from: string, to: string, target: string) => `Swapped ${from} for ${to}: you hit the target (${target}) twice and it felt too easy.`,
+  swapHard: (from: string, to: string) => `Swapped ${from} for ${to}: it felt too hard twice in a row.`,
+  swapMissed: (from: string, to: string) => `Swapped ${from} for ${to}: the target was missed 3 times in a row, so we step back first.`,
+  weekTheme: {
+    learn: 'Learn',
+    build: 'Build',
+    apply: 'Apply and test',
+    taper: 'Taper',
+  } as Record<string, string>,
+  weekThemeLong: {
+    learn: 'Regular drills at a moderate pace. Shape before speed.',
+    build: 'More volume and some semi-random drills.',
+    apply: 'Random drills, games and a short test at the end of the week.',
+    taper: 'Lighter week. Sharp serves, calm head, fresh legs.',
+  } as Record<string, string>,
+  notes: {
+    welcome: {
+      calm: 'Welcome, {name}. We start gently: shape first, then rhythm. Enjoy it.',
+      energetic: "Let's go, {name}! First session. Build the base and have fun with it.",
+      direct: 'First session, {name}. Focus on clean shape. Speed comes later.',
+    } as VoiceSet,
+    learn: {
+      calm: 'This week is about learning. Slow, regular balls. Get the shape right before you add speed.',
+      energetic: 'Learning week! Lots of clean reps. Nail the shape and the speed will come.',
+      direct: 'Learning week. Regular drills. Shape first, speed second.',
+    } as VoiceSet,
+    build: {
+      calm: 'Build week: a bit more volume and a few drills where the ball goes to different places. Stay relaxed.',
+      energetic: 'Build week! More reps, more movement. Push the targets a little.',
+      direct: 'Build week. More volume, semi-random placement. Keep the quality.',
+    } as VoiceSet,
+    apply: {
+      calm: 'This week we use what you learned in random drills and small games. Trust your strokes.',
+      energetic: 'Apply week! Random balls, games, real pressure. Show what you built.',
+      direct: 'Apply week. Random drills and games. Test at the end of the week.',
+    } as VoiceSet,
+    taper: {
+      calm: 'Lighter week before your tournament. Keep it sharp and stay fresh.',
+      energetic: 'Taper time! Short, sharp, confident. Save your legs for the big day.',
+      direct: 'Taper. Less volume, sharp serves and receives, rest well.',
+    } as VoiceSet,
+    test: {
+      calm: 'Test day, {name}. Warm up well, then give each test three calm tries. It is a check, not an exam.',
+      energetic: "Test day, {name}! Warm up properly, then go for your best numbers.",
+      direct: 'Test day. Warm up, then three tries per test. Log your best.',
+    } as VoiceSet,
+    stage: {
+      calm: 'New stage for {move}: {stage}. {task}',
+      energetic: '{move} moves up: {stage}! {task}',
+      direct: '{move}: {stage}. {task}',
+    } as VoiceSet,
+    focus: {
+      calm: 'Main focus today: {skill}. Pick one cue and stay with it.',
+      energetic: 'Today we hammer {skill}. One cue, full attention!',
+      direct: 'Focus: {skill}. One cue per drill.',
+    } as VoiceSet,
+  },
+  target: {
+    inARow: (n: number) => `${n} in a row`,
+    outOf: (n: number, of: number) => `${n} of ${of}`,
+  },
+};

@@ -5,8 +5,8 @@ import { ArcProgress, Button } from '../../design/components';
 import { celebrate } from '../../design/motion';
 import { common, learnText, phaseNames, playerText as T, stageNames, milestoneText } from '../../strings/en';
 import { STAGES } from '../../content/types';
-import { pickVariant } from '../components/DrillCard';
-import { Dialog } from '../components/Controls';
+import { pickVariant, watchMove } from '../components/DrillCard';
+import { Dialog, NumberStepper } from '../components/Controls';
 import { MoveViewer } from '../components/MoveViewer';
 import { Troubleshoot } from './MoveScreen';
 import { data, logBySession, logSession, program, setSettings, today } from '../state';
@@ -152,12 +152,12 @@ export function SessionPlayer({ id }: { id: string }) {
   if (!session) return <p class="screen">{common.notFound}</p>;
 
   const cur = items[at]!;
-  const buildLog = (done: boolean): SessionLog => ({
+  const buildLog = (done: boolean, from: Draft = logs): SessionLog => ({
     sessionId: session.id,
     sessionIndex: session.index,
     date: prevLog?.date ?? today.value,
     done,
-    items: Object.entries(logs).map(([k, l]) => {
+    items: Object.entries(from).map(([k, l]) => {
       const x = items[Number(k)]!;
       return { ...l, blockIndex: x.bi, itemIndex: x.ii, drillId: x.it.drillId };
     }),
@@ -173,13 +173,14 @@ export function SessionPlayer({ id }: { id: string }) {
       /* ignore */
     }
     setChanges(ch);
-    setMode('summary');
-    celebrate(T.celebrate);
+    setMode('summary'); // the summary screen is the celebration; no toast on top of it
   };
 
   const saveItem = (l: Partial<ItemLog> & { skipped?: boolean }) => {
     const next = { ...logs, [at]: { blockIndex: cur.bi, itemIndex: cur.ii, drillId: cur.it.drillId, done: !l.skipped, ...l } as ItemLog };
     setLogs(next);
+    // keep every logged drill on the device right away: the phone may close the app before the end
+    if (at < items.length - 1) logSession(buildLog(false, next));
     if (l.stagePassed && cur.it.learn) {
       const nxt = STAGES[STAGES.indexOf(cur.it.learn.stage) + 1];
       const name = byId.move.get(cur.it.learn.moveId)!.name;
@@ -311,7 +312,7 @@ function DrillView({
   const endAt = useRef(0);
   const settings = data.value.settings;
   const drill = it.drillId ? byId.drill.get(it.drillId) : null;
-  const move = it.learn ? byId.move.get(it.learn.moveId) : drill?.moveIds.map((m) => byId.move.get(m)).find((m) => m?.animationId);
+  const move = it.learn ? byId.move.get(it.learn.moveId) : drill ? watchMove(drill) : undefined;
   const variant = drill ? drill.variants.find((v) => v.setup === it.setup) ?? pickVariant(drill, [it.setup]) : null;
   const title = drill ? drill.name : common.watchMove(move?.name ?? '');
   const learnStage = it.learn ? byId.move.get(it.learn.moveId)?.learningPath.find((l) => l.stage === it.learn!.stage) : undefined;
@@ -522,13 +523,8 @@ function LogView({
       {wantsCount ? (
         <div class="stack stack--s">
           <p class="field__label">{T.best}</p>
-          <div class="counter">
-            <Button kind="quiet" icon="minus" label={T.minus} onClick={() => setBest(Math.max(0, (best ?? 0) - 1))} />
-            <button type="button" class="counter__plus" onClick={() => setBest((best ?? 0) + 1)} aria-label={`${T.plus}. ${best ?? 0}`}>
-              <span class="num">{best ?? 0}</span>
-            </button>
-            <span />
-          </div>
+          {/* type the number, or use − / + */}
+          <NumberStepper label={T.best} value={best ?? 0} onChange={setBest} />
         </div>
       ) : null}
       {it.learn && it.learn.stage !== 'see' ? (

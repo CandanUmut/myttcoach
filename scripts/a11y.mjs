@@ -16,7 +16,7 @@ const profile = {
   goalMetric: { metricId: 'loop-backspin-10', start: 4, target: 8, targetDate: '2026-03-01' },
   lowImpact: false, voice: 'calm', regenCount: 0,
 };
-const routes = ['/today', '/card', '/plan', '/plan/s3', '/play/s3', '/learn', '/learn/fh-loop-backspin', '/library', '/library/drill/dynamic-warmup',
+const routes = ['/today', '/card', '/plan', '/plan/s3', '/plan/s10', '/plan/s20', '/play/s3', '/learn', '/learn/fh-loop-backspin', '/library', '/library/drill/dynamic-warmup',
   '/progress', '/settings', '/journal', '/journal/new', '/serve-lab', '/spin', '/onboarding/1', '/onboarding/2', '/onboarding/8'];
 const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--use-gl=swiftshader', '--enable-webgl', '--ignore-gpu-blocklist'] });
 const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, colorScheme: dark ? 'dark' : 'light', hasTouch: true, isMobile: true });
@@ -35,6 +35,9 @@ for (const r of routes) {
     const out = await axe.run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21aa', 'best-practice'] });
     return out.violations.map((v) => ({ id: v.id, impact: v.impact, help: v.help, nodes: v.nodes.slice(0, 3).map((n) => n.target.join(' ') + ' :: ' + (n.failureSummary || '').split('\n').slice(1, 2).join('')) , count: v.nodes.length }));
   });
+  // no page may scroll sideways on a phone
+  const wide = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+  if (wide > 0) res.push({ id: 'sideways-scroll', impact: 'serious', help: `Page is ${wide}px wider than the screen`, nodes: [], count: 1 });
   total += res.length;
   console.log(`\n${r}: ${res.length ? res.length + ' issue(s)' : 'ok'}`);
   for (const v of res) console.log(`  [${v.impact}] ${v.id} (${v.count}): ${v.help}\n    ${v.nodes.join('\n    ')}`);

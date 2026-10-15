@@ -103,6 +103,8 @@ export interface Metric {
   higherIsBetter: boolean;
   skillId: string;
   levelTargets: Record<Level, number>;
+  /** The test can be done honestly without a table (for shadow-only players). */
+  worksWithoutTable?: boolean;
 }
 
 export interface Tip {
@@ -151,6 +153,8 @@ export interface JournalTag {
   id: string;
   name: string;
   skillWeights: Record<string, number>;
+  /** Only makes sense as "didn't work" (e.g. too many easy mistakes). */
+  problemOnly?: boolean;
 }
 
 export interface JournalContent {

@@ -30,7 +30,7 @@
 .drill__target { display: flex; gap: var(--s3); align-items: flex-start; padding: var(--s3) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .drill__target .icon { color: var(--accent); flex: none; margin-top: 2px; }
 .drill__target p { font-weight: 700; }
-.drill__watch { justify-self: start; }
+.drill__watch { justify-self: start; white-space: normal; max-width: 100%; text-align: left; height: auto; }
 .tag--warn { background: var(--accent-soft); color: var(--warn); }
 
 /* Ball bullets: numbered list where each number sits in a ball */

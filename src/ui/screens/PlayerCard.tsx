@@ -22,7 +22,7 @@ export function whyThisPlan(): string[] {
     .filter((f) => !['physical', 'mental'].includes(byId.skill.get(f.skillId)?.category ?? ''))
     .slice(0, 3)
     .map((f) => byId.skill.get(f.skillId)!.name.toLowerCase());
-  out.push(C.whyFocus(list(top)));
+  out.push(p.goals.length || p.moves.length ? C.whyFocus(list(top)) : C.whyFocusBalanced(list(top)));
   for (const f of prog.focus) if (f.addedBecause) out.push(C.whyAdded(f.addedBecause));
   const next = data.value.logs.length ? Math.max(...data.value.logs.map((l) => l.sessionIndex)) + 1 : 0;
   const jp = journalPlan(prog, next);
@@ -80,11 +80,15 @@ export function PlayerCard() {
             </dl>
             <div class="pcard__section">
               <span class="pcard__label">{C.goals}</span>
-              <ol class="pcard__goals">
-                {p.goals.map((g) => (
-                  <li>{goalNames[g]}</li>
-                ))}
-              </ol>
+              {p.goals.length ? (
+                <ol class="pcard__goals">
+                  {p.goals.map((g) => (
+                    <li>{goalNames[g]}</li>
+                  ))}
+                </ol>
+              ) : (
+                <span>{C.noGoals}</span>
+              )}
             </div>
             <div class="pcard__section">
               <span class="pcard__label">{C.moves}</span>

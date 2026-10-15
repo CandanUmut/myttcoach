@@ -36,3 +36,13 @@ describe('goal metric suggestions', () => {
     expect(g).toEqual({ metricId: 'loop-backspin-10', start: 6, target: 8, targetDate: '2026-12-14' });
   });
 });
+
+describe('no-table players', () => {
+  it('are only offered goals they can test without a table, and only get such tests', async () => {
+    const { beginnerNoTable } = await import('../fixtures/profiles');
+    const { generateProgram } = await import('../../src/engine/generate');
+    for (const id of goalMetricOptions(beginnerNoTable, content)) expect(content.metrics.find((m) => m.id === id)?.worksWithoutTable).toBe(true);
+    const prog = generateProgram(beginnerNoTable, content);
+    for (const s of prog.sessions) for (const b of s.blocks) for (const it of b.items) if (it.metricId) expect(content.metrics.find((m) => m.id === it.metricId)?.worksWithoutTable).toBe(true);
+  });
+});

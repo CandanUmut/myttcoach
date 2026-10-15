@@ -5,6 +5,7 @@ import { Icon } from '../../design/icons';
 import { Backdrop } from '../../design/backgrounds';
 import { learnText as T, ob, stageNames, stageShort, toolsText } from '../../strings/en';
 import { engineState, profile, program } from '../state';
+import { sortMoves } from '../sessionInfo';
 import { BottomNav } from '../components/BottomNav';
 
 export function Learn() {
@@ -12,7 +13,7 @@ export function Learn() {
   const prog = program.value!;
   const stageOf = engineState.value.stageOf as Record<string, number>;
   const mine = [...new Set([...prog.learnOrder, ...p.moves.map((m) => m.id)])];
-  const others = content.moves.filter((m) => !mine.includes(m.id) && m.levelMin <= p.level + 1);
+  const others = sortMoves(content.moves.filter((m) => !mine.includes(m.id) && m.levelMin <= p.level + 1));
   return (
     <div class="screen">
       <Backdrop variant="learn" />

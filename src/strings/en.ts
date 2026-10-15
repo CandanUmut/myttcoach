@@ -102,6 +102,7 @@ export const moveText = {
 
 export const drillText = {
   diagramLabel: 'Table diagram showing where the ball goes',
+  stageOf: (n: number, of: number) => `stage ${n} of ${of}`,
   target: 'Target',
   coachingPoints: 'Coaching points',
   feeder: 'For the feeder',
@@ -297,6 +298,7 @@ export const ob = {
     max: 'You can pick 3. Remove one to add another.',
   },
   moves: {
+    startHere: 'Start here',
     title: 'Moves to learn or improve',
     intro: 'Moves for your level. Choose Learn for new ones, Improve for ones you already play.',
     learn: 'Learn',
@@ -366,6 +368,8 @@ export const card = {
   go: 'See today',
   edit: 'Edit',
   whyFocus: (skills: string) => `Most of your time goes to ${skills}, from your goals and the moves you picked.`,
+  whyFocusBalanced: (skills: string) => `You didn’t pick goals or moves, so the plan is balanced for your level and style. Most time goes to ${skills}.`,
+  noGoals: 'None picked: a balanced plan for your level.',
   whyAdded: (t: string) => t,
   whyWeeks: (n: number, perWeek: number, len: number) => `${n} weeks, ${perWeek} sessions a week, ${len} minutes each. Every session adds up to exactly ${len} minutes.`,
   whyBlocks: 'Each 4-week block goes Learn, Learn, Build, Apply. You end each block with a short test to update your goal curve.',
@@ -376,6 +380,8 @@ export const card = {
 };
 
 export const todayText = {
+  playedMatch: 'Played a match? Log it',
+  playedMatchSub: 'What didn’t work becomes practice in your next sessions.',
   morning: (n: string) => `Morning, ${n}`,
   afternoon: (n: string) => `Afternoon, ${n}`,
   evening: (n: string) => `Evening, ${n}`,
@@ -423,6 +429,7 @@ export const planText = {
   list: 'Weeks',
   month: 'Month',
   done: 'Done',
+  partly: 'Partly done: tap to finish',
   skipped: 'Skipped',
   test: 'Test',
   today: 'Today',
@@ -467,7 +474,7 @@ export const playerText = {
   notYet: 'Not yet',
   best: 'Your best',
   skip: 'Skip this drill',
-  logAndNext: 'Save and next',
+  logAndNext: 'Save',
   logThis: 'Log this drill',
   timerLabel: (m: string, s: string) => `${m} minutes ${s} seconds left`,
   finish: 'Finish session',
@@ -486,7 +493,6 @@ export const playerText = {
   testNote: 'Three tries. Log your best.',
   soundOn: 'Sound on',
   soundOff: 'Sound off',
-  celebrate: 'Session done. Well played.',
   stageUp: (move: string, stage: string) => `${move}: on to ${stage}`,
 };
 
@@ -494,7 +500,7 @@ export const learnText = {
   title: 'Learn',
   yours: 'Your moves',
   more: 'More moves for your level',
-  none: 'You have not picked moves to learn. Add some in Settings, or open any move below.',
+  none: 'You have not picked moves to learn. Open any move below and tap “Add to my plan”.',
   owned: 'Owned',
   stage: (s: string) => s,
   path: 'Improvement path',

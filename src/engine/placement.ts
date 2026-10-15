@@ -43,7 +43,7 @@ export function goalMetricOptions(p: Profile, content: Content): string[] {
     const d = content.drills.find((x) => x.id === met.testDrillId);
     if (!d || !drillFits(d, p, 1)) return false;
     const onlyShadow = p.setups.every((s) => s === 'shadow');
-    if (onlyShadow && !d.variants.some((v) => v.setup === 'shadow')) return false;
+    if (onlyShadow && !met.worksWithoutTable) return false;
     return true;
   });
 }

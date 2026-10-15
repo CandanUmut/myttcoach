@@ -1,5 +1,6 @@
 import { useState } from 'preact/hooks';
-import type { Drill, Setup } from '../../content/types';
+import type { Drill, Move, Setup } from '../../content/types';
+import { profile } from '../state';
 import { byId } from '../../content/load';
 import { Icon } from '../../design/icons';
 import { TableDiagram } from '../../design/components';
@@ -14,6 +15,24 @@ export function pickVariant(drill: Drill, setups: Setup[]) {
   return drill.variants[0]!;
 }
 
+/**
+ * The move to watch for a drill that covers several moves: the player's own moves first,
+ * then moves for the skills this drill is meant to train, then any move except the ready stance.
+ */
+export function watchMove(drill: Drill, focusSkills: string[] = []): Move | undefined {
+  const ms = drill.moveIds.map((m) => byId.move.get(m)).filter((m): m is Move => !!m?.animationId);
+  // the drill's own main skills count too (e.g. "keeps your forehand drive sharp")
+  focusSkills = [...focusSkills, ...[...drill.skills].sort((a, b) => b.weight - a.weight).map((x) => x.id)];
+  const mine = new Set((profile.value?.moves ?? []).map((m) => m.id));
+  return (
+    ms.find((m) => mine.has(m.id) && focusSkills.includes(m.skillId)) ??
+    ms.find((m) => focusSkills.includes(m.skillId)) ??
+    ms.find((m) => mine.has(m.id)) ??
+    ms.find((m) => m.id !== 'ready-stance') ??
+    ms[0]
+  );
+}
+
 export function DrillCard({
   drill,
   setups = ['multiball', 'partner', 'robot', 'wall', 'shadow'],
@@ -23,6 +42,7 @@ export function DrillCard({
   hand = 'R',
   compact,
   headingLevel = 3,
+  focusSkills = [],
 }: {
   drill: Drill;
   setups?: Setup[];
@@ -32,12 +52,14 @@ export function DrillCard({
   hand?: 'R' | 'L';
   compact?: boolean;
   headingLevel?: 1 | 2 | 3;
+  /** Skills this drill is meant to train here (picks which move to watch). */
+  focusSkills?: string[];
 }) {
   const H = `h${headingLevel}` as 'h3';
   const usable = drill.variants.filter((v) => setups.includes(v.setup));
   const [setup, setSetup] = useState<Setup>(pickVariant(drill, setups).setup);
   const variant = drill.variants.find((v) => v.setup === setup) ?? drill.variants[0]!;
-  const animated = drill.moveIds.map((m) => byId.move.get(m)).find((m) => m?.animationId);
+  const animated = watchMove(drill, focusSkills);
   return (
     <article class={`drill${compact ? ' drill--compact' : ''}`}>
       {!compact ? (

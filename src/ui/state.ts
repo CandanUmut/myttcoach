@@ -65,6 +65,12 @@ export function applyTheme(t: Settings['theme']) {
 }
 
 export async function init() {
+  // ask the browser to keep our data even when storage runs low (no prompt in most browsers)
+  try {
+    void navigator.storage?.persist?.();
+  } catch {
+    /* ignore */
+  }
   const d = await loadAll();
   // A profile without a plan (storage partly cleared): rebuild the plan from the profile
   if (d.profile && !d.program) {

@@ -548,7 +548,7 @@ export function generateProgram(profile: Profile, content: Content, opts: Genera
       if (!m) continue;
       const d = drills.get(m.testDrillId);
       if (!d || !drillFits(d, profile, 1) || seenDrill.has(d.id)) continue;
-      if (noTable && !d.variants.some((v) => v.setup === 'shadow')) continue;
+      if (noTable && !m.worksWithoutTable) continue;
       const sk = skills.get(m.skillId);
       if (sk && sk.levelMax < profile.level && !noTable && id !== profile.goalMetric?.metricId) continue;
       seenDrill.add(d.id);

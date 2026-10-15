@@ -46,7 +46,7 @@ test('new player: onboarding to plan, then log a drill', async ({ page }) => {
   await page.getByRole('button', { name: 'Done', exact: true }).click();
   await page.getByRole('radio', { name: 'Right' }).click();
   await page.getByRole('radio', { name: 'Yes' }).first().click();
-  await page.getByRole('button', { name: 'Save and next' }).click();
+  await page.getByRole('button', { name: 'Save', exact: true }).click();
   await expect(page.locator('.player__count')).toHaveText(/^2 of/);
 
   // Leave: the log is kept and the plan still shows

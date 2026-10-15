@@ -144,7 +144,7 @@ export function BounceStepper({
         ))}
       </svg>
       <p class="bounce-stepper__now">
-        <strong>{steps[current]}</strong>, stage {current + 1} of {n}
+        <strong>{steps[current]}</strong>, {drillText.stageOf(current + 1, n)}
       </p>
       <ol class="bounce-stepper__wide" aria-hidden="true">
         {steps.map((s, i) => (

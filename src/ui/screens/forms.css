@@ -149,8 +149,14 @@ input[type='date'].input { padding-right: var(--s2); }
   box-shadow: 0 20px 60px rgb(0 0 0 / 0.3);
 }
 .dialog::backdrop { background: rgb(20 16 14 / 0.5); }
+.dialog { max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; }
 .dialog__body { padding: var(--s5); display: grid; gap: var(--s4); }
-.dialog__actions { display: flex; gap: var(--s2); justify-content: flex-end; flex-wrap: wrap; }
+/* actions stay reachable when the content (e.g. the 3D viewer) is taller than the screen */
+.dialog__actions {
+  display: flex; gap: var(--s2); justify-content: flex-end; flex-wrap: wrap;
+  position: sticky; bottom: calc(-1 * var(--s5)); margin: 0 calc(-1 * var(--s5)) calc(-1 * var(--s5));
+  padding: var(--s3) var(--s5) var(--s5); background: var(--surface);
+}
 
 /* ---------- Action bar ---------- */
 .actionbar {
@@ -400,3 +406,5 @@ input[type='date'].input { padding-right: var(--s2); }
 .style.is-mine { border-color: var(--accent); }
 
 .week--done summary { cursor: pointer; min-height: var(--tap); display: flex; align-items: center; color: var(--text-2); font-size: var(--t-m); }
+
+.option__title .tag { margin-left: var(--s2); vertical-align: middle; }

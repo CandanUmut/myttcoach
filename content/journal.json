@@ -8,7 +8,8 @@
         "fh-drive": 0.6,
         "bh-drive": 0.6,
         "focus-routine": 0.4
-      }
+      },
+      "problemOnly": true
     },
     {
       "id": "my-serve",
@@ -114,7 +115,8 @@
       "skillWeights": {
         "physical-prep": 1,
         "agility": 0.5
-      }
+      },
+      "problemOnly": true
     },
     {
       "id": "nerves",
@@ -122,7 +124,8 @@
       "skillWeights": {
         "handling-nerves": 1,
         "focus-routine": 0.6
-      }
+      },
+      "problemOnly": true
     }
   ],
   "opponents": [

@@ -181,7 +181,7 @@ export function JournalForm({ id }: { id: string | null }) {
         <fieldset class="stack stack--s">
           <legend class="field__label">{T.worked}</legend>
           <div class="row row--wrap">
-            {content.journal.tags.map((t) => (
+            {content.journal.tags.filter((t) => !t.problemOnly).map((t) => (
               <Chip selected={e.worked.includes(t.id)} onClick={() => toggle('worked', t.id)}>
                 {t.name}
               </Chip>

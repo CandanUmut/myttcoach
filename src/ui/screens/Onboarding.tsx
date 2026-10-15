@@ -1,5 +1,6 @@
 import { signal } from '@preact/signals';
 import { useState } from 'preact/hooks';
+import { sortMoves } from '../sessionInfo';
 import { content } from '../../content/load';
 import type { GoalId, Level, Setup, StyleId, WorkoutType } from '../../content/types';
 import type { AgeBand, Profile, SessionLength } from '../../engine/types';
@@ -343,7 +344,7 @@ function MovesStep(_p: { edit?: boolean }) {
   void _p;
   const d = draft.value;
   const M = ob.moves;
-  const list = content.moves.filter((m) => m.levelMin <= d.level + 1);
+  const list = sortMoves(content.moves.filter((m) => m.levelMin <= d.level + 1));
   const modeOf = (id: string) => d.moves.find((m) => m.id === id)?.mode ?? 'none';
   const set = (id: string, mode: 'learn' | 'improve' | 'none') => {
     const rest = d.moves.filter((m) => m.id !== id);
@@ -359,7 +360,10 @@ function MovesStep(_p: { edit?: boolean }) {
         {list.map((m) => (
           <div class="move-pick">
             <div>
-              <p class="option__title">{m.name}</p>
+              <p class="option__title">
+                {m.name}
+                {d.level === 1 && m.id === 'fh-drive' ? <span class="tag tag--accent">{M.startHere}</span> : null}
+              </p>
               <p class="option__sub">{m.summary}</p>
             </div>
             <Segmented
@@ -499,7 +503,7 @@ function GoalMetricStep(_p: { edit?: boolean }) {
             <NumberStepper label={G.target} value={current.target} unit={met.unit} onChange={(v) => setDraft({ goalMetric: { ...current, target: v } })} />
           </Field>
           <Field label={G.by}>
-            <input class="input" type="date" value={current.targetDate} min={d.schedule.startDate} onInput={(e) => setDraft({ goalMetric: { ...current, targetDate: (e.target as HTMLInputElement).value } })} />
+            <input class="input" type="date" value={current.targetDate} min={d.schedule.startDate} onInput={(e) => setDraft({ goalMetric: { ...current, targetDate: (e.target as HTMLInputElement).value || current.targetDate } })} />
           </Field>
         </div>
       ) : null}

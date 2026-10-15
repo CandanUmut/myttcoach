@@ -98,7 +98,17 @@ function WeekList() {
                       {sessionTitle(s)}
                       {s.kind === 'assessment' && sessionTitle(s) !== todayText.assessment ? <span class="tag tag--accent">{T.test}</span> : null}
                     </span>
-                    <span class="rowlink__sub">{st === 'done' ? T.done : st === 'today' ? T.today : sessionAlso(s) ? todayText.also(sessionAlso(s)!) : todayText.minutes(s.length)}</span>
+                    <span class="rowlink__sub">
+                      {st === 'done'
+                        ? T.done
+                        : logBySession.value.get(s.id)?.items.some((i) => i.done)
+                          ? T.partly
+                          : st === 'today'
+                            ? T.today
+                            : sessionAlso(s)
+                              ? todayText.also(sessionAlso(s)!)
+                              : todayText.minutes(s.length)}
+                    </span>
                   </span>
                   {st === 'done' ? <Icon name="check" size={22} class="session-row__check" /> : <Icon name="forward" size={20} />}
                 </a>

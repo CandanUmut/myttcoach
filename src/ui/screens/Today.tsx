@@ -138,6 +138,17 @@ export function Today() {
             <p>{tip.text}</p>
           </section>
         ) : null}
+
+        <a class="rowlink" href="#/journal/new">
+          <span class="rowlink__icon">
+            <Icon name="match" />
+          </span>
+          <span class="rowlink__main">
+            <span class="rowlink__title">{T.playedMatch}</span>
+            <span class="rowlink__sub">{T.playedMatchSub}</span>
+          </span>
+          <Icon name="forward" size={20} />
+        </a>
       </div>
       <BottomNav active="today" />
     </div>

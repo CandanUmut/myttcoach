@@ -14,7 +14,7 @@ Live site: https://candanumut.github.io/myttcoach/
 | 6 Learning path wiring | done (stage passes, What's next with self-checks, skip ahead, add move to plan, troubleshooting in the session player) |
 | 7 Full content library + animations | done: 42 skills, 25 moves (all animated), 95 drills, 11 metrics, 155 tips; coverage test; content critic fixes applied |
 | 8 Proposed features | done: match journal, serve lab, spin and angle helper, milestones (read cues aloud was already in the session player); critic fixes applied |
-| 9 PWA, accessibility, polish | in progress: offline PWA + icons, axe audit clean (light/dark, 18 screens), content guide |
+| 9 PWA, accessibility, polish | done: offline PWA + icons, axe audit clean (light/dark, 20 screens, no sideways scroll), content guide, final critic fixes |
 
 ## Decisions log
 - 2026-10-14 — Repo already existed (`CandanUmut/myttcoach`), so no repo creation. App display name: **Third Ball** (owner: name doesn't matter).
@@ -42,3 +42,5 @@ Live site: https://candanumut.github.io/myttcoach/
 - 2026-10-15 — Serve lab scores depth only (short / half-long / long / mixed). Width targets (backhand, elbow, forehand) would be a good next step; tap positions are already stored.
 - 2026-10-15 — PWA: Workbox precaches the app, 3D chunk, all animations and the two Latin fonts (39 files, ~1.26 MB); other font files are cached when first used. Updates install silently (no prompts, no notifications). Offline is covered by an e2e test.
 - Known: milestones come from logs, so starting a brand-new plan from onboarding (which clears logs) resets them.
+- 2026-10-15 — Final critic fixes: every logged drill is saved to the device immediately (not only at the end of a session) and the app asks the browser for persistent storage; "Your best" is a number field with −/+; "Save" button fits; Watch buttons wrap (no sideways scroll); the Watch move for multi-move drills follows the player's moves and the drill's skills (not always the ready stance); no-table players only get goals/tests that work without a table (`worksWithoutTable` on metrics); clearing the goal date can't break the curve; beginner move order with "Start here"; honest "Why this plan" when no goals or moves were picked; no duplicate session subtitle; dialog actions stay on screen; "Partly done" sessions; journal link on Today; "what worked" doesn't offer problem-only tags.
+- Not verified (needs a real phone): 3D speed, backup download from an installed iPhone home-screen app, speech voices.

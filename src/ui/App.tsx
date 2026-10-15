@@ -1,21 +1,55 @@
-import { path, match } from './router';
+import { useEffect } from 'preact/hooks';
+import { match, path, query, navigate } from './router';
+import { loaded, profile, program } from './state';
 import { StyleBoard } from './screens/StyleBoard';
 import { MoveScreen } from './screens/MoveScreen';
 import { DrillScreen } from './screens/DrillScreen';
+import { Welcome } from './screens/Welcome';
+import { Onboarding } from './screens/Onboarding';
+import { PlayerCard } from './screens/PlayerCard';
+import { Today } from './screens/Today';
+import { Plan, SessionDetail } from './screens/Plan';
+import { SessionPlayer } from './screens/SessionPlayer';
+import { Learn } from './screens/Learn';
+import { Library } from './screens/Library';
+import { Progress } from './screens/Progress';
+import { Settings } from './screens/Settings';
 import { BallMoment } from '../design/motion';
+import { engineState } from './state';
 
-export function App() {
+function Routes() {
   void path.value;
   let m: Record<string, string> | null;
-  let screen;
-  if ((m = match('/styleboard'))) screen = <StyleBoard />;
-  else if ((m = match('/styleboard/:dir'))) screen = <StyleBoard only={m.dir} />;
-  else if ((m = match('/learn/:moveId'))) screen = <MoveScreen moveId={m.moveId!} />;
-  else if ((m = match('/library/drill/:id'))) screen = <DrillScreen drillId={m.id!} />;
-  else screen = <StyleBoard />;
+  // Always available
+  if ((m = match('/styleboard'))) return <StyleBoard />;
+  if ((m = match('/styleboard/:dir'))) return <StyleBoard only={m.dir} />;
+  if ((m = match('/onboarding/:step'))) return <Onboarding step={Number(m.step) || 1} edit={query.value.edit === '1' && !!profile.value} />;
+  if ((m = match('/library/drill/:id'))) return <DrillScreen drillId={m.id!} />;
+  if ((m = match('/learn/:moveId'))) {
+    const st = (engineState.value.stageOf as Record<string, number>)[m.moveId!] ?? 0;
+    return <MoveScreen key={m.moveId} moveId={m.moveId!} stageIndex={Math.min(6, st)} />;
+  }
+  if (!profile.value || !program.value) return <Welcome />;
+  if (match('/') || match('/today')) return <Today />;
+  if (match('/card')) return <PlayerCard />;
+  if (match('/plan')) return <Plan />;
+  if ((m = match('/plan/:id'))) return <SessionDetail id={m.id!} />;
+  if ((m = match('/play/:id'))) return <SessionPlayer key={m.id} id={m.id!} />;
+  if (match('/learn')) return <Learn />;
+  if (match('/library')) return <Library />;
+  if (match('/progress')) return <Progress />;
+  if (match('/settings')) return <Settings />;
+  return <Today />;
+}
+
+export function App() {
+  useEffect(() => {
+    if (loaded.value && profile.value && match('/')) navigate('/today', true);
+  }, [loaded.value]);
+  if (!loaded.value) return <div class="splash" aria-busy="true" />;
   return (
     <>
-      {screen}
+      <Routes />
       <BallMoment />
     </>
   );

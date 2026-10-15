@@ -46,3 +46,8 @@ export function match(pattern: string): Record<string, string> | null {
   }
   return params;
 }
+
+export const query = computed(() => {
+  const q = path.value.split('?')[1] ?? '';
+  return Object.fromEntries(new URLSearchParams(q));
+});

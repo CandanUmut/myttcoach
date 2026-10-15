@@ -19,6 +19,8 @@ page.on('console', (m) => { if (m.type() === 'error') console.error('CONSOLE', m
 if (process.env.SETUP) {
   await page.goto(`http://localhost:${port}/myttcoach/#/`);
   await page.evaluate(process.env.SETUP);
+  await page.reload();
+  await page.waitForTimeout(800);
 }
 for (const r of routes) {
   const [route, name] = r.split('=');

@@ -107,6 +107,8 @@
   font-size: var(--t-xs);
   font-weight: 700;
   color: var(--text-2);
+  white-space: nowrap;
+  flex: none;
 }
 .tag--accent { background: var(--accent-soft); color: var(--text); }
 

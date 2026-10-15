@@ -21,7 +21,7 @@
     },
     {
       "name": "Recover",
-      "t": 1
+      "t": 0.9
     }
   ],
   "keys": [
@@ -62,12 +62,13 @@
       "t": 0.35,
       "joints": {
         "torso.turn": -10,
-        "r_arm.raise": 38,
+        "r_arm.raise": 20,
         "r_arm.straddle": 14,
         "r_arm.turn": -86,
-        "r_elbow.bend": 112,
-        "r_wrist.bend": 25,
-        "r_wrist.tilt": 32
+        "r_elbow.bend": 87,
+        "r_wrist.bend": 5,
+        "r_wrist.tilt": 32,
+        "r_wrist.turn": 11
       }
     },
     {
@@ -79,7 +80,8 @@
         "r_arm.turn": -62,
         "r_elbow.bend": 98,
         "r_wrist.bend": 0,
-        "r_wrist.tilt": 38
+        "r_wrist.tilt": 25,
+        "r_wrist.turn": 30
       }
     },
     {
@@ -87,12 +89,13 @@
       "joints": {
         "torso.turn": 6,
         "head.nod": -10,
-        "r_arm.raise": 56,
+        "r_arm.raise": 80,
         "r_arm.straddle": 20,
-        "r_arm.turn": -46,
-        "r_elbow.bend": 82,
+        "r_arm.turn": -54,
+        "r_elbow.bend": 85,
         "r_wrist.bend": -5,
-        "r_wrist.tilt": 40
+        "r_wrist.tilt": 35,
+        "r_wrist.turn": 60
       }
     },
     {
@@ -105,7 +108,8 @@
         "r_arm.turn": -70,
         "r_elbow.bend": 100,
         "r_wrist.bend": 5,
-        "r_wrist.tilt": 38
+        "r_wrist.tilt": 38,
+        "r_wrist.turn": 0
       }
     }
   ],
@@ -149,5 +153,6 @@
       "t": 0.92,
       "text": "Back to the middle"
     }
-  ]
+  ],
+  "camera": "front"
 }

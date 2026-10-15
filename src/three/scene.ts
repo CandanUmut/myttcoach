@@ -129,36 +129,41 @@ export function buildBall(): { group: THREE.Group; ball: THREE.Mesh; arrows: THR
 
 export class Trail {
   readonly line: THREE.Line;
-  private pts: THREE.Vector3[] = [];
   private geo: THREE.BufferGeometry;
+  private pos: Float32Array;
+  private n = 0;
+  private base: THREE.Color;
+  private bg = new THREE.Color(0xfbf8f3);
+  private c = new THREE.Color();
   constructor(private max = 40, color = 0xf47a20) {
+    this.pos = new Float32Array(max * 3);
     this.geo = new THREE.BufferGeometry();
-    this.geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(max * 3), 3));
+    this.geo.setAttribute('position', new THREE.BufferAttribute(this.pos, 3));
     this.geo.setAttribute('color', new THREE.BufferAttribute(new Float32Array(max * 3), 3));
     this.line = new THREE.Line(this.geo, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.9 }));
     this.line.frustumCulled = false;
     this.base = new THREE.Color(color);
   }
-  private base: THREE.Color;
   clear() {
-    this.pts = [];
+    this.n = 0;
     this.geo.setDrawRange(0, 0);
   }
+  /** Append a point; the oldest drops off. No allocations per frame. */
   push(p: THREE.Vector3) {
-    this.pts.push(p.clone());
-    if (this.pts.length > this.max) this.pts.shift();
-    const pos = this.geo.getAttribute('position') as THREE.BufferAttribute;
+    if (this.n < this.max) this.n++;
+    else this.pos.copyWithin(0, 3);
+    const i = (this.n - 1) * 3;
+    this.pos[i] = p.x;
+    this.pos[i + 1] = p.y;
+    this.pos[i + 2] = p.z;
     const col = this.geo.getAttribute('color') as THREE.BufferAttribute;
-    const n = this.pts.length;
-    const bg = new THREE.Color(0xfbf8f3);
-    this.pts.forEach((q, i) => {
-      pos.setXYZ(i, q.x, q.y, q.z);
-      const c = bg.clone().lerp(this.base, (i + 1) / n);
-      col.setXYZ(i, c.r, c.g, c.b);
-    });
-    pos.needsUpdate = true;
+    for (let k = 0; k < this.n; k++) {
+      this.c.copy(this.bg).lerp(this.base, (k + 1) / this.n);
+      col.setXYZ(k, this.c.r, this.c.g, this.c.b);
+    }
+    (this.geo.getAttribute('position') as THREE.BufferAttribute).needsUpdate = true;
     col.needsUpdate = true;
-    this.geo.setDrawRange(0, n);
+    this.geo.setDrawRange(0, this.n);
   }
 }
 

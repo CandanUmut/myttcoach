@@ -21,7 +21,7 @@
     },
     {
       "name": "Recover",
-      "t": 1
+      "t": 0.9
     }
   ],
   "keys": [
@@ -62,17 +62,17 @@
     {
       "t": 0.38,
       "root": {
-        "z": 0.2
+        "z": 0.3
       },
       "joints": {
         "torso.bend": 26,
         "torso.turn": -6,
-        "r_leg.raise": 58,
-        "r_knee.bend": 62,
-        "r_ankle.bend": 14,
-        "l_leg.raise": 22,
-        "l_knee.bend": 46,
-        "l_ankle.bend": 26,
+        "r_leg.raise": 45,
+        "r_knee.bend": 55,
+        "r_ankle.bend": 18,
+        "l_leg.raise": 15,
+        "l_knee.bend": 56,
+        "l_ankle.bend": 30,
         "r_arm.raise": 42,
         "r_arm.turn": -84,
         "r_elbow.bend": 108,
@@ -85,9 +85,9 @@
       "t": 0.56,
       "joints": {
         "torso.turn": 0,
-        "r_arm.raise": 40,
+        "r_arm.raise": 52,
         "r_arm.turn": -66,
-        "r_elbow.bend": 98,
+        "r_elbow.bend": 85,
         "r_wrist.bend": 5,
         "r_wrist.turn": -45,
         "r_wrist.tilt": 28
@@ -96,9 +96,9 @@
     {
       "t": 0.7,
       "joints": {
-        "r_arm.raise": 34,
+        "r_arm.raise": 48,
         "r_arm.turn": -50,
-        "r_elbow.bend": 90,
+        "r_elbow.bend": 74,
         "r_wrist.bend": 0,
         "r_wrist.turn": -45,
         "r_wrist.tilt": 24
@@ -167,5 +167,6 @@
       "t": 0.9,
       "text": "Step back to ready"
     }
-  ]
+  ],
+  "camera": "front"
 }

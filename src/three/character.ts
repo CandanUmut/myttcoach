@@ -39,11 +39,14 @@ export function toon(color: number): THREE.Material {
   let m = matCache.get(color);
   if (!m) {
     m = new THREE.MeshToonMaterial({ color, gradientMap: toonGradient() });
+    m.userData.cached = true; // shared across viewers: never disposed per viewer
     matCache.set(color, m);
   }
   return m;
 }
 const outlineMat = new THREE.MeshBasicMaterial({ color: COLORS.outline, side: THREE.BackSide });
+outlineMat.userData.cached = true;
+const THREE_AXIS_SET = new Set(THREE_AXIS);
 
 /** Mesh plus an inverted-hull outline for a soft cartoon edge. */
 function part(geo: THREE.BufferGeometry, color: number, outline = 0.012): THREE.Group {
@@ -280,7 +283,7 @@ export function buildCharacter(): Character {
 
   function apply(pose: Pose, blend?: { a: Pose; b: Pose; u: number }) {
     for (const [name, grp] of joints) {
-      if (blend && THREE_AXIS.includes(name)) {
+      if (blend && THREE_AXIS_SET.has(name)) {
         qa.setFromEuler(eulerFor(name, blend.a.joints, e));
         qb.setFromEuler(eulerFor(name, blend.b.joints, e));
         grp.quaternion.copy(tmpQ.copy(qa).slerp(qb, blend.u));

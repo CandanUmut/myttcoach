@@ -21,7 +21,7 @@
     },
     {
       "name": "Recover",
-      "t": 1
+      "t": 0.9
     }
   ],
   "keys": [
@@ -49,12 +49,12 @@
         "l_knee.bend": 46,
         "r_ankle.bend": 32,
         "l_ankle.bend": 12,
-        "r_arm.raise": 12,
-        "r_arm.straddle": 30,
-        "r_arm.turn": 45,
+        "r_arm.raise": 35,
+        "r_arm.straddle": 12,
+        "r_arm.turn": -40,
         "r_elbow.bend": 85,
-        "r_wrist.turn": -10,
-        "r_wrist.tilt": 15,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 25,
         "r_wrist.bend": 0,
         "l_arm.raise": 40,
         "l_arm.straddle": 15,
@@ -73,16 +73,17 @@
         "l_knee.bend": 40,
         "r_ankle.bend": 38,
         "l_ankle.bend": 8,
-        "r_arm.raise": -8,
-        "r_arm.straddle": 40,
-        "r_arm.turn": 70,
-        "r_elbow.bend": 92,
-        "r_wrist.turn": -15,
-        "r_wrist.tilt": 0,
+        "r_arm.raise": 0,
+        "r_arm.straddle": 5,
+        "r_arm.turn": 23,
+        "r_elbow.bend": 87,
+        "r_wrist.turn": 4,
+        "r_wrist.tilt": 22,
         "l_arm.raise": 55,
         "l_arm.straddle": 10,
         "l_arm.turn": -35,
-        "l_elbow.bend": 95
+        "l_elbow.bend": 95,
+        "r_wrist.bend": -15
       }
     },
     {
@@ -96,16 +97,17 @@
         "l_knee.bend": 50,
         "r_ankle.bend": 28,
         "l_ankle.bend": 16,
-        "r_arm.raise": 22,
-        "r_arm.straddle": 32,
-        "r_arm.turn": 62,
-        "r_elbow.bend": 88,
-        "r_wrist.turn": -18,
-        "r_wrist.tilt": 12,
+        "r_arm.raise": 13,
+        "r_arm.straddle": 5,
+        "r_arm.turn": 45,
+        "r_elbow.bend": 75,
+        "r_wrist.turn": -4,
+        "r_wrist.tilt": 34,
         "l_arm.raise": 35,
         "l_arm.straddle": 25,
         "l_arm.turn": -10,
-        "l_elbow.bend": 80
+        "l_elbow.bend": 80,
+        "r_wrist.bend": -15
       }
     },
     {
@@ -142,16 +144,17 @@
         "l_knee.bend": 46,
         "r_ankle.bend": 32,
         "l_ankle.bend": 12,
-        "r_arm.raise": 12,
-        "r_arm.straddle": 30,
-        "r_arm.turn": 45,
+        "r_arm.raise": 35,
+        "r_arm.straddle": 12,
+        "r_arm.turn": -40,
         "r_elbow.bend": 85,
-        "r_wrist.turn": -10,
-        "r_wrist.tilt": 15,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 25,
         "l_arm.raise": 40,
         "l_arm.straddle": 15,
         "l_arm.turn": -25,
-        "l_elbow.bend": 90
+        "l_elbow.bend": 90,
+        "r_wrist.bend": 0
       }
     }
   ],

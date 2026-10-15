@@ -51,7 +51,7 @@ export function PoseEditor() {
     setAnim(next);
     const e = eng.current;
     if (!e) return;
-    e.setAnimation(next, false);
+    e.updateKeys(next);
     e.pause();
     e.seek(next.keys[seekKey]?.t ?? 0);
   };

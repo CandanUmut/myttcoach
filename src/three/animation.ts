@@ -21,6 +21,8 @@ export interface MoveAnimation {
   ball?: { contactT: number; spin: 'topspin' | 'backspin' | 'sidespin' | 'none'; from: [number, number, number]; to: [number, number, number]; bounce?: [number, number, number] };
   cues?: { t: number; text: string }[];
   footwork?: boolean;
+  /** Best default view, e.g. 'front' for backhand strokes the side view hides. */
+  camera?: 'front' | 'side' | 'top' | 'eyes';
 }
 
 export interface Pose {

@@ -7,6 +7,7 @@ import { Icon } from '../../design/icons';
 import { viewerText as T } from '../../strings/en';
 import { Segmented } from './Controls';
 import { data, profile } from '../state';
+import { prefersReducedMotion } from '../../design/motion';
 
 function isDark(): boolean {
   const t = data.value.settings.theme;
@@ -45,6 +46,7 @@ export function MoveViewer({
   const [state, setState] = useState({ t: startT ?? 0, phase: 0, playing: !paused });
   const [speed, setSpeed] = useState(follow ? 0.5 : 1);
   const [cam, setCam] = useState<CameraPreset>(startCam ?? 'side');
+  const reduced = prefersReducedMotion();
   const [failed, setFailed] = useState(false);
   const [following, setFollowing] = useState(follow);
   const [reps, setReps] = useState(0);
@@ -66,17 +68,22 @@ export function MoveViewer({
       }
       engine = new mod.MoveViewer(box.current, isDark());
       eng.current = engine;
-      engine.setCamera(cam);
+      const firstCam = startCam ?? a.camera ?? 'side';
+      setCam(firstCam);
+      engine.setCamera(firstCam);
       engine.setAnimation(a, lefty);
       engine.setSpeed(speed);
       if (startT !== undefined) engine.seek(startT);
-      if (paused) engine.pause();
+      // with "reduce motion" the player waits for a tap
+      if (paused || (reduced && !follow)) engine.pause();
       let last = -1;
+      let lastT = -1;
       engine.onFrame = (s) => {
-        // update React state at most ~10 times a second
+        // update React state at most ~10 times a second (immediately after a seek while paused)
         const now = performance.now();
-        if (now - last > 90 || !s.playing) {
+        if (now - last > 90 || (!s.playing && s.t !== lastT)) {
           last = now;
+          lastT = s.t;
           setState(s);
         }
       };
@@ -131,7 +138,7 @@ export function MoveViewer({
         {following ? <div class="viewer__reps num">{T.reps(reps)}</div> : null}
       </div>
       {anim && !bare ? (
-        <div class="viewer__caption" aria-live="polite">
+        <div class="viewer__caption" aria-live={state.playing ? 'off' : 'polite'}>
           <strong>{phase?.name}</strong>
           {cue ? <span>{cue.text}</span> : null}
         </div>
@@ -145,6 +152,7 @@ export function MoveViewer({
               max={1000}
               value={Math.round(state.t * 1000)}
               aria-label={T.scrub}
+              aria-valuetext={`${phase?.name ?? ''}, ${Math.round(state.t * 100)}%`}
               onInput={(e) => {
                 const t = Number((e.target as HTMLInputElement).value) / 1000;
                 eng.current?.pause();
@@ -188,7 +196,9 @@ export function MoveViewer({
               </span>
             ) : null}
             {lefty ? <span class="muted small">{T.lefty}</span> : null}
-            <Button kind="ghost" icon="info" label={T.info} onClick={() => setInfo(!info)} />
+            <button type="button" class="btn btn--ghost btn--icon" aria-label={T.info} aria-expanded={info} onClick={() => setInfo(!info)}>
+              <Icon name="info" size={22} />
+            </button>
           </div>
           {info ? <p class="muted small viewer__info">{T.infoBody}</p> : null}
           {following ? (

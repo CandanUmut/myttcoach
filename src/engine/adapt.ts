@@ -2,7 +2,8 @@ import type { Content } from '../content/types';
 import { STAGES } from '../content/types';
 import { engineText as T } from '../strings/en';
 import { drillFits, generateProgram, type EngineState } from './generate';
-import type { Change, Felt, Profile, Program, SessionLog } from './types';
+import type { Change, Felt, MatchNote, Profile, Program, SessionLog } from './types';
+import { journalBoost } from './journal';
 
 /**
  * Turn logs into engine state: drill swaps (with plain reasons) and
@@ -14,6 +15,7 @@ export function deriveState(
   content: Content,
   program: Program,
   passes: { moveId: string; stage: string }[] = [],
+  notes: MatchNote[] = [],
 ): EngineState {
   const drills = new Map(content.drills.map((d) => [d.id, d]));
   const hist = new Map<string, { felt?: Felt; hit?: boolean }[]>();
@@ -72,7 +74,9 @@ export function deriveState(
     .filter(([, s]) => s >= 7)
     .map(([m]) => content.moves.find((x) => x.id === m)?.skillId)
     .filter((x): x is string => !!x);
-  return { stageOf, changes, learnedSkills };
+  const state: EngineState = { stageOf, changes, learnedSkills };
+  if (notes.length) state.journal = journalBoost(notes, content);
+  return state;
 }
 
 /**
@@ -86,10 +90,11 @@ export function adaptProgram(
   profile: Profile,
   content: Content,
   passes: { moveId: string; stage: string }[] = [],
+  notes: MatchNote[] = [],
 ): { program: Program; newChanges: Change[] } {
-  if (!logs.length && !passes.length) return { program, newChanges: [] };
+  if (!logs.length && !passes.length && !notes.length) return { program, newChanges: [] };
   const k = logs.length ? Math.max(...logs.map((l) => l.sessionIndex)) + 1 : 0;
-  const state = deriveState(logs, profile, content, program, passes);
+  const state = deriveState(logs, profile, content, program, passes, notes);
   const next = generateProgram(profile, content, { past: program.sessions.slice(0, k), state });
   const key = (c: Change) => `${c.atSession}:${c.fromDrillId}>${c.toDrillId}`;
   const old = new Set(program.changes.map(key));

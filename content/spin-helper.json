@@ -1,0 +1,71 @@
+{
+  "spins": [
+    { "id": "topspin", "name": "Topspin" },
+    { "id": "backspin", "name": "Backspin" },
+    { "id": "none", "name": "No spin" },
+    { "id": "sidespin", "name": "Sidespin" }
+  ],
+  "strokes": [
+    { "id": "block", "name": "Block", "moveId": "bh-block" },
+    { "id": "push", "name": "Push", "moveId": "bh-push" },
+    { "id": "drive", "name": "Drive", "moveId": "fh-drive" },
+    { "id": "loop", "name": "Loop", "moveId": "fh-loop-topspin" },
+    { "id": "flick", "name": "Flick", "moveId": "bh-flick" },
+    { "id": "chop", "name": "Chop", "moveId": "fh-chop" }
+  ],
+  "cells": [
+    { "stroke": "block", "spin": "topspin", "light": { "angle": -20, "swing": 0 }, "heavy": { "angle": -40, "swing": 0 },
+      "note": "Let the ball come onto the bat and take it early. The heavier the topspin, the more you close the bat." },
+    { "stroke": "block", "spin": "backspin", "light": { "angle": 15, "swing": 15 }, "heavy": { "angle": 30, "swing": 20 }, "better": "push",
+      "note": "A block against backspin drops into the net unless the bat is open. Push it, or lift it with a loop." },
+    { "stroke": "block", "spin": "none", "light": { "angle": -10, "swing": 0 }, "heavy": { "angle": -10, "swing": 0 },
+      "note": "A flat ball comes off the bat straight. Keep the bat nearly upright and push it forward a little." },
+    { "stroke": "block", "spin": "sidespin", "light": { "angle": -10, "swing": 0 }, "heavy": { "angle": -15, "swing": 0 },
+      "note": "Sidespin jumps off your bat the opposite way to its curve in the air. Aim a little toward the side it curved to." },
+
+    { "stroke": "push", "spin": "backspin", "light": { "angle": 45, "swing": -5 }, "heavy": { "angle": 60, "swing": -10 },
+      "note": "Open the bat and brush under the back of the ball. More spin coming in: open the bat more, keep the stroke short." },
+    { "stroke": "push", "spin": "topspin", "light": { "angle": 15, "swing": 0 }, "heavy": { "angle": 5, "swing": 0 }, "better": "block",
+      "note": "Pushing topspin makes the ball pop up. Block or drive it instead." },
+    { "stroke": "push", "spin": "none", "light": { "angle": 30, "swing": -5 }, "heavy": { "angle": 30, "swing": -5 },
+      "note": "A no-spin ball needs less open bat than backspin. Push through the ball, not under it." },
+    { "stroke": "push", "spin": "sidespin", "light": { "angle": 40, "swing": -5 }, "heavy": { "angle": 50, "swing": -5 },
+      "note": "Sidespin serves often carry some backspin too. Open the bat and aim toward the side the ball curved to." },
+
+    { "stroke": "drive", "spin": "topspin", "light": { "angle": -20, "swing": 15 }, "heavy": { "angle": -35, "swing": 10 },
+      "note": "Close the bat and swing forward through the ball. Heavier topspin: close more and swing more forward." },
+    { "stroke": "drive", "spin": "backspin", "light": { "angle": 5, "swing": 35 }, "heavy": { "angle": 15, "swing": 45 }, "better": "loop",
+      "note": "A closed bat sends backspin into the net. Open the bat a little and lift. Against heavy backspin a loop is safer." },
+    { "stroke": "drive", "spin": "none", "light": { "angle": -10, "swing": 15 }, "heavy": { "angle": -10, "swing": 15 },
+      "note": "Bat slightly closed, swing forward and a little up. A good ball to attack." },
+    { "stroke": "drive", "spin": "sidespin", "light": { "angle": -15, "swing": 15 }, "heavy": { "angle": -20, "swing": 15 },
+      "note": "Drive through the ball and aim a little toward the side it curved to." },
+
+    { "stroke": "loop", "spin": "topspin", "light": { "angle": -40, "swing": 20 }, "heavy": { "angle": -55, "swing": 15 },
+      "note": "Close the bat and brush forward over the top of the ball. More topspin coming in: close more, swing more forward." },
+    { "stroke": "loop", "spin": "backspin", "light": { "angle": -15, "swing": 55 }, "heavy": { "angle": 0, "swing": 65 },
+      "note": "Brush up the back of the ball. Heavier backspin: bat more upright and lift more. Lighter: close it and go more forward." },
+    { "stroke": "loop", "spin": "none", "light": { "angle": -30, "swing": 35 }, "heavy": { "angle": -30, "swing": 35 },
+      "note": "Between the two: bat closed, swing forward and up. No-spin balls feel heavy, so brush, don't hit flat." },
+    { "stroke": "loop", "spin": "sidespin", "light": { "angle": -35, "swing": 30 }, "heavy": { "angle": -40, "swing": 30 },
+      "note": "Loop through the ball and aim toward the side it curved to. Your own spin cancels a lot of theirs." },
+
+    { "stroke": "flick", "spin": "backspin", "light": { "angle": 0, "swing": 30 }, "heavy": { "angle": 15, "swing": 45 },
+      "note": "Get the bat under and behind the ball, then flick up and forward. Heavier backspin: open the bat more and lift more." },
+    { "stroke": "flick", "spin": "topspin", "light": { "angle": -25, "swing": 10 }, "heavy": { "angle": -35, "swing": 10 },
+      "note": "Short topspin is easy to flick: close the bat and go forward over the ball." },
+    { "stroke": "flick", "spin": "none", "light": { "angle": -10, "swing": 20 }, "heavy": { "angle": -10, "swing": 20 },
+      "note": "Bat a little closed, short fast flick forward. Don't let the no-spin ball float." },
+    { "stroke": "flick", "spin": "sidespin", "light": { "angle": -5, "swing": 25 }, "heavy": { "angle": 0, "swing": 25 },
+      "note": "Flick and aim toward the side the ball curved to. Contact the side of the ball if you can." },
+
+    { "stroke": "chop", "spin": "topspin", "light": { "angle": 55, "swing": -40 }, "heavy": { "angle": 40, "swing": -55 },
+      "note": "Heavy loops kick up off the bat: keep the bat more upright and chop more down. Light loops: open the bat and go forward." },
+    { "stroke": "chop", "spin": "backspin", "light": { "angle": 65, "swing": -20 }, "heavy": { "angle": 70, "swing": -20 },
+      "note": "Chopping backspin is like a long push: open the bat and go more forward than down." },
+    { "stroke": "chop", "spin": "none", "light": { "angle": 55, "swing": -35 }, "heavy": { "angle": 55, "swing": -35 },
+      "note": "A no-spin ball goes where the bat points: open bat, down and forward." },
+    { "stroke": "chop", "spin": "sidespin", "light": { "angle": 50, "swing": -40 }, "heavy": { "angle": 45, "swing": -40 },
+      "note": "Chop down and forward and aim toward the side the ball curved to." }
+  ]
+}

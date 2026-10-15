@@ -3,7 +3,7 @@ import { STAGES } from '../../content/types';
 import { BounceStepper } from '../../design/components';
 import { Icon } from '../../design/icons';
 import { Backdrop } from '../../design/backgrounds';
-import { learnText as T, ob, stageNames, stageShort } from '../../strings/en';
+import { learnText as T, ob, stageNames, stageShort, toolsText } from '../../strings/en';
 import { engineState, profile, program } from '../state';
 import { BottomNav } from '../components/BottomNav';
 
@@ -70,6 +70,29 @@ export function Learn() {
               </a>
             ))}
           </div>
+        </section>
+        <section class="stack stack--s">
+          <h2 class="section-title">{toolsText.title}</h2>
+          <a class="rowlink" href="#/spin">
+            <span class="rowlink__icon">
+              <Icon name="spin" />
+            </span>
+            <span class="rowlink__main">
+              <span class="rowlink__title">{toolsText.spin}</span>
+              <span class="rowlink__sub">{toolsText.spinSub}</span>
+            </span>
+            <Icon name="forward" size={20} />
+          </a>
+          <a class="rowlink" href="#/serve-lab">
+            <span class="rowlink__icon">
+              <Icon name="serve" />
+            </span>
+            <span class="rowlink__main">
+              <span class="rowlink__title">{toolsText.serveLab}</span>
+              <span class="rowlink__sub">{toolsText.serveLabSub}</span>
+            </span>
+            <Icon name="forward" size={20} />
+          </a>
         </section>
       </div>
       <BottomNav active="learn" />

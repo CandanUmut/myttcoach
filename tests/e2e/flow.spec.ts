@@ -79,3 +79,63 @@ test('learning path: pass a stage from the move page', async ({ page }) => {
   await page.goto('./#/learn');
   await expect(page.getByText('Feel it').first()).toBeVisible();
 });
+
+const seed = async (page: import('@playwright/test').Page) => {
+  await page.goto('./');
+  await page.evaluate(() => {
+    localStorage.setItem('thirdball:v1', JSON.stringify({ schemaVersion: 2, profile: {
+      name: 'Kim', hand: 'R', grip: 'shakehand', level: 3, style: 'balanced', goals: ['consistency'], moves: [],
+      workoutTypes: [], setups: ['partner'], schedule: { days: [0,1,2,3,4,5,6], time: null, length: 60, weeks: 4, startDate: '2026-01-05' },
+      lowImpact: false, voice: 'calm', regenCount: 0 }, settings: { theme: 'light', sound: false, readCues: false } }));
+  });
+  await page.reload();
+};
+
+test('match journal: a lost match adds focus to the plan', async ({ page }) => {
+  await seed(page);
+  await page.goto('./#/progress');
+  await page.getByRole('link', { name: /Match journal/ }).click();
+  await page.getByRole('link', { name: 'Log a match' }).click();
+  await page.getByRole('button', { name: 'Chopper / defender' }).click();
+  await page.getByRole('radio', { name: 'Lost' }).click();
+  await page.getByRole('textbox').nth(1).fill('1–3');
+  // "Receiving serves" appears twice (didn't / worked): the first group is "didn't work"
+  await page.getByRole('button', { name: 'Receiving serves' }).first().click();
+  await page.getByRole('button', { name: 'Save match' }).click();
+  await expect(page.getByRole('heading', { name: 'Match saved' })).toBeVisible();
+  await expect(page.getByText(/Your next sessions add more/)).toBeVisible();
+  await page.getByRole('link', { name: 'Back to the journal' }).click();
+  await expect(page.getByText('vs Chopper / defender')).toBeVisible();
+  // the plan explains itself
+  await page.goto('./#/card');
+  await expect(page.getByText(/because of your match journal/).first()).toBeVisible();
+});
+
+test('serve lab: a round of 10 gives a score and a history row', async ({ page }) => {
+  await seed(page);
+  await page.goto('./#/serve-lab');
+  await page.getByRole('button', { name: 'Start 10 serves' }).click();
+  const zones = page.getByRole('group', { name: 'Or pick where it bounced' });
+  for (let i = 0; i < 6; i++) await zones.getByRole('button', { name: 'Short', exact: true }).click();
+  await page.getByRole('button', { name: 'Undo' }).click();
+  for (let i = 0; i < 2; i++) await zones.getByRole('button', { name: 'Long', exact: true }).click();
+  // a tap on the table itself, in the short third (net is at the bottom)
+  const box = (await page.locator('.serve-table').boundingBox())!;
+  await page.mouse.click(box.x + box.width / 2, box.y + box.height * 0.75);
+  for (let i = 0; i < 2; i++) await zones.getByRole('button', { name: 'Net or missed' }).click();
+  await expect(page.getByText('Round done')).toBeVisible();
+  await expect(page.getByRole('heading', { name: '6 of 10' })).toBeVisible();
+  await expect(page.locator('.serve-history__row')).toHaveCount(1);
+});
+
+test('spin helper: heavy backspin loop needs an upright bat', async ({ page }) => {
+  await seed(page);
+  await page.goto('./#/spin');
+  await page.getByRole('radio', { name: 'Backspin' }).click();
+  await page.getByRole('radio', { name: 'Heavy' }).click();
+  await page.getByRole('button', { name: 'Loop' }).click();
+  await expect(page.locator('.spin-facts')).toContainText('About upright');
+  await expect(page.locator('.spin-facts')).toContainText('Mostly up');
+  await page.getByRole('button', { name: 'Block' }).click();
+  await expect(page.getByText('Better choice here: Push.')).toBeVisible();
+});

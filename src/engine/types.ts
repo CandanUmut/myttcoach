@@ -75,6 +75,7 @@ export interface FocusEntry {
   skillId: string;
   weight: number;
   addedBecause?: string; // prerequisite note
+  fromJournal?: string[]; // journal tag/opponent names that raised this skill
 }
 
 export interface Program {
@@ -123,4 +124,13 @@ export interface MetricResult {
   value: number;
   source: 'test' | 'log';
   sessionId?: string;
+}
+
+/** What the engine reads from a match-journal entry. */
+export interface MatchNote {
+  id: string;
+  date: string; // YYYY-MM-DD
+  opponentStyle: string;
+  won: boolean | null;
+  didnt: string[];
 }

@@ -1,4 +1,4 @@
-import type { Content, Drill, Goal, Metric, Move, Skill, Style, Templates, Tip } from './types';
+import type { Content, Drill, Goal, JournalContent, Metric, SpinHelper, Move, Skill, Style, Templates, Tip } from './types';
 import meta from '../../content/meta.json';
 import skills from '../../content/skills.json';
 import drills from '../../content/drills.json';
@@ -7,6 +7,8 @@ import tips from '../../content/tips.json';
 import styles from '../../content/styles.json';
 import goals from '../../content/goals.json';
 import templates from '../../content/templates.json';
+import journal from '../../content/journal.json';
+import spinHelper from '../../content/spin-helper.json';
 
 const moveFiles = import.meta.glob('../../content/moves/*.json', { eager: true, import: 'default' }) as Record<string, Move>;
 // Batch files: content/<kind>/*.json each hold an array, merged after the main file
@@ -28,6 +30,8 @@ export const content: Content = {
   styles: styles as unknown as Style[],
   goals: goals as unknown as Goal[],
   templates: templates as unknown as Templates,
+  journal: journal as unknown as JournalContent,
+  spinHelper: spinHelper as unknown as SpinHelper,
 };
 
 /* Fast lookups */

@@ -2,6 +2,7 @@ import { computed, signal } from '@preact/signals';
 import { content } from '../content/load';
 import { generateProgram } from '../engine/generate';
 import { adaptProgram, deriveState } from '../engine/adapt';
+import { journalBoost } from '../engine/journal';
 import { sessionDates } from '../engine/schedule';
 import type { Change, MetricResult, Profile, Session, SessionLog } from '../engine/types';
 import type { StageId } from '../content/types';
@@ -98,7 +99,9 @@ export function clearPlayerDrafts() {
 
 /** First plan: new profile, fresh program. */
 export function createPlan(p: Profile) {
-  const prog = generateProgram(p, content);
+  const notes = data.value.journal;
+  const state = notes.length ? { stageOf: {}, changes: [], learnedSkills: [], journal: journalBoost(notes, content) } : undefined;
+  const prog = generateProgram(p, content, { state });
   clearPlayerDrafts();
   update({ profile: p, program: prog, logs: [], overrides: {}, results: [], stagePasses: [] });
 }
@@ -111,7 +114,7 @@ export function updateProfile(p: Profile, regenerate: boolean) {
     return;
   }
   const k = d.logs.length ? Math.max(...d.logs.map((l) => l.sessionIndex)) + 1 : 0;
-  const state = d.profile ? deriveState(d.logs, p, content, d.program, d.stagePasses) : undefined;
+  const state = d.profile ? deriveState(d.logs, p, content, d.program, d.stagePasses, d.journal) : undefined;
   const prog = generateProgram(p, content, { past: d.program.sessions.slice(0, k), state });
   clearPlayerDrafts();
   const overrides = Object.fromEntries(Object.entries(d.overrides).filter(([id]) => Number(id.slice(1)) < k));
@@ -136,7 +139,7 @@ export function logSession(log: SessionLog): Change[] {
       if (metric) results.push({ metricId: metric.id, date: log.date, value: it.count, source: 'log', sessionId: log.sessionId });
     }
   }
-  const { program: prog, newChanges } = adaptProgram(d.program, logs, d.profile, content, d.stagePasses);
+  const { program: prog, newChanges } = adaptProgram(d.program, logs, d.profile, content, d.stagePasses, d.journal);
   update({ logs, results, program: prog });
   return newChanges;
 }
@@ -146,7 +149,7 @@ export function passStage(moveId: string, stage: StageId) {
   const d = data.value;
   if (!d.program || !d.profile) return;
   const stagePasses = [...d.stagePasses, { moveId, stage, date: today.value }];
-  const { program: prog } = adaptProgram(d.program, d.logs, d.profile, content, stagePasses);
+  const { program: prog } = adaptProgram(d.program, d.logs, d.profile, content, stagePasses, d.journal);
   update({ stagePasses, program: prog });
 }
 
@@ -168,8 +171,35 @@ export function dismiss(id: string) {
   if (!data.value.dismissed.includes(id)) update({ dismissed: [...data.value.dismissed, id] });
 }
 
-export function saveJournal(j: JournalEntry) {
-  update({ journal: [...data.value.journal.filter((x) => x.id !== j.id), j] });
+/**
+ * Save (or edit) a match and re-plan future sessions with the journal.
+ * Returns the names of skills that now get more focus because of it.
+ */
+export function saveJournal(j: JournalEntry): string[] {
+  return replanJournal([...data.value.journal.filter((x) => x.id !== j.id), j]);
+}
+
+export function deleteJournal(id: string) {
+  replanJournal(data.value.journal.filter((x) => x.id !== id));
+}
+
+function replanJournal(journal: JournalEntry[]): string[] {
+  const d = data.value;
+  if (!d.program || !d.profile) {
+    update({ journal });
+    return [];
+  }
+  const before = new Set(d.program.focus.filter((f) => f.fromJournal).map((f) => f.skillId));
+  // past (logged) sessions stay; the future is rebuilt with the new journal
+  const k = d.logs.length ? Math.max(...d.logs.map((l) => l.sessionIndex)) + 1 : 0;
+  const state = deriveState(d.logs, d.profile, content, d.program, d.stagePasses, journal);
+  const program = generateProgram(d.profile, content, { past: d.program.sessions.slice(0, k), state });
+  clearPlayerDrafts();
+  update({ journal, program });
+  return program.focus
+    .filter((f) => f.fromJournal && !before.has(f.skillId))
+    .slice(0, 3)
+    .map((f) => content.skills.find((x) => x.id === f.skillId)?.name ?? f.skillId);
 }
 
 export function saveServeLab(e: ServeLabEntry) {

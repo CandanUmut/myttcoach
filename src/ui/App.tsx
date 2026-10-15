@@ -13,6 +13,9 @@ import { SessionPlayer } from './screens/SessionPlayer';
 import { Learn } from './screens/Learn';
 import { Library } from './screens/Library';
 import { Progress } from './screens/Progress';
+import { Journal, JournalForm } from './screens/Journal';
+import { ServeLab } from './screens/ServeLab';
+import { SpinHelper } from './screens/SpinHelper';
 import { Settings } from './screens/Settings';
 import { BallMoment } from '../design/motion';
 import { DevShot } from './screens/DevShot';
@@ -43,6 +46,11 @@ function Routes() {
   if (match('/library')) return <Library />;
   if (match('/progress')) return <Progress />;
   if (match('/settings')) return <Settings />;
+  if (match('/journal')) return <Journal />;
+  if (match('/journal/new')) return <JournalForm id={null} />;
+  if ((m = match('/journal/:id'))) return <JournalForm key={m.id} id={m.id!} />;
+  if (match('/serve-lab')) return <ServeLab />;
+  if (match('/spin')) return <SpinHelper />;
   return <Today />;
 }
 

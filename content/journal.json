@@ -1,0 +1,26 @@
+{
+  "tags": [
+    { "id": "my-serve", "name": "My serves", "skillWeights": { "serve-basics": 1, "serve-pendulum": 0.6, "third-ball": 0.4 } },
+    { "id": "receive", "name": "Receiving serves", "skillWeights": { "receive-basics": 1, "spin-reading": 0.8, "receive-long": 0.5 } },
+    { "id": "vs-backspin", "name": "Against backspin", "skillWeights": { "fh-loop-backspin": 1, "bh-push": 0.5, "fh-push": 0.4, "spin-reading": 0.4 } },
+    { "id": "vs-topspin", "name": "Against topspin", "skillWeights": { "bh-block": 0.8, "fh-block": 0.8, "counter-loop": 0.5 } },
+    { "id": "short-game", "name": "Short game", "skillWeights": { "short-touch": 1, "bh-flick": 0.6, "fh-flick": 0.5, "bh-push": 0.4 } },
+    { "id": "third-ball", "name": "Attacking after my serve", "skillWeights": { "third-ball": 1, "fh-loop-backspin": 0.5, "serve-basics": 0.3 } },
+    { "id": "forehand", "name": "Forehand", "skillWeights": { "fh-drive": 0.8, "fh-loop-topspin": 0.8 } },
+    { "id": "backhand", "name": "Backhand", "skillWeights": { "bh-drive": 0.8, "bh-topspin": 0.8, "bh-block": 0.4 } },
+    { "id": "footwork", "name": "Footwork", "skillWeights": { "basic-footwork": 1, "in-out": 0.6, "pivot": 0.4, "crossover": 0.4 } },
+    { "id": "placement", "name": "Placement", "skillWeights": { "placement": 1, "variation": 0.5 } },
+    { "id": "high-balls", "name": "Finishing high balls", "skillWeights": { "smash": 1 } },
+    { "id": "stamina", "name": "Stamina", "skillWeights": { "physical-prep": 1, "agility": 0.5 } },
+    { "id": "nerves", "name": "Nerves at the end of games", "skillWeights": { "handling-nerves": 1, "focus-routine": 0.6 } }
+  ],
+  "opponents": [
+    { "id": "attacker", "name": "Attacker (loops a lot)", "skillWeights": { "bh-block": 0.6, "fh-block": 0.6, "counter-loop": 0.4, "lob": 0.3 } },
+    { "id": "blocker", "name": "Blocker", "skillWeights": { "fh-loop-topspin": 0.6, "placement": 0.6, "variation": 0.4 } },
+    { "id": "chopper", "name": "Chopper / defender", "skillWeights": { "fh-loop-backspin": 0.8, "vs-styles": 0.6, "fh-push": 0.3, "smash": 0.3 } },
+    { "id": "pimples", "name": "Long pimples", "skillWeights": { "vs-styles": 0.8, "spin-reading": 0.6, "variation": 0.3 } },
+    { "id": "lefty", "name": "Left-hander", "skillWeights": { "placement": 0.6, "receive-basics": 0.5, "vs-styles": 0.4 } },
+    { "id": "allround", "name": "All-round", "skillWeights": { "placement": 0.4, "variation": 0.4 } },
+    { "id": "unknown", "name": "Not sure", "skillWeights": {} }
+  ]
+}

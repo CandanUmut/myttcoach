@@ -1,5 +1,6 @@
 import type { MetricResult, Profile, Program, SessionLog } from '../engine/types';
 import type { StageId } from '../content/types';
+import type { LandingZone, ServeTarget } from '../engine/serveLab';
 
 export const SCHEMA_VERSION = 2;
 
@@ -26,8 +27,8 @@ export interface ServeLabEntry {
   id: string;
   date: string;
   serveId: string;
-  landings: { x: number; y: number; zone: 'short' | 'half' | 'long' | 'out' }[];
-  target: 'short' | 'long' | 'mixed';
+  landings: { x: number; y: number; zone: LandingZone }[];
+  target: ServeTarget;
 }
 
 /** Everything the app stores. Profile and settings live in localStorage; the rest in IndexedDB. */

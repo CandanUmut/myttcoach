@@ -146,6 +146,37 @@ export interface Templates {
   noTablePhases: Phase[];
 }
 
+/** A match-journal tag or opponent style and the skills it points to. */
+export interface JournalTag {
+  id: string;
+  name: string;
+  skillWeights: Record<string, number>;
+}
+
+export interface JournalContent {
+  tags: JournalTag[];
+  opponents: JournalTag[];
+}
+
+/** Spin and angle helper. Angles in degrees: bat from upright (+ open, − closed); swing from forward (+ up, − down). */
+export interface SpinSetting {
+  angle: number;
+  swing: number;
+}
+export interface SpinCell {
+  stroke: string;
+  spin: string;
+  light: SpinSetting;
+  heavy: SpinSetting;
+  note: string;
+  better?: string;
+}
+export interface SpinHelper {
+  spins: { id: string; name: string }[];
+  strokes: { id: string; name: string; moveId: string }[];
+  cells: SpinCell[];
+}
+
 export interface Content {
   version: string;
   skills: Skill[];
@@ -156,4 +187,6 @@ export interface Content {
   styles: Style[];
   goals: Goal[];
   templates: Templates;
+  journal: JournalContent;
+  spinHelper: SpinHelper;
 }

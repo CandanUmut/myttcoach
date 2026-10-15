@@ -2,6 +2,7 @@ import type { Content, Drill, Phase, Setup, StageId } from '../content/types';
 import { STAGES } from '../content/types';
 import { engineText as T, stageNames } from '../strings/en';
 import { buildFocus, learnOrder } from './focus';
+import type { JournalBoost } from './journal';
 import { allowedRegularity, regularityBonus, weekThemes } from './periodize';
 import { fnv1a, mulberry32, pickBest, type Rng } from './prng';
 import { programSeed } from './seed';
@@ -15,6 +16,8 @@ export interface EngineState {
   changes: Change[];
   /** Skills of moves the player has already owned. */
   learnedSkills: string[];
+  /** Extra focus from the match journal. */
+  journal?: JournalBoost;
 }
 
 export interface GenerateOptions {
@@ -86,7 +89,7 @@ export function generateProgram(profile: Profile, content: Content, opts: Genera
   const noTable = isNoTable(profile);
   const state: EngineState = opts.state ?? { stageOf: {}, changes: [], learnedSkills: [] };
 
-  const focus = buildFocus(profile, content, new Set(state.learnedSkills));
+  const focus = buildFocus(profile, content, new Set(state.learnedSkills), state.journal);
   const fw = new Map(focus.map((f) => [f.skillId, f.weight]));
   const topFocus = new Set(focus.filter((f) => !['physical', 'mental'].includes(skills.get(f.skillId)?.category ?? '')).slice(0, 3).map((f) => f.skillId));
   const order = learnOrder(profile, content, focus);

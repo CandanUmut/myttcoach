@@ -126,6 +126,34 @@ export function validateContent(c: Content, animationIds: Set<string> = new Set(
     for (const k of Object.keys(g.skillWeights)) if (!skills.has(k)) err(`goal ${g.id}: skill "${k}" not found`);
     if (g.suggestedMetricId && !metrics.has(g.suggestedMetricId)) err(`goal ${g.id}: metric "${g.suggestedMetricId}" not found`);
   }
+  // match journal: tags and opponent styles point at real skills
+  ids('journal tag', c.journal.tags);
+  ids('journal opponent', c.journal.opponents);
+  for (const t of [...c.journal.tags, ...c.journal.opponents]) {
+    if (!t.name) err(`journal ${t.id}: missing name`);
+    for (const [k, v] of Object.entries(t.skillWeights)) {
+      if (!skills.has(k)) err(`journal ${t.id}: skill "${k}" not found`);
+      if (!(v > 0 && v <= 1)) err(`journal ${t.id}: weight for "${k}" must be in (0, 1]`);
+    }
+  }
+  // spin helper: every stroke × spin has one cell with sane angles
+  const sh = c.spinHelper;
+  const strokeIds = ids('spin stroke', sh.strokes);
+  ids('spin', sh.spins);
+  for (const st of sh.strokes) if (!moves.has(st.moveId)) err(`spin stroke ${st.id}: move "${st.moveId}" not found`);
+  for (const st of sh.strokes)
+    for (const sp of sh.spins) {
+      const n = sh.cells.filter((x) => x.stroke === st.id && x.spin === sp.id).length;
+      if (n !== 1) err(`spin helper: ${st.id} × ${sp.id} has ${n} cells (needs 1)`);
+    }
+  for (const x of sh.cells) {
+    if (!strokeIds.has(x.stroke) || !sh.spins.some((s) => s.id === x.spin)) err(`spin helper: unknown cell ${x.stroke} × ${x.spin}`);
+    if (x.better && !strokeIds.has(x.better)) err(`spin helper ${x.stroke} × ${x.spin}: better "${x.better}" not found`);
+    for (const v of [x.light, x.heavy]) {
+      if (Math.abs(v.angle) > 80 || Math.abs(v.swing) > 90) err(`spin helper ${x.stroke} × ${x.spin}: angle out of range`);
+    }
+    if (!x.note) err(`spin helper ${x.stroke} × ${x.spin}: missing note`);
+  }
   for (const t of c.templates.sessions) {
     const sum = t.blocks.reduce((a, b) => a + b.minutes, 0);
     if (sum !== t.length) err(`template ${t.length} min: blocks add up to ${sum}`);

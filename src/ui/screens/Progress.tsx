@@ -11,6 +11,8 @@ import { addResult, data, engineState, profile, program, today } from '../state'
 import { BottomNav } from '../components/BottomNav';
 import { Field, NumberStepper } from '../components/Controls';
 import { shortDate } from '../sessionInfo';
+import { Milestones } from '../components/Milestones';
+import { toolsText } from '../../strings/en';
 
 export function Progress() {
   const d = data.value;
@@ -52,6 +54,8 @@ export function Progress() {
 
         <GoalCurve />
         <ImprovementPath />
+        <Milestones data={d} />
+        <Tools />
 
         {minutes > 0 ? (
           <section class="stack">
@@ -299,6 +303,32 @@ function ImprovementPath() {
           </span>
         </li>
       </ol>
+    </section>
+  );
+}
+
+/** Links to the journal, serve lab and spin helper. */
+export function Tools() {
+  const items = [
+    { href: '#/journal', icon: 'journal' as const, title: toolsText.journal, sub: toolsText.journalSub },
+    { href: '#/serve-lab', icon: 'serve' as const, title: toolsText.serveLab, sub: toolsText.serveLabSub },
+    { href: '#/spin', icon: 'spin' as const, title: toolsText.spin, sub: toolsText.spinSub },
+  ];
+  return (
+    <section class="stack stack--s">
+      <h2 class="section-title">{toolsText.title}</h2>
+      {items.map((it) => (
+        <a class="rowlink" href={it.href}>
+          <span class="rowlink__icon">
+            <Icon name={it.icon} />
+          </span>
+          <span class="rowlink__main">
+            <span class="rowlink__title">{it.title}</span>
+            <span class="rowlink__sub">{it.sub}</span>
+          </span>
+          <Icon name="forward" size={20} />
+        </a>
+      ))}
     </section>
   );
 }

@@ -3,7 +3,7 @@ import { byId } from '../../content/load';
 import type { Change, Felt, ItemLog, SessionLog } from '../../engine/types';
 import { ArcProgress, Button } from '../../design/components';
 import { celebrate } from '../../design/motion';
-import { common, learnText, phaseNames, playerText as T, stageNames } from '../../strings/en';
+import { common, learnText, phaseNames, playerText as T, stageNames, milestoneText } from '../../strings/en';
 import { STAGES } from '../../content/types';
 import { pickVariant } from '../components/DrillCard';
 import { Dialog } from '../components/Controls';
@@ -12,6 +12,9 @@ import { Troubleshoot } from './MoveScreen';
 import { data, logBySession, logSession, program, setSettings, today } from '../state';
 import { flatItems } from '../sessionInfo';
 import { navigate } from '../router';
+import { milestonesOf } from '../components/Milestones';
+import { newlyReached } from '../../engine/milestones';
+import { Icon } from '../../design/icons';
 
 /* ---------- small device helpers (sound, wake lock, speech) ---------- */
 
@@ -131,6 +134,7 @@ export function SessionPlayer({ id }: { id: string }) {
   const [at, setAt] = useState(Math.min(startAt, Math.max(0, items.length - 1)));
   const [logs, setLogs] = useState<Draft>(initialLogs);
   const [mode, setMode] = useState<'drill' | 'log' | 'summary'>('drill');
+  const [newMilestones, setNewMilestones] = useState<string[]>([]);
   const [changes, setChanges] = useState<Change[]>([]);
   const [leaving, setLeaving] = useState(false);
   const [started, setStarted] = useState(false);
@@ -160,7 +164,9 @@ export function SessionPlayer({ id }: { id: string }) {
   });
 
   const finish = () => {
+    const before = milestonesOf(data.value);
     const ch = logSession(buildLog(true));
+    setNewMilestones(newlyReached(before, milestonesOf(data.value)));
     try {
       sessionStorage.removeItem(draftKey(id));
     } catch {
@@ -198,6 +204,12 @@ export function SessionPlayer({ id }: { id: string }) {
         <div class="stack stack--l">
           <h1>{T.summary}</h1>
           <p class="player__big">{T.summaryBody(mins, done.length)}</p>
+          {newMilestones.map((m) => (
+            <p class="milestone is-reached">
+              <Icon name="milestone" size={22} />
+              <span>{milestoneText.newOne(milestoneText.names[m]!)}</span>
+            </p>
+          ))}
           <section class="stack">
             <h2 class="section-title">{T.planChanged}</h2>
             {changes.length ? (

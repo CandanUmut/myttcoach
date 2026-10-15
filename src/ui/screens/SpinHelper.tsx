@@ -18,6 +18,7 @@ export function SpinHelper() {
   const set: SpinSetting = spin === 'none' ? cell.light : cell[amount];
   const better = cell.better ? sh.strokes.find((s) => s.id === cell.better) : undefined;
   const strokeInfo = sh.strokes.find((s) => s.id === stroke)!;
+  const moveId = cell.moveId ?? strokeInfo.moveId;
   const bat = batText(set.angle);
   const swing = T.swingDir(set.swing);
   return (
@@ -74,8 +75,8 @@ export function SpinHelper() {
           <p>{cell.note}</p>
           {better ? <p class="note">{T.better(better.name)}</p> : null}
           <p class="muted spin-small">{spin === 'sidespin' ? `${T.sidespinNote} ` : ''}{T.legend} {T.approx}</p>
-          <Button kind="quiet" icon="watch" href={`#/learn/${strokeInfo.moveId}`}>
-            {common.watchMove(content.moves.find((m) => m.id === strokeInfo.moveId)?.name ?? strokeInfo.name)}
+          <Button kind="quiet" icon="watch" href={`#/learn/${moveId}`}>
+            {common.watchMove(content.moves.find((m) => m.id === moveId)?.name ?? strokeInfo.name)}
           </Button>
         </section>
       </div>

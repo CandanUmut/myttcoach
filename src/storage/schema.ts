@@ -16,6 +16,7 @@ export interface JournalEntry {
   id: string;
   date: string;
   opponentStyle: string;
+  lefty?: boolean; // left-handed opponent
   won: boolean | null;
   score?: string;
   worked: string[];

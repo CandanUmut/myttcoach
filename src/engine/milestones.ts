@@ -8,6 +8,8 @@ export interface MilestoneInput {
   stagePasses: { moveId: string; stage: string; date: string }[];
   journal: { date: string }[];
   serveLab: { date: string; hits: number }[];
+  /** Drills that train looping (for the loop-minutes marker). */
+  loopDrillIds?: Set<string>;
 }
 
 export interface Milestone {
@@ -18,6 +20,8 @@ export interface Milestone {
   have?: number;
   need?: number;
 }
+
+const LOOP_MINUTES = 120;
 
 const min = (a: string | null, b: string | null) => (!a ? b : !b ? a : a < b ? a : b);
 
@@ -52,6 +56,8 @@ export function milestones(x: MilestoneInput): Milestone[] {
   const drillDates: string[] = [];
   let firstStage: string | null = null;
   let firstOwn: string | null = null;
+  let loopMinutes = 0;
+  let loops: string | null = null;
   for (const l of [...x.logs].sort((a, b) => a.date.localeCompare(b.date) || a.sessionIndex - b.sessionIndex)) {
     const s = x.program?.sessions[l.sessionIndex];
     for (const it of l.items) {
@@ -61,6 +67,10 @@ export function milestones(x: MilestoneInput): Milestone[] {
       if (!h5 && minutes >= 300) h5 = l.date;
       if (!h20 && minutes >= 1200) h20 = l.date;
       if (it.drillId) drillDates.push(l.date);
+      if (it.drillId && x.loopDrillIds?.has(it.drillId)) {
+        loopMinutes += planned?.minutes ?? 0;
+        if (!loops && loopMinutes >= LOOP_MINUTES) loops = l.date;
+      }
       const learn = planned?.learn;
       if (learn && (learn.stage === 'see' || it.stagePassed)) firstStage = min(firstStage, l.date);
       if (learn?.stage === 'own' && it.stagePassed) firstOwn = min(firstOwn, l.date);
@@ -73,6 +83,7 @@ export function milestones(x: MilestoneInput): Milestone[] {
   out.push({ id: 'hours-5', date: h5, have: Math.min(Math.floor(minutes / 60), 5), need: 5 });
   out.push({ id: 'hours-20', date: h20, have: Math.min(Math.floor(minutes / 60), 20), need: 20 });
   count('drills-100', drillDates, 100);
+  out.push({ id: 'loops-120', date: loops, have: Math.min(loopMinutes, LOOP_MINUTES), need: LOOP_MINUTES });
   out.push({ id: 'first-stage', date: firstStage });
   out.push({ id: 'first-own', date: firstOwn });
 

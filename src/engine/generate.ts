@@ -1,9 +1,9 @@
 import type { Content, Drill, Phase, Setup, StageId } from '../content/types';
 import { STAGES } from '../content/types';
 import { engineText as T, stageNames } from '../strings/en';
-import { buildFocus, learnOrder } from './focus';
-import type { JournalBoost } from './journal';
-import { allowedRegularity, regularityBonus, weekThemes } from './periodize';
+import { buildFocus, eligible, learnOrder } from './focus';
+import { JOURNAL_SESSIONS, type JournalFocus } from './journal';
+import { addDays, allowedRegularity, plannedDates, regularityBonus, weekThemes } from './periodize';
 import { fnv1a, mulberry32, pickBest, type Rng } from './prng';
 import { programSeed } from './seed';
 import { allocate } from './template';
@@ -17,7 +17,7 @@ export interface EngineState {
   /** Skills of moves the player has already owned. */
   learnedSkills: string[];
   /** Extra focus from the match journal. */
-  journal?: JournalBoost;
+  journal?: JournalFocus;
 }
 
 export interface GenerateOptions {
@@ -89,7 +89,7 @@ export function generateProgram(profile: Profile, content: Content, opts: Genera
   const noTable = isNoTable(profile);
   const state: EngineState = opts.state ?? { stageOf: {}, changes: [], learnedSkills: [] };
 
-  const focus = buildFocus(profile, content, new Set(state.learnedSkills), state.journal);
+  const focus = buildFocus(profile, content, new Set(state.learnedSkills));
   const fw = new Map(focus.map((f) => [f.skillId, f.weight]));
   const topFocus = new Set(focus.filter((f) => !['physical', 'mental'].includes(skills.get(f.skillId)?.category ?? '')).slice(0, 3).map((f) => f.skillId));
   const order = learnOrder(profile, content, focus);
@@ -109,6 +109,21 @@ export function generateProgram(profile: Profile, content: Content, opts: Genera
   const days = [...new Set(profile.schedule.days)];
   const perWeek = Math.max(1, days.length);
   const total = profile.schedule.weeks * perWeek;
+
+  // Match journal: the sessions right after the newest match each get one drill for what didn't work
+  const journalDrillFor = (sid: string) => (d: Drill) =>
+    available.has(d.phase) && drillFits(d, profile) && (!noTable || d.variants.some((v) => v.setup === 'shadow')) && (d.skills.find((x) => x.id === sid)?.weight ?? 0) >= 0.6;
+  const jSkills = (state.journal?.skills ?? [])
+    .filter((x) => {
+      const sk = skills.get(x.id);
+      return sk && eligible(sk, profile.level) && content.drills.some(journalDrillFor(x.id));
+    })
+    .slice(0, 2);
+  const jWindow = new Map<number, number>(); // session index -> position in the window
+  if (state.journal && jSkills.length && state.journal.from >= addDays(profile.schedule.startDate, -56)) {
+    const dates = plannedDates(profile, total);
+    for (let i = 0; i < total && jWindow.size < JOURNAL_SESSIONS; i++) if ((dates[i] ?? '') >= state.journal.from) jWindow.set(i, jWindow.size);
+  }
 
   // Assessment: last session of every Apply week. When a tournament taper takes
   // the last week, its test moves to the end of the week before.
@@ -371,6 +386,30 @@ export function generateProgram(profile: Profile, content: Content, opts: Genera
     const tests = isTest ? pickTests().slice(0, Math.max(1, Math.floor(testMinutes / 5))) : [];
     for (const t of tests) used.add(t.testDrillId);
 
+    // ----- Journal slot: one drill for what didn't work in the last match -----
+    let journalItem: DrillItem | null = null;
+    let journalPhase: Phase | null = null;
+    const jPos = jWindow.get(idx);
+    if (jPos !== undefined && !tests.length) {
+      const phases = new Set(plan.map((b) => b.phase));
+      const tryOrder = [jSkills[jPos % jSkills.length]!, ...jSkills];
+      for (const sk of tryOrder) {
+        const c = content.drills
+          .filter((d) => phases.has(d.phase) && journalDrillFor(sk.id)(d) && (theme !== 'taper' || d.intensity < 4))
+          .map((d) => drills.get(swapAt(d.id, idx))!)
+          .filter((d) => !used.has(d.id));
+        const d = pickBest(c, (dd) => score(dd) + (dd.skills.find((x) => x.id === sk.id)?.weight ?? 0), rng);
+        if (!d) continue;
+        const bm = plan.find((b) => b.phase === d.phase)!.minutes;
+        const room = bm - (learnPhase === d.phase ? learnItems.reduce((a, li) => a + li.minutes, 0) : 0);
+        if (room < d.duration.min) continue;
+        const m = Math.min(room, d.duration.max, Math.max(d.duration.min, d.duration.default));
+        journalPhase = d.phase;
+        journalItem = makeItem(d, d.phase, m, { reason: T.reasonJournal(sk.because.join(', ')), fromJournal: sk.because, focus: true });
+        break;
+      }
+    }
+
     // ----- Blocks -----
     const blocks: Block[] = [];
     let slack = 0;
@@ -395,6 +434,11 @@ export function generateProgram(profile: Profile, content: Content, opts: Genera
           items.push({ ...li, minutes: m });
           minutes -= m;
         }
+      }
+      if (journalItem && journalPhase === b.phase) {
+        const m = Math.min(journalItem.minutes, minutes);
+        items.push({ ...journalItem, minutes: m });
+        minutes -= m;
       }
       if (minutes > 0) slack += fill(b.phase, minutes, items);
       const kept = items.filter((i) => i.minutes > 0);

@@ -133,6 +133,7 @@ export const engineText = {
   reasonGoal: (goal: string) => `Part of your goal: ${goal.toLowerCase()}.`,
   reasonMove: (move: string) => `Builds the ${move} you chose to work on.`,
   reasonKeep: (skill: string) => `Keeps your ${skill.toLowerCase()} sharp.`,
+  reasonJournal: (names: string) => `From your match journal: ${names.toLowerCase()}.`,
   reasonPhase: {
     physicalWarmup: 'Gets your body ready to play.',
     tableWarmup: 'Finds your timing before the main work.',
@@ -659,6 +660,8 @@ export const journalText = {
   empty: 'No matches yet. After your next match, add it here.',
   date: 'Date',
   opponent: 'Opponent’s style',
+  lefty: 'Left-handed opponent',
+  leftyShort: 'left-handed',
   result: 'Result',
   won: 'Won',
   lost: 'Lost',
@@ -674,15 +677,15 @@ export const journalText = {
   deleteConfirm: 'Delete this match? Its extra practice is removed from your plan.',
   cancel: 'Cancel',
   saved: 'Match saved',
-  nowMore: (names: string[]) => `Your next sessions add more ${names.join(', ').toLowerCase()}.`,
-  noNewFocus: 'Your plan already covers this. Keep going.',
+  inPlan: (n: number, drills: string[]) =>
+    `Your next ${n === 1 ? 'session includes' : `${n} sessions each include`} a drill for what didn’t work: ${drills.slice(0, 3).join(', ').toLowerCase()}.`,
+  noNewFocus: 'No change to your plan this time. The match is saved in your journal.',
   seePlan: 'See my plan',
   backToJournal: 'Back to the journal',
   wonShort: 'W',
   lostShort: 'L',
   vs: (style: string) => `vs ${style}`,
   didntList: (names: string) => `Didn’t work: ${names}`,
-  fromJournal: (names: string, skill: string) => `More ${skill.toLowerCase()} because of your match journal (${names.toLowerCase()}).`,
 };
 
 export const serveLabText = {
@@ -691,10 +694,14 @@ export const serveLabText = {
   pickServe: 'Serve',
   target: 'Target',
   short: 'Short',
+  half: 'Half-long',
   long: 'Long',
   mixed: 'Mixed',
+  netLabel: 'Net',
+  endLabel: 'End line',
   targetHelp: {
     short: 'Short: the first bounce lands in the third of the table nearest the net.',
+    half: 'Half-long: the first bounce lands in the middle third. A good receiver can’t attack it easily.',
     long: 'Long: the first bounce lands in the third nearest the end line.',
     mixed: 'Mixed: short, long, short, long… The target zone is shown each time.',
   } as Record<string, string>,
@@ -740,7 +747,8 @@ export const spinText = {
   diagramLabel: (bat: string, swing: string) => `Side view. Bat ${bat.toLowerCase()}. Swing ${swing.toLowerCase()}.`,
   legend: 'Side view: you on the left, the net on the right.',
   approx: 'Angles are a starting point. Adjust by watching where your ball goes.',
-  sidespinNote: 'Seen from the side, sidespin has no up or down: the arrow shows it spinning sideways.',
+  sidespinNote:
+    'Sidespin nearly always comes with some topspin or backspin: set the bat for that first, then aim for the side. Read it from their bat: the ball comes off your bat the way their bat was moving, so aim a little the other way. Seen from the side, sidespin has no up or down: the ring shows it spinning sideways.',
 };
 
 export const milestoneText = {
@@ -748,6 +756,7 @@ export const milestoneText = {
   next: 'Next',
   reached: (date: string) => `Reached ${date}`,
   progress: (a: number, b: number) => `${a} of ${b}`,
+  minutes: (a: number, b: number) => `${a} of ${b} minutes`,
   newOne: (name: string) => `New milestone: ${name}`,
   names: {
     'first-session': 'First session in the book',
@@ -757,6 +766,7 @@ export const milestoneText = {
     'hours-5': 'Five hours of practice',
     'hours-20': 'Twenty hours of practice',
     'drills-100': 'A hundred drills done',
+    'loops-120': 'Two hours of looping',
     'first-stage': 'First learning stage passed',
     'first-own': 'First move you own',
     'streak-4': 'Four weeks in a row',

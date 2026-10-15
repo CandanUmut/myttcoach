@@ -61,7 +61,9 @@ export function App() {
   if (!loaded.value) return <div class="splash" aria-busy="true" />;
   return (
     <>
-      <Routes />
+      <main>
+        <Routes />
+      </main>
       <BallMoment />
     </>
   );

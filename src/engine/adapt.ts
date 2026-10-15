@@ -3,7 +3,7 @@ import { STAGES } from '../content/types';
 import { engineText as T } from '../strings/en';
 import { drillFits, generateProgram, type EngineState } from './generate';
 import type { Change, Felt, MatchNote, Profile, Program, SessionLog } from './types';
-import { journalBoost } from './journal';
+import { journalFocus } from './journal';
 
 /**
  * Turn logs into engine state: drill swaps (with plain reasons) and
@@ -75,7 +75,8 @@ export function deriveState(
     .map(([m]) => content.moves.find((x) => x.id === m)?.skillId)
     .filter((x): x is string => !!x);
   const state: EngineState = { stageOf, changes, learnedSkills };
-  if (notes.length) state.journal = journalBoost(notes, content);
+  const jf = journalFocus(notes, content);
+  if (jf) state.journal = jf;
   return state;
 }
 

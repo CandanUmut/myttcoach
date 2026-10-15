@@ -42,6 +42,7 @@ export interface DrillItem {
   reason: string;
   focus: boolean;
   learn?: { moveId: string; stage: StageId };
+  fromJournal?: string[]; // match-journal tags/opponents this drill answers
   metricId?: string;
 }
 
@@ -75,7 +76,6 @@ export interface FocusEntry {
   skillId: string;
   weight: number;
   addedBecause?: string; // prerequisite note
-  fromJournal?: string[]; // journal tag/opponent names that raised this skill
 }
 
 export interface Program {
@@ -131,6 +131,7 @@ export interface MatchNote {
   id: string;
   date: string; // YYYY-MM-DD
   opponentStyle: string;
+  lefty?: boolean;
   won: boolean | null;
   didnt: string[];
 }

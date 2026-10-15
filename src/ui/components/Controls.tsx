@@ -1,4 +1,4 @@
-import type { ComponentChildren } from 'preact';
+import { cloneElement, isValidElement, type ComponentChildren } from 'preact';
 import { useEffect, useId, useRef } from 'preact/hooks';
 import { Icon, type IconName } from '../../design/icons';
 import { Button } from '../../design/components';
@@ -115,11 +115,24 @@ export function Toggle({ checked, onChange, label, sub }: { checked: boolean; on
 }
 
 export function Field({ label, children, hint }: { label: string; children: ComponentChildren; hint?: string }) {
+  const id = useId();
+  // A single text/date input or textarea gets a real <label for>; other controls carry their own label.
+  const one = isValidElement(children) && ['input', 'textarea', 'select'].includes(children.type as string);
   return (
     <div class="field">
-      <span class="field__label">{label}</span>
-      {children}
-      {hint ? <span class="field__hint">{hint}</span> : null}
+      {one ? (
+        <label class="field__label" for={id}>
+          {label}
+        </label>
+      ) : (
+        <span class="field__label">{label}</span>
+      )}
+      {one ? cloneElement(children, { id, 'aria-describedby': hint ? `${id}-hint` : undefined }) : children}
+      {hint ? (
+        <span class="field__hint" id={`${id}-hint`}>
+          {hint}
+        </span>
+      ) : null}
     </div>
   );
 }

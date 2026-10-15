@@ -5,9 +5,9 @@ import { Backdrop } from '../../design/backgrounds';
 import { Icon } from '../../design/icons';
 import { common, journalText as T } from '../../strings/en';
 import type { JournalEntry } from '../../storage/schema';
-import { data, deleteJournal, saveJournal, today } from '../state';
+import { data, deleteJournal, saveJournal, today, type JournalPlan } from '../state';
 import { back, navigate } from '../router';
-import { Dialog, Field, Segmented } from '../components/Controls';
+import { Dialog, Field, Segmented, Toggle } from '../components/Controls';
 import { shortDate } from '../sessionInfo';
 
 const tagName = (id: string) => content.journal.tags.find((t) => t.id === id)?.name ?? id;
@@ -41,6 +41,7 @@ export function Journal() {
                   <span class="journal-item__text">
                     <span class="journal-item__title">
                       {T.vs(oppName(j.opponentStyle))}
+                      {j.lefty ? `, ${T.leftyShort}` : ''}
                       {j.score ? <span class="num"> · {j.score}</span> : null}
                     </span>
                     <span class="journal-item__sub">
@@ -76,7 +77,7 @@ export function JournalForm({ id }: { id: string | null }) {
         didnt: [],
       },
   );
-  const [saved, setSaved] = useState<string[] | null>(null);
+  const [saved, setSaved] = useState<JournalPlan | null>(null);
   const [confirmDel, setConfirmDel] = useState(false);
   const set = (p: Partial<JournalEntry>) => setE((x) => ({ ...x, ...p }));
   const toggle = (key: 'worked' | 'didnt', tag: string) => {
@@ -101,7 +102,7 @@ export function JournalForm({ id }: { id: string | null }) {
         <Backdrop variant="progress" />
         <div class="stack stack--l">
           <h1>{T.saved}</h1>
-          <p class="note">{saved.length ? T.nowMore(saved) : T.noNewFocus}</p>
+          <p class="note">{saved.sessions ? T.inPlan(saved.sessions, saved.drills) : T.noNewFocus}</p>
           <div class="stack">
             <Button wide href="#/plan">
               {T.seePlan}
@@ -120,7 +121,7 @@ export function JournalForm({ id }: { id: string | null }) {
       <Backdrop variant="progress" />
       <div class="topbar">
         <Button kind="ghost" icon="back" label={common.back} onClick={() => back('/journal')} />
-        <span class="topbar__title">{existing ? T.editMatch : T.logMatch}</span>
+        <h1 class="topbar__title">{existing ? T.editMatch : T.logMatch}</h1>
         <span />
       </div>
       <form
@@ -145,6 +146,8 @@ export function JournalForm({ id }: { id: string | null }) {
             ))}
           </div>
         </fieldset>
+
+        <Toggle checked={!!e.lefty} onChange={(v) => set({ lefty: v })} label={T.lefty} />
 
         <Field label={T.result}>
           <Segmented

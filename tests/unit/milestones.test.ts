@@ -31,6 +31,13 @@ describe('milestones', () => {
     expect(get(ms, 'hours-5').date).not.toBeNull(); // 10 × 60 min
   });
 
+  it('loop minutes count only loop drills', () => {
+    const logs = Array.from({ length: 10 }, (_, i) => logOf(i, `2026-10-${String(10 + i).padStart(2, '0')}`));
+    const all = new Set(content.drills.map((d) => d.id));
+    expect(get(milestones({ ...base, logs, loopDrillIds: all }), 'loops-120').date).not.toBeNull();
+    expect(get(milestones({ ...base, logs, loopDrillIds: new Set() }), 'loops-120')).toMatchObject({ date: null, have: 0 });
+  });
+
   it('four weeks in a row needs four consecutive weeks', () => {
     const gap = milestones({ ...base, logs: ['2026-10-05', '2026-10-12', '2026-10-26', '2026-11-02'].map((d, i) => logOf(i, d)) });
     expect(get(gap, 'streak-4').date).toBeNull();
@@ -78,6 +85,7 @@ describe('serve lab scoring', () => {
   });
   it('mixed alternates short and long', () => {
     expect([0, 1, 2, 3].map((i) => targetFor('mixed', i))).toEqual(['short', 'long', 'short', 'long']);
+    expect(targetFor('half', 3)).toBe('half');
   });
   it('counts hits against the target of each serve', () => {
     const l = (zone: 'short' | 'half' | 'long' | 'out') => ({ x: 0, y: 0, zone });

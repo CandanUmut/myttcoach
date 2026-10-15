@@ -1,6 +1,5 @@
 import type { Content, Skill } from '../content/types';
 import type { FocusEntry, Profile } from './types';
-import type { JournalBoost } from './journal';
 import { engineText } from '../strings/en';
 
 const RANK = [1, 0.7, 0.5];
@@ -23,7 +22,7 @@ export function eligible(skill: Skill, level: number): boolean {
  * Turn goals, chosen moves and style into a weighted skill list.
  * Missing prerequisites of focus skills are added with a plain reason.
  */
-export function buildFocus(profile: Profile, content: Content, learnedSkills: Set<string> = new Set(), journal?: JournalBoost): FocusEntry[] {
+export function buildFocus(profile: Profile, content: Content, learnedSkills: Set<string> = new Set()): FocusEntry[] {
   const skills = new Map(content.skills.map((s) => [s.id, s]));
   const w = new Map<string, number>();
   const chosen = new Set<string>();
@@ -47,17 +46,6 @@ export function buildFocus(profile: Profile, content: Content, learnedSkills: Se
     chosen.add(mv.skillId);
     asked.add(mv.skillId);
     w.set(mv.skillId, (w.get(mv.skillId) ?? 0) + (m.mode === 'learn' ? LEARN_BONUS : IMPROVE_BONUS));
-  }
-
-  // Match journal: what didn't work in recent matches gets extra focus (no new prerequisites)
-  const fromJournal = new Map<string, string[]>();
-  if (journal) {
-    for (const [sid, val] of Object.entries(journal.weights)) {
-      const sk = skills.get(sid);
-      if (!sk || !eligible(sk, profile.level)) continue;
-      w.set(sid, (w.get(sid) ?? 0) + val);
-      fromJournal.set(sid, journal.because[sid] ?? []);
-    }
   }
 
   for (const [sid, val] of w) {
@@ -89,8 +77,6 @@ export function buildFocus(profile: Profile, content: Content, learnedSkills: Se
     const e: FocusEntry = { skillId: sid, weight: Math.round(weight * 1000) / 1000 };
     const because = added.get(sid);
     if (because) e.addedBecause = because;
-    const fj = fromJournal.get(sid);
-    if (fj?.length) e.fromJournal = fj;
     out.push(e);
   }
   out.sort((a, b) => b.weight - a.weight || a.skillId.localeCompare(b.skillId));

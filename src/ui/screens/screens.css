@@ -15,7 +15,7 @@
 .drill__setups { display: flex; gap: 4px; padding: 4px; background: var(--surface-2); border-radius: var(--r-ball); overflow-x: auto; scrollbar-width: none; }
 .seg {
   flex: 1 0 auto;
-  min-height: 40px;
+  min-height: 48px;
   padding: 0 var(--s3);
   border: 0;
   border-radius: var(--r-ball);
@@ -135,14 +135,14 @@
 .viewer__row .segmented { flex: 1; }
 .viewer__row--small { justify-content: space-between; flex-wrap: wrap; }
 .viewer__scrub { position: relative; padding: 6px 0; }
-.viewer__scrub input[type='range'] { width: 100%; height: 40px; accent-color: var(--c-ball); }
+.viewer__scrub input[type='range'] { width: 100%; height: 48px; accent-color: var(--c-ball); }
 .viewer__marks { position: absolute; left: 10px; right: 10px; top: 0; height: 8px; pointer-events: none; }
 .viewer__marks span { position: absolute; width: 4px; height: 10px; border-radius: 2px; background: var(--line-strong); transform: translateX(-2px); }
 .viewer__marks span.is-on { background: var(--accent); }
 .viewer__follow { display: flex; gap: var(--s3); align-items: center; justify-content: space-between; }
 .viewer--fail { padding: var(--s5); border-radius: var(--r-blade); background: var(--surface-2); color: var(--text-2); }
 .spin { display: inline-flex; gap: 6px; align-items: center; font-weight: 700; font-size: var(--t-s); }
-.spin--topspin { color: #c45a10; }
+.spin--topspin { color: var(--focus); }
 .spin--backspin { color: var(--table); }
 .devshot { position: fixed; inset: 0; }
 .editor__stage { position: sticky; top: 0; z-index: 2; height: 42dvh; margin: calc(-1 * var(--s5)) calc(-1 * var(--s4)) var(--s3); background: var(--surface-2); }
@@ -183,7 +183,8 @@ legend { padding: 0; margin-bottom: var(--s2); }
 .serve-table { width: 100%; max-height: 52vh; touch-action: manipulation; cursor: crosshair; display: block; border-radius: var(--r-blade); }
 .serve-table__floor { fill: var(--surface-2); }
 .serve-table__surface { fill: var(--table); }
-.serve-table__target { fill: var(--accent); opacity: 0.35; }
+.serve-table__target { fill: var(--accent); opacity: 0.55; }
+.serve-table__label { font-size: 10px; font-weight: 700; fill: var(--text-2); pointer-events: none; }
 .serve-table__third { stroke: var(--table-line); stroke-width: 0.8; stroke-dasharray: 3 3; opacity: 0.6; fill: none; }
 .serve-table__centre { stroke: var(--table-line); stroke-width: 0.6; opacity: 0.7; }
 .serve-table__edge { fill: none; stroke: var(--table-line); stroke-width: 2; }

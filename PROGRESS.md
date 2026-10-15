@@ -13,8 +13,8 @@ Live site: https://candanumut.github.io/myttcoach/
 | 5 3D player | done: cute code-built character, viewer, follow-along, pose editor (#/dev/poses), 4 animations |
 | 6 Learning path wiring | done (stage passes, What's next with self-checks, skip ahead, add move to plan, troubleshooting in the session player) |
 | 7 Full content library + animations | done: 42 skills, 25 moves (all animated), 95 drills, 11 metrics, 155 tips; coverage test; content critic fixes applied |
-| 8 Proposed features | not started |
-| 9 PWA, accessibility, polish | not started |
+| 8 Proposed features | done: match journal, serve lab, spin and angle helper, milestones (read cues aloud was already in the session player); critic fixes applied |
+| 9 PWA, accessibility, polish | in progress: offline PWA + icons, axe audit clean (light/dark, 18 screens), content guide |
 
 ## Decisions log
 - 2026-10-14 — Repo already existed (`CandanUmut/myttcoach`), so no repo creation. App display name: **Third Ball** (owner: name doesn't matter).
@@ -37,3 +37,8 @@ Live site: https://candanumut.github.io/myttcoach/
 - 2026-10-15 — Phase 7 content critic fixes applied: crossover footwork (the left foot crosses for a right-hander moving right), chop bat angle (more upright against heavy topspin), left-hander diagonals, Falkenberg feed, two drills fed the wrong metric (removed), mix-stage drills that didn't match their task, clearer serve descriptions, workable game-drill rules, left-hander notes.
 - 2026-10-15 — 21 more animations are generated from shared base poses (stance, step-in, deep) by a small script; serve arm poses come from `scripts/solve-pose.ts` (finds arm angles for a target bat position and face direction). Every animation passes the pose tests (feet on the floor, face toward the table, sensible contact height) and was checked in side and front renders. The viewer camera now frames where the move is played (chops and lobs stand far back).
 - Honest note: the new animations are clear but simpler than the four hand-tuned ones (one key per phase). The owner's eye on the serves and chops would be the most useful review.
+- 2026-10-15 — Match journal: the critic measured that adding small focus weights over the whole plan barely changed anything (and reshuffled unrelated drills), while the screen claimed it did. Changed to what the spec describes: the 6 sessions after the newest match each get one dedicated drill for the top 1–2 skills behind what didn't work (or the style of an opponent the player lost to). Matches more than 8 weeks older than the newest one don't count. The save screen and player card only report journal drills that are really in the plan. Left-handed opponent is a separate switch (it's not a style).
+- 2026-10-15 — Spin and angle helper is a 2D side view (bat angle, swing arrow, spin arrow), not 3D: clearer and lighter. Sidespin is treated as one spin, with a note that it nearly always comes with top- or backspin.
+- 2026-10-15 — Serve lab scores depth only (short / half-long / long / mixed). Width targets (backhand, elbow, forehand) would be a good next step; tap positions are already stored.
+- 2026-10-15 — PWA: Workbox precaches the app, 3D chunk, all animations and the two Latin fonts (39 files, ~1.26 MB); other font files are cached when first used. Updates install silently (no prompts, no notifications). Offline is covered by an e2e test.
+- Known: milestones come from logs, so starting a brand-new plan from onboarding (which clears logs) resets them.

@@ -83,9 +83,10 @@ test('learning path: pass a stage from the move page', async ({ page }) => {
 const seed = async (page: import('@playwright/test').Page) => {
   await page.goto('./');
   await page.evaluate(() => {
+    const start = new Date().toISOString().slice(0, 10); // the plan runs from today
     localStorage.setItem('thirdball:v1', JSON.stringify({ schemaVersion: 2, profile: {
       name: 'Kim', hand: 'R', grip: 'shakehand', level: 3, style: 'balanced', goals: ['consistency'], moves: [],
-      workoutTypes: [], setups: ['partner'], schedule: { days: [0,1,2,3,4,5,6], time: null, length: 60, weeks: 4, startDate: '2026-01-05' },
+      workoutTypes: [], setups: ['partner'], schedule: { days: [0,1,2,3,4,5,6], time: null, length: 60, weeks: 4, startDate: start },
       lowImpact: false, voice: 'calm', regenCount: 0 }, settings: { theme: 'light', sound: false, readCues: false } }));
   });
   await page.reload();
@@ -97,18 +98,19 @@ test('match journal: a lost match adds focus to the plan', async ({ page }) => {
   await page.getByRole('link', { name: /Match journal/ }).click();
   await page.getByRole('link', { name: 'Log a match' }).click();
   await page.getByRole('button', { name: 'Chopper / defender' }).click();
+  await page.getByRole('switch', { name: 'Left-handed opponent' }).click();
   await page.getByRole('radio', { name: 'Lost' }).click();
   await page.getByRole('textbox').nth(1).fill('1–3');
   // "Receiving serves" appears twice (didn't / worked): the first group is "didn't work"
   await page.getByRole('button', { name: 'Receiving serves' }).first().click();
   await page.getByRole('button', { name: 'Save match' }).click();
   await expect(page.getByRole('heading', { name: 'Match saved' })).toBeVisible();
-  await expect(page.getByText(/Your next sessions add more/)).toBeVisible();
+  await expect(page.getByText(/Your next 6 sessions each include a drill for what didn’t work/)).toBeVisible();
   await page.getByRole('link', { name: 'Back to the journal' }).click();
-  await expect(page.getByText('vs Chopper / defender')).toBeVisible();
+  await expect(page.getByText('vs Chopper / defender, left-handed')).toBeVisible();
   // the plan explains itself
   await page.goto('./#/card');
-  await expect(page.getByText(/because of your match journal/).first()).toBeVisible();
+  await expect(page.getByText(/each include a drill for what didn’t work/).first()).toBeVisible();
 });
 
 test('serve lab: a round of 10 gives a score and a history row', async ({ page }) => {
@@ -138,4 +140,22 @@ test('spin helper: heavy backspin loop needs an upright bat', async ({ page }) =
   await expect(page.locator('.spin-facts')).toContainText('Mostly up');
   await page.getByRole('button', { name: 'Block' }).click();
   await expect(page.getByText('Better choice here: Push.')).toBeVisible();
+});
+
+test('works offline after the first visit', async ({ page, context }) => {
+  await seed(page);
+  // wait until the service worker controls the page and has precached everything
+  await page.evaluate(async () => {
+    const reg = await navigator.serviceWorker.ready;
+    if (!navigator.serviceWorker.controller) await new Promise((r) => navigator.serviceWorker.addEventListener('controllerchange', r, { once: true }));
+    return !!reg.active;
+  });
+  await context.setOffline(true);
+  await page.reload();
+  await expect(page.getByText("Today's session")).toBeVisible();
+  // a lazy chunk (the move page with its animation) also loads offline
+  await page.goto('./#/learn/fh-drive');
+  await expect(page.getByRole('heading', { name: 'Forehand drive', level: 1 })).toBeVisible();
+  await expect(page.locator('.viewer canvas, .viewer--fail')).toHaveCount(1);
+  await context.setOffline(false);
 });

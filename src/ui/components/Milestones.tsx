@@ -1,9 +1,13 @@
+import { content } from '../../content/load';
 import { milestones, type Milestone } from '../../engine/milestones';
 import { hitsOf } from '../../engine/serveLab';
 import { Icon } from '../../design/icons';
 import { milestoneText as T } from '../../strings/en';
 import type { AppData } from '../../storage/schema';
 import { shortDate } from '../sessionInfo';
+
+const LOOP_SKILLS = ['fh-loop-backspin', 'fh-loop-topspin', 'bh-topspin', 'counter-loop'];
+const loopDrillIds = new Set(content.drills.filter((d) => d.skills.some((s) => LOOP_SKILLS.includes(s.id) && s.weight >= 0.6)).map((d) => d.id));
 
 export function milestonesOf(d: AppData): Milestone[] {
   return milestones({
@@ -14,6 +18,7 @@ export function milestonesOf(d: AppData): Milestone[] {
     stagePasses: d.stagePasses,
     journal: d.journal,
     serveLab: d.serveLab.map((r) => ({ date: r.date, hits: hitsOf(r) })),
+    loopDrillIds,
   });
 }
 
@@ -47,7 +52,7 @@ export function Milestones({ data }: { data: AppData }) {
               <span class="milestone__sub">
                 {m.need! > 1 ? (
                   <>
-                    {T.next}: <span class="num">{T.progress(m.have!, m.need!)}</span>
+                    {T.next}: <span class="num">{m.id === 'loops-120' ? T.minutes(m.have!, m.need!) : T.progress(m.have!, m.need!)}</span>
                   </>
                 ) : (
                   T.next

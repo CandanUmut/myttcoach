@@ -22,6 +22,7 @@ export function RestoreButton({ kind = 'quiet' }: { kind?: 'quiet' | 'ghost' }) 
         accept="application/json,.json"
         class="sr-only"
         tabIndex={-1}
+        aria-hidden="true"
         onChange={async (e) => {
           const f = (e.target as HTMLInputElement).files?.[0];
           if (!f) return;

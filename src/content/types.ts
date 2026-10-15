@@ -156,6 +156,8 @@ export interface JournalTag {
 export interface JournalContent {
   tags: JournalTag[];
   opponents: JournalTag[];
+  /** Extra weights when the opponent was left-handed (any style). */
+  lefty: JournalTag;
 }
 
 /** Spin and angle helper. Angles in degrees: bat from upright (+ open, − closed); swing from forward (+ up, − down). */
@@ -170,6 +172,8 @@ export interface SpinCell {
   heavy: SpinSetting;
   note: string;
   better?: string;
+  /** Move to watch for this cell, when it differs from the stroke's usual move. */
+  moveId?: string;
 }
 export interface SpinHelper {
   spins: { id: string; name: string }[];

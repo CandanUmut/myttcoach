@@ -13,7 +13,7 @@ export function DrillScreen({ drillId }: { drillId: string }) {
       <div class="topbar">
         <Button kind="ghost" icon="back" label={common.back} onClick={() => back('/library')} />
       </div>
-      {drill ? <DrillCard drill={drill} /> : <p>{common.notFound}</p>}
+      {drill ? <DrillCard drill={drill} headingLevel={1} /> : <p>{common.notFound}</p>}
     </div>
   );
 }

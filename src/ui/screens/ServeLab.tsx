@@ -119,6 +119,7 @@ export function ServeLab() {
             onChange={setTarget}
             options={[
               { value: 'short', label: T.short },
+              { value: 'half', label: T.half },
               { value: 'long', label: T.long },
               { value: 'mixed', label: T.mixed },
             ]}
@@ -186,7 +187,7 @@ function History({ rounds }: { rounds: ServeLabEntry[] }) {
 
 /** Far half of the table, seen from the server: net at the bottom, end line at the top.
  *  Tapping outside the table counts as a miss. */
-function ServeTable({ landings, target, aim, onTap }: { landings: Landing[]; target: ServeTarget; aim: 'short' | 'long'; onTap: (x: number, y: number) => void }) {
+function ServeTable({ landings, target, aim, onTap }: { landings: Landing[]; target: ServeTarget; aim: 'short' | 'half' | 'long'; onTap: (x: number, y: number) => void }) {
   const M = 26; // margin around the table (taps here missed)
   const TW = 152.5;
   const TH = 137;
@@ -203,11 +204,15 @@ function ServeTable({ landings, target, aim, onTap }: { landings: Landing[]; tar
       role="img"
       aria-label={T.tableLabel(landings.length)}
       onClick={(ev) => {
+        // map the tap into viewBox units (correct even when the drawing is letterboxed)
         const svg = ev.currentTarget as SVGSVGElement;
-        const r = svg.getBoundingClientRect();
-        const vx = ((ev.clientX - r.left) / r.width) * W;
-        const vy = ((ev.clientY - r.top) / r.height) * H;
-        onTap((vx - M) / TW, 1 - (vy - M) / TH);
+        const ctm = svg.getScreenCTM();
+        if (!ctm) return;
+        const pt = svg.createSVGPoint();
+        pt.x = ev.clientX;
+        pt.y = ev.clientY;
+        const p = pt.matrixTransform(ctm.inverse());
+        onTap((p.x - M) / TW, 1 - (p.y - M) / TH);
       }}
     >
       <rect x="0" y="0" width={W} height={H} class="serve-table__floor" />
@@ -217,6 +222,12 @@ function ServeTable({ landings, target, aim, onTap }: { landings: Landing[]; tar
       <path d={`M${M + TW / 2} ${M} V${M + TH}`} class="serve-table__centre" />
       <rect x={M} y={M} width={TW} height={TH} class="serve-table__edge" />
       <path d={`M${M - 8} ${M + TH} H${M + TW + 8}`} class="serve-table__net" />
+      <text x={M + TW / 2} y={M + TH + 17} text-anchor="middle" class="serve-table__label">
+        {T.netLabel}
+      </text>
+      <text x={M + TW / 2} y={M - 9} text-anchor="middle" class="serve-table__label">
+        {T.endLabel}
+      </text>
       {landings.map((l, i) => {
         if (l.zone === 'out' && l.x < -0.5) return null; // "net or missed" has no spot
         const [cx, cy] = toSvg(Math.max(-0.15, Math.min(1.15, l.x)), Math.max(-0.15, Math.min(1.15, l.y)));

@@ -129,7 +129,7 @@ export function validateContent(c: Content, animationIds: Set<string> = new Set(
   // match journal: tags and opponent styles point at real skills
   ids('journal tag', c.journal.tags);
   ids('journal opponent', c.journal.opponents);
-  for (const t of [...c.journal.tags, ...c.journal.opponents]) {
+  for (const t of [...c.journal.tags, ...c.journal.opponents, c.journal.lefty]) {
     if (!t.name) err(`journal ${t.id}: missing name`);
     for (const [k, v] of Object.entries(t.skillWeights)) {
       if (!skills.has(k)) err(`journal ${t.id}: skill "${k}" not found`);
@@ -148,6 +148,7 @@ export function validateContent(c: Content, animationIds: Set<string> = new Set(
     }
   for (const x of sh.cells) {
     if (!strokeIds.has(x.stroke) || !sh.spins.some((s) => s.id === x.spin)) err(`spin helper: unknown cell ${x.stroke} × ${x.spin}`);
+    if (x.moveId && !moves.has(x.moveId)) err(`spin helper ${x.stroke} × ${x.spin}: move "${x.moveId}" not found`);
     if (x.better && !strokeIds.has(x.better)) err(`spin helper ${x.stroke} × ${x.spin}: better "${x.better}" not found`);
     for (const v of [x.light, x.heavy]) {
       if (Math.abs(v.angle) > 80 || Math.abs(v.swing) > 90) err(`spin helper ${x.stroke} × ${x.spin}: angle out of range`);

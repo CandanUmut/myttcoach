@@ -22,6 +22,7 @@ export function DrillCard({
   reason,
   hand = 'R',
   compact,
+  headingLevel = 3,
 }: {
   drill: Drill;
   setups?: Setup[];
@@ -30,7 +31,9 @@ export function DrillCard({
   reason?: string;
   hand?: 'R' | 'L';
   compact?: boolean;
+  headingLevel?: 1 | 2 | 3;
 }) {
+  const H = `h${headingLevel}` as 'h3';
   const usable = drill.variants.filter((v) => setups.includes(v.setup));
   const [setup, setSetup] = useState<Setup>(pickVariant(drill, setups).setup);
   const variant = drill.variants.find((v) => v.setup === setup) ?? drill.variants[0]!;
@@ -52,7 +55,7 @@ export function DrillCard({
           <span class="tag tag--warn">{T.highImpact}</span>
         </div>
       ) : null}
-      <h3 class="drill__name">{drill.name}</h3>
+      <H class="drill__name">{drill.name}</H>
       <p class="drill__purpose">{drill.purpose}</p>
       {reason ? (
         <p class="drill__why">

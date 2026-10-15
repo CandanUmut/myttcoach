@@ -77,7 +77,7 @@ input[type='date'].input { padding-right: var(--s2); }
 
 /* ---------- Segmented ---------- */
 .segmented { display: flex; gap: 4px; padding: 4px; background: var(--surface-2); border-radius: var(--r-ball); }
-.segmented .seg { flex: 1 1 0; min-height: 44px; }
+.segmented .seg { flex: 1 1 0; min-height: 48px; }
 .feel-row .btn.is-picked,
 .btn.is-picked { --btn-bg: var(--text); --btn-fg: var(--bg); box-shadow: none; }
 
@@ -259,7 +259,7 @@ input[type='date'].input { padding-right: var(--s2); }
 .session-row__dow { font-size: var(--t-xs); color: var(--text-2); font-weight: 700; }
 .session-row__day { font-family: var(--font-display); font-weight: 800; font-size: var(--t-l); }
 .session-row.is-done .rowlink__title { color: var(--text-2); }
-.session-row.is-today .session-row__day { color: var(--accent); }
+.session-row.is-today .session-row__day { color: var(--focus); }
 .session-row__check { color: var(--good); }
 .rowlink__title .tag { margin-left: var(--s2); vertical-align: middle; }
 .month__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }

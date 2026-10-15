@@ -5,7 +5,7 @@ import { Button, PlyDivider } from '../../design/components';
 import { Icon } from '../../design/icons';
 import { Backdrop } from '../../design/backgrounds';
 import { card as C, controlsText, goalNames, learnText, levelNames, ob, stageNames, journalText } from '../../strings/en';
-import { engineState, profile, program } from '../state';
+import { data, engineState, journalPlan, profile, program } from '../state';
 import { startEdit } from './Onboarding';
 
 function list(items: string[]): string {
@@ -24,7 +24,9 @@ export function whyThisPlan(): string[] {
     .map((f) => byId.skill.get(f.skillId)!.name.toLowerCase());
   out.push(C.whyFocus(list(top)));
   for (const f of prog.focus) if (f.addedBecause) out.push(C.whyAdded(f.addedBecause));
-  for (const f of prog.focus.filter((x) => x.fromJournal).slice(0, 3)) out.push(journalText.fromJournal(f.fromJournal!.join(', '), byId.skill.get(f.skillId)!.name));
+  const next = data.value.logs.length ? Math.max(...data.value.logs.map((l) => l.sessionIndex)) + 1 : 0;
+  const jp = journalPlan(prog, next);
+  if (jp.sessions) out.push(journalText.inPlan(jp.sessions, jp.drills));
   if (prog.learnOrder.length) out.push(C.whyLearn(list(prog.learnOrder.map((m) => byId.move.get(m)!.name.toLowerCase()))));
   const perWeek = prog.weeks[0]?.sessionIds.length ?? new Set(p.schedule.days).size;
   out.push(C.whyWeeks(prog.weeks.length, perWeek, prog.sessions[0]?.length ?? p.schedule.length));

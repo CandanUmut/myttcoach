@@ -2,9 +2,9 @@ import { computed, signal } from '@preact/signals';
 import { content } from '../content/load';
 import { generateProgram } from '../engine/generate';
 import { adaptProgram, deriveState } from '../engine/adapt';
-import { journalBoost } from '../engine/journal';
+import { journalFocus } from '../engine/journal';
 import { sessionDates } from '../engine/schedule';
-import type { Change, MetricResult, Profile, Session, SessionLog } from '../engine/types';
+import type { Change, MetricResult, Profile, Program, Session, SessionLog } from '../engine/types';
 import type { StageId } from '../content/types';
 import { clearAll, loadAll, saveIdb, saveLocal } from '../storage/persist';
 import { emptyData, type AppData, type JournalEntry, type ServeLabEntry, type Settings } from '../storage/schema';
@@ -100,7 +100,7 @@ export function clearPlayerDrafts() {
 /** First plan: new profile, fresh program. */
 export function createPlan(p: Profile) {
   const notes = data.value.journal;
-  const state = notes.length ? { stageOf: {}, changes: [], learnedSkills: [], journal: journalBoost(notes, content) } : undefined;
+  const state = notes.length ? { stageOf: {}, changes: [], learnedSkills: [], journal: journalFocus(notes, content) } : undefined;
   const prog = generateProgram(p, content, { state });
   clearPlayerDrafts();
   update({ profile: p, program: prog, logs: [], overrides: {}, results: [], stagePasses: [] });
@@ -173,9 +173,9 @@ export function dismiss(id: string) {
 
 /**
  * Save (or edit) a match and re-plan future sessions with the journal.
- * Returns the names of skills that now get more focus because of it.
+ * Returns what the journal now puts into the upcoming sessions.
  */
-export function saveJournal(j: JournalEntry): string[] {
+export function saveJournal(j: JournalEntry): JournalPlan {
   return replanJournal([...data.value.journal.filter((x) => x.id !== j.id), j]);
 }
 
@@ -183,23 +183,41 @@ export function deleteJournal(id: string) {
   replanJournal(data.value.journal.filter((x) => x.id !== id));
 }
 
-function replanJournal(journal: JournalEntry[]): string[] {
+function replanJournal(journal: JournalEntry[]): JournalPlan {
   const d = data.value;
   if (!d.program || !d.profile) {
     update({ journal });
-    return [];
+    return { sessions: 0, drills: [] };
   }
-  const before = new Set(d.program.focus.filter((f) => f.fromJournal).map((f) => f.skillId));
   // past (logged) sessions stay; the future is rebuilt with the new journal
   const k = d.logs.length ? Math.max(...d.logs.map((l) => l.sessionIndex)) + 1 : 0;
   const state = deriveState(d.logs, d.profile, content, d.program, d.stagePasses, journal);
   const program = generateProgram(d.profile, content, { past: d.program.sessions.slice(0, k), state });
   clearPlayerDrafts();
   update({ journal, program });
-  return program.focus
-    .filter((f) => f.fromJournal && !before.has(f.skillId))
-    .slice(0, 3)
-    .map((f) => content.skills.find((x) => x.id === f.skillId)?.name ?? f.skillId);
+  return journalPlan(program, k);
+}
+
+export interface JournalPlan {
+  /** Upcoming sessions with a journal drill. */
+  sessions: number;
+  /** Names of those drills, without repeats. */
+  drills: string[];
+}
+
+/** What the match journal actually put into the sessions from index `from` on. */
+export function journalPlan(prog: Program, from: number): JournalPlan {
+  let sessions = 0;
+  const drills: string[] = [];
+  for (const s of prog.sessions.slice(from)) {
+    const items = s.blocks.flatMap((b) => b.items).filter((i) => i.fromJournal && i.drillId);
+    if (items.length) sessions++;
+    for (const i of items) {
+      const name = content.drills.find((x) => x.id === i.drillId)?.name;
+      if (name && !drills.includes(name)) drills.push(name);
+    }
+  }
+  return { sessions, drills };
 }
 
 export function saveServeLab(e: ServeLabEntry) {

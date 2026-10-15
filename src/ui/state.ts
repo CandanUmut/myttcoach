@@ -83,9 +83,22 @@ function update(patch: Partial<AppData>) {
   }
 }
 
+/** Session-player drafts live in sessionStorage; clear them whenever plans change. */
+export function clearPlayerDrafts() {
+  try {
+    for (let i = sessionStorage.length - 1; i >= 0; i--) {
+      const k = sessionStorage.key(i);
+      if (k?.startsWith('thirdball:play:')) sessionStorage.removeItem(k);
+    }
+  } catch {
+    /* ignore */
+  }
+}
+
 /** First plan: new profile, fresh program. */
 export function createPlan(p: Profile) {
   const prog = generateProgram(p, content);
+  clearPlayerDrafts();
   update({ profile: p, program: prog, logs: [], overrides: {}, results: [] });
 }
 
@@ -99,7 +112,9 @@ export function updateProfile(p: Profile, regenerate: boolean) {
   const k = d.logs.length ? Math.max(...d.logs.map((l) => l.sessionIndex)) + 1 : 0;
   const state = d.profile ? deriveState(d.logs, p, content, d.program) : undefined;
   const prog = generateProgram(p, content, { past: d.program.sessions.slice(0, k), state });
-  update({ profile: p, program: prog });
+  clearPlayerDrafts();
+  const overrides = Object.fromEntries(Object.entries(d.overrides).filter(([id]) => Number(id.slice(1)) < k));
+  update({ profile: p, program: prog, overrides });
 }
 
 /** Save a session log, record metric results, and re-plan the future. Returns new changes. */
@@ -107,15 +122,17 @@ export function logSession(log: SessionLog): Change[] {
   const d = data.value;
   if (!d.program || !d.profile) return [];
   const logs = [...d.logs.filter((l) => l.sessionId !== log.sessionId), log];
-  const results: MetricResult[] = [...d.results];
+  // results from this session replace any saved earlier for it (leave, then finish, then reopen)
+  const results: MetricResult[] = d.results.filter((r) => r.sessionId !== log.sessionId);
   const session = d.program.sessions[log.sessionIndex];
   for (const it of log.items) {
+    if (!it.done || typeof it.count !== 'number') continue;
     const planned = session?.blocks[it.blockIndex]?.items[it.itemIndex];
-    if (planned?.metricId && typeof it.count === 'number') {
-      results.push({ metricId: planned.metricId, date: log.date, value: it.count, source: 'test' });
-    } else if (planned?.drillId && typeof it.count === 'number') {
+    if (planned?.metricId) {
+      results.push({ metricId: planned.metricId, date: log.date, value: it.count, source: 'test', sessionId: log.sessionId });
+    } else if (planned?.drillId) {
       const metric = content.metrics.find((m) => m.testDrillId === planned.drillId);
-      if (metric) results.push({ metricId: metric.id, date: log.date, value: it.count, source: 'log' });
+      if (metric) results.push({ metricId: metric.id, date: log.date, value: it.count, source: 'log', sessionId: log.sessionId });
     }
   }
   const { program: prog, newChanges } = adaptProgram(d.program, logs, d.profile, content);
@@ -150,6 +167,7 @@ export function saveServeLab(e: ServeLabEntry) {
 }
 
 export function replaceAll(d: AppData) {
+  clearPlayerDrafts();
   update({ ...d });
   saveLocal(d);
   applyTheme(d.settings.theme);
@@ -157,6 +175,7 @@ export function replaceAll(d: AppData) {
 
 export async function resetAll() {
   await clearAll();
+  clearPlayerDrafts();
   data.value = emptyData();
   applyTheme('auto');
 }

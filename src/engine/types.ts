@@ -122,4 +122,5 @@ export interface MetricResult {
   date: string;
   value: number;
   source: 'test' | 'log';
+  sessionId?: string;
 }

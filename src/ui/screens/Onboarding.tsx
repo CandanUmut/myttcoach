@@ -9,7 +9,7 @@ import { ArcProgress, Button, Chip } from '../../design/components';
 import { Backdrop } from '../../design/backgrounds';
 import { ActionBar, Dialog, Field, NumberStepper, OptionRow, Segmented, Toggle } from '../components/Controls';
 import {
-  dayShort, goalNames, levelBlurbs, levelNames, ob, settingsText, voiceNames, voiceSamples, workoutNames,
+  dayShort, goalNames, levelBlurbs, levelNames, ob, settingsText, todayText, voiceNames, voiceSamples, workoutNames,
 } from '../../strings/en';
 import { createPlan, profile as currentProfile, today, updateProfile } from '../state';
 import { navigate } from '../router';
@@ -105,16 +105,25 @@ export function Onboarding({ step, edit }: { step: number; edit: boolean }) {
         <ArcProgress value={step} max={TOTAL} compact label={ob.stepOf(step, TOTAL)} />
       </div>
       <div class="stack stack--l onboarding__body">
-        <Step />
+        <Step edit={edit} />
       </div>
       <ActionBar>
         {step > 1 ? (
           <Button kind="quiet" icon="back" onClick={() => go(step - 1)}>
             {ob.back}
           </Button>
+        ) : edit ? (
+          <Button kind="quiet" icon="close" onClick={() => navigate('/settings', true)}>
+            {ob.cancel}
+          </Button>
         ) : (
           <span />
         )}
+        {edit && step < TOTAL ? (
+          <Button kind="quiet" onClick={finish} disabled={!canNext}>
+            {ob.saveShort}
+          </Button>
+        ) : null}
         {step < TOTAL ? (
           <Button onClick={() => go(step + 1)} disabled={!canNext}>
             {ob.next}
@@ -157,7 +166,8 @@ export function Onboarding({ step, edit }: { step: number; edit: boolean }) {
   );
 }
 
-function About() {
+function About(_p: { edit?: boolean }) {
+  void _p;
   const d = draft.value;
   const A = ob.about;
   return (
@@ -190,7 +200,7 @@ function About() {
   );
 }
 
-function LevelStep() {
+function LevelStep({ edit }: { edit?: boolean }) {
   const d = draft.value;
   const L = ob.level;
   const counts = Object.fromEntries(Object.entries(L.checks).map(([k, v]) => [k, v.length]));
@@ -199,8 +209,10 @@ function LevelStep() {
     const arr = [...(d.levelChecks[lvl] ?? Array(L.checks[lvl]!.length).fill(false))];
     arr[i] = !arr[i];
     const checks = { ...d.levelChecks, [lvl]: arr };
-    setDraft({ levelChecks: checks, level: suggestedLevel(checks, counts) });
+    // when editing, never overwrite the saved level by itself; offer the suggestion instead
+    setDraft(edit ? { levelChecks: checks } : { levelChecks: checks, level: suggestedLevel(checks, counts) });
   };
+  const anyTicked = Object.values(d.levelChecks).some((a) => a.some(Boolean));
   return (
     <>
       <div class="stack stack--s">
@@ -212,7 +224,16 @@ function LevelStep() {
           L.checks[lvl]!.map((text, i) => <OptionRow multi title={text} selected={!!d.levelChecks[lvl]?.[i]} onClick={() => toggle(lvl, i)} />),
         )}
       </div>
-      <p class="callout">{L.suggested(levelNames[suggestion]!)}</p>
+      {!edit || anyTicked ? (
+        <div class="callout row row--between row--wrap">
+          <span>{L.suggested(levelNames[suggestion]!)}</span>
+          {edit && suggestion !== d.level ? (
+            <Button kind="quiet" onClick={() => setDraft({ level: suggestion })}>
+              {todayText.useLevel}
+            </Button>
+          ) : null}
+        </div>
+      ) : null}
       <Field label={L.pick}>
         <div class="stack stack--s">
           {([1, 2, 3, 4, 5] as Level[]).map((l) => (
@@ -224,7 +245,8 @@ function LevelStep() {
   );
 }
 
-function StyleStep() {
+function StyleStep(_p: { edit?: boolean }) {
+  void _p;
   const d = draft.value;
   const S = ob.style;
   const [quiz, setQuiz] = useState<number[] | null>(null);
@@ -283,7 +305,8 @@ function StyleStep() {
   );
 }
 
-function GoalsStep() {
+function GoalsStep(_p: { edit?: boolean }) {
+  void _p;
   const d = draft.value;
   const G = ob.goals;
   const toggle = (g: GoalId) => {
@@ -316,7 +339,8 @@ function GoalsStep() {
   );
 }
 
-function MovesStep() {
+function MovesStep(_p: { edit?: boolean }) {
+  void _p;
   const d = draft.value;
   const M = ob.moves;
   const list = content.moves.filter((m) => m.levelMin <= d.level + 1);
@@ -352,7 +376,8 @@ function MovesStep() {
   );
 }
 
-function WorkoutsStep() {
+function WorkoutsStep(_p: { edit?: boolean }) {
+  void _p;
   const d = draft.value;
   const W = ob.workouts;
   const all: WorkoutType[] = ['technique', 'footwork', 'serveReceive', 'matchPlay', 'fitness', 'mental'];
@@ -378,7 +403,8 @@ function WorkoutsStep() {
   );
 }
 
-function SetupStep() {
+function SetupStep(_p: { edit?: boolean }) {
+  void _p;
   const d = draft.value;
   const S = ob.setup;
   const all: Setup[] = ['partner', 'multiball', 'robot', 'wall', 'shadow'];
@@ -402,7 +428,8 @@ function SetupStep() {
   );
 }
 
-function ScheduleStep() {
+function ScheduleStep(_p: { edit?: boolean }) {
+  void _p;
   const d = draft.value;
   const S = ob.schedule;
   const sch = d.schedule;
@@ -440,7 +467,8 @@ function ScheduleStep() {
   );
 }
 
-function GoalMetricStep() {
+function GoalMetricStep(_p: { edit?: boolean }) {
+  void _p;
   const d = draft.value;
   const G = ob.goal;
   const p = toProfile(d);
@@ -479,7 +507,8 @@ function GoalMetricStep() {
   );
 }
 
-function OptionsStep() {
+function OptionsStep(_p: { edit?: boolean }) {
+  void _p;
   const d = draft.value;
   const O = ob.options;
   return (

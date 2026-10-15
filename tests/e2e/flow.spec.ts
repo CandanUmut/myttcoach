@@ -42,12 +42,12 @@ test('new player: onboarding to plan, then log a drill', async ({ page }) => {
 
   // Start the session and log the first drill
   await page.getByRole('link', { name: 'Start' }).first().click();
-  await expect(page.getByText('1 of')).toBeVisible();
-  await page.getByRole('button', { name: 'Next drill' }).click();
+  await expect(page.locator('.player__count')).toHaveText(/^1 of/);
+  await page.getByRole('button', { name: 'Done', exact: true }).click();
   await page.getByRole('radio', { name: 'Right' }).click();
   await page.getByRole('radio', { name: 'Yes' }).first().click();
   await page.getByRole('button', { name: 'Save and next' }).click();
-  await expect(page.getByText('2 of')).toBeVisible();
+  await expect(page.locator('.player__count')).toHaveText(/^2 of/);
 
   // Leave: the log is kept and the plan still shows
   await page.getByRole('button', { name: 'Close session' }).click();

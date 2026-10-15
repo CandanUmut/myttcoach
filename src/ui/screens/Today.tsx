@@ -6,7 +6,7 @@ import { addDays } from '../../engine/periodize';
 import { BounceStepper, Button } from '../../design/components';
 import { Icon } from '../../design/icons';
 import { Backdrop } from '../../design/backgrounds';
-import { engineText, learnText, levelNames, ob, phaseNames, stageShort, todayText as T } from '../../strings/en';
+import { appName, controlsText, engineText, levelNames, ob, phaseNames, stageShort, todayText as T } from '../../strings/en';
 import { data, dates, dismiss, engineState, logBySession, nextSession, profile, program, today, updateProfile } from '../state';
 import { friendlyDate, sessionSetup, sessionTitle } from '../sessionInfo';
 import { BottomNav } from '../components/BottomNav';
@@ -36,8 +36,8 @@ export function Today() {
     <div class="screen">
       <Backdrop variant="today" />
       <div class="topbar">
-        <span class="topbar__title">Third Ball</span>
-        <Button kind="ghost" icon="settings" label="Settings" href="#/settings" />
+        <span class="topbar__title">{appName}</span>
+        <Button kind="ghost" icon="settings" label={controlsText.settings} href="#/settings" />
       </div>
       <div class="stack stack--l">
         <div class="stack stack--s">
@@ -52,7 +52,7 @@ export function Today() {
             <span class="hero__eyebrow">{T.done}</span>
             <h2>{T.doneBody}</h2>
             <Button wide href="#/settings">
-              {ob.next}
+              {T.newPlan}
             </Button>
           </div>
         ) : isToday ? (
@@ -138,7 +138,6 @@ export function Today() {
             <p>{tip.text}</p>
           </section>
         ) : null}
-        <span class="sr-only">{learnText.title}</span>
       </div>
       <BottomNav active="today" />
     </div>

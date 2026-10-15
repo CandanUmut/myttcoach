@@ -33,7 +33,7 @@ export function BallMoment() {
   }, [m?.id]);
   if (!m) return null;
   return (
-    <div class="ball-moment" role="status" aria-live="polite" key={m.id} onClick={() => (moment.value = null)}>
+    <div class="ball-moment" role="status" aria-live="polite" key={m.id}>
       <svg class="ball-moment__svg" viewBox="0 0 320 140" aria-hidden="true">
         <path d="M10 120 H310" class="ball-moment__table" />
         <path d="M160 120 V96" class="ball-moment__net" />

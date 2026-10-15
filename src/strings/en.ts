@@ -61,9 +61,9 @@ export const setupNames: Record<string, string> = {
 };
 
 export const regularityNames: Record<string, string> = {
-  regular: 'Regular',
-  semiIrregular: 'Semi-random',
-  irregular: 'Random',
+  regular: 'Same place each time',
+  semiIrregular: 'Set pattern',
+  irregular: 'Random placement',
   game: 'Game',
 };
 
@@ -246,6 +246,8 @@ export const ob = {
   back: 'Back',
   finish: 'Build my plan',
   saveChanges: 'Save changes',
+  saveShort: 'Save',
+  cancel: 'Cancel',
   skip: 'Skip',
   about: {
     title: 'About you',
@@ -384,7 +386,8 @@ export const todayText = {
   startEarly: 'Start it now',
   start: 'Start',
   continue: 'Continue',
-  view: 'See the plan',
+  view: 'See this session',
+  newPlan: 'Build a new plan',
   coachNote: 'Coach note',
   tip: 'Tip',
   learning: 'You are learning',
@@ -398,6 +401,7 @@ export const todayText = {
   levelUp: (name: string) => `Your results reach ${name} level. Move up?`,
   levelUpYes: 'Move me up',
   levelUpNo: 'Not yet',
+  useLevel: 'Use this level',
   behind: 'You are behind your goal curve twice in a row.',
   behindAdd: 'Add a short extra block for it',
   behindMove: 'Move the goal date 2 weeks later',
@@ -413,6 +417,7 @@ export const planText = {
   title: 'Your plan',
   week: (n: number) => `Week ${n}`,
   weekTheme: (n: number, theme: string) => `Week ${n}: ${theme}`,
+  weekDone: (n: number, theme: string) => `Week ${n}: ${theme}. All done.`,
   list: 'Weeks',
   month: 'Month',
   done: 'Done',
@@ -442,6 +447,7 @@ export const playerText = {
   pause: 'Pause',
   resume: 'Resume',
   next: 'Next drill',
+  done: 'Done',
   prev: 'Previous drill',
   reps: 'Count',
   plus: 'Add one',
@@ -460,6 +466,8 @@ export const playerText = {
   best: 'Your best',
   skip: 'Skip this drill',
   logAndNext: 'Save and next',
+  logThis: 'Log this drill',
+  timerLabel: (m: string, s: string) => `${m} minutes ${s} seconds left`,
   finish: 'Finish session',
   summary: 'Session done',
   summaryBody: (mins: number, drills: number) => `${mins} minutes, ${drills} drills.`,
@@ -529,6 +537,9 @@ export const progressText = {
   ahead: 'Ahead',
   behind: 'Behind',
   noResults: 'No results yet. Your first test session will add a point.',
+  chartLabel: (name: string, a: number, b: number, n: number) => `${name}. Plan from ${a} to ${b}. ${n} results.`,
+  bestAim: (best: number, aim: number, unit: string) => `Best ${best}. Aim: ${aim} ${unit}.`,
+  notTested: (aim: number, unit: string) => `Not tested yet. Aim: ${aim} ${unit}.`,
   addResult: 'Add a result',
   addResultHint: 'Measured it yourself? Add it here.',
   value: 'Value',
@@ -574,4 +585,12 @@ export const settingsText = {
   styleboard: 'Style board',
   version: (v: string) => `Content version ${v}`,
   saved: 'Saved.',
+};
+
+export const controlsText = {
+  less: (l: string) => `${l}, less`,
+  more: (l: string) => `${l}, more`,
+  mainNav: 'Main',
+  settings: 'Settings',
+  and: 'and',
 };

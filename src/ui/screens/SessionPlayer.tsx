@@ -4,7 +4,8 @@ import type { Change, Felt, ItemLog, SessionLog } from '../../engine/types';
 import { ArcProgress, Button } from '../../design/components';
 import { Icon } from '../../design/icons';
 import { celebrate } from '../../design/motion';
-import { common, phaseNames, playerText as T, stageNames } from '../../strings/en';
+import { common, learnText, phaseNames, playerText as T, stageNames } from '../../strings/en';
+import { STAGES } from '../../content/types';
 import { pickVariant } from '../components/DrillCard';
 import { Dialog } from '../components/Controls';
 import { data, logBySession, logSession, program, setSettings, today } from '../state';
@@ -14,10 +15,20 @@ import { navigate } from '../router';
 /* ---------- small device helpers (sound, wake lock, speech) ---------- */
 
 let audio: AudioContext | null = null;
-function beep(times = 2) {
+/** Create/resume the audio context. Call inside a tap (iOS only allows sound after one). */
+export function unlockAudio() {
   try {
     audio ??= new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+    if (audio.state !== 'running') void audio.resume();
+  } catch {
+    /* no audio */
+  }
+}
+function beep(times = 2) {
+  try {
+    unlockAudio();
     const ctx = audio;
+    if (!ctx) return;
     for (let i = 0; i < times; i++) {
       const o = ctx.createOscillator();
       const g = ctx.createGain();
@@ -82,6 +93,14 @@ function useWakeLock(active: boolean) {
 type Draft = Record<number, ItemLog & { skipped?: boolean }>;
 const draftKey = (id: string) => `thirdball:play:${id}`;
 
+function sessionStorageHas(id: string): boolean {
+  try {
+    return sessionStorage.getItem(draftKey(id)) !== null;
+  } catch {
+    return false;
+  }
+}
+
 function loadDraft(id: string): { at: number; logs: Draft } {
   try {
     const s = sessionStorage.getItem(draftKey(id));
@@ -105,7 +124,10 @@ export function SessionPlayer({ id }: { id: string }) {
       if (k >= 0) initialLogs[k] = l;
     });
   }
-  const [at, setAt] = useState(Math.min(saved.at, Math.max(0, items.length - 1)));
+  // resume where the player left off: the saved position, else the first drill without a log
+  const firstOpen = items.findIndex((_, k) => !initialLogs[k]);
+  const startAt = sessionStorageHas(id) ? saved.at : firstOpen >= 0 ? firstOpen : 0;
+  const [at, setAt] = useState(Math.min(startAt, Math.max(0, items.length - 1)));
   const [logs, setLogs] = useState<Draft>(initialLogs);
   const [mode, setMode] = useState<'drill' | 'log' | 'summary'>('drill');
   const [changes, setChanges] = useState<Change[]>([]);
@@ -152,9 +174,9 @@ export function SessionPlayer({ id }: { id: string }) {
     const next = { ...logs, [at]: { blockIndex: cur.bi, itemIndex: cur.ii, drillId: cur.it.drillId, done: !l.skipped, ...l } as ItemLog };
     setLogs(next);
     if (l.stagePassed && cur.it.learn) {
-      const order = ['see', 'shadow', 'feel', 'groove', 'mix', 'use', 'own'];
-      const nxt = order[order.indexOf(cur.it.learn.stage) + 1];
-      celebrate(nxt ? T.stageUp(byId.move.get(cur.it.learn.moveId)!.name, stageNames[nxt]!.toLowerCase()) : common.close);
+      const nxt = STAGES[STAGES.indexOf(cur.it.learn.stage) + 1];
+      const name = byId.move.get(cur.it.learn.moveId)!.name;
+      celebrate(nxt ? T.stageUp(name, stageNames[nxt]!.toLowerCase()) : learnText.ownedToast(name));
     }
     if (at < items.length - 1) {
       setAt(at + 1);
@@ -187,7 +209,7 @@ export function SessionPlayer({ id }: { id: string }) {
               <p class="muted">{T.noChanges}</p>
             )}
           </section>
-          <Button big wide href="#/today">
+          <Button big wide onClick={() => navigate('/today', true)}>
             {T.backToday}
           </Button>
         </div>
@@ -204,7 +226,10 @@ export function SessionPlayer({ id }: { id: string }) {
           kind="ghost"
           icon={settings.sound ? 'speaker' : 'speakerOff'}
           label={settings.sound ? T.soundOn : T.soundOff}
-          onClick={() => setSettings({ sound: !settings.sound })}
+          onClick={() => {
+            unlockAudio();
+            setSettings({ sound: !settings.sound });
+          }}
         />
       </div>
       <div class="player__dots" aria-hidden="true">
@@ -275,6 +300,7 @@ function DrillView({
   const move = it.learn ? byId.move.get(it.learn.moveId) : drill?.moveIds.map((m) => byId.move.get(m)).find((m) => m?.animationId);
   const variant = drill ? drill.variants.find((v) => v.setup === it.setup) ?? pickVariant(drill, [it.setup]) : null;
   const title = drill ? drill.name : common.watchMove(move?.name ?? '');
+  const counted = !!it.metricId || drill?.success.type === 'consecutive' || drill?.success.type === 'outOf';
 
   useEffect(() => {
     if (!running) return;
@@ -301,6 +327,7 @@ function DrillView({
     }
     if (left <= 0) setLeft(total);
     endAt.current = Date.now() + (left <= 0 ? total : left) * 1000;
+    unlockAudio();
     setRunning(true);
     setShowText(false);
     onStart();
@@ -318,8 +345,10 @@ function DrillView({
       </div>
 
       <div class="player__timer" aria-live="off">
-        <ArcProgress value={total - left} max={total} label={undefined} />
-        <span class="player__time num" role="timer" aria-label={`${mm} minutes ${ss} seconds left`}>
+        <div aria-hidden="true">
+          <ArcProgress value={total - left} max={total} label={undefined} />
+        </div>
+        <span class="player__time num" role="timer" aria-label={T.timerLabel(mm, ss)}>
           {mm}:{ss}
         </span>
         {left === 0 ? <span class="player__timeup">{T.timeUp}</span> : null}
@@ -356,6 +385,7 @@ function DrillView({
         </a>
       ) : null}
 
+      {counted ? (
       <div class="counter" role="group" aria-label={T.reps}>
         <Button kind="quiet" icon="minus" label={T.minus} onClick={() => setCount(Math.max(0, count - 1))} />
         <button type="button" class="counter__plus" onClick={() => setCount(count + 1)} aria-label={`${T.plus}. ${count}`}>
@@ -364,13 +394,22 @@ function DrillView({
         </button>
         <Button kind="ghost" icon="repeat" label={T.resetCount} onClick={() => setCount(0)} />
       </div>
+      ) : null}
 
       <div class="player__controls">
         <Button kind="quiet" icon="prev" label={T.prev} onClick={onPrev} disabled={!onPrev} big />
-        <Button icon={running ? 'pause' : 'play'} big onClick={toggle}>
-          {running ? T.pause : left < total && left > 0 ? T.resume : T.start}
+        {left === 0 ? (
+          <Button icon="check" big onClick={() => onDone(count || undefined)}>
+            {T.logThis}
+          </Button>
+        ) : (
+          <Button icon={running ? 'pause' : 'play'} big onClick={toggle}>
+            {running ? T.pause : left < total ? T.resume : T.start}
+          </Button>
+        )}
+        <Button kind="quiet" big onClick={() => onDone(count || undefined)}>
+          {T.done}
         </Button>
-        <Button kind="strong" icon="next" label={T.next} big onClick={() => onDone(count || undefined)} />
       </div>
       {wake === false ? <p class="muted center small">{T.wakeLockOff}</p> : null}
     </div>

@@ -1,7 +1,8 @@
 import type { ComponentChildren } from 'preact';
-import { useEffect, useRef } from 'preact/hooks';
+import { useEffect, useId, useRef } from 'preact/hooks';
 import { Icon, type IconName } from '../../design/icons';
 import { Button } from '../../design/components';
+import { controlsText } from '../../strings/en';
 
 /** A big tappable row: radio (single) or checkbox (multi). */
 export function OptionRow({
@@ -78,7 +79,7 @@ export function NumberStepper({
 }) {
   return (
     <div class="stepper" role="group" aria-label={label}>
-      <Button kind="quiet" icon="minus" label={`${label}: less`} onClick={() => onChange(Math.max(min, value - step))} disabled={value <= min} />
+      <Button kind="quiet" icon="minus" label={controlsText.less(label)} onClick={() => onChange(Math.max(min, value - step))} disabled={value <= min} />
       <div class="stepper__value">
         <input
           type="number"
@@ -94,7 +95,7 @@ export function NumberStepper({
         />
         {unit ? <span class="stepper__unit">{unit}</span> : null}
       </div>
-      <Button kind="quiet" icon="plus" label={`${label}: more`} onClick={() => onChange(Math.min(max, value + step))} disabled={value >= max} />
+      <Button kind="quiet" icon="plus" label={controlsText.more(label)} onClick={() => onChange(Math.min(max, value + step))} disabled={value >= max} />
     </div>
   );
 }
@@ -137,6 +138,7 @@ export function Dialog({
   actions: ComponentChildren;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
+  const tid = useId();
   useEffect(() => {
     const d = ref.current;
     if (!d) return;
@@ -147,9 +149,9 @@ export function Dialog({
     if (!open && d.open) d.close();
   }, [open]);
   return (
-    <dialog ref={ref} class="dialog" onClose={onClose} onCancel={onClose} aria-labelledby="dlg-title">
+    <dialog ref={ref} class="dialog" onClose={onClose} onCancel={onClose} aria-labelledby={tid}>
       <div class="dialog__body">
-        <h2 id="dlg-title" class="section-title">{title}</h2>
+        <h2 id={tid} class="section-title">{title}</h2>
         {children}
         <div class="dialog__actions">{actions}</div>
       </div>

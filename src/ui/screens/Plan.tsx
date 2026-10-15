@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 import { byId } from '../../content/load';
 import { addDays, parseDate } from '../../engine/periodize';
 import type { Session } from '../../engine/types';
@@ -62,10 +62,22 @@ function statusOf(s: Session) {
 
 function WeekList() {
   const prog = program.value!;
+  const cur = nextSessionWeek();
+  useEffect(() => {
+    if (cur > 0) document.getElementById(`week-${cur}`)?.scrollIntoView({ block: 'start' });
+  }, []);
   return (
     <div class="stack stack--l">
-      {prog.weeks.map((w) => (
-        <section class="week" aria-label={T.week(w.index + 1)}>
+      {prog.weeks.map((w) => {
+        const allDone = w.sessionIds.every((id) => logBySession.value.get(id)?.done);
+        if (allDone && w.index < cur)
+          return (
+            <details class="week week--done" id={`week-${w.index}`}>
+              <summary class="week__title">{T.weekDone(w.index + 1, engineText.weekTheme[w.theme]!)}</summary>
+            </details>
+          );
+        return (
+        <section class="week" id={`week-${w.index}`} aria-label={T.week(w.index + 1)}>
           <div class="week__head">
             <h2 class="week__title">{T.weekTheme(w.index + 1, engineText.weekTheme[w.theme]!)}</h2>
             <p class="muted week__sub">{engineText.weekThemeLong[w.theme]}</p>
@@ -94,9 +106,16 @@ function WeekList() {
             })}
           </div>
         </section>
-      ))}
+        );
+      })}
     </div>
   );
+}
+
+function nextSessionWeek(): number {
+  const prog = program.value!;
+  const open = prog.sessions.find((s) => !logBySession.value.get(s.id)?.done);
+  return open ? open.week : prog.weeks.length - 1;
 }
 
 function Month() {
@@ -121,9 +140,9 @@ function Month() {
         <h2 class="section-title">{`${monthLong[m - 1]} ${y}`}</h2>
         <Button kind="ghost" icon="forward" label={T.nextMonth} onClick={() => shift(1)} />
       </div>
-      <div class="month__grid" role="grid">
+      <div class="month__grid">
         {[1, 2, 3, 4, 5, 6, 0].map((d) => (
-          <span class="month__dow" role="columnheader">
+          <span class="month__dow">
             {dayShort[d]!.slice(0, 2)}
           </span>
         ))}
@@ -133,13 +152,13 @@ function Month() {
           const day = parseDate(c).getUTCDate();
           if (!s)
             return (
-              <span class={`month__cell${c === today.value ? ' is-today' : ''}`} role="gridcell">
+              <span class={`month__cell${c === today.value ? ' is-today' : ''}`}>
                 {day}
               </span>
             );
           const st = statusOf(s);
           return (
-            <a class={`month__cell has-session is-${st}${c === today.value ? ' is-today' : ''}`} href={`#/plan/${s.id}`} role="gridcell" aria-label={`${friendlyDate(c, today.value)}: ${sessionTitle(s)}`}>
+            <a class={`month__cell has-session is-${st}${c === today.value ? ' is-today' : ''}`} href={`#/plan/${s.id}`} aria-label={`${friendlyDate(c, today.value)}: ${sessionTitle(s)}`}>
               <span>{day}</span>
               <span class="month__ball" aria-hidden="true" />
             </a>
@@ -148,6 +167,12 @@ function Month() {
       </div>
     </div>
   );
+}
+
+function dateLine(d: string, t: string): string {
+  const f = friendlyDate(d, t);
+  const cap = `${f[0]!.toUpperCase()}${f.slice(1)}`;
+  return /\d/.test(f) ? cap : `${cap}, ${shortDate(d)}`;
 }
 
 export function SessionDetail({ id }: { id: string }) {
@@ -167,7 +192,7 @@ export function SessionDetail({ id }: { id: string }) {
       </div>
       <div class="stack stack--l">
         <div class="stack stack--s">
-          <p class="muted">{`${friendlyDate(d, today.value)[0]!.toUpperCase()}${friendlyDate(d, today.value).slice(1)}, ${shortDate(d)}`}</p>
+          <p class="muted">{dateLine(d, today.value)}</p>
           <h1>{sessionTitle(s)}</h1>
           <p class="muted">{T.weekTheme(s.week + 1, engineText.weekTheme[s.weekTheme]!)}</p>
         </div>

@@ -244,6 +244,7 @@ img, svg { display: block; }
 .ball-moment {
   position: fixed;
   inset: auto 16px calc(var(--nav-h) + 16px) 16px;
+  pointer-events: none;
   z-index: 50;
   background: var(--surface);
   color: var(--text);
@@ -273,3 +274,6 @@ img, svg { display: block; }
   }
   .ball-moment__svg { display: none; }
 }
+
+/* In the session player the moment shows at the top, clear of the controls */
+body:has(.player) .ball-moment { inset: calc(16px + env(safe-area-inset-top)) 16px auto 16px; }

@@ -37,15 +37,21 @@ export function DrillCard({
   const animated = drill.moveIds.map((m) => byId.move.get(m)).find((m) => m?.animationId);
   return (
     <article class={`drill${compact ? ' drill--compact' : ''}`}>
-      <div class="drill__meta">
-        <span class="tag">{phaseNames[drill.phase]}</span>
-        <span class="tag">{regularityNames[drill.regularity]}</span>
-        <span class="tag">
-          <Icon name="timer" size={16} />
-          {T.minutes(minutes ?? drill.duration.default)}
-        </span>
-        {drill.impact === 'high' ? <span class="tag tag--warn">{T.highImpact}</span> : null}
-      </div>
+      {!compact ? (
+        <div class="drill__meta">
+          <span class="tag">{phaseNames[drill.phase]}</span>
+          <span class="tag">{regularityNames[drill.regularity]}</span>
+          <span class="tag">
+            <Icon name="timer" size={16} />
+            {T.minutes(minutes ?? drill.duration.default)}
+          </span>
+          {drill.impact === 'high' ? <span class="tag tag--warn">{T.highImpact}</span> : null}
+        </div>
+      ) : drill.impact === 'high' ? (
+        <div class="drill__meta">
+          <span class="tag tag--warn">{T.highImpact}</span>
+        </div>
+      ) : null}
       <h3 class="drill__name">{drill.name}</h3>
       <p class="drill__purpose">{drill.purpose}</p>
       {reason ? (

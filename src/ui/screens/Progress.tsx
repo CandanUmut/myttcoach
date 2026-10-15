@@ -158,7 +158,7 @@ function GoalCurve() {
         <span class="muted">{T.goalLine(gm.start, gm.target, met.unit, shortDate(gm.targetDate))}</span>
       </p>
       <figure class="chart">
-        <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${met.name}. Plan from ${gm.start} to ${gm.target}. ${results.length} results.`}>
+        <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={T.chartLabel(met.name, gm.start, gm.target, results.length)}>
           {ticks.map((v) => (
             <g>
               <path d={`M${pad.l} ${y(v)} H${W - pad.r}`} class="chart__grid" />
@@ -184,7 +184,7 @@ function GoalCurve() {
             const cy = y(r.value);
             return (
               <g class="chart__pt" onClick={() => setSel(sel === i ? null : i)}>
-                <circle cx={cx} cy={cy} r="16" class="chart__hit" />
+                <circle cx={cx} cy={cy} r="24" class="chart__hit" />
                 <circle cx={cx} cy={cy} r="6" class="chart__dot" />
                 {sel === i ? (
                   <text x={cx} y={cy - 12} class="chart__label" text-anchor="middle">
@@ -262,7 +262,7 @@ function ImprovementPath() {
   for (const m of testMetrics.slice(0, 4)) {
     const v = latest.get(m.id);
     const target = m.levelTargets[next];
-    steps.push({ label: m.name, sub: `${v ?? '–'} / ${target} ${m.unit}`, state: v !== undefined && v >= target ? 'done' : 'next' });
+    steps.push({ label: m.name, sub: v !== undefined ? T.bestAim(v, target, m.unit) : T.notTested(target, m.unit), state: v !== undefined && v >= target ? 'done' : 'next' });
   }
   const firstOpen = steps.findIndex((s) => s.state !== 'done');
   if (firstOpen >= 0) steps[firstOpen]!.state = 'now';

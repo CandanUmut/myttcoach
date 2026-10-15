@@ -4,13 +4,13 @@ import { isNoTable } from '../../engine/generate';
 import { Button, PlyDivider } from '../../design/components';
 import { Icon } from '../../design/icons';
 import { Backdrop } from '../../design/backgrounds';
-import { card as C, goalNames, levelNames, ob, stageNames } from '../../strings/en';
+import { card as C, controlsText, goalNames, learnText, levelNames, ob, stageNames } from '../../strings/en';
 import { engineState, profile, program } from '../state';
 import { startEdit } from './Onboarding';
 
 function list(items: string[]): string {
   if (items.length <= 1) return items.join('');
-  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
+  return `${items.slice(0, -1).join(', ')} ${controlsText.and} ${items[items.length - 1]}`;
 }
 
 export function whyThisPlan(): string[] {
@@ -25,7 +25,8 @@ export function whyThisPlan(): string[] {
   out.push(C.whyFocus(list(top)));
   for (const f of prog.focus) if (f.addedBecause) out.push(C.whyAdded(f.addedBecause));
   if (prog.learnOrder.length) out.push(C.whyLearn(list(prog.learnOrder.map((m) => byId.move.get(m)!.name.toLowerCase()))));
-  out.push(C.whyWeeks(p.schedule.weeks, new Set(p.schedule.days).size, p.schedule.length));
+  const perWeek = prog.weeks[0]?.sessionIds.length ?? new Set(p.schedule.days).size;
+  out.push(C.whyWeeks(prog.weeks.length, perWeek, prog.sessions[0]?.length ?? p.schedule.length));
   out.push(C.whyBlocks);
   if (isNoTable(p)) out.push(C.whyNoTable);
   else out.push(C.whySetup(list(p.setups.filter((s) => s !== 'shadow').map((s) => ob.setup.options[s]!.name))));
@@ -93,7 +94,7 @@ export function PlayerCard() {
                       <li>
                         <Icon name={m.mode === 'learn' ? 'learn' : 'repeat'} size={20} />
                         <span>{mv.name}</span>
-                        <span class="tag">{(st[m.id] ?? 0) >= 7 ? 'Owned' : m.mode === 'learn' ? stageNames[STAGES[s]!] : ob.moves.improve}</span>
+                        <span class="tag">{(st[m.id] ?? 0) >= 7 ? learnText.owned : m.mode === 'learn' ? stageNames[STAGES[s]!] : ob.moves.improve}</span>
                       </li>
                     );
                   })}

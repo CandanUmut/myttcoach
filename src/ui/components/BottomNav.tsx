@@ -1,5 +1,5 @@
 import { Icon, type IconName } from '../../design/icons';
-import { nav } from '../../strings/en';
+import { controlsText, nav } from '../../strings/en';
 
 const items: { key: keyof typeof nav; icon: IconName; href: string }[] = [
   { key: 'today', icon: 'today', href: '#/today' },
@@ -11,7 +11,7 @@ const items: { key: keyof typeof nav; icon: IconName; href: string }[] = [
 
 export function BottomNav({ active }: { active: string }) {
   return (
-    <nav class="bottomnav" aria-label="Main">
+    <nav class="bottomnav" aria-label={controlsText.mainNav}>
       <ul>
         {items.map((it) => (
           <li>

@@ -293,7 +293,7 @@ input[type='date'].input { padding-right: var(--s2); }
 .player__dots span { flex: 1; height: 4px; border-radius: 2px; background: var(--line); }
 .player__dots .is-done { background: var(--text-2); }
 .player__dots .is-now { background: var(--accent); }
-.player__body { display: grid; gap: var(--s4); padding-bottom: var(--s6); }
+.player__body { display: grid; gap: var(--s4); }
 .player__phase { font-weight: 700; color: var(--text-2); font-size: var(--t-s); }
 .player__title { font-size: 2.1rem; }
 .player__big { font-size: var(--t-l); }
@@ -307,7 +307,21 @@ input[type='date'].input { padding-right: var(--s2); }
 .player__how { background: var(--surface-2); border-radius: var(--r-small); padding: var(--s3) var(--s4); }
 .player__how summary { font-weight: 700; cursor: pointer; min-height: 32px; }
 .player__how p { margin-top: var(--s2); }
-.player__controls { display: grid; grid-template-columns: auto 1fr auto; gap: var(--s3); align-items: center; }
+.player__controls {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--s3);
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  background: var(--bg);
+  padding: var(--s3) 0 calc(var(--s3) + env(safe-area-inset-bottom));
+  margin: 0 calc(-1 * var(--s4));
+  padding-left: var(--s4);
+  padding-right: var(--s4);
+  border-top: 1px solid var(--line);
+  z-index: 5;
+}
 .player__controls--log { grid-template-columns: auto auto 1fr; }
 .counter { display: grid; grid-template-columns: auto 1fr auto; gap: var(--s3); align-items: center; }
 .counter__plus {
@@ -384,3 +398,5 @@ input[type='date'].input { padding-right: var(--s2); }
 .style summary::-webkit-details-marker { display: none; }
 .style[open] summary { margin-bottom: var(--s3); }
 .style.is-mine { border-color: var(--accent); }
+
+.week--done summary { cursor: pointer; min-height: var(--tap); display: flex; align-items: center; color: var(--text-2); font-size: var(--t-m); }

@@ -1,0 +1,158 @@
+[
+  {
+    "id": "loop-block-game", "name": "Loop against block game",
+    "purpose": "Points where one player opens with a loop and the other blocks. Learn to win with the loop and to survive with the block.",
+    "skills": [{ "id": "fh-loop-topspin", "weight": 0.7 }, { "id": "bh-block", "weight": 0.6 }, { "id": "fh-block", "weight": 0.4 }],
+    "levelMin": 3, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "The server pushes long, the receiver loops, then play the point out. Games to 7, then swap roles." },
+      { "setup": "multiball", "instructions": "The feeder sends one long backspin, then blocks anything you loop. Play it out like a point: 7 points, count wins.", "feederInstructions": "First ball long backspin, then block every loop back to a random spot." },
+      { "setup": "robot", "instructions": "Robot: one backspin, then topspin to random spots. Loop the first, then keep looping or block. Count how many 4-ball sequences you finish." }
+    ],
+    "duration": { "min": 5, "default": 9, "max": 15 }, "intensity": 4, "impact": "low",
+    "success": { "type": "outOf", "target": 4, "of": 7, "description": "Win 4 of 7 points." },
+    "coachingPoints": ["Open with spin, not speed", "Blocker: stay close, bat in front", "After the loop, get ready for the block"],
+    "moveIds": ["fh-loop-topspin", "fh-block", "bh-block"]
+  },
+  {
+    "id": "open-up-game", "name": "Open-up game",
+    "purpose": "Push until a ball is long enough, then be the first to open with topspin from either wing.",
+    "skills": [{ "id": "bh-topspin", "weight": 0.6 }, { "id": "fh-loop-backspin", "weight": 0.6 }, { "id": "placement", "weight": 0.3 }],
+    "levelMin": 3, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "Serve backspin. Push until a ball comes long, then open with topspin. A point won by the first opening counts 2. Games to 11." },
+      { "setup": "multiball", "instructions": "The feeder pushes 2 to 4 balls, then one long to a random side. Push the short ones, open the long one.", "feederInstructions": "Backspin pushes; every few balls, one long to a random side." },
+      { "setup": "robot", "instructions": "Robot on backspin to random spots. Push the short balls, open the long ones with topspin." }
+    ],
+    "duration": { "min": 5, "default": 9, "max": 15 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 openings land." },
+    "coachingPoints": ["Wait for the right ball", "Decide wing early", "Spin first on the opening"],
+    "moveIds": ["bh-topspin", "fh-loop-backspin"]
+  },
+  {
+    "id": "counter-loop-game", "name": "Counter-loop points",
+    "purpose": "Points that start with a loop: the receiver must counter-loop or block, then play on.",
+    "skills": [{ "id": "counter-loop", "weight": 1 }, { "id": "fh-loop-topspin", "weight": 0.5 }],
+    "levelMin": 4, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "Start with a push, the other loops, you counter-loop. Play it out. Games to 7, then swap." },
+      { "setup": "robot", "instructions": "Robot on heavy topspin to random sides, stand back. Counter-loop and count rallies of 4 or more." }
+    ],
+    "duration": { "min": 5, "default": 9, "max": 14 }, "intensity": 5, "impact": "low",
+    "success": { "type": "outOf", "target": 4, "of": 7, "description": "Win 4 of 7 points." },
+    "coachingPoints": ["Stay a step back", "Counter with spin, then speed", "Recover after every shot"],
+    "moveIds": ["counter-loop"]
+  },
+  {
+    "id": "flick-receive-game", "name": "Flick the receive",
+    "purpose": "Receive short serves with a flick to take the initiative.",
+    "skills": [{ "id": "fh-flick", "weight": 0.6 }, { "id": "bh-flick", "weight": 0.6 }, { "id": "receive-basics", "weight": 0.5 }],
+    "levelMin": 3, "levelMax": 5, "phase": "receive", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner serves short anywhere. Flick every serve you can; push the ones you can't. Play the point out. 10 serves, then swap." },
+      { "setup": "multiball", "instructions": "The feeder serves short to random spots. Flick each serve.", "feederInstructions": "Serve short with varied spin from your end, random placement." }
+    ],
+    "duration": { "min": 4, "default": 7, "max": 10 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 flicks land." },
+    "coachingPoints": ["Read the spin first", "Step in early", "Flick to the corners or the elbow"],
+    "moveIds": ["fh-flick", "bh-flick"]
+  },
+  {
+    "id": "finish-the-point", "name": "Finish the point",
+    "purpose": "When you get a high ball, finish it. When you are under attack, lob and fight back.",
+    "skills": [{ "id": "smash", "weight": 0.8 }, { "id": "lob", "weight": 0.5 }],
+    "levelMin": 2, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "Each point starts with one player hitting a high ball. The other smashes; play it out. 10 points, then swap." },
+      { "setup": "multiball", "instructions": "The feeder mixes normal balls and high balls. Drive the normal ones, smash the high ones. Count smash winners.", "feederInstructions": "Mostly normal topspin; every 3–4 balls, a high one." }
+    ],
+    "duration": { "min": 4, "default": 7, "max": 12 }, "intensity": 4, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 high balls finished." },
+    "coachingPoints": ["Move first, then smash", "Aim wide, away from the lobber", "Lobber: high, deep, spinny"],
+    "moveIds": ["smash", "lob"]
+  },
+  {
+    "id": "chop-attack-game", "name": "Chop and attack",
+    "purpose": "Defend with chops until you get a weak ball, then attack it. The chopper's game in one drill.",
+    "skills": [{ "id": "fh-chop", "weight": 0.6 }, { "id": "bh-chop", "weight": 0.6 }, { "id": "variation", "weight": 0.4 }],
+    "levelMin": 3, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner attacks with loops; you chop. When a ball sits up, attack it. Games to 11." },
+      { "setup": "robot", "instructions": "Robot on random topspin; every few balls set it to a high ball (or step in on a short one) and attack." }
+    ],
+    "duration": { "min": 5, "default": 9, "max": 15 }, "intensity": 4, "impact": "low",
+    "success": { "type": "outOf", "target": 5, "of": 10, "description": "Win 5 of 10 points." },
+    "coachingPoints": ["Vary the backspin: heavy, then light", "Be patient", "Attack the first loose ball"],
+    "moveIds": ["fh-chop", "bh-chop"]
+  },
+  {
+    "id": "pressure-points", "name": "Pressure points",
+    "purpose": "Practise closing out tight games: every game starts at 8–8 or 9–9.",
+    "skills": [{ "id": "handling-nerves", "weight": 1 }, { "id": "focus-routine", "weight": 0.6 }, { "id": "serve-basics", "weight": 0.3 }],
+    "levelMin": 2, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "Play games that start at 8–8. Use your pre-point routine before every point. Best of 5 games." },
+      { "setup": "robot", "instructions": "Robot on random. Each set of 5 balls is a 'point': all 5 on the table wins it. First to 3 points; start every set with your routine." },
+      { "setup": "wall", "instructions": "Rebound board up. A 'point' is 10 balls in a row. Start at 8–8 against an imaginary opponent: miss and they score." },
+      { "setup": "multiball", "instructions": "The feeder plays random balls; each 4-ball sequence is a point. Start at 8–8.", "feederInstructions": "Random placement, a little faster than normal." }
+    ],
+    "duration": { "min": 4, "default": 8, "max": 12 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 3, "of": 5, "description": "Win 3 of 5 close games." },
+    "coachingPoints": ["Same routine every point", "Play your normal shots, just with more margin", "Breathe out before you serve"],
+    "moveIds": []
+  },
+  {
+    "id": "handicap-game", "name": "Handicap games",
+    "purpose": "Close games with a stronger or weaker partner: the stronger one starts behind.",
+    "skills": [{ "id": "placement", "weight": 0.6 }, { "id": "focus-routine", "weight": 0.5 }, { "id": "third-ball", "weight": 0.3 }],
+    "levelMin": 1, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "Play to 11. The stronger player starts at 0, the other at 3–5 (agree on it). Change the start after each game so it stays close." }
+    ],
+    "duration": { "min": 6, "default": 10, "max": 20 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 2, "of": 3, "description": "Win 2 of 3 games." },
+    "coachingPoints": ["Pick one thing to try each game", "Serve with a plan", "Reset after every point"],
+    "moveIds": []
+  },
+  {
+    "id": "robot-random-match", "name": "Robot match simulation",
+    "purpose": "Random balls with no pattern, like a match. Read, move, decide.",
+    "skills": [{ "id": "basic-footwork", "weight": 0.6 }, { "id": "fh-drive", "weight": 0.4 }, { "id": "bh-drive", "weight": 0.4 }, { "id": "placement", "weight": 0.3 }],
+    "levelMin": 1, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "robot", "instructions": "Robot on random placement and mixed spin. Each 6-ball set is a 'point': 5 of 6 on the table wins it. Play to 11." },
+      { "setup": "wall", "instructions": "Rebound board up. Hit to different spots on the board on purpose: left, right, middle. A 'point' is 8 good balls in a row. Play to 11." },
+      { "setup": "multiball", "instructions": "The feeder plays random balls with mixed spin. Each 6-ball set is a 'point'.", "feederInstructions": "No pattern: mix placement, length and spin." }
+    ],
+    "duration": { "min": 5, "default": 9, "max": 15 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 7, "of": 11, "description": "Win 7 points before the 'opponent' wins 11." },
+    "coachingPoints": ["Recover to the middle", "Decide fast, then commit", "Breathe out on each shot"],
+    "moveIds": []
+  },
+  {
+    "id": "serve-receive-game", "name": "Serve and receive points",
+    "purpose": "Short points that start with a real serve and receive: the first three balls decide most points.",
+    "skills": [{ "id": "serve-basics", "weight": 0.6 }, { "id": "receive-basics", "weight": 0.6 }, { "id": "third-ball", "weight": 0.4 }],
+    "levelMin": 1, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "Each player serves 5 times in a row. Points end after 4 balls: whoever is ahead at the 4th ball wins. Games to 11." }
+    ],
+    "duration": { "min": 5, "default": 8, "max": 14 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 11, "description": "Win 6 of 11." },
+    "coachingPoints": ["Serve with a plan for ball three", "Receive low or attack", "Stay ready after the serve"],
+    "moveIds": []
+  },
+  {
+    "id": "king-of-table", "name": "Up and down the table",
+    "purpose": "A fun pressure game: win to stay on, lose and you swap.",
+    "skills": [{ "id": "focus-routine", "weight": 0.5 }, { "id": "placement", "weight": 0.5 }],
+    "levelMin": 1, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "Play single points. Each point you win is a step 'up'. First to 5 steps in a row wins the round. A lost point sends you back to 0." }
+    ],
+    "duration": { "min": 4, "default": 8, "max": 12 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 2, "of": 3, "description": "Win 2 of 3 rounds." },
+    "coachingPoints": ["Every point is a fresh start", "Use your routine", "Play safe on big points, not passive"],
+    "moveIds": []
+  }
+]

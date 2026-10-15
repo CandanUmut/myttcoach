@@ -11,54 +11,45 @@ Learn order: ready-stance > fh-drive > bh-drive
 ## s0 2026-10-19 week 1 (learn) total 30 min
    Note: Welcome, Sam. We start gently: shape first, then rhythm. Enjoy it.
    | Warm-up              |  4 | Moving warm-up                                             | shadow    | You feel warm and slightly out of breath
-   | Warm-up at the table |  4 | Ball on the bat                                            | shadow    | 30 alternating bounces without dropping the ball
+   | Warm-up at the table |  4 | Shadow stroke warm-up                                      | shadow    | 4 strokes warmed up, back to ready every time
    | Technique            |  3 | Watch the move [ready-stance:see]                          | shadow    | You can name the three cues.
-   | Technique            |  6 | Shadow strokes with the 3D player [ready-stance:shadow]    | shadow    | 10 reps, then answer the self-checks.
+   | Technique            |  5 | Shadow strokes with the 3D player [ready-stance:shadow]    | shadow    | 10 reps, then answer the self-checks.
    | Technique            |  6 | Shadow combinations                                        | shadow    | 4 rounds with clean recovery every time
-   | Footwork             |  5 | Two-point footwork                                         | shadow    | 12 forehands in a row, alternating corner and middle
+   | Footwork             |  6 | Two-point footwork                                         | shadow    | 12 forehands in a row, alternating corner and middle
    | Cool-down            |  2 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: Work on one thing at a time. Pick one cue for this drill and let the rest go.
+   Tip: Shadow strokes in front of a mirror or a dark window show you what your body really does.
 
 ## s1 2026-10-21 week 1 (learn) total 30 min
    Note: New stage for Forehand drive: see it. Watch the 3D player at slow speed. Step through each phase: ready, backswing, contact, follow-through, recover.
-   | Warm-up              |  4 | Moving warm-up                                             | shadow    | You feel warm and slightly out of breath
-   | Warm-up at the table |  4 | Ball on the bat                                            | shadow    | 30 alternating bounces without dropping the ball
+   | Warm-up              |  4 | Mobility warm-up                                           | shadow    | Loose and warm
+   | Warm-up at the table |  4 | Shadow stroke warm-up                                      | shadow    | 4 strokes warmed up, back to ready every time
    | Technique            |  3 | Watch the move [fh-drive:see]                              | shadow    | You can say the three cues without looking.
-   | Technique            |  6 | Shadow strokes with the 3D player [fh-drive:shadow]        | shadow    | 3 sets of 10, then yes to all three self-checks.
+   | Technique            |  5 | Shadow strokes with the 3D player [fh-drive:shadow]        | shadow    | 3 sets of 10, then yes to all three self-checks.
    | Technique            |  6 | Shadow combinations                                        | shadow    | 4 rounds with clean recovery every time
-   | Footwork             |  5 | Side-step pattern                                          | shadow    | 4 rounds staying low the whole time
-   | Cool-down            |  2 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: Control before speed. Add speed only when you can hit the same spot 10 times in a row.
+   | Footwork             |  6 | Side-step pattern                                          | shadow    | 4 rounds staying low the whole time
+   | Cool-down            |  2 | Cool-down with breathing                                   | shadow    | Breathing calm, one good thing named
+   Tip: Work on one thing at a time. Pick one cue for this drill and let the rest go.
 
 ## s2 2026-10-23 week 1 (learn) total 30 min
-   Note: New stage for Ready position: shadow it. Copy the player: step into ready, hold for 3 seconds, stand up, repeat. Then add a small side step and come back to ready.
+   Note: New stage for Backhand drive: see it. Watch the 3D player from the front, then from the side. Notice how little the body moves.
    | Warm-up              |  4 | Moving warm-up                                             | shadow    | You feel warm and slightly out of breath
-   | Warm-up at the table |  4 | Ball on the bat                                            | shadow    | 30 alternating bounces without dropping the ball
-   | Technique            |  9 | Shadow strokes with the 3D player [ready-stance:shadow]    | shadow    | 10 reps, then answer the self-checks.
+   | Warm-up at the table |  4 | Shadow stroke warm-up                                      | shadow    | 4 strokes warmed up, back to ready every time
+   | Technique            |  3 | Watch the move [bh-drive:see]                              | shadow    | You can say the three cues.
+   | Technique            |  5 | Shadow strokes with the 3D player [bh-drive:shadow]        | shadow    | 3 sets of 10, then yes to all self-checks.
    | Technique            |  6 | Shadow combinations                                        | shadow    | 4 rounds with clean recovery every time
-   | Footwork             |  5 | Two-point footwork                                         | shadow    | 12 forehands in a row, alternating corner and middle
+   | Footwork             |  6 | Two-point footwork                                         | shadow    | 12 forehands in a row, alternating corner and middle
    | Cool-down            |  2 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: Consistency comes from doing the same thing every time: same distance, same contact point, same finish.
+   Tip: Learning a new stroke? Make it slow and right first. Speed added to a wrong shape just makes it wrong faster.
 
 ## s3 2026-10-26 week 2 (learn) total 30 min
-   Note: New stage for Forehand drive: shadow it. Follow-along mode: copy the player without a ball, slow and exact, then at normal speed.
-   | Warm-up              |  4 | Moving warm-up                                             | shadow    | You feel warm and slightly out of breath
-   | Warm-up at the table |  4 | Ball on the bat                                            | shadow    | 30 alternating bounces without dropping the ball
-   | Technique            |  9 | Shadow strokes with the 3D player [fh-drive:shadow]        | shadow    | 3 sets of 10, then yes to all three self-checks.
+   Note: New stage for Ready position: shadow it. Copy the player: step into ready, hold for 3 seconds, stand up, repeat. Then add a small side step and come back to ready.
+   | Warm-up              |  4 | Mobility warm-up                                           | shadow    | Loose and warm
+   | Warm-up at the table |  4 | Shadow stroke warm-up                                      | shadow    | 4 strokes warmed up, back to ready every time
+   | Technique            |  8 | Shadow strokes with the 3D player [ready-stance:shadow]    | shadow    | 10 reps, then answer the self-checks.
    | Technique            |  6 | Shadow combinations                                        | shadow    | 4 rounds with clean recovery every time
-   | Footwork             |  5 | Two-point footwork                                         | shadow    | 12 forehands in a row, alternating corner and middle
-   | Cool-down            |  2 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: Feet first, bat second. Get to the ball, then swing.
-
-## s4 2026-10-28 week 2 (learn) total 30 min
-   Note: Main focus today: forehand drive. Pick one cue and stay with it.
-   | Warm-up              |  4 | Moving warm-up                                             | shadow    | You feel warm and slightly out of breath
-   | Warm-up at the table |  4 | Ball on the bat                                            | shadow    | 30 alternating bounces without dropping the ball
-   | Technique            |  9 | Shadow strokes with the 3D player [ready-stance:shadow]    | shadow    | 10 reps, then answer the self-checks.
-   | Technique            |  6 | Shadow combinations                                        | shadow    | 4 rounds with clean recovery every time
-   | Footwork             |  5 | Side-step pattern                                          | shadow    | 4 rounds staying low the whole time
-   | Cool-down            |  2 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: Most errors start one shot earlier: you didn't get back to ready in time.
+   | Footwork             |  6 | Two-point footwork                                         | shadow    | 12 forehands in a row, alternating corner and middle
+   | Cool-down            |  2 | Cool-down with breathing                                   | shadow    | Breathing calm, one good thing named
+   Tip: Control before speed. Add speed only when you can hit the same spot 10 times in a row.
 ```
 
 ```
@@ -75,9 +66,9 @@ Learn order: fh-loop-backspin
    | Technique            |  6 | Forehand loop against backspin                             | multiball | 7 of 10 loops on the table
    | Footwork             | 11 | Falkenberg drill                                           | multiball | 5 full cycles without a miss
    | Serve                |  7 | Backspin serve practice                                    | partner   | 7 of 10 legal serves that stop or spin back toward the net
-   | Receive              |  6 | Receive with a push                                        | partner   | 8 of 10 low returns
-   | Match play           |  5 | Rally record challenge                                     | partner   | 38 in a row
-   | Cool-down            |  3 | Cool-down                                                  | shadow    | Breathing back to normal
+   | Receive              |  6 | Attack the long serve                                      | partner   | 6 of 10 long serves attacked onto the table
+   | Match play           |  5 | Open-up game                                               | partner   | 6 of 10 openings land
+   | Cool-down            |  3 | Cool-down with breathing                                   | shadow    | Breathing calm, one good thing named
    Tip: Work on one thing at a time. Pick one cue for this drill and let the rest go.
 
 ## s1 2026-10-22 week 1 (learn) total 60 min
@@ -87,50 +78,38 @@ Learn order: fh-loop-backspin
    | Technique            | 10 | Shadow strokes with the 3D player [fh-loop-backspin:shadow] | shadow    | 3 sets of 10, then yes to all self-checks.
    | Technique            |  6 | Forehand loop against backspin                             | multiball | 7 of 10 loops on the table
    | Footwork             | 11 | Two-point footwork                                         | multiball | 18 forehands in a row, alternating corner and middle
-   | Serve                |  7 | Short and long serve targets                               | partner   | 6 of 10 serves land in the right zone
-   | Receive              |  6 | Receive with a push                                        | partner   | 8 of 10 low returns
-   | Match play           |  5 | Rally record challenge                                     | partner   | 38 in a row
+   | Serve                |  7 | Short serve precision                                      | partner   | 6 of 10 would bounce twice
+   | Receive              |  6 | Attack the long serve                                      | partner   | 6 of 10 long serves attacked onto the table
+   | Match play           |  5 | Playing a chopper                                          | partner   | 7 of 10 loops against backspin land
    | Cool-down            |  3 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: The crossover point near your opponent's playing elbow is the hardest place to defend. Aim there when in doubt.
+   Tip: Learning a new stroke? Make it slow and right first. Speed added to a wrong shape just makes it wrong faster.
 
 ## s2 2026-10-24 week 1 (learn) total 60 min
    Note: Focus: forehand loop against backspin. One cue per drill.
-   | Warm-up              |  6 | Skip and shuffle warm-up                                   | shadow    | Legs feel light and quick
+   | Warm-up              |  6 | Mobility warm-up                                           | shadow    | Loose and warm
    | Warm-up at the table |  6 | Backhand warm-up rally                                     | partner   | 30 backhands in a row at an easy pace
    | Technique            | 10 | Shadow strokes with the 3D player [fh-loop-backspin:shadow] | shadow    | 3 sets of 10, then yes to all self-checks.
    | Technique            |  6 | Forehand loop against backspin                             | multiball | 7 of 10 loops on the table
    | Footwork             | 11 | Falkenberg drill                                           | multiball | 5 full cycles without a miss
    | Serve                |  7 | Backspin serve practice                                    | partner   | 7 of 10 legal serves that stop or spin back toward the net
-   | Receive              |  6 | Receive with a push                                        | partner   | 8 of 10 low returns
-   | Match play           |  5 | Rally record challenge                                     | partner   | 38 in a row
-   | Cool-down            |  3 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: On the forehand, turn your waist before the ball arrives. If you turn when it lands, you are already late.
+   | Receive              |  6 | Attack the long serve                                      | partner   | 6 of 10 long serves attacked onto the table
+   | Match play           |  5 | Open-up game                                               | partner   | 6 of 10 openings land
+   | Cool-down            |  3 | Cool-down with breathing                                   | shadow    | Breathing calm, one good thing named
+   Tip: Film yourself from the side once a month. It's the quickest honest coach you have.
 
 ## s3 2026-10-27 week 2 (learn) total 60 min
    Note: Forehand loop against backspin: feel it. Slow backspin balls one at a time. Just lift them onto the table, any speed.
-   | Warm-up              |  6 | Moving warm-up                                             | shadow    | You feel warm and slightly out of breath
-   | Warm-up at the table |  6 | Backhand warm-up rally                                     | partner   | 30 backhands in a row at an easy pace
-   | Technique            | 10 | Forehand loop against backspin [fh-loop-backspin:feel]     | multiball | 5 of 10 on the table.
-   | Technique            |  6 | Backhand drive, cross-court                                | multiball | 45 backhand drives in a row
-   | Footwork             | 11 | Falkenberg drill                                           | multiball | 5 full cycles without a miss
-   | Serve                |  7 | Short and long serve targets                               | partner   | 6 of 10 serves land in the right zone
-   | Receive              |  6 | Receive with a push                                        | partner   | 8 of 10 low returns
-   | Match play           |  5 | Rally record challenge                                     | partner   | 38 in a row
-   | Cool-down            |  3 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: Against backspin, spin first and speed second. A slow, heavy loop that lands beats a fast one in the net.
-
-## s4 2026-10-29 week 2 (learn) total 60 min
-   Note: Focus: forehand loop against backspin. One cue per drill.
    | Warm-up              |  6 | Skip and shuffle warm-up                                   | shadow    | Legs feel light and quick
    | Warm-up at the table |  6 | Backhand warm-up rally                                     | partner   | 30 backhands in a row at an easy pace
    | Technique            | 10 | Forehand loop against backspin [fh-loop-backspin:feel]     | multiball | 5 of 10 on the table.
-   | Technique            |  6 | Easy feed, first contact                                   | multiball | 8 of 10 on the table with the right shape
-   | Footwork             | 11 | Falkenberg drill                                           | multiball | 5 full cycles without a miss
-   | Serve                |  7 | Backspin serve practice                                    | partner   | 7 of 10 legal serves that stop or spin back toward the net
-   | Receive              |  6 | Receive with a push                                        | partner   | 8 of 10 low returns
-   | Match play           |  5 | Rally record challenge                                     | partner   | 38 in a row
+   | Technique            |  6 | Backhand drive, cross-court                                | multiball | 45 backhand drives in a row
+   | Footwork             |  8 | Pivot and forehand                                         | multiball | 8 pivots in a row with balanced finishes
+   | Footwork             |  3 | Side-step pattern                                          | shadow    | 4 rounds staying low the whole time
+   | Serve                |  7 | Pendulum serve: four spins, one motion                     | partner   | 8 of 10 serves with the spin you meant
+   | Receive              |  6 | Attack the long serve                                      | partner   | 6 of 10 long serves attacked onto the table
+   | Match play           |  5 | Open-up game                                               | partner   | 6 of 10 openings land
    | Cool-down            |  3 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: Relax your arm before the loop. You can only speed up sharply if you start loose.
+   Tip: Multiball gives you more good repetitions in 5 minutes than a rally gives in 15. Use it for new strokes.
 ```
 
 ```
@@ -141,83 +120,66 @@ Learn order: (none)
 ## s0 2026-10-19 week 1 (learn) total 90 min
    Note: Let's go, Lea! First session. Build the base and have fun with it.
    | Warm-up              |  8 | Skip and shuffle warm-up                                   | shadow    | Legs feel light and quick
-   | Warm-up at the table |  7 | Forehand warm-up rally                                     | robot     | 35 forehands in a row at an easy pace
-   | Technique            | 12 | Forehand loop against backspin                             | robot     | 8 of 10 loops on the table
-   | Technique            | 10 | Shadow strokes with the 3D player                          | shadow    | Yes to all three self-checks
-   | Footwork             |  8 | Two-point footwork                                         | robot     | 21 forehands in a row, alternating corner and middle
-   | Footwork             |  6 | Falkenberg drill                                           | robot     | 6 full cycles without a miss
+   | Warm-up at the table |  4 | Push warm-up rally                                         | robot     | 35 low pushes in a row
+   | Warm-up at the table |  3 | Forehand warm-up rally                                     | robot     | 35 forehands in a row at an easy pace
+   | Technique            | 15 | Forehand loop against backspin                             | robot     | 8 of 10 loops on the table
+   | Technique            |  7 | Forehand loop against a block                              | robot     | 13 loops in a row
+   | Footwork             | 11 | Two-point footwork                                         | robot     | 21 forehands in a row, alternating corner and middle
+   | Footwork             |  3 | Side-step pattern                                          | shadow    | 4 rounds staying low the whole time
    | Serve                |  8 | Backspin serve practice                                    | robot     | 7 of 10 legal serves that stop or spin back toward the net
-   | Receive              |  6 | Receive with a push                                        | robot     | 8 of 10 low returns
-   | Match play           |  8 | Rally record challenge                                     | robot     | 44 in a row
-   | Match play           |  6 | Serve and attack the third ball                            | robot     | 6 of 10 third balls on the table
+   | Receive              |  6 | Attack the long serve                                      | robot     | 7 of 10 long serves attacked onto the table
+   | Match play           | 14 | Open-up game                                               | robot     | 6 of 10 openings land
    | Fitness              |  6 | Quick steps                                                | shadow    | 4 rounds, staying low
    | Mental               |  2 | Breathing reset                                            | shadow    | 6 calm rounds
-   | Cool-down            |  3 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: The crossover point near your opponent's playing elbow is the hardest place to defend. Aim there when in doubt.
+   | Cool-down            |  3 | Cool-down with breathing                                   | shadow    | Breathing calm, one good thing named
+   Tip: Spin comes from a thin contact: brush the ball, don't push it.
 
 ## s1 2026-10-20 week 1 (learn) total 90 min
    Note: Today we hammer forehand loop against backspin. One cue, full attention!
    | Warm-up              |  8 | Moving warm-up                                             | shadow    | You feel warm and slightly out of breath
    | Warm-up at the table |  7 | Backhand warm-up rally                                     | robot     | 35 backhands in a row at an easy pace
-   | Technique            | 12 | Forehand loop against backspin                             | robot     | 8 of 10 loops on the table
-   | Technique            | 10 | Backhand push rally                                        | robot     | 35 pushes in a row, all low over the net
-   | Footwork             |  8 | Two-point footwork                                         | robot     | 21 forehands in a row, alternating corner and middle
-   | Footwork             |  6 | Side-step pattern                                          | shadow    | 4 rounds staying low the whole time
-   | Serve                |  8 | Short and long serve targets                               | robot     | 7 of 10 serves land in the right zone
-   | Receive              |  6 | Receive with a push                                        | robot     | 8 of 10 low returns
-   | Match play           | 14 | Serve and attack the third ball                            | robot     | 6 of 10 third balls on the table
+   | Technique            | 15 | Forehand loop against backspin                             | robot     | 8 of 10 loops on the table
+   | Technique            |  7 | Smash the high ball                                        | robot     | 8 of 10 smashes on the table
+   | Footwork             | 10 | Pivot and forehand                                         | robot     | 10 pivots in a row with balanced finishes
+   | Footwork             |  4 | Two-point footwork                                         | robot     | 21 forehands in a row, alternating corner and middle
+   | Serve                |  8 | Short serve precision                                      | robot     | 7 of 10 would bounce twice
+   | Receive              |  6 | Attack the long serve                                      | robot     | 7 of 10 long serves attacked onto the table
+   | Match play           | 14 | Playing a chopper                                          | robot     | 7 of 10 loops against backspin land
    | Fitness              |  6 | Lateral hops                                               | shadow    | 3 rounds with soft, quiet landings
    | Mental               |  2 | Pre-point routine                                          | shadow    | 10 routines, each under 10 seconds
-   | Cool-down            |  3 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: Against backspin, spin first and speed second. A slow, heavy loop that lands beats a fast one in the net.
-
-## s2 2026-10-22 week 1 (learn) total 90 min
-   Note: Today we hammer forehand loop against backspin. One cue, full attention!
-   | Warm-up              |  8 | Skip and shuffle warm-up                                   | shadow    | Legs feel light and quick
-   | Warm-up at the table |  7 | Forehand warm-up rally                                     | robot     | 35 forehands in a row at an easy pace
-   | Technique            | 12 | Forehand loop against backspin                             | robot     | 8 of 10 loops on the table
-   | Technique            | 10 | Forehand push rally                                        | robot     | 35 forehand pushes in a row
-   | Footwork             |  8 | Falkenberg drill                                           | robot     | 6 full cycles without a miss
-   | Footwork             |  6 | Two-point footwork                                         | robot     | 21 forehands in a row, alternating corner and middle
-   | Serve                |  8 | Backspin serve practice                                    | robot     | 7 of 10 legal serves that stop or spin back toward the net
-   | Receive              |  6 | Receive with a push                                        | robot     | 8 of 10 low returns
-   | Match play           |  8 | Rally record challenge                                     | robot     | 44 in a row
-   | Match play           |  6 | Serve and attack the third ball                            | robot     | 6 of 10 third balls on the table
-   | Fitness              |  6 | Core and shoulder care                                     | shadow    | 2 full rounds with good form
-   | Mental               |  2 | Breathing reset                                            | shadow    | 6 calm rounds
    | Cool-down            |  3 | Cool-down                                                  | shadow    | Breathing back to normal
    Tip: Work on one thing at a time. Pick one cue for this drill and let the rest go.
 
+## s2 2026-10-22 week 1 (learn) total 90 min
+   Note: Today we hammer forehand loop against backspin. One cue, full attention!
+   | Warm-up              |  8 | Mobility warm-up                                           | shadow    | Loose and warm
+   | Warm-up at the table |  4 | Push warm-up rally                                         | robot     | 35 low pushes in a row
+   | Warm-up at the table |  3 | Forehand warm-up rally                                     | robot     | 35 forehands in a row at an easy pace
+   | Technique            | 15 | Forehand loop against backspin                             | robot     | 8 of 10 loops on the table
+   | Technique            |  7 | Shadow strokes with the 3D player                          | shadow    | Yes to all three self-checks
+   | Footwork             | 11 | The 2-1 drill                                              | robot     | 6 full cycles without a miss
+   | Footwork             |  3 | In and out                                                 | robot     | 12 in-out pairs in a row
+   | Serve                |  8 | Backspin serve practice                                    | robot     | 7 of 10 legal serves that stop or spin back toward the net
+   | Receive              |  6 | Attack the long serve                                      | robot     | 7 of 10 long serves attacked onto the table
+   | Match play           | 14 | Open-up game                                               | robot     | 6 of 10 openings land
+   | Fitness              |  6 | Core and shoulder care                                     | shadow    | 2 full rounds with good form
+   | Mental               |  2 | One cue per point                                          | shadow    | 8 of 10 points rated 2 or 3
+   | Cool-down            |  3 | Cool-down with breathing                                   | shadow    | Breathing calm, one good thing named
+   Tip: Learning a new stroke? Make it slow and right first. Speed added to a wrong shape just makes it wrong faster.
+
 ## s3 2026-10-24 week 1 (learn) total 90 min
    Note: Today we hammer forehand loop against backspin. One cue, full attention!
-   | Warm-up              |  8 | Moving warm-up                                             | shadow    | You feel warm and slightly out of breath
-   | Warm-up at the table |  7 | Backhand warm-up rally                                     | robot     | 35 backhands in a row at an easy pace
-   | Technique            | 12 | Forehand loop against backspin                             | robot     | 8 of 10 loops on the table
-   | Technique            | 10 | Shadow strokes with the 3D player                          | shadow    | Yes to all three self-checks
-   | Footwork             |  8 | Two-point footwork                                         | robot     | 21 forehands in a row, alternating corner and middle
-   | Footwork             |  6 | Falkenberg drill                                           | robot     | 6 full cycles without a miss
-   | Serve                |  8 | Short and long serve targets                               | robot     | 7 of 10 serves land in the right zone
-   | Receive              |  6 | Receive with a push                                        | robot     | 8 of 10 low returns
-   | Match play           | 14 | Serve and attack the third ball                            | robot     | 6 of 10 third balls on the table
-   | Fitness              |  6 | Quick steps                                                | shadow    | 4 rounds, staying low
-   | Mental               |  2 | Pre-point routine                                          | shadow    | 10 routines, each under 10 seconds
-   | Cool-down            |  3 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: On the forehand, turn your waist before the ball arrives. If you turn when it lands, you are already late.
-
-## s4 2026-10-26 week 2 (learn) total 90 min
-   Note: Today we hammer forehand loop against backspin. One cue, full attention!
    | Warm-up              |  8 | Skip and shuffle warm-up                                   | shadow    | Legs feel light and quick
-   | Warm-up at the table |  7 | Forehand warm-up rally                                     | robot     | 35 forehands in a row at an easy pace
-   | Technique            | 12 | Forehand loop against backspin                             | robot     | 8 of 10 loops on the table
-   | Technique            | 10 | Shadow strokes with the 3D player                          | shadow    | Yes to all three self-checks
-   | Footwork             |  8 | Two-point footwork                                         | robot     | 21 forehands in a row, alternating corner and middle
-   | Footwork             |  6 | Falkenberg drill                                           | robot     | 6 full cycles without a miss
-   | Serve                |  8 | Backspin serve practice                                    | robot     | 7 of 10 legal serves that stop or spin back toward the net
-   | Receive              |  6 | Receive with a push                                        | robot     | 8 of 10 low returns
-   | Match play           |  8 | Rally record challenge                                     | robot     | 44 in a row
-   | Match play           |  6 | Serve and attack the third ball                            | robot     | 6 of 10 third balls on the table
-   | Fitness              |  6 | Lateral hops                                               | shadow    | 3 rounds with soft, quiet landings
+   | Warm-up at the table |  7 | Backhand warm-up rally                                     | robot     | 35 backhands in a row at an easy pace
+   | Technique            | 15 | Forehand loop against backspin                             | robot     | 8 of 10 loops on the table
+   | Technique            |  7 | Counter-loop rally                                         | robot     | 6 counter-loops in a row
+   | Footwork             | 11 | Falkenberg drill                                           | robot     | 6 full cycles without a miss
+   | Footwork             |  3 | Side-step pattern                                          | shadow    | 4 rounds staying low the whole time
+   | Serve                |  8 | Pendulum serve: four spins, one motion                     | robot     | 8 of 10 serves with the spin you meant
+   | Receive              |  6 | Attack the long serve                                      | robot     | 7 of 10 long serves attacked onto the table
+   | Match play           | 14 | Open-up game                                               | robot     | 6 of 10 openings land
+   | Fitness              |  6 | Quick steps                                                | shadow    | 4 rounds, staying low
    | Mental               |  2 | Breathing reset                                            | shadow    | 6 calm rounds
    | Cool-down            |  3 | Cool-down                                                  | shadow    | Breathing back to normal
-   Tip: Relax your arm before the loop. You can only speed up sharply if you start loose.
+   Tip: Multiball gives you more good repetitions in 5 minutes than a rally gives in 15. Use it for new strokes.
 ```

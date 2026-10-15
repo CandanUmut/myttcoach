@@ -1,0 +1,38 @@
+{
+  "id": "fh-block", "name": "Forehand block", "skillId": "fh-block", "wing": "FH", "levelMin": 2,
+  "summary": "A short, firm stroke close to the table that sends a topspin ball back using its own speed.",
+  "whenToUse": "Against a fast or heavy topspin to your forehand when you have no time to loop, or when you want to stay close and move the ball around.",
+  "keyPoints": {
+    "stance": "Close to the table, feet a little wider than shoulders, knees bent, right foot slightly back (left foot if left-handed).",
+    "bodyAction": "Very little. A small turn of the waist to line the bat up, then hold your shape.",
+    "strokeLength": "Tiny. The bat starts in front and moves a few centimetres forward; no backswing.",
+    "timing": "Early: just after the bounce, on the rise.",
+    "tablePosition": "Close, about half a metre from the end line.",
+    "freeArm": "Up and in front for balance.",
+    "batArm": "Elbow in front of the body, bat slightly closed. The heavier the topspin, the more closed the bat.",
+    "recovery": "Bat back to the middle straight away: the next ball comes fast.",
+    "anticipation": "Watch the looper's swing: a longer, more upward swing means more spin, so close the bat more."
+  },
+  "cues": ["Bat in front, no backswing", "Meet it on the rise", "Close the face over the ball"],
+  "learningPath": [
+    { "stage": "see", "task": "Watch the 3D player block from the side. Notice there is almost no swing.", "passCheck": "You can say the three cues.", "drillIds": [] },
+    { "stage": "shadow", "task": "Follow-along: hold the bat in front, small forward push, back to ready.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"],
+      "selfChecks": ["Was there no backswing at all?", "Was the bat slightly closed?", "Did you come back to ready each time?"] },
+    { "stage": "feel", "task": "Block slow topspin balls to one spot. Just find the angle.", "passCheck": "7 of 10 back on the table.", "drillIds": ["fh-block-vs-topspin"] },
+    { "stage": "groove", "task": "Block a steady loop until 15 in a row.", "passCheck": "15 blocks in a row.", "drillIds": ["fh-block-vs-topspin"] },
+    { "stage": "mix", "task": "Block from both wings, switching side.", "passCheck": "12 in a row, both wings.", "drillIds": ["block-switch"] },
+    { "stage": "use", "task": "Play loop-against-block points as the blocker.", "passCheck": "Win 3 points with your block.", "drillIds": ["loop-block-game"] },
+    { "stage": "own", "task": "Test: forehand blocks in a row.", "passCheck": "20 in a row.", "drillIds": ["fh-block-vs-topspin"] }
+  ],
+  "gamePatterns": [
+    { "situation": "Your opponent loops hard to your forehand and you are close to the table.", "how": "Block to the wide backhand or into their playing elbow. Change the angle, not the speed.", "drillId": "loop-block-game" },
+    { "situation": "A long rally where you are under pressure.", "how": "Block once to buy time, then step back in and attack the next ball.", "drillId": "block-switch" }
+  ],
+  "troubleshooting": [
+    { "symptom": "The ball flies long", "causes": ["Bat too open for the spin", "Pushing too hard"], "fixes": ["Close the bat more against heavy topspin", "Relax and let the ball rebound"], "drillId": "fh-block-vs-topspin" },
+    { "symptom": "The ball goes into the net", "causes": ["Bat too closed for a light topspin", "Contact too late, as the ball drops"], "fixes": ["Open the bat a little against light spin", "Move in and take it earlier"], "drillId": "fh-block-vs-topspin" },
+    { "symptom": "I'm too slow, the ball beats me", "causes": ["Bat drops after each block", "Standing too far back"], "fixes": ["Keep the bat in front at table height", "Stay half a metre from the table"], "drillId": "block-switch" }
+  ],
+  "penholdNotes": "Penholders block with the same face; turn the wrist so the face points forward-down.",
+  "animationId": null
+}

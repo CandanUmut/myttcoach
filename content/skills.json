@@ -25,7 +25,7 @@
     "prerequisites": ["ready-position"],
     "styleWeights": { "midLooper": 1.4, "chopper": 1.4, "closeAttacker": 1.2 },
     "summary": "Small side steps, the cross-over step and the pivot, so you hit every ball from a balanced position.",
-    "moveIds": []
+    "moveIds": ["side-step"]
   },
   {
     "id": "fh-drive", "name": "Forehand drive", "category": "stroke", "levelMin": 1, "levelMax": 3,

@@ -1,0 +1,37 @@
+{
+  "id": "pivot-step", "name": "Pivot", "skillId": "pivot", "wing": "none", "levelMin": 3,
+  "summary": "Step around your backhand corner to play a forehand from there.",
+  "whenToUse": "When a ball to your backhand is attackable and your forehand is your stronger weapon.",
+  "keyPoints": {
+    "stance": "From ready, slightly toward the backhand.",
+    "bodyAction": "Step back and around with the right foot (left foot if left-handed), turning sideways to the table.",
+    "strokeLength": "Footwork only; the forehand follows as you finish turning.",
+    "timing": "Decide early: the pivot takes time.",
+    "tablePosition": "Into the backhand corner, side-on.",
+    "freeArm": "Helps the turn.",
+    "batArm": "Back for the forehand as you land.",
+    "recovery": "Back to the middle quickly: the wide forehand is open.",
+    "anticipation": "Only pivot when you are sure you can attack."
+  },
+  "cues": ["Back and around", "Side-on to the table", "Recover to the middle"],
+  "learningPath": [
+    { "stage": "see", "task": "Watch the step from above.", "passCheck": "You can say the three cues.", "drillIds": [] },
+    { "stage": "shadow", "task": "Pivot with a shadow forehand.", "passCheck": "10 reps, then yes to the self-checks.", "drillIds": ["pivot-forehand", "shadow-footwork-patterns"],
+      "selfChecks": ["Was the first step back and around?", "Did you end side-on?", "Did you recover to the middle?"] },
+    { "stage": "feel", "task": "Middle, then pivot from the backhand corner, slowly.", "passCheck": "5 balanced pivots.", "drillIds": ["pivot-forehand"] },
+    { "stage": "groove", "task": "Pivot drill at match pace.", "passCheck": "8 in a row.", "drillIds": ["pivot-forehand"] },
+    { "stage": "mix", "task": "The 2-1 drill and Falkenberg.", "passCheck": "5 cycles.", "drillIds": ["shadow-footwork-patterns", "two-one-drill"] },
+    { "stage": "use", "task": "Serve and pivot-attack the third ball.", "passCheck": "6 of 10 third balls on the table.", "drillIds": ["serve-third-ball"] },
+    { "stage": "own", "task": "Test: pivot drill.", "passCheck": "10 in a row.", "drillIds": ["pivot-forehand"] }
+  ],
+  "gamePatterns": [
+    { "situation": "You serve short and the push comes long to your backhand.", "how": "Pivot and loop with your forehand to their wide backhand or elbow.", "drillId": "serve-third-ball" }
+  ],
+  "troubleshooting": [
+    { "symptom": "I'm cramped", "causes": ["Not stepping far enough back"], "fixes": ["Step back and around, not just sideways"], "drillId": "pivot-forehand" },
+    { "symptom": "The wide forehand beats me", "causes": ["Slow recovery"], "fixes": ["Recover to the middle right after the shot"], "drillId": "two-one-drill" },
+    { "symptom": "I pivot too often", "causes": ["Pivoting on balls you can't attack"], "fixes": ["Pivot only for balls you can attack; otherwise use the backhand"], "drillId": "pivot-forehand" }
+  ],
+  "penholdNotes": "Penholders pivot often; same footwork.",
+  "animationId": null
+}

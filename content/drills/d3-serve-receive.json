@@ -1,0 +1,175 @@
+[
+  {
+    "id": "pendulum-variations", "name": "Pendulum serve: four spins, one motion",
+    "purpose": "Serve backspin, sidespin, no-spin and topspin with the same-looking pendulum motion.",
+    "skills": [{ "id": "serve-pendulum", "weight": 1 }, { "id": "serve-basics", "weight": 0.5 }], "levelMin": 1, "levelMax": 5, "phase": "serve", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Serve 5 of each spin. Your partner calls out the spin they think it is. Count how often they guess wrong." },
+      { "setup": "multiball", "instructions": "Basket of balls. 5 of each spin, then mix them. Watch the second bounce: backspin stops or comes back, topspin runs on.", "feederInstructions": "Collect balls and tell them which spin you saw." },
+      { "setup": "robot", "instructions": "Robot off, basket of balls. 5 of each spin, then mix." },
+      { "setup": "wall", "instructions": "Fold the table out to full length, then serve from a basket: 5 of each spin, then mix." },
+      { "setup": "shadow", "instructions": "No table: practise the toss and the four contacts in the air. Brush under (backspin), around the side (sidespin), behind (no-spin), up the back (topspin)." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 1, "impact": "low",
+    "success": { "type": "outOf", "target": 7, "of": 10, "description": "7 of 10 serves with the spin you meant." },
+    "progressionId": "serve-disguise", "regressionId": "backspin-serve-practice",
+    "coachingPoints": ["Same toss and swing for every spin", "Spin comes from where you brush the ball", "Contact low, just above the table"],
+    "moveIds": ["serve-pendulum"]
+  },
+  {
+    "id": "serve-disguise", "name": "Disguise your serve",
+    "purpose": "Hide the spin: change only the contact, not the look of the motion.",
+    "skills": [{ "id": "serve-pendulum", "weight": 0.7 }, { "id": "serve-reverse", "weight": 0.4 }, { "id": "variation", "weight": 0.5 }],
+    "levelMin": 3, "levelMax": 5, "phase": "serve", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Serve heavy backspin or no-spin that look the same. Your partner must push every serve; count how many they pop up or put in the net." },
+      { "setup": "multiball", "instructions": "Basket of balls. Alternate heavy backspin and no-spin with the same motion; check the ball's behaviour after the second bounce.", "feederInstructions": "Watch and tell them if you could see the difference." },
+      { "setup": "robot", "instructions": "Robot off. Alternate heavy backspin and no-spin with the same motion and a big follow-through after contact." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 1, "impact": "low",
+    "success": { "type": "outOf", "target": 5, "of": 10, "description": "5 of 10 serves misread by the receiver." },
+    "regressionId": "pendulum-variations",
+    "coachingPoints": ["Fast arm, gentle contact for no-spin", "Hide contact with a follow-through", "Same rhythm every time"],
+    "moveIds": ["serve-pendulum", "serve-reverse-pendulum"]
+  },
+  {
+    "id": "reverse-pendulum-practice", "name": "Reverse pendulum serve practice",
+    "purpose": "Learn the reverse swing for sidespin the other way.",
+    "skills": [{ "id": "serve-reverse", "weight": 1 }], "levelMin": 3, "levelMax": 5, "phase": "serve", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Serve reverse sidespin short. Your partner pushes it back; watch which way it kicks." },
+      { "setup": "multiball", "instructions": "Basket of balls. Reverse pendulum, sidespin-backspin, short.", "feederInstructions": "Collect and tell them where it bounced." },
+      { "setup": "robot", "instructions": "Robot off. Basket of balls: reverse pendulum serves, short." },
+      { "setup": "shadow", "instructions": "No table: practise the reverse swing and the contact on the left side of the ball (right side for left-handers)." }
+    ],
+    "duration": { "min": 3, "default": 5, "max": 10 }, "intensity": 1, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 short with clear sidespin." },
+    "regressionId": "pendulum-variations",
+    "coachingPoints": ["Elbow up, bat swings from left to right (right-hander)", "Contact on the left side of the ball", "Bend the knees to keep it low"],
+    "moveIds": ["serve-reverse-pendulum"]
+  },
+  {
+    "id": "tomahawk-practice", "name": "Tomahawk serve practice",
+    "purpose": "A sidespin serve with the bat tip up, swinging across the body.",
+    "skills": [{ "id": "serve-tomahawk", "weight": 1 }], "levelMin": 3, "levelMax": 5, "phase": "serve", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Tomahawk serves short and long. Your partner returns them; watch the kick." },
+      { "setup": "multiball", "instructions": "Basket of balls. Tomahawk serves: short sidespin-backspin, then long sidespin.", "feederInstructions": "Collect and report the bounce spot." },
+      { "setup": "robot", "instructions": "Robot off. Basket of balls: tomahawk serves." },
+      { "setup": "shadow", "instructions": "No table: practise the tomahawk swing with the bat tip up, brushing across the ball." }
+    ],
+    "duration": { "min": 3, "default": 5, "max": 10 }, "intensity": 1, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 with clear sidespin." },
+    "regressionId": "pendulum-variations",
+    "coachingPoints": ["Bat tip up, elbow high", "Brush across the side of the ball", "Toss a little in front"],
+    "moveIds": ["serve-tomahawk"]
+  },
+  {
+    "id": "bh-serve-practice", "name": "Backhand serve practice",
+    "purpose": "A compact serve from in front of the body: backspin and sidespin.",
+    "skills": [{ "id": "serve-backhand", "weight": 1 }, { "id": "serve-basics", "weight": 0.3 }], "levelMin": 2, "levelMax": 5, "phase": "serve", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Backhand serves short and long. Your partner pushes or attacks; play 3 balls." },
+      { "setup": "multiball", "instructions": "Basket of balls. Backhand serves: backspin short, sidespin long.", "feederInstructions": "Collect and tell them how short it was." },
+      { "setup": "robot", "instructions": "Robot off. Basket of balls: backhand serves." },
+      { "setup": "wall", "instructions": "Fold the table out to full length; basket of balls: backhand serves." },
+      { "setup": "shadow", "instructions": "No table: practise the toss and the backhand serving swing in front of your body." }
+    ],
+    "duration": { "min": 3, "default": 5, "max": 10 }, "intensity": 1, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 land where you aimed." },
+    "regressionId": "backspin-serve-practice",
+    "coachingPoints": ["Stand square, ball in front of your body", "Elbow leads, wrist snaps at contact", "Recover quickly: you are close to the table"],
+    "moveIds": ["serve-backhand"]
+  },
+  {
+    "id": "short-serve-precision", "name": "Short serve precision",
+    "purpose": "Short serves that would bounce twice: the key to stopping your opponent's attack.",
+    "skills": [{ "id": "serve-basics", "weight": 1 }, { "id": "serve-pendulum", "weight": 0.5 }], "levelMin": 2, "levelMax": 5, "phase": "serve", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner lets each serve bounce. Count serves that bounce twice on their side before the end line." },
+      { "setup": "multiball", "instructions": "Basket of balls. Short serves only; a target sheet near the net on the far side.", "feederInstructions": "Watch for the second bounce and call 'two' or 'long'." },
+      { "setup": "robot", "instructions": "Robot off. Short serves to a target near the net." },
+      { "setup": "wall", "instructions": "Fold the table out to full length; short serves to a target near the net." }
+    ],
+    "duration": { "min": 3, "default": 5, "max": 10 }, "intensity": 1, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 would bounce twice." },
+    "regressionId": "backspin-serve-practice",
+    "coachingPoints": ["First bounce close to the net on your side", "Low contact, gentle touch", "Backspin keeps it short"],
+    "moveIds": ["serve-pendulum"]
+  },
+  {
+    "id": "long-serve-attack", "name": "Attack the long serve",
+    "purpose": "Punish long serves: step back a touch, read the spin and attack with topspin.",
+    "skills": [{ "id": "receive-long", "weight": 1 }, { "id": "fh-loop-backspin", "weight": 0.4 }, { "id": "spin-reading", "weight": 0.3 }],
+    "levelMin": 2, "levelMax": 5, "phase": "receive", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner mixes short and long serves. Attack every long one with topspin; push the short ones." },
+      { "setup": "multiball", "instructions": "The feeder serves long with mixed spin. Attack each one.", "feederInstructions": "Serve long from your end: backspin, sidespin, topspin, mixed." },
+      { "setup": "robot", "instructions": "Robot on long balls with mixed spin to random sides. Attack every ball." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 long serves attacked onto the table." },
+    "regressionId": "push-receive",
+    "coachingPoints": ["Stand ready to step back for long serves", "Read the spin, then pick the bat angle", "Spin first on the return"],
+    "moveIds": ["fh-loop-backspin", "fh-drive"]
+  },
+  {
+    "id": "read-the-spin", "name": "Read the spin",
+    "purpose": "Learn to tell the spin from the server's bat: call it before the ball reaches you.",
+    "skills": [{ "id": "spin-reading", "weight": 1 }, { "id": "receive-basics", "weight": 0.6 }], "levelMin": 2, "levelMax": 5, "phase": "receive", "regularity": "irregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner serves with mixed spin. Call 'back', 'side', 'top' or 'none' out loud before the bounce, then return it." },
+      { "setup": "multiball", "instructions": "The feeder serves with mixed spin. Call the spin before the bounce, then return.", "feederInstructions": "Serve mixed spins from your end; tell them if the call was right." },
+      { "setup": "shadow", "instructions": "No table: watch serve clips of good players at slow speed and call the spin from the bat path at contact. 20 serves." }
+    ],
+    "duration": { "min": 3, "default": 5, "max": 8 }, "intensity": 1, "impact": "low",
+    "success": { "type": "outOf", "target": 7, "of": 10, "description": "7 of 10 spins called right." },
+    "coachingPoints": ["Watch the bat at contact, not the ball", "Up = topspin, under = backspin, around = sidespin", "Fast arm with a soft touch often means no-spin"],
+    "moveIds": []
+  },
+  {
+    "id": "receive-mixed", "name": "Receive anything",
+    "purpose": "Short or long, any spin: choose push, drop, flick or attack.",
+    "skills": [{ "id": "receive-basics", "weight": 1 }, { "id": "spin-reading", "weight": 0.5 }, { "id": "short-touch", "weight": 0.3 }],
+    "levelMin": 3, "levelMax": 5, "phase": "receive", "regularity": "irregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner serves anything. Choose the return and play 3 balls. 10 serves, then swap." },
+      { "setup": "multiball", "instructions": "The feeder serves anything from their end. Pick the right return each time.", "feederInstructions": "Mix short and long, all spins, all placements." },
+      { "setup": "robot", "instructions": "Robot on random length, spin and placement. Pick the right return each time." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 2, "impact": "low",
+    "success": { "type": "outOf", "target": 7, "of": 10, "description": "7 of 10 good receives." },
+    "regressionId": "push-receive",
+    "coachingPoints": ["Decide short or long first", "Low and deep by default", "Attack anything long"],
+    "moveIds": ["bh-push", "fh-push"]
+  },
+  {
+    "id": "drive-or-smash", "name": "Drive or smash",
+    "purpose": "Normal balls get a drive, high balls get a smash: choose fast.",
+    "skills": [{ "id": "smash", "weight": 0.8 }, { "id": "fh-drive", "weight": 0.5 }], "levelMin": 2, "levelMax": 5, "phase": "technique", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "multiball", "instructions": "Normal topspin with every third ball high. Drive the normal ones, smash the high one.", "feederInstructions": "Two normal balls, then one high ball. Repeat." },
+      { "setup": "partner", "instructions": "Your partner drives two balls, then lobs one. Drive, drive, smash." },
+      { "setup": "robot", "instructions": "If your robot can vary height: two normal balls, then a high one. Drive, drive, smash." }
+    ],
+    "duration": { "min": 4, "default": 6, "max": 10 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 7, "of": 10, "description": "7 of 10 sequences with both shots on the table." },
+    "regressionId": "smash-high-balls",
+    "coachingPoints": ["Recover after each drive", "See the high ball early", "Move under it before you swing"],
+    "moveIds": ["smash", "fh-drive"]
+  },
+  {
+    "id": "lob-and-counter", "name": "Lob, then counter",
+    "purpose": "Lob until a ball comes weaker, then counter-attack and step back in.",
+    "skills": [{ "id": "lob", "weight": 0.8 }, { "id": "fh-loop-topspin", "weight": 0.4 }], "levelMin": 3, "levelMax": 5, "phase": "technique", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner smashes; after 3 lobs they play a softer ball. Counter-attack it and play on." },
+      { "setup": "multiball", "instructions": "Three firm balls deep (lob them), then one slower ball (counter it).", "feederInstructions": "Three firm flat balls deep, then one slower topspin." }
+    ],
+    "duration": { "min": 4, "default": 6, "max": 10 }, "intensity": 4, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 sequences." },
+    "regressionId": "lob-rally",
+    "coachingPoints": ["Lob high and deep", "Watch for the softer ball", "Counter with spin, then step in"],
+    "moveIds": ["lob"]
+  }
+]

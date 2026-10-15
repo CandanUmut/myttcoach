@@ -1,0 +1,37 @@
+{
+  "id": "fh-flick", "name": "Forehand flick", "skillId": "fh-flick", "wing": "FH", "levelMin": 3,
+  "summary": "Attack a short ball over the table with a short, quick forearm and wrist stroke.",
+  "whenToUse": "Against a short serve or short push to your forehand that is a little high or has light spin.",
+  "keyPoints": {
+    "stance": "Step in under the table with your right foot (left foot if left-handed).",
+    "bodyAction": "Lean in; the body stays quiet and low.",
+    "strokeLength": "Very short: a few centimetres back, then up and forward.",
+    "timing": "At the top of the bounce, over the table.",
+    "tablePosition": "Over the table, close to the ball.",
+    "freeArm": "Out to the side for balance; never on the table.",
+    "batArm": "Elbow bent, bat close to the ball. Open a little against backspin, more closed against no-spin.",
+    "recovery": "Push off the front foot back to ready; a fast ball can come back.",
+    "anticipation": "Read the serve: heavy backspin needs more lift, no-spin needs more forward."
+  },
+  "cues": ["Foot in first", "Bat close to the ball", "Up and forward, short"],
+  "learningPath": [
+    { "stage": "see", "task": "Watch the step in and the tiny backswing.", "passCheck": "You can say the three cues.", "drillIds": [] },
+    { "stage": "shadow", "task": "Follow-along: step in, flick, step out.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"],
+      "selfChecks": ["Did your foot step in before the stroke?", "Was the backswing tiny?", "Did you step back out?"] },
+    { "stage": "feel", "task": "Flick short no-spin balls to one spot.", "passCheck": "6 of 10 on the table.", "drillIds": ["fh-flick-short"] },
+    { "stage": "groove", "task": "Flick short backspin balls.", "passCheck": "6 of 10 on the table.", "drillIds": ["fh-flick-short"] },
+    { "stage": "mix", "task": "Short game: drop or flick depending on the ball.", "passCheck": "7 of 10 good choices.", "drillIds": ["short-game-duel"] },
+    { "stage": "use", "task": "Flick the receive.", "passCheck": "6 of 10 flicks land.", "drillIds": ["flick-receive-game"] },
+    { "stage": "own", "task": "Test: flicks out of 10.", "passCheck": "7 of 10.", "drillIds": ["fh-flick-short"] }
+  ],
+  "gamePatterns": [
+    { "situation": "A short serve to your forehand that stays a bit high.", "how": "Flick it down the line to their forehand or into the elbow.", "drillId": "flick-receive-game" }
+  ],
+  "troubleshooting": [
+    { "symptom": "Into the net", "causes": ["Not lifting against backspin", "Contact too late, below the net height"], "fixes": ["Open the bat and lift more", "Step in earlier, take it at the top"], "drillId": "fh-flick-short" },
+    { "symptom": "Off the end", "causes": ["Too much backswing", "Bat too open"], "fixes": ["Start the bat next to the ball", "Close the bat a little"], "drillId": "fh-flick-short" },
+    { "symptom": "I'm stuck at the table after", "causes": ["No push-off", "Leaning on the front foot"], "fixes": ["Push off the front foot right after contact", "Step back to ready"], "drillId": "flick-receive-game" }
+  ],
+  "penholdNotes": "Penholders are natural flickers; use the wrist but keep the stroke short.",
+  "animationId": null
+}

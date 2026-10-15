@@ -3,7 +3,7 @@
 exports[`determinism > same profile and content version give an identical program 1`] = `
 {
   "changes": [],
-  "contentVersion": "2026.10.1",
+  "contentVersion": "2026.10.2",
   "focus": [
     {
       "skillId": "fh-loop-backspin",
@@ -50,6 +50,102 @@ exports[`determinism > same profile and content version give an identical progra
       "weight": 0.8,
     },
     {
+      "skillId": "bh-flick",
+      "weight": 0.42,
+    },
+    {
+      "skillId": "bh-topspin",
+      "weight": 0.42,
+    },
+    {
+      "skillId": "fh-loop-topspin",
+      "weight": 0.42,
+    },
+    {
+      "skillId": "variation",
+      "weight": 0.42,
+    },
+    {
+      "skillId": "in-out",
+      "weight": 0.39,
+    },
+    {
+      "skillId": "pivot",
+      "weight": 0.39,
+    },
+    {
+      "skillId": "placement",
+      "weight": 0.39,
+    },
+    {
+      "skillId": "receive-long",
+      "weight": 0.39,
+    },
+    {
+      "skillId": "serve-pendulum",
+      "weight": 0.39,
+    },
+    {
+      "skillId": "serve-reverse",
+      "weight": 0.39,
+    },
+    {
+      "skillId": "short-touch",
+      "weight": 0.39,
+    },
+    {
+      "skillId": "vs-styles",
+      "weight": 0.39,
+    },
+    {
+      "skillId": "bh-block",
+      "weight": 0.36,
+    },
+    {
+      "skillId": "counter-loop",
+      "weight": 0.36,
+    },
+    {
+      "skillId": "crossover",
+      "weight": 0.36,
+    },
+    {
+      "skillId": "fh-flick",
+      "weight": 0.36,
+    },
+    {
+      "skillId": "serve-tomahawk",
+      "weight": 0.36,
+    },
+    {
+      "skillId": "smash",
+      "weight": 0.36,
+    },
+    {
+      "skillId": "spin-reading",
+      "weight": 0.36,
+    },
+    {
+      "skillId": "fh-block",
+      "weight": 0.33,
+    },
+    {
+      "skillId": "serve-backhand",
+      "weight": 0.33,
+    },
+    {
+      "skillId": "agility",
+      "weight": 0.3,
+    },
+    {
+      "skillId": "bh-chop",
+      "weight": 0.3,
+    },
+    {
+      "skillId": "core-strength",
+      "weight": 0.3,
+    },
+    {
       "skillId": "focus-routine",
       "weight": 0.3,
     },
@@ -57,12 +153,28 @@ exports[`determinism > same profile and content version give an identical progra
       "skillId": "grip",
       "weight": 0.3,
     },
+    {
+      "skillId": "handling-nerves",
+      "weight": 0.3,
+    },
+    {
+      "skillId": "lob",
+      "weight": 0.3,
+    },
+    {
+      "skillId": "shoulder-care",
+      "weight": 0.3,
+    },
+    {
+      "skillId": "fh-chop",
+      "weight": 0.24,
+    },
   ],
   "learnOrder": [
     "fh-loop-backspin",
   ],
   "regenCount": 0,
-  "seed": 342459625,
+  "seed": 443272434,
   "sessions": [
     {
       "blocks": [
@@ -183,15 +295,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Watch the server's bat at contact",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Stand ready to step back for long serves",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
             },
           ],
           "minutes": 6,
@@ -200,15 +312,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Treat every try like a match point",
-              "drillId": "rally-record",
+              "cue": "Wait for the right ball",
+              "drillId": "open-up-game",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "38 in a row",
-              "targetValue": 38,
+              "target": "6 of 10 openings land",
+              "targetValue": 6,
             },
           ],
           "minutes": 5,
@@ -218,13 +330,13 @@ exports[`determinism > same profile and content version give an identical progra
           "items": [
             {
               "cue": "Hold, don't bounce",
-              "drillId": "cooldown-stretch",
+              "drillId": "cooldown-breathe",
               "focus": false,
               "kind": "drill",
               "minutes": 3,
               "reason": "Brings your heart rate down and helps you recover.",
               "setup": "shadow",
-              "target": "Breathing back to normal",
+              "target": "Breathing calm, one good thing named",
               "targetValue": 1,
             },
           ],
@@ -333,14 +445,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Same toss and motion for both",
-              "drillId": "short-long-serve-targets",
+              "cue": "First bounce close to the net on your side",
+              "drillId": "short-serve-precision",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
               "reason": "Part of your goal: serve and receive.",
               "setup": "partner",
-              "target": "6 of 10 serves land in the right zone",
+              "target": "6 of 10 would bounce twice",
               "targetValue": 6,
             },
           ],
@@ -350,15 +462,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Move in with your foot for short balls",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Read the spin, then pick the bat angle",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
             },
           ],
           "minutes": 6,
@@ -367,15 +479,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Breathe out before you start",
-              "drillId": "rally-record",
+              "cue": "Spin first; speed only on the loose ball",
+              "drillId": "vs-chopper-pattern",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "38 in a row",
-              "targetValue": 38,
+              "target": "7 of 10 loops against backspin land",
+              "targetValue": 7,
             },
           ],
           "minutes": 5,
@@ -384,7 +496,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Breathe slowly",
+              "cue": "Hold, don't bounce",
               "drillId": "cooldown-stretch",
               "focus": false,
               "kind": "drill",
@@ -408,7 +520,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 1,
       "kind": "training",
       "length": 60,
-      "tipId": "t-elbow-target",
+      "tipId": "t-learn-slow",
       "week": 0,
       "weekTheme": "learn",
     },
@@ -417,14 +529,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Land softly",
-              "drillId": "skipping-warmup",
+              "cue": "Move through full, easy ranges",
+              "drillId": "mobility-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "Legs feel light and quick",
+              "target": "Loose and warm",
               "targetValue": 1,
             },
           ],
@@ -517,15 +629,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Push deep to their backhand by default",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Spin first on the return",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
             },
           ],
           "minutes": 6,
@@ -534,15 +646,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay relaxed as the count grows",
-              "drillId": "rally-record",
+              "cue": "Decide wing early",
+              "drillId": "open-up-game",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "38 in a row",
-              "targetValue": 38,
+              "target": "6 of 10 openings land",
+              "targetValue": 6,
             },
           ],
           "minutes": 5,
@@ -551,14 +663,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Note one thing that went well today",
-              "drillId": "cooldown-stretch",
+              "cue": "Slow breaths",
+              "drillId": "cooldown-breathe",
               "focus": false,
               "kind": "drill",
               "minutes": 3,
               "reason": "Brings your heart rate down and helps you recover.",
               "setup": "shadow",
-              "target": "Breathing back to normal",
+              "target": "Breathing calm, one good thing named",
               "targetValue": 1,
             },
           ],
@@ -575,7 +687,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 2,
       "kind": "training",
       "length": 60,
-      "tipId": "t-fh-turn",
+      "tipId": "t-learn-film",
       "week": 0,
       "weekTheme": "learn",
     },
@@ -584,14 +696,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Big, easy movements, no bouncing stretches",
-              "drillId": "dynamic-warmup",
+              "cue": "Land softly",
+              "drillId": "skipping-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "You feel warm and slightly out of breath",
+              "target": "Legs feel light and quick",
               "targetValue": 1,
             },
           ],
@@ -650,15 +762,26 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay low throughout",
-              "drillId": "falkenberg",
+              "cue": "First step is back and around",
+              "drillId": "pivot-forehand",
+              "focus": false,
+              "kind": "drill",
+              "minutes": 8,
+              "reason": "Keeps your pivot sharp.",
+              "setup": "multiball",
+              "target": "8 pivots in a row with balanced finishes",
+              "targetValue": 8,
+            },
+            {
+              "cue": "Push off the foot further from where you're going",
+              "drillId": "side-shuffle-shadow",
               "focus": true,
               "kind": "drill",
-              "minutes": 11,
-              "reason": "Builds the backhand drive you chose to work on.",
-              "setup": "multiball",
-              "target": "5 full cycles without a miss",
-              "targetValue": 5,
+              "minutes": 3,
+              "reason": "Works on basic footwork, one of your focus skills.",
+              "setup": "shadow",
+              "target": "4 rounds staying low the whole time",
+              "targetValue": 4,
             },
           ],
           "minutes": 11,
@@ -667,15 +790,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Short: first bounce near the net on your side",
-              "drillId": "short-long-serve-targets",
+              "cue": "Same toss and swing for every spin",
+              "drillId": "pendulum-variations",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Keeps your forehand pendulum serve sharp.",
               "setup": "partner",
-              "target": "6 of 10 serves land in the right zone",
-              "targetValue": 6,
+              "target": "8 of 10 serves with the spin you meant",
+              "targetValue": 8,
             },
           ],
           "minutes": 7,
@@ -684,15 +807,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Watch the server's bat at contact",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Stand ready to step back for long serves",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
             },
           ],
           "minutes": 6,
@@ -701,15 +824,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Treat every try like a match point",
-              "drillId": "rally-record",
+              "cue": "Spin first on the opening",
+              "drillId": "open-up-game",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "38 in a row",
-              "targetValue": 38,
+              "target": "6 of 10 openings land",
+              "targetValue": 6,
             },
           ],
           "minutes": 5,
@@ -718,7 +841,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Hold, don't bounce",
+              "cue": "Breathe slowly",
               "drillId": "cooldown-stretch",
               "focus": false,
               "kind": "drill",
@@ -742,7 +865,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 3,
       "kind": "training",
       "length": 60,
-      "tipId": "t-loop-spin-first",
+      "tipId": "t-learn-multiball",
       "week": 1,
       "weekTheme": "learn",
     },
@@ -751,14 +874,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Keep your knees bent on the shuffles",
-              "drillId": "skipping-warmup",
+              "cue": "Big, easy movements, no bouncing stretches",
+              "drillId": "dynamic-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "Legs feel light and quick",
+              "target": "You feel warm and slightly out of breath",
               "targetValue": 1,
             },
           ],
@@ -817,15 +940,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay at the same height",
-              "drillId": "two-point-footwork",
+              "cue": "Stay low throughout",
+              "drillId": "falkenberg",
               "focus": true,
               "kind": "drill",
               "minutes": 11,
-              "reason": "Works on basic footwork, one of your focus skills.",
+              "reason": "Builds the backhand drive you chose to work on.",
               "setup": "multiball",
-              "target": "18 forehands in a row, alternating corner and middle",
-              "targetValue": 18,
+              "target": "5 full cycles without a miss",
+              "targetValue": 5,
             },
           ],
           "minutes": 11,
@@ -851,15 +974,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Move in with your foot for short balls",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Read the spin, then pick the bat angle",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
             },
           ],
           "minutes": 6,
@@ -868,15 +991,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Breathe out before you start",
-              "drillId": "rally-record",
+              "cue": "Aim for the middle",
+              "drillId": "vs-chopper-pattern",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "38 in a row",
-              "targetValue": 38,
+              "target": "7 of 10 loops against backspin land",
+              "targetValue": 7,
             },
           ],
           "minutes": 5,
@@ -885,14 +1008,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Breathe slowly",
-              "drillId": "cooldown-stretch",
+              "cue": "Name one thing that went well",
+              "drillId": "cooldown-breathe",
               "focus": false,
               "kind": "drill",
               "minutes": 3,
               "reason": "Brings your heart rate down and helps you recover.",
               "setup": "shadow",
-              "target": "Breathing back to normal",
+              "target": "Breathing calm, one good thing named",
               "targetValue": 1,
             },
           ],
@@ -909,7 +1032,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 4,
       "kind": "training",
       "length": 60,
-      "tipId": "t-loop-legs",
+      "tipId": "t-elbow-target",
       "week": 1,
       "weekTheme": "learn",
     },
@@ -918,14 +1041,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Finish in your ready position",
-              "drillId": "dynamic-warmup",
+              "cue": "Keep your knees bent on the shuffles",
+              "drillId": "skipping-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "You feel warm and slightly out of breath",
+              "target": "Legs feel light and quick",
               "targetValue": 1,
             },
           ],
@@ -984,15 +1107,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Pivot early with a big first step",
-              "drillId": "falkenberg",
+              "cue": "Stay at the same height",
+              "drillId": "two-point-footwork",
               "focus": true,
               "kind": "drill",
               "minutes": 11,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Works on basic footwork, one of your focus skills.",
               "setup": "multiball",
-              "target": "5 full cycles without a miss",
-              "targetValue": 5,
+              "target": "18 forehands in a row, alternating corner and middle",
+              "targetValue": 18,
             },
           ],
           "minutes": 11,
@@ -1001,14 +1124,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Long: first bounce near your end line",
-              "drillId": "short-long-serve-targets",
+              "cue": "Low contact, gentle touch",
+              "drillId": "short-serve-precision",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
               "reason": "Part of your goal: serve and receive.",
               "setup": "partner",
-              "target": "6 of 10 serves land in the right zone",
+              "target": "6 of 10 would bounce twice",
               "targetValue": 6,
             },
           ],
@@ -1018,15 +1141,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Push deep to their backhand by default",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Spin first on the return",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
             },
           ],
           "minutes": 6,
@@ -1035,15 +1158,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay relaxed as the count grows",
-              "drillId": "rally-record",
+              "cue": "Wait for the right ball",
+              "drillId": "open-up-game",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "38 in a row",
-              "targetValue": 38,
+              "target": "6 of 10 openings land",
+              "targetValue": 6,
             },
           ],
           "minutes": 5,
@@ -1070,13 +1193,13 @@ exports[`determinism > same profile and content version give an identical progra
       "coachNote": "Forehand loop against backspin: groove it. Sets of 10 loops; aim for depth and spin, not speed.",
       "focusSkillIds": [
         "fh-loop-backspin",
-        "bh-drive",
+        "basic-footwork",
       ],
       "id": "s5",
       "index": 5,
       "kind": "training",
       "length": 60,
-      "tipId": "t-loop-relax",
+      "tipId": "t-fh-turn",
       "week": 1,
       "weekTheme": "learn",
     },
@@ -1085,14 +1208,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay on the balls of your feet",
-              "drillId": "skipping-warmup",
+              "cue": "No bouncing stretches",
+              "drillId": "mobility-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "Legs feel light and quick",
+              "target": "Loose and warm",
               "targetValue": 1,
             },
           ],
@@ -1102,15 +1225,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Bat in front of your belly button",
-              "drillId": "bh-diagonal-warmup",
+              "cue": "Easy pace first",
+              "drillId": "fh-bh-warmup",
               "focus": true,
               "kind": "drill",
               "minutes": 6,
               "reason": "Finds your timing before the main work.",
               "setup": "partner",
-              "target": "32 backhands in a row at an easy pace",
-              "targetValue": 32,
+              "target": "27 in a row",
+              "targetValue": 27,
             },
           ],
           "minutes": 6,
@@ -1151,7 +1274,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Recover to the middle after the wide forehand",
+              "cue": "Pivot early with a big first step",
               "drillId": "falkenberg",
               "focus": true,
               "kind": "drill",
@@ -1168,15 +1291,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Toss straight up, at least 16 cm, ball visible",
-              "drillId": "backspin-serve-practice",
+              "cue": "Same toss and motion for both",
+              "drillId": "short-long-serve-targets",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
               "reason": "Part of your goal: serve and receive.",
               "setup": "partner",
-              "target": "7 of 10 legal serves that stop or spin back toward the net",
-              "targetValue": 7,
+              "target": "6 of 10 serves land in the right zone",
+              "targetValue": 6,
             },
           ],
           "minutes": 7,
@@ -1185,15 +1308,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Watch the server's bat at contact",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Stand ready to step back for long serves",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
             },
           ],
           "minutes": 6,
@@ -1220,13 +1343,13 @@ exports[`determinism > same profile and content version give an identical progra
           "items": [
             {
               "cue": "Hold, don't bounce",
-              "drillId": "cooldown-stretch",
+              "drillId": "cooldown-breathe",
               "focus": false,
               "kind": "drill",
               "minutes": 3,
               "reason": "Brings your heart rate down and helps you recover.",
               "setup": "shadow",
-              "target": "Breathing back to normal",
+              "target": "Breathing calm, one good thing named",
               "targetValue": 1,
             },
           ],
@@ -1243,7 +1366,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 6,
       "kind": "training",
       "length": 60,
-      "tipId": "t-footwork-first",
+      "tipId": "t-loop-spin-first",
       "week": 2,
       "weekTheme": "build",
     },
@@ -1252,14 +1375,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Start slow and build up",
-              "drillId": "dynamic-warmup",
+              "cue": "Stay on the balls of your feet",
+              "drillId": "skipping-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "You feel warm and slightly out of breath",
+              "target": "Legs feel light and quick",
               "targetValue": 1,
             },
           ],
@@ -1269,7 +1392,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Elbow relaxed, slightly forward",
+              "cue": "Bat in front of your belly button",
               "drillId": "bh-diagonal-warmup",
               "focus": true,
               "kind": "drill",
@@ -1318,15 +1441,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Arrive before the ball",
-              "drillId": "two-point-footwork",
+              "cue": "Recover to the middle after the wide forehand",
+              "drillId": "falkenberg",
               "focus": true,
               "kind": "drill",
               "minutes": 11,
-              "reason": "Works on basic footwork, one of your focus skills.",
+              "reason": "Builds the backhand drive you chose to work on.",
               "setup": "multiball",
-              "target": "19 forehands in a row, alternating corner and middle",
-              "targetValue": 19,
+              "target": "6 full cycles without a miss",
+              "targetValue": 6,
             },
           ],
           "minutes": 11,
@@ -1335,15 +1458,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Same toss and motion for both",
-              "drillId": "short-long-serve-targets",
+              "cue": "Toss straight up, at least 16 cm, ball visible",
+              "drillId": "backspin-serve-practice",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
               "reason": "Part of your goal: serve and receive.",
               "setup": "partner",
-              "target": "6 of 10 serves land in the right zone",
-              "targetValue": 6,
+              "target": "7 of 10 legal serves that stop or spin back toward the net",
+              "targetValue": 7,
             },
           ],
           "minutes": 7,
@@ -1352,15 +1475,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Move in with your foot for short balls",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Read the spin, then pick the bat angle",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
             },
           ],
           "minutes": 6,
@@ -1386,7 +1509,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Breathe slowly",
+              "cue": "Hold, don't bounce",
               "drillId": "cooldown-stretch",
               "focus": false,
               "kind": "drill",
@@ -1410,7 +1533,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 7,
       "kind": "training",
       "length": 60,
-      "tipId": "t-serve-same",
+      "tipId": "t-loop-thin",
       "week": 2,
       "weekTheme": "build",
     },
@@ -1419,14 +1542,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Land softly",
-              "drillId": "skipping-warmup",
+              "cue": "Finish in your ready position",
+              "drillId": "dynamic-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "Legs feel light and quick",
+              "target": "You feel warm and slightly out of breath",
               "targetValue": 1,
             },
           ],
@@ -1436,15 +1559,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Short stroke, quick reset",
-              "drillId": "bh-diagonal-warmup",
+              "cue": "Bat back to the middle",
+              "drillId": "fh-bh-warmup",
               "focus": true,
               "kind": "drill",
               "minutes": 6,
               "reason": "Finds your timing before the main work.",
               "setup": "partner",
-              "target": "32 backhands in a row at an easy pace",
-              "targetValue": 32,
+              "target": "27 in a row",
+              "targetValue": 27,
             },
           ],
           "minutes": 6,
@@ -1485,15 +1608,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay low throughout",
-              "drillId": "falkenberg",
+              "cue": "Arrive before the ball",
+              "drillId": "two-point-footwork",
               "focus": true,
               "kind": "drill",
               "minutes": 11,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Works on basic footwork, one of your focus skills.",
               "setup": "multiball",
-              "target": "6 full cycles without a miss",
-              "targetValue": 6,
+              "target": "19 forehands in a row, alternating corner and middle",
+              "targetValue": 19,
             },
           ],
           "minutes": 11,
@@ -1502,15 +1625,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Open bat, brush under the back of the ball",
-              "drillId": "backspin-serve-practice",
+              "cue": "Short: first bounce near the net on your side",
+              "drillId": "short-long-serve-targets",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
               "reason": "Part of your goal: serve and receive.",
               "setup": "partner",
-              "target": "7 of 10 legal serves that stop or spin back toward the net",
-              "targetValue": 7,
+              "target": "6 of 10 serves land in the right zone",
+              "targetValue": 6,
             },
           ],
           "minutes": 7,
@@ -1519,15 +1642,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Push deep to their backhand by default",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Spin first on the return",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
             },
           ],
           "minutes": 6,
@@ -1553,14 +1676,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Note one thing that went well today",
-              "drillId": "cooldown-stretch",
+              "cue": "Slow breaths",
+              "drillId": "cooldown-breathe",
               "focus": false,
               "kind": "drill",
               "minutes": 3,
               "reason": "Brings your heart rate down and helps you recover.",
               "setup": "shadow",
-              "target": "Breathing back to normal",
+              "target": "Breathing calm, one good thing named",
               "targetValue": 1,
             },
           ],
@@ -1577,7 +1700,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 8,
       "kind": "training",
       "length": 60,
-      "tipId": "t-ready-back",
+      "tipId": "t-loop-elbow",
       "week": 2,
       "weekTheme": "build",
     },
@@ -1586,14 +1709,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Big, easy movements, no bouncing stretches",
-              "drillId": "dynamic-warmup",
+              "cue": "Land softly",
+              "drillId": "skipping-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "You feel warm and slightly out of breath",
+              "target": "Legs feel light and quick",
               "targetValue": 1,
             },
           ],
@@ -1603,7 +1726,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Bat in front of your belly button",
+              "cue": "Elbow relaxed, slightly forward",
               "drillId": "bh-diagonal-warmup",
               "focus": true,
               "kind": "drill",
@@ -1654,163 +1777,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Short: first bounce near the net on your side",
-              "drillId": "short-long-serve-targets",
-              "focus": false,
-              "kind": "drill",
-              "minutes": 7,
-              "reason": "Part of your goal: serve and receive.",
-              "setup": "partner",
-              "target": "6 of 10 serves land in the right zone",
-              "targetValue": 6,
-            },
-          ],
-          "minutes": 7,
-          "phase": "serve",
-        },
-        {
-          "items": [
-            {
-              "cue": "Watch the server's bat at contact",
-              "drillId": "push-receive",
-              "focus": false,
-              "kind": "drill",
-              "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
-              "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
-            },
-          ],
-          "minutes": 6,
-          "phase": "receive",
-        },
-        {
-          "items": [
-            {
-              "cue": "After the serve, step back into ready at once",
-              "drillId": "serve-third-ball",
-              "focus": true,
-              "kind": "drill",
-              "learn": {
-                "moveId": "fh-loop-backspin",
-                "stage": "use",
-              },
-              "minutes": 9,
-              "reason": "Forehand loop against backspin, stage 6 of 7: Use it.",
-              "setup": "partner",
-              "target": "6 of 10 third balls on the table.",
-              "targetValue": 6,
-            },
-          ],
-          "minutes": 9,
-          "phase": "matchPlay",
-        },
-        {
-          "items": [
-            {
-              "cue": "Hold, don't bounce",
-              "drillId": "cooldown-stretch",
-              "focus": false,
-              "kind": "drill",
-              "minutes": 3,
-              "reason": "Brings your heart rate down and helps you recover.",
-              "setup": "shadow",
-              "target": "Breathing back to normal",
-              "targetValue": 1,
-            },
-          ],
-          "minutes": 3,
-          "phase": "cooldown",
-        },
-      ],
-      "coachNote": "Apply week. Random drills and games. Test at the end of the week.",
-      "focusSkillIds": [
-        "fh-loop-backspin",
-        "third-ball",
-      ],
-      "id": "s9",
-      "index": 9,
-      "kind": "training",
-      "length": 60,
-      "tipId": "t-serve-plan",
-      "week": 3,
-      "weekTheme": "apply",
-    },
-    {
-      "blocks": [
-        {
-          "items": [
-            {
-              "cue": "Keep your knees bent on the shuffles",
-              "drillId": "skipping-warmup",
-              "focus": false,
-              "kind": "drill",
-              "minutes": 6,
-              "reason": "Gets your body ready to play.",
-              "setup": "shadow",
-              "target": "Legs feel light and quick",
-              "targetValue": 1,
-            },
-          ],
-          "minutes": 6,
-          "phase": "physicalWarmup",
-        },
-        {
-          "items": [
-            {
-              "cue": "Elbow relaxed, slightly forward",
-              "drillId": "bh-diagonal-warmup",
-              "focus": true,
-              "kind": "drill",
-              "minutes": 6,
-              "reason": "Finds your timing before the main work.",
-              "setup": "partner",
-              "target": "30 backhands in a row at an easy pace",
-              "targetValue": 30,
-            },
-          ],
-          "minutes": 6,
-          "phase": "tableWarmup",
-        },
-        {
-          "items": [
-            {
-              "cue": "Brush up and forward, legs push first",
-              "drillId": "fh-loop-backspin-multiball",
-              "focus": true,
-              "kind": "drill",
-              "minutes": 12,
-              "reason": "Builds the forehand loop against backspin you chose to work on.",
-              "setup": "multiball",
-              "target": "7 of 10 loops on the table",
-              "targetValue": 7,
-            },
-          ],
-          "minutes": 12,
-          "phase": "technique",
-        },
-        {
-          "items": [
-            {
-              "cue": "Pivot early with a big first step",
-              "drillId": "falkenberg",
-              "focus": true,
-              "kind": "drill",
-              "minutes": 11,
-              "reason": "Builds the backhand drive you chose to work on.",
-              "setup": "multiball",
-              "target": "5 full cycles without a miss",
-              "targetValue": 5,
-            },
-          ],
-          "minutes": 11,
-          "phase": "footwork",
-        },
-        {
-          "items": [
-            {
-              "cue": "Contact low, but above table height",
+              "cue": "Open bat, brush under the back of the ball",
               "drillId": "backspin-serve-practice",
               "focus": false,
               "kind": "drill",
@@ -1827,15 +1794,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Move in with your foot for short balls",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Stand ready to step back for long serves",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
             },
           ],
           "minutes": 6,
@@ -1844,7 +1811,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Expect the long push and be ready to move",
+              "cue": "After the serve, step back into ready at once",
               "drillId": "serve-third-ball",
               "focus": true,
               "kind": "drill",
@@ -1880,16 +1847,16 @@ exports[`determinism > same profile and content version give an identical progra
           "phase": "cooldown",
         },
       ],
-      "coachNote": "Focus: forehand loop against backspin. One cue per drill.",
+      "coachNote": "Apply week. Random drills and games. Test at the end of the week.",
       "focusSkillIds": [
         "fh-loop-backspin",
         "basic-footwork",
       ],
-      "id": "s10",
-      "index": 10,
+      "id": "s9",
+      "index": 9,
       "kind": "training",
       "length": 60,
-      "tipId": "t-footwork-small",
+      "tipId": "t-loop-recover",
       "week": 3,
       "weekTheme": "apply",
     },
@@ -1898,14 +1865,170 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Finish in your ready position",
-              "drillId": "dynamic-warmup",
+              "cue": "Finish quick and light",
+              "drillId": "mobility-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "You feel warm and slightly out of breath",
+              "target": "Loose and warm",
+              "targetValue": 1,
+            },
+          ],
+          "minutes": 6,
+          "phase": "physicalWarmup",
+        },
+        {
+          "items": [
+            {
+              "cue": "Small steps",
+              "drillId": "fh-bh-warmup",
+              "focus": true,
+              "kind": "drill",
+              "minutes": 6,
+              "reason": "Finds your timing before the main work.",
+              "setup": "partner",
+              "target": "25 in a row",
+              "targetValue": 25,
+            },
+          ],
+          "minutes": 6,
+          "phase": "tableWarmup",
+        },
+        {
+          "items": [
+            {
+              "cue": "Brush up and forward, legs push first",
+              "drillId": "fh-loop-backspin-multiball",
+              "focus": true,
+              "kind": "drill",
+              "minutes": 12,
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
+              "setup": "multiball",
+              "target": "7 of 10 loops on the table",
+              "targetValue": 7,
+            },
+          ],
+          "minutes": 12,
+          "phase": "technique",
+        },
+        {
+          "items": [
+            {
+              "cue": "Stay low throughout",
+              "drillId": "falkenberg",
+              "focus": true,
+              "kind": "drill",
+              "minutes": 11,
+              "reason": "Builds the backhand drive you chose to work on.",
+              "setup": "multiball",
+              "target": "5 full cycles without a miss",
+              "targetValue": 5,
+            },
+          ],
+          "minutes": 11,
+          "phase": "footwork",
+        },
+        {
+          "items": [
+            {
+              "cue": "Long: first bounce near your end line",
+              "drillId": "short-long-serve-targets",
+              "focus": false,
+              "kind": "drill",
+              "minutes": 7,
+              "reason": "Part of your goal: serve and receive.",
+              "setup": "partner",
+              "target": "6 of 10 serves land in the right zone",
+              "targetValue": 6,
+            },
+          ],
+          "minutes": 7,
+          "phase": "serve",
+        },
+        {
+          "items": [
+            {
+              "cue": "Read the spin, then pick the bat angle",
+              "drillId": "long-serve-attack",
+              "focus": true,
+              "kind": "drill",
+              "minutes": 6,
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
+              "setup": "partner",
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
+            },
+          ],
+          "minutes": 6,
+          "phase": "receive",
+        },
+        {
+          "items": [
+            {
+              "cue": "Expect the long push and be ready to move",
+              "drillId": "serve-third-ball",
+              "focus": true,
+              "kind": "drill",
+              "learn": {
+                "moveId": "fh-loop-backspin",
+                "stage": "use",
+              },
+              "minutes": 9,
+              "reason": "Forehand loop against backspin, stage 6 of 7: Use it.",
+              "setup": "partner",
+              "target": "6 of 10 third balls on the table.",
+              "targetValue": 6,
+            },
+          ],
+          "minutes": 9,
+          "phase": "matchPlay",
+        },
+        {
+          "items": [
+            {
+              "cue": "Name one thing that went well",
+              "drillId": "cooldown-breathe",
+              "focus": false,
+              "kind": "drill",
+              "minutes": 3,
+              "reason": "Brings your heart rate down and helps you recover.",
+              "setup": "shadow",
+              "target": "Breathing calm, one good thing named",
+              "targetValue": 1,
+            },
+          ],
+          "minutes": 3,
+          "phase": "cooldown",
+        },
+      ],
+      "coachNote": "Focus: forehand loop against backspin. One cue per drill.",
+      "focusSkillIds": [
+        "fh-loop-backspin",
+        "third-ball",
+      ],
+      "id": "s10",
+      "index": 10,
+      "kind": "training",
+      "length": 60,
+      "tipId": "t-loop-low-start",
+      "week": 3,
+      "weekTheme": "apply",
+    },
+    {
+      "blocks": [
+        {
+          "items": [
+            {
+              "cue": "Keep your knees bent on the shuffles",
+              "drillId": "skipping-warmup",
+              "focus": false,
+              "kind": "drill",
+              "minutes": 6,
+              "reason": "Gets your body ready to play.",
+              "setup": "shadow",
+              "target": "Legs feel light and quick",
               "targetValue": 1,
             },
           ],
@@ -1956,7 +2079,7 @@ exports[`determinism > same profile and content version give an identical progra
               "targetValue": 18,
             },
             {
-              "cue": "Long: first bounce near your end line",
+              "cue": "Same toss and motion for both",
               "drillId": "short-long-serve-targets",
               "focus": true,
               "kind": "drill",
@@ -1985,15 +2108,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Toss straight up, at least 16 cm, ball visible",
-              "drillId": "backspin-serve-practice",
+              "cue": "Backspin keeps it short",
+              "drillId": "short-serve-precision",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
               "reason": "Part of your goal: serve and receive.",
               "setup": "partner",
-              "target": "7 of 10 legal serves that stop or spin back toward the net",
-              "targetValue": 7,
+              "target": "6 of 10 would bounce twice",
+              "targetValue": 6,
             },
           ],
           "minutes": 7,
@@ -2002,15 +2125,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Push deep to their backhand by default",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Spin first on the return",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "8 of 10 low returns",
-              "targetValue": 8,
+              "target": "6 of 10 long serves attacked onto the table",
+              "targetValue": 6,
             },
           ],
           "minutes": 6,
@@ -2019,14 +2142,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Loop with spin first, speed second",
-              "drillId": "serve-third-ball",
+              "cue": "Decide wing early",
+              "drillId": "open-up-game",
               "focus": true,
               "kind": "drill",
               "minutes": 9,
               "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "6 of 10 third balls on the table",
+              "target": "6 of 10 openings land",
               "targetValue": 6,
             },
           ],
@@ -2069,14 +2192,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay on the balls of your feet",
-              "drillId": "skipping-warmup",
+              "cue": "Start slow and build up",
+              "drillId": "dynamic-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "Legs feel light and quick",
+              "target": "You feel warm and slightly out of breath",
               "targetValue": 1,
             },
           ],
@@ -2135,7 +2258,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Recover to the middle after the wide forehand",
+              "cue": "Pivot early with a big first step",
               "drillId": "falkenberg",
               "focus": true,
               "kind": "drill",
@@ -2152,7 +2275,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Open bat, brush under the back of the ball",
+              "cue": "Contact low, but above table height",
               "drillId": "backspin-serve-practice",
               "focus": false,
               "kind": "drill",
@@ -2169,15 +2292,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Watch the server's bat at contact",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Stand ready to step back for long serves",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -2186,15 +2309,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Treat every try like a match point",
-              "drillId": "rally-record",
+              "cue": "Bring them in with a drop shot",
+              "drillId": "vs-chopper-pattern",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "43 in a row",
-              "targetValue": 43,
+              "target": "8 of 10 loops against backspin land",
+              "targetValue": 8,
             },
           ],
           "minutes": 5,
@@ -2204,13 +2327,13 @@ exports[`determinism > same profile and content version give an identical progra
           "items": [
             {
               "cue": "Hold, don't bounce",
-              "drillId": "cooldown-stretch",
+              "drillId": "cooldown-breathe",
               "focus": false,
               "kind": "drill",
               "minutes": 3,
               "reason": "Brings your heart rate down and helps you recover.",
               "setup": "shadow",
-              "target": "Breathing back to normal",
+              "target": "Breathing calm, one good thing named",
               "targetValue": 1,
             },
           ],
@@ -2227,7 +2350,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 12,
       "kind": "training",
       "length": 60,
-      "tipId": "t-elbow-target",
+      "tipId": "t-learn-slow",
       "week": 4,
       "weekTheme": "learn",
     },
@@ -2236,14 +2359,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Start slow and build up",
-              "drillId": "dynamic-warmup",
+              "cue": "Stay on the balls of your feet",
+              "drillId": "skipping-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "You feel warm and slightly out of breath",
+              "target": "Legs feel light and quick",
               "targetValue": 1,
             },
           ],
@@ -2298,7 +2421,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay low throughout",
+              "cue": "Recover to the middle after the wide forehand",
               "drillId": "falkenberg",
               "focus": true,
               "kind": "drill",
@@ -2315,14 +2438,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Same toss and motion for both",
-              "drillId": "short-long-serve-targets",
+              "cue": "Stand square, ball in front of your body",
+              "drillId": "bh-serve-practice",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Keeps your backhand serve sharp.",
               "setup": "partner",
-              "target": "7 of 10 serves land in the right zone",
+              "target": "7 of 10 land where you aimed",
               "targetValue": 7,
             },
           ],
@@ -2332,15 +2455,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Move in with your foot for short balls",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Read the spin, then pick the bat angle",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -2349,15 +2472,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Breathe out before you start",
-              "drillId": "rally-record",
+              "cue": "Spin first on the opening",
+              "drillId": "open-up-game",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "43 in a row",
-              "targetValue": 43,
+              "target": "7 of 10 openings land",
+              "targetValue": 7,
             },
           ],
           "minutes": 5,
@@ -2366,7 +2489,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Breathe slowly",
+              "cue": "Hold, don't bounce",
               "drillId": "cooldown-stretch",
               "focus": false,
               "kind": "drill",
@@ -2390,7 +2513,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 13,
       "kind": "training",
       "length": 60,
-      "tipId": "t-fh-turn",
+      "tipId": "t-learn-film",
       "week": 4,
       "weekTheme": "learn",
     },
@@ -2399,14 +2522,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Land softly",
-              "drillId": "skipping-warmup",
+              "cue": "Move through full, easy ranges",
+              "drillId": "mobility-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "Legs feel light and quick",
+              "target": "Loose and warm",
               "targetValue": 1,
             },
           ],
@@ -2478,7 +2601,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Contact low, but above table height",
+              "cue": "Toss straight up, at least 16 cm, ball visible",
               "drillId": "backspin-serve-practice",
               "focus": false,
               "kind": "drill",
@@ -2495,15 +2618,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Push deep to their backhand by default",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Spin first on the return",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -2512,15 +2635,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay relaxed as the count grows",
-              "drillId": "rally-record",
+              "cue": "Wait for the right ball",
+              "drillId": "open-up-game",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "43 in a row",
-              "targetValue": 43,
+              "target": "7 of 10 openings land",
+              "targetValue": 7,
             },
           ],
           "minutes": 5,
@@ -2529,14 +2652,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Note one thing that went well today",
-              "drillId": "cooldown-stretch",
+              "cue": "Slow breaths",
+              "drillId": "cooldown-breathe",
               "focus": false,
               "kind": "drill",
               "minutes": 3,
               "reason": "Brings your heart rate down and helps you recover.",
               "setup": "shadow",
-              "target": "Breathing back to normal",
+              "target": "Breathing calm, one good thing named",
               "targetValue": 1,
             },
           ],
@@ -2553,7 +2676,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 14,
       "kind": "training",
       "length": 60,
-      "tipId": "t-loop-spin-first",
+      "tipId": "t-learn-multiball",
       "week": 4,
       "weekTheme": "learn",
     },
@@ -2562,14 +2685,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Big, easy movements, no bouncing stretches",
-              "drillId": "dynamic-warmup",
+              "cue": "Land softly",
+              "drillId": "skipping-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "You feel warm and slightly out of breath",
+              "target": "Legs feel light and quick",
               "targetValue": 1,
             },
           ],
@@ -2624,7 +2747,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Pivot early with a big first step",
+              "cue": "Stay low throughout",
               "drillId": "falkenberg",
               "focus": true,
               "kind": "drill",
@@ -2641,14 +2764,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Short: first bounce near the net on your side",
-              "drillId": "short-long-serve-targets",
+              "cue": "First bounce close to the net on your side",
+              "drillId": "short-serve-precision",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
               "reason": "Part of your goal: serve and receive.",
               "setup": "partner",
-              "target": "7 of 10 serves land in the right zone",
+              "target": "7 of 10 would bounce twice",
               "targetValue": 7,
             },
           ],
@@ -2658,15 +2781,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Watch the server's bat at contact",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Stand ready to step back for long serves",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -2675,15 +2798,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Treat every try like a match point",
-              "drillId": "rally-record",
+              "cue": "Spin first; speed only on the loose ball",
+              "drillId": "vs-chopper-pattern",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "43 in a row",
-              "targetValue": 43,
+              "target": "8 of 10 loops against backspin land",
+              "targetValue": 8,
             },
           ],
           "minutes": 5,
@@ -2692,7 +2815,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Hold, don't bounce",
+              "cue": "Breathe slowly",
               "drillId": "cooldown-stretch",
               "focus": false,
               "kind": "drill",
@@ -2716,7 +2839,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 15,
       "kind": "training",
       "length": 60,
-      "tipId": "t-loop-legs",
+      "tipId": "t-elbow-target",
       "week": 5,
       "weekTheme": "learn",
     },
@@ -2725,14 +2848,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Keep your knees bent on the shuffles",
-              "drillId": "skipping-warmup",
+              "cue": "Big, easy movements, no bouncing stretches",
+              "drillId": "dynamic-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "Legs feel light and quick",
+              "target": "You feel warm and slightly out of breath",
               "targetValue": 1,
             },
           ],
@@ -2787,7 +2910,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Recover to the middle after the wide forehand",
+              "cue": "Pivot early with a big first step",
               "drillId": "falkenberg",
               "focus": true,
               "kind": "drill",
@@ -2804,7 +2927,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Toss straight up, at least 16 cm, ball visible",
+              "cue": "Open bat, brush under the back of the ball",
               "drillId": "backspin-serve-practice",
               "focus": false,
               "kind": "drill",
@@ -2821,15 +2944,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Move in with your foot for short balls",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Read the spin, then pick the bat angle",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -2838,15 +2961,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Breathe out before you start",
-              "drillId": "rally-record",
+              "cue": "Decide wing early",
+              "drillId": "open-up-game",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "43 in a row",
-              "targetValue": 43,
+              "target": "7 of 10 openings land",
+              "targetValue": 7,
             },
           ],
           "minutes": 5,
@@ -2855,14 +2978,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Breathe slowly",
-              "drillId": "cooldown-stretch",
+              "cue": "Name one thing that went well",
+              "drillId": "cooldown-breathe",
               "focus": false,
               "kind": "drill",
               "minutes": 3,
               "reason": "Brings your heart rate down and helps you recover.",
               "setup": "shadow",
-              "target": "Breathing back to normal",
+              "target": "Breathing calm, one good thing named",
               "targetValue": 1,
             },
           ],
@@ -2879,7 +3002,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 16,
       "kind": "training",
       "length": 60,
-      "tipId": "t-loop-relax",
+      "tipId": "t-fh-turn",
       "week": 5,
       "weekTheme": "learn",
     },
@@ -2888,14 +3011,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Finish in your ready position",
-              "drillId": "dynamic-warmup",
+              "cue": "Keep your knees bent on the shuffles",
+              "drillId": "skipping-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "You feel warm and slightly out of breath",
+              "target": "Legs feel light and quick",
               "targetValue": 1,
             },
           ],
@@ -2967,15 +3090,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Long: first bounce near your end line",
-              "drillId": "short-long-serve-targets",
+              "cue": "Spin comes from where you brush the ball",
+              "drillId": "pendulum-variations",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Keeps your forehand pendulum serve sharp.",
               "setup": "partner",
-              "target": "7 of 10 serves land in the right zone",
-              "targetValue": 7,
+              "target": "9 of 10 serves with the spin you meant",
+              "targetValue": 9,
             },
           ],
           "minutes": 7,
@@ -2984,15 +3107,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Push deep to their backhand by default",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Spin first on the return",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -3001,15 +3124,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay relaxed as the count grows",
-              "drillId": "rally-record",
+              "cue": "Spin first on the opening",
+              "drillId": "open-up-game",
               "focus": true,
               "kind": "drill",
               "minutes": 5,
-              "reason": "Builds the backhand drive you chose to work on.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "43 in a row",
-              "targetValue": 43,
+              "target": "7 of 10 openings land",
+              "targetValue": 7,
             },
           ],
           "minutes": 5,
@@ -3042,7 +3165,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 17,
       "kind": "training",
       "length": 60,
-      "tipId": "t-footwork-first",
+      "tipId": "t-loop-spin-first",
       "week": 5,
       "weekTheme": "learn",
     },
@@ -3051,14 +3174,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay on the balls of your feet",
-              "drillId": "skipping-warmup",
+              "cue": "No bouncing stretches",
+              "drillId": "mobility-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "Legs feel light and quick",
+              "target": "Loose and warm",
               "targetValue": 1,
             },
           ],
@@ -3068,15 +3191,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Bat in front of your belly button",
-              "drillId": "bh-diagonal-warmup",
+              "cue": "Easy pace first",
+              "drillId": "fh-bh-warmup",
               "focus": true,
               "kind": "drill",
               "minutes": 6,
               "reason": "Finds your timing before the main work.",
               "setup": "partner",
-              "target": "36 backhands in a row at an easy pace",
-              "targetValue": 36,
+              "target": "31 in a row",
+              "targetValue": 31,
             },
           ],
           "minutes": 6,
@@ -3113,7 +3236,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Stay low throughout",
+              "cue": "Recover to the middle after the wide forehand",
               "drillId": "falkenberg",
               "focus": true,
               "kind": "drill",
@@ -3130,15 +3253,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Open bat, brush under the back of the ball",
-              "drillId": "backspin-serve-practice",
+              "cue": "Short: first bounce near the net on your side",
+              "drillId": "short-long-serve-targets",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
               "reason": "Part of your goal: serve and receive.",
               "setup": "partner",
-              "target": "8 of 10 legal serves that stop or spin back toward the net",
-              "targetValue": 8,
+              "target": "7 of 10 serves land in the right zone",
+              "targetValue": 7,
             },
           ],
           "minutes": 7,
@@ -3147,15 +3270,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Watch the server's bat at contact",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Stand ready to step back for long serves",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -3164,7 +3287,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "After the serve, step back into ready at once",
+              "cue": "Loop with spin first, speed second",
               "drillId": "serve-third-ball",
               "focus": true,
               "kind": "drill",
@@ -3182,13 +3305,13 @@ exports[`determinism > same profile and content version give an identical progra
           "items": [
             {
               "cue": "Hold, don't bounce",
-              "drillId": "cooldown-stretch",
+              "drillId": "cooldown-breathe",
               "focus": false,
               "kind": "drill",
               "minutes": 3,
               "reason": "Brings your heart rate down and helps you recover.",
               "setup": "shadow",
-              "target": "Breathing back to normal",
+              "target": "Breathing calm, one good thing named",
               "targetValue": 1,
             },
           ],
@@ -3205,7 +3328,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 18,
       "kind": "training",
       "length": 60,
-      "tipId": "t-serve-same",
+      "tipId": "t-loop-thin",
       "week": 6,
       "weekTheme": "build",
     },
@@ -3214,14 +3337,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Start slow and build up",
-              "drillId": "dynamic-warmup",
+              "cue": "Stay on the balls of your feet",
+              "drillId": "skipping-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "You feel warm and slightly out of breath",
+              "target": "Legs feel light and quick",
               "targetValue": 1,
             },
           ],
@@ -3231,7 +3354,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Elbow relaxed, slightly forward",
+              "cue": "Bat in front of your belly button",
               "drillId": "bh-diagonal-warmup",
               "focus": true,
               "kind": "drill",
@@ -3276,7 +3399,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Pivot early with a big first step",
+              "cue": "Stay low throughout",
               "drillId": "falkenberg",
               "focus": true,
               "kind": "drill",
@@ -3293,15 +3416,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Same toss and motion for both",
-              "drillId": "short-long-serve-targets",
+              "cue": "Contact low, but above table height",
+              "drillId": "backspin-serve-practice",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
               "reason": "Part of your goal: serve and receive.",
               "setup": "partner",
-              "target": "7 of 10 serves land in the right zone",
-              "targetValue": 7,
+              "target": "8 of 10 legal serves that stop or spin back toward the net",
+              "targetValue": 8,
             },
           ],
           "minutes": 7,
@@ -3310,15 +3433,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Move in with your foot for short balls",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Read the spin, then pick the bat angle",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -3327,7 +3450,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Expect the long push and be ready to move",
+              "cue": "After the serve, step back into ready at once",
               "drillId": "serve-third-ball",
               "focus": true,
               "kind": "drill",
@@ -3344,7 +3467,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Breathe slowly",
+              "cue": "Hold, don't bounce",
               "drillId": "cooldown-stretch",
               "focus": false,
               "kind": "drill",
@@ -3368,7 +3491,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 19,
       "kind": "training",
       "length": 60,
-      "tipId": "t-control-first",
+      "tipId": "t-loop-elbow",
       "week": 6,
       "weekTheme": "build",
     },
@@ -3377,14 +3500,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Land softly",
-              "drillId": "skipping-warmup",
+              "cue": "Finish in your ready position",
+              "drillId": "dynamic-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "Legs feel light and quick",
+              "target": "You feel warm and slightly out of breath",
               "targetValue": 1,
             },
           ],
@@ -3394,15 +3517,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Short stroke, quick reset",
-              "drillId": "bh-diagonal-warmup",
+              "cue": "Bat back to the middle",
+              "drillId": "fh-bh-warmup",
               "focus": true,
               "kind": "drill",
               "minutes": 6,
               "reason": "Finds your timing before the main work.",
               "setup": "partner",
-              "target": "36 backhands in a row at an easy pace",
-              "targetValue": 36,
+              "target": "31 in a row",
+              "targetValue": 31,
             },
           ],
           "minutes": 6,
@@ -3456,15 +3579,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Contact low, but above table height",
-              "drillId": "backspin-serve-practice",
+              "cue": "Long: first bounce near your end line",
+              "drillId": "short-long-serve-targets",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
               "reason": "Part of your goal: serve and receive.",
               "setup": "partner",
-              "target": "8 of 10 legal serves that stop or spin back toward the net",
-              "targetValue": 8,
+              "target": "7 of 10 serves land in the right zone",
+              "targetValue": 7,
             },
           ],
           "minutes": 7,
@@ -3473,15 +3596,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Push deep to their backhand by default",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Spin first on the return",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -3490,7 +3613,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Loop with spin first, speed second",
+              "cue": "Expect the long push and be ready to move",
               "drillId": "serve-third-ball",
               "focus": true,
               "kind": "drill",
@@ -3507,14 +3630,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Note one thing that went well today",
-              "drillId": "cooldown-stretch",
+              "cue": "Slow breaths",
+              "drillId": "cooldown-breathe",
               "focus": false,
               "kind": "drill",
               "minutes": 3,
               "reason": "Brings your heart rate down and helps you recover.",
               "setup": "shadow",
-              "target": "Breathing back to normal",
+              "target": "Breathing calm, one good thing named",
               "targetValue": 1,
             },
           ],
@@ -3531,7 +3654,7 @@ exports[`determinism > same profile and content version give an identical progra
       "index": 20,
       "kind": "training",
       "length": 60,
-      "tipId": "t-serve-plan",
+      "tipId": "t-loop-recover",
       "week": 6,
       "weekTheme": "build",
     },
@@ -3540,14 +3663,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Big, easy movements, no bouncing stretches",
-              "drillId": "dynamic-warmup",
+              "cue": "Land softly",
+              "drillId": "skipping-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "You feel warm and slightly out of breath",
+              "target": "Legs feel light and quick",
               "targetValue": 1,
             },
           ],
@@ -3557,7 +3680,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Bat in front of your belly button",
+              "cue": "Elbow relaxed, slightly forward",
               "drillId": "bh-diagonal-warmup",
               "focus": true,
               "kind": "drill",
@@ -3608,14 +3731,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Short: first bounce near the net on your side",
-              "drillId": "short-long-serve-targets",
+              "cue": "Low contact, gentle touch",
+              "drillId": "short-serve-precision",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
               "reason": "Part of your goal: serve and receive.",
               "setup": "partner",
-              "target": "7 of 10 serves land in the right zone",
+              "target": "7 of 10 would bounce twice",
               "targetValue": 7,
             },
           ],
@@ -3625,15 +3748,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Watch the server's bat at contact",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Stand ready to step back for long serves",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -3642,14 +3765,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "After the serve, step back into ready at once",
-              "drillId": "serve-third-ball",
+              "cue": "Wait for the right ball",
+              "drillId": "open-up-game",
               "focus": true,
               "kind": "drill",
               "minutes": 9,
               "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "7 of 10 third balls on the table",
+              "target": "7 of 10 openings land",
               "targetValue": 7,
             },
           ],
@@ -3659,7 +3782,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Hold, don't bounce",
+              "cue": "Breathe slowly",
               "drillId": "cooldown-stretch",
               "focus": false,
               "kind": "drill",
@@ -3677,13 +3800,13 @@ exports[`determinism > same profile and content version give an identical progra
       "coachNote": "Apply week. Random drills and games. Test at the end of the week.",
       "focusSkillIds": [
         "fh-loop-backspin",
-        "third-ball",
+        "basic-footwork",
       ],
       "id": "s21",
       "index": 21,
       "kind": "training",
       "length": 60,
-      "tipId": "t-pace-change",
+      "tipId": "t-loop-low-start",
       "week": 7,
       "weekTheme": "apply",
     },
@@ -3692,14 +3815,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Keep your knees bent on the shuffles",
-              "drillId": "skipping-warmup",
+              "cue": "Finish quick and light",
+              "drillId": "mobility-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "Legs feel light and quick",
+              "target": "Loose and warm",
               "targetValue": 1,
             },
           ],
@@ -3709,15 +3832,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Elbow relaxed, slightly forward",
-              "drillId": "bh-diagonal-warmup",
+              "cue": "Small steps",
+              "drillId": "fh-bh-warmup",
               "focus": true,
               "kind": "drill",
               "minutes": 6,
               "reason": "Finds your timing before the main work.",
               "setup": "partner",
-              "target": "34 backhands in a row at an easy pace",
-              "targetValue": 34,
+              "target": "29 in a row",
+              "targetValue": 29,
             },
           ],
           "minutes": 6,
@@ -3743,7 +3866,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Recover to the middle after the wide forehand",
+              "cue": "Pivot early with a big first step",
               "drillId": "falkenberg",
               "focus": true,
               "kind": "drill",
@@ -3777,15 +3900,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Move in with your foot for short balls",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Read the spin, then pick the bat angle",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -3794,7 +3917,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Expect the long push and be ready to move",
+              "cue": "Loop with spin first, speed second",
               "drillId": "serve-third-ball",
               "focus": true,
               "kind": "drill",
@@ -3811,14 +3934,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Breathe slowly",
-              "drillId": "cooldown-stretch",
+              "cue": "Name one thing that went well",
+              "drillId": "cooldown-breathe",
               "focus": false,
               "kind": "drill",
               "minutes": 3,
               "reason": "Brings your heart rate down and helps you recover.",
               "setup": "shadow",
-              "target": "Breathing back to normal",
+              "target": "Breathing calm, one good thing named",
               "targetValue": 1,
             },
           ],
@@ -3844,14 +3967,14 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Finish in your ready position",
-              "drillId": "dynamic-warmup",
+              "cue": "Keep your knees bent on the shuffles",
+              "drillId": "skipping-warmup",
               "focus": false,
               "kind": "drill",
               "minutes": 6,
               "reason": "Gets your body ready to play.",
               "setup": "shadow",
-              "target": "You feel warm and slightly out of breath",
+              "target": "Legs feel light and quick",
               "targetValue": 1,
             },
           ],
@@ -3902,7 +4025,7 @@ exports[`determinism > same profile and content version give an identical progra
               "targetValue": 20,
             },
             {
-              "cue": "Long: first bounce near your end line",
+              "cue": "Same toss and motion for both",
               "drillId": "short-long-serve-targets",
               "focus": true,
               "kind": "drill",
@@ -3931,15 +4054,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Open bat, brush under the back of the ball",
-              "drillId": "backspin-serve-practice",
+              "cue": "Contact low, just above the table",
+              "drillId": "pendulum-variations",
               "focus": false,
               "kind": "drill",
               "minutes": 7,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Keeps your forehand pendulum serve sharp.",
               "setup": "partner",
-              "target": "8 of 10 legal serves that stop or spin back toward the net",
-              "targetValue": 8,
+              "target": "9 of 10 serves with the spin you meant",
+              "targetValue": 9,
             },
           ],
           "minutes": 7,
@@ -3948,15 +4071,15 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Push deep to their backhand by default",
-              "drillId": "push-receive",
-              "focus": false,
+              "cue": "Spin first on the return",
+              "drillId": "long-serve-attack",
+              "focus": true,
               "kind": "drill",
               "minutes": 6,
-              "reason": "Part of your goal: serve and receive.",
+              "reason": "Builds the forehand loop against backspin you chose to work on.",
               "setup": "partner",
-              "target": "9 of 10 low returns",
-              "targetValue": 9,
+              "target": "7 of 10 long serves attacked onto the table",
+              "targetValue": 7,
             },
           ],
           "minutes": 6,
@@ -3965,7 +4088,7 @@ exports[`determinism > same profile and content version give an identical progra
         {
           "items": [
             {
-              "cue": "Loop with spin first, speed second",
+              "cue": "After the serve, step back into ready at once",
               "drillId": "serve-third-ball",
               "focus": true,
               "kind": "drill",
@@ -4000,13 +4123,13 @@ exports[`determinism > same profile and content version give an identical progra
       "coachNote": "Test day. Warm up, then three tries per test. Log your best.",
       "focusSkillIds": [
         "fh-loop-backspin",
-        "serve-basics",
+        "third-ball",
       ],
       "id": "s23",
       "index": 23,
       "kind": "assessment",
       "length": 60,
-      "tipId": "t-elbow-target",
+      "tipId": "t-learn-slow",
       "week": 7,
       "weekTheme": "apply",
     },

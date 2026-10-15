@@ -1,0 +1,37 @@
+{
+  "id": "serve-tomahawk", "name": "Tomahawk serve", "skillId": "serve-tomahawk", "wing": "FH", "levelMin": 3,
+  "summary": "A forehand serve with the bat tip up, swinging across the body for strong sidespin.",
+  "whenToUse": "For variation, especially from the forehand side of the table; it kicks differently from the pendulum.",
+  "keyPoints": {
+    "stance": "Facing the table more than for the pendulum, in the forehand or middle area.",
+    "bodyAction": "Small turn; knees bent.",
+    "strokeLength": "The bat swings across the body with the tip pointing up.",
+    "timing": "Contact as the ball falls, near table height.",
+    "tablePosition": "Middle to forehand side of the end line.",
+    "freeArm": "Legal toss, then away.",
+    "batArm": "Elbow high, bat tip up; brush across the side of the ball.",
+    "recovery": "Back to ready, ready for a cross-court return.",
+    "anticipation": "Know where the sidespin will push the return and wait there."
+  },
+  "cues": ["Bat tip up", "Brush across the side", "Low, then ready"],
+  "learningPath": [
+    { "stage": "see", "task": "Watch the tomahawk swing from the front.", "passCheck": "You can say the three cues.", "drillIds": [] },
+    { "stage": "shadow", "task": "Follow-along: toss and swing across with the tip up.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes", "tomahawk-practice"],
+      "selfChecks": ["Was the bat tip pointing up?", "Did the bat move across the ball?", "Was contact low?"] },
+    { "stage": "feel", "task": "Serve tomahawk sidespin.", "passCheck": "5 of 10 with clear sidespin.", "drillIds": ["tomahawk-practice"] },
+    { "stage": "groove", "task": "Short and long tomahawk serves.", "passCheck": "6 of 10 where you aimed.", "drillIds": ["tomahawk-practice"] },
+    { "stage": "mix", "task": "Mix tomahawk with pendulum serves.", "passCheck": "5 of 10 misread.", "drillIds": ["serve-disguise"] },
+    { "stage": "use", "task": "Serve and attack the third ball.", "passCheck": "6 of 10 third balls on the table.", "drillIds": ["serve-third-ball", "serve-receive-game"] },
+    { "stage": "own", "task": "Test: tomahawk on target.", "passCheck": "7 of 10.", "drillIds": ["tomahawk-practice"] }
+  ],
+  "gamePatterns": [
+    { "situation": "Your opponent reads your pendulum serves.", "how": "A short tomahawk to their forehand changes the kick and often pops the return up.", "drillId": "serve-third-ball" }
+  ],
+  "troubleshooting": [
+    { "symptom": "No sidespin", "causes": ["Hitting through instead of across"], "fixes": ["Brush across the side of the ball"], "drillId": "tomahawk-practice" },
+    { "symptom": "Too high", "causes": ["Contact too high"], "fixes": ["Bend the knees, let it drop"], "drillId": "tomahawk-practice" },
+    { "symptom": "Wrist hurts", "causes": ["Forcing the wrist"], "fixes": ["Use the forearm, keep the wrist relaxed"], "drillId": "tomahawk-practice" }
+  ],
+  "penholdNotes": "Penholders find this natural; keep the toss legal and visible.",
+  "animationId": null
+}

@@ -1,0 +1,37 @@
+{
+  "id": "bh-chop", "name": "Backhand chop", "skillId": "bh-chop", "wing": "BH", "levelMin": 3,
+  "summary": "The backhand defensive stroke: long, down and forward, with an open bat.",
+  "whenToUse": "Against loops to your backhand when you play as a defender, far from the table.",
+  "keyPoints": {
+    "stance": "Side-on: right foot forward for a right-hander's backhand chop (left foot if left-handed).",
+    "bodyAction": "Shoulders turn back with the bat, then forward into the stroke.",
+    "strokeLength": "Long: from shoulder height across and down to the knee.",
+    "timing": "As the ball drops, beside the body.",
+    "tablePosition": "One to three metres back.",
+    "freeArm": "Out to the side.",
+    "batArm": "Bat open, elbow away from the body; brush down and forward under the ball.",
+    "recovery": "Back to the middle, low and ready.",
+    "anticipation": "Watch their loop: heavier spin means a more open bat."
+  },
+  "cues": ["Bat up by the shoulder", "Down and forward under the ball", "Side-on, then back to the middle"],
+  "learningPath": [
+    { "stage": "see", "task": "Watch the shoulder turn and the long stroke.", "passCheck": "You can say the three cues.", "drillIds": [] },
+    { "stage": "shadow", "task": "Follow-along: turn, chop, recover.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"],
+      "selfChecks": ["Did the bat start by your shoulder?", "Was the bat open?", "Did you recover to the middle?"] },
+    { "stage": "feel", "task": "Chop slow topspin to your backhand.", "passCheck": "6 of 10 on the table.", "drillIds": ["chop-vs-topspin"] },
+    { "stage": "groove", "task": "Chop a steady loop.", "passCheck": "10 in a row.", "drillIds": ["chop-vs-topspin"] },
+    { "stage": "mix", "task": "Chop both wings.", "passCheck": "8 in a row.", "drillIds": ["chop-switch"] },
+    { "stage": "use", "task": "Chop and attack game.", "passCheck": "Win 5 of 10 points.", "drillIds": ["chop-attack-game"] },
+    { "stage": "own", "task": "Test: chops in a row.", "passCheck": "15 in a row.", "drillIds": ["chop-vs-topspin"] }
+  ],
+  "gamePatterns": [
+    { "situation": "Topspin rally that pushes you back.", "how": "Switch to chopping: deep and low to their backhand, then vary the spin.", "drillId": "chop-attack-game" }
+  ],
+  "troubleshooting": [
+    { "symptom": "Pops up", "causes": ["Too early", "Pushing up"], "fixes": ["Wait for the drop", "Go forward, not up"], "drillId": "chop-vs-topspin" },
+    { "symptom": "Into the net", "causes": ["Bat not open enough"], "fixes": ["Open the face more for heavy loops"], "drillId": "chop-vs-topspin" },
+    { "symptom": "Cramped", "causes": ["Ball too close to the body", "Elbow tucked"], "fixes": ["Step back and to the side", "Elbow away from the body"], "drillId": "chop-switch" }
+  ],
+  "penholdNotes": "Use the reverse side for backhand chops with penhold.",
+  "animationId": null
+}

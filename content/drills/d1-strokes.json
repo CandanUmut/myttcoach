@@ -1,0 +1,231 @@
+[
+  {
+    "id": "fh-block-vs-topspin", "name": "Forehand block against topspin",
+    "purpose": "Meet a topspin ball early with a firm, slightly closed bat and send it back with control.",
+    "skills": [{ "id": "fh-block", "weight": 1 }], "levelMin": 2, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner loops steadily to your forehand. You block every ball back to their forehand. Swap after each set." },
+      { "setup": "multiball", "instructions": "The feeder sends medium-fast topspin to your forehand. Block each ball back cross-court, close to the table.", "feederInstructions": "Feed topspin with a brushing action, a bit faster than a normal rally. Same spot every ball." },
+      { "setup": "robot", "instructions": "Robot on medium-fast topspin to your forehand. Stand close and block every ball cross-court." }
+    ],
+    "duration": { "min": 4, "default": 7, "max": 12 }, "intensity": 2, "impact": "low",
+    "success": { "type": "consecutive", "target": 15, "description": "15 blocks in a row." },
+    "metricId": "block-streak", "progressionId": "block-switch", "regressionId": "fh-drive-crosscourt",
+    "coachingPoints": ["Bat in front, slightly closed", "Meet it early, just after the bounce", "Short, firm push forward; no backswing"],
+    "moveIds": ["fh-block"], "diagram": { "placements": [{ "zone": "fh", "depth": "long", "order": 1 }], "arrows": [] }
+  },
+  {
+    "id": "bh-block-vs-topspin", "name": "Backhand block against topspin",
+    "purpose": "The safe backhand answer to a loop: angle the bat, meet it early, let the ball's speed do the work.",
+    "skills": [{ "id": "bh-block", "weight": 1 }], "levelMin": 2, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner loops to your backhand. You block back to their forehand, then switch roles." },
+      { "setup": "multiball", "instructions": "Topspin balls to your backhand. Block each one diagonally, staying close.", "feederInstructions": "Medium-fast topspin to their backhand, steady rhythm." },
+      { "setup": "robot", "instructions": "Robot on medium-fast topspin to your backhand. Block back, close to the table." }
+    ],
+    "duration": { "min": 4, "default": 7, "max": 12 }, "intensity": 2, "impact": "low",
+    "success": { "type": "consecutive", "target": 15, "description": "15 blocks in a row." },
+    "metricId": "block-streak", "progressionId": "block-switch", "regressionId": "bh-drive-crosscourt",
+    "coachingPoints": ["Bat angled forward over the ball", "Take it on the rise", "Relaxed grip absorbs speed, firm grip adds it"],
+    "moveIds": ["bh-block"], "diagram": { "placements": [{ "zone": "bh", "depth": "long", "order": 1 }], "arrows": [] }
+  },
+  {
+    "id": "block-switch", "name": "Block, forehand and backhand",
+    "purpose": "Block from both wings and switch fast, recovering to the middle each time.",
+    "skills": [{ "id": "bh-block", "weight": 0.8 }, { "id": "fh-block", "weight": 0.8 }, { "id": "basic-footwork", "weight": 0.3 }],
+    "levelMin": 2, "levelMax": 5, "phase": "technique", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner loops one to your backhand and one to your forehand. Block both back to them. Later they loop anywhere." },
+      { "setup": "multiball", "instructions": "Topspin alternating backhand and forehand. Block every ball.", "feederInstructions": "Topspin, backhand then forehand. When steady, add a ball to the middle." },
+      { "setup": "robot", "instructions": "Robot oscillating between your backhand and forehand on topspin. Block every ball." }
+    ],
+    "duration": { "min": 4, "default": 8, "max": 12 }, "intensity": 3, "impact": "low",
+    "success": { "type": "consecutive", "target": 12, "description": "12 blocks in a row, both wings." },
+    "regressionId": "bh-block-vs-topspin",
+    "coachingPoints": ["Bat back to the middle after each block", "Decide the wing early", "Keep the knees bent"],
+    "moveIds": ["fh-block", "bh-block"],
+    "diagram": { "placements": [{ "zone": "bh", "depth": "long", "order": 1 }, { "zone": "fh", "depth": "long", "order": 2 }], "arrows": [] }
+  },
+  {
+    "id": "fh-loop-vs-block", "name": "Forehand loop against a block",
+    "purpose": "Keep looping against a block: a shorter, more forward swing than against backspin.",
+    "skills": [{ "id": "fh-loop-topspin", "weight": 1 }, { "id": "basic-footwork", "weight": 0.3 }],
+    "levelMin": 3, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner blocks to your forehand. Loop every ball back to their backhand, steady pace." },
+      { "setup": "multiball", "instructions": "Topspin balls to your forehand, one at a time. Loop each one deep.", "feederInstructions": "Feed light topspin to their forehand, deep, one ball every 1.5 seconds." },
+      { "setup": "robot", "instructions": "Robot on light topspin to your forehand. Loop every ball, sets of 15." }
+    ],
+    "duration": { "min": 5, "default": 9, "max": 14 }, "intensity": 3, "impact": "low",
+    "success": { "type": "consecutive", "target": 10, "description": "10 loops in a row." },
+    "metricId": "loop-topspin-streak", "progressionId": "counter-loop-rally", "regressionId": "fh-drive-crosscourt",
+    "coachingPoints": ["Swing more forward than up", "Close the bat over the ball", "Recover fast: the block comes back quickly"],
+    "moveIds": ["fh-loop-topspin"], "diagram": { "placements": [{ "zone": "fh", "depth": "long", "order": 1 }], "arrows": [] }
+  },
+  {
+    "id": "counter-loop-rally", "name": "Counter-loop rally",
+    "purpose": "Loop against a loop from a step back: take it after the peak and spin through it.",
+    "skills": [{ "id": "counter-loop", "weight": 1 }, { "id": "fh-loop-topspin", "weight": 0.5 }],
+    "levelMin": 4, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Both of you a step or two back. Loop to loop, forehand cross-court. Count your longest rally." },
+      { "setup": "multiball", "instructions": "Stand 2 metres back. The feeder sends heavy, deep topspin; counter-loop each ball.", "feederInstructions": "Heavy topspin, deep to their forehand. Brush hard; it should kick after the bounce." },
+      { "setup": "robot", "instructions": "Robot on heavy, deep topspin. Stand back and counter-loop each ball." }
+    ],
+    "duration": { "min": 5, "default": 8, "max": 12 }, "intensity": 4, "impact": "low",
+    "success": { "type": "consecutive", "target": 6, "description": "6 counter-loops in a row." },
+    "regressionId": "fh-loop-vs-block",
+    "coachingPoints": ["Give yourself room: a step back", "Swing forward and over the ball", "Use legs and hips, not just the arm"],
+    "moveIds": ["counter-loop"]
+  },
+  {
+    "id": "bh-topspin-vs-backspin", "name": "Backhand topspin against backspin",
+    "purpose": "Open with the backhand: lift a backspin ball using forearm and wrist from in front of the body.",
+    "skills": [{ "id": "bh-topspin", "weight": 1 }], "levelMin": 3, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "multiball", "instructions": "Backspin balls to your backhand, one at a time. Topspin each one deep, sets of 10.", "feederInstructions": "Backspin to their backhand, half-long to long. Wait until they recover." },
+      { "setup": "robot", "instructions": "Robot on backspin to your backhand, slow-medium. Topspin each ball." },
+      { "setup": "partner", "instructions": "Your partner pushes long to your backhand. Topspin it and play the point out." }
+    ],
+    "duration": { "min": 5, "default": 8, "max": 12 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 7, "of": 10, "description": "7 of 10 backhand topspins on the table." },
+    "metricId": "bh-topspin-10", "regressionId": "bh-drive-crosscourt",
+    "coachingPoints": ["Elbow forward, bat drops below the ball", "Wrist cocks back, then whips up and forward", "Contact in front of your body"],
+    "moveIds": ["bh-topspin"], "diagram": { "placements": [{ "zone": "bh", "depth": "long", "order": 1 }], "arrows": [] }
+  },
+  {
+    "id": "bh-topspin-rally", "name": "Backhand topspin rally",
+    "purpose": "Keep a backhand topspin going against a block or a drive.",
+    "skills": [{ "id": "bh-topspin", "weight": 1 }], "levelMin": 3, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner blocks to your backhand. Topspin every ball back to their backhand." },
+      { "setup": "multiball", "instructions": "Light topspin to your backhand. Topspin each ball diagonally.", "feederInstructions": "Light topspin to their backhand, steady rhythm." },
+      { "setup": "robot", "instructions": "Robot on light topspin to your backhand. Topspin each ball back, sets of 15." }
+    ],
+    "duration": { "min": 4, "default": 8, "max": 12 }, "intensity": 3, "impact": "low",
+    "success": { "type": "consecutive", "target": 15, "description": "15 backhand topspins in a row." },
+    "regressionId": "bh-drive-crosscourt",
+    "coachingPoints": ["Brush up and forward", "Short stroke, quick reset", "Weight slightly forward"],
+    "moveIds": ["bh-topspin"], "diagram": { "placements": [{ "zone": "bh", "depth": "long", "order": 1 }], "arrows": [] }
+  },
+  {
+    "id": "fh-flick-short", "name": "Forehand flick against a short ball",
+    "purpose": "Attack a short ball over the table: step in, short backswing, flick up and forward.",
+    "skills": [{ "id": "fh-flick", "weight": 1 }, { "id": "in-out", "weight": 0.3 }], "levelMin": 3, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "multiball", "instructions": "Short backspin balls to your forehand. Step in and flick each one, sets of 10.", "feederInstructions": "Short balls that would bounce twice on their side, to the forehand. Light backspin at first." },
+      { "setup": "partner", "instructions": "Your partner serves short to your forehand. Flick every serve and play the point out." },
+      { "setup": "robot", "instructions": "If your robot can play short: short backspin to your forehand. Step in and flick." }
+    ],
+    "duration": { "min": 4, "default": 7, "max": 10 }, "intensity": 2, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 flicks on the table." },
+    "metricId": "flick-10", "regressionId": "fh-push-diagonal",
+    "coachingPoints": ["Right foot under the table (left foot if left-handed)", "Bat starts close to the ball", "Lift against backspin, go forward against no-spin"],
+    "moveIds": ["fh-flick"], "diagram": { "placements": [{ "zone": "fh", "depth": "short", "order": 1 }], "arrows": [] }
+  },
+  {
+    "id": "bh-flick-short", "name": "Backhand flick against a short ball",
+    "purpose": "Attack short balls with the backhand over the table.",
+    "skills": [{ "id": "bh-flick", "weight": 1 }, { "id": "in-out", "weight": 0.3 }], "levelMin": 3, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "multiball", "instructions": "Short balls to your backhand. Step in, elbow up, flick each ball. Sets of 10.", "feederInstructions": "Short balls to their backhand, light backspin or no-spin." },
+      { "setup": "partner", "instructions": "Your partner serves short to your backhand. Flick it and play on." },
+      { "setup": "robot", "instructions": "If your robot can play short: short balls to your backhand. Flick each one." }
+    ],
+    "duration": { "min": 4, "default": 7, "max": 10 }, "intensity": 2, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 flicks on the table." },
+    "metricId": "flick-10", "regressionId": "bh-push-diagonal",
+    "coachingPoints": ["Elbow high and forward", "Wrist cocks back, then flicks out", "Contact at the top of the bounce, over the table"],
+    "moveIds": ["bh-flick"], "diagram": { "placements": [{ "zone": "bh", "depth": "short", "order": 1 }], "arrows": [] }
+  },
+  {
+    "id": "short-game-duel", "name": "Short game duel",
+    "purpose": "Keep the ball short and low until someone can attack. Touch, patience and placement.",
+    "skills": [{ "id": "short-touch", "weight": 1 }, { "id": "bh-push", "weight": 0.4 }, { "id": "fh-push", "weight": 0.4 }],
+    "levelMin": 2, "levelMax": 5, "phase": "technique", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Serve short. Both of you return everything short. The first ball that goes long can be attacked. Count who wins." },
+      { "setup": "multiball", "instructions": "Short balls anywhere. Drop every one short. If the feeder calls 'long', push it long instead.", "feederInstructions": "Short balls to random spots. Now and then call 'long'." }
+    ],
+    "duration": { "min": 4, "default": 6, "max": 10 }, "intensity": 2, "impact": "low",
+    "success": { "type": "outOf", "target": 7, "of": 10, "description": "7 of 10 returns stay short." },
+    "regressionId": "drop-short-multiball",
+    "coachingPoints": ["Soft hands, early contact", "Tiny stroke, almost a touch", "Step in and out every time"],
+    "moveIds": ["short-touch"]
+  },
+  {
+    "id": "drop-short-multiball", "name": "Drop it short",
+    "purpose": "Return short backspin so it would bounce twice on the other side.",
+    "skills": [{ "id": "short-touch", "weight": 1 }], "levelMin": 2, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "multiball", "instructions": "Short backspin balls to one spot. Drop each one back short and low.", "feederInstructions": "Short backspin, close to the net on their side." },
+      { "setup": "robot", "instructions": "If your robot can play short: short backspin to your forehand. Drop each one short." },
+      { "setup": "partner", "instructions": "Your partner serves short backspin. Drop it back short every time." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 1, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 would bounce twice." },
+    "regressionId": "bh-push-diagonal",
+    "coachingPoints": ["Take it early, right after the bounce", "Bat open, almost no swing", "Relax your grip"],
+    "moveIds": ["short-touch"], "diagram": { "placements": [{ "zone": "mid", "depth": "short", "order": 1 }], "arrows": [] }
+  },
+  {
+    "id": "smash-high-balls", "name": "Smash the high ball",
+    "purpose": "Finish a high ball with a fast, flat hit: step, wait for the top of the bounce, hit through.",
+    "skills": [{ "id": "smash", "weight": 1 }, { "id": "basic-footwork", "weight": 0.3 }], "levelMin": 2, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "multiball", "instructions": "High balls to your forehand. Smash each one to a target. Sets of 8.", "feederInstructions": "Throw or feed high, easy balls that bounce up to about head height." },
+      { "setup": "partner", "instructions": "Your partner lobs from far back. Smash to their forehand and backhand in turn." },
+      { "setup": "robot", "instructions": "Robot on high, slow balls if it can. Smash each one." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 7, "of": 10, "description": "7 of 10 smashes on the table." },
+    "regressionId": "fh-drive-crosscourt",
+    "coachingPoints": ["Move so the ball comes down in front of you", "Hit at the top of the bounce", "Flat bat, hit through the ball"],
+    "moveIds": ["smash"]
+  },
+  {
+    "id": "chop-vs-topspin", "name": "Chop against topspin",
+    "purpose": "Return a loop with heavy backspin from far back: long stroke, down and forward.",
+    "skills": [{ "id": "fh-chop", "weight": 0.8 }, { "id": "bh-chop", "weight": 0.8 }], "levelMin": 3, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner loops slowly to one side. Chop every ball back low and deep. Start backhand, then forehand." },
+      { "setup": "robot", "instructions": "Robot on slow topspin, deep. Stand 2 metres back and chop each ball." },
+      { "setup": "multiball", "instructions": "Topspin balls deep to one side. Chop each one, then step back into position.", "feederInstructions": "Slow, deep topspin. Same side for a set, then switch." }
+    ],
+    "duration": { "min": 5, "default": 8, "max": 12 }, "intensity": 3, "impact": "low",
+    "success": { "type": "consecutive", "target": 10, "description": "10 chops in a row, low over the net." },
+    "regressionId": "bh-push-diagonal",
+    "coachingPoints": ["Start high, finish low and forward", "Contact as the ball drops, beside the body", "Step back with the stroke"],
+    "moveIds": ["fh-chop", "bh-chop"]
+  },
+  {
+    "id": "chop-switch", "name": "Chop, forehand and backhand",
+    "purpose": "Move side to side and chop from both wings, staying far from the table.",
+    "skills": [{ "id": "fh-chop", "weight": 0.8 }, { "id": "bh-chop", "weight": 0.8 }, { "id": "basic-footwork", "weight": 0.5 }],
+    "levelMin": 3, "levelMax": 5, "phase": "technique", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner loops one to your forehand, one to your backhand. Chop both. Later they loop anywhere." },
+      { "setup": "robot", "instructions": "Robot oscillating with slow topspin. Chop forehand and backhand." },
+      { "setup": "multiball", "instructions": "Deep topspin alternating sides. Chop and recover each time.", "feederInstructions": "Slow, deep topspin: forehand, backhand, repeat." }
+    ],
+    "duration": { "min": 5, "default": 8, "max": 12 }, "intensity": 4, "impact": "low",
+    "success": { "type": "consecutive", "target": 8, "description": "8 chops in a row, switching sides." },
+    "regressionId": "chop-vs-topspin",
+    "coachingPoints": ["Big side steps", "Turn the shoulders with each chop", "Back to the middle every time"],
+    "moveIds": ["fh-chop", "bh-chop"]
+  },
+  {
+    "id": "lob-rally", "name": "Lob rally",
+    "purpose": "Stay in the point when attacked: high, deep, spinny returns from far back.",
+    "skills": [{ "id": "lob", "weight": 1 }, { "id": "smash", "weight": 0.4 }], "levelMin": 3, "levelMax": 5, "phase": "technique", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "One of you smashes at three-quarter speed, the other lobs from far back. Swap after 2 minutes." },
+      { "setup": "multiball", "instructions": "Stand 3 metres back. The feeder hits flat balls deep; lob each one high and deep.", "feederInstructions": "Hit firm, flat balls deep to them from your end." }
+    ],
+    "duration": { "min": 4, "default": 6, "max": 10 }, "intensity": 4, "impact": "low",
+    "success": { "type": "consecutive", "target": 6, "description": "6 lobs in a row, landing deep." },
+    "regressionId": "smash-high-balls",
+    "coachingPoints": ["Lift from low to high with topspin", "Aim deep, near the end line", "Recover back, don't creep forward"],
+    "moveIds": ["lob", "smash"]
+  }
+]

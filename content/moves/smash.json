@@ -1,0 +1,134 @@
+{
+  "id": "smash",
+  "name": "Smash",
+  "skillId": "smash",
+  "wing": "FH",
+  "levelMin": 2,
+  "summary": "A fast, flat hit to finish a high ball.",
+  "whenToUse": "When the ball comes high: a lob, a mistake, or a weak return that bounces above the net.",
+  "keyPoints": {
+    "stance": "Feet apart, right foot back (left foot if left-handed); move so the ball comes down in front of you.",
+    "bodyAction": "Turn back with the ball, then a strong turn through it, weight to the front foot.",
+    "strokeLength": "Long: from shoulder height to across the body.",
+    "timing": "At the top of the bounce.",
+    "tablePosition": "Wherever the ball is: move to it first.",
+    "freeArm": "Up and pointing at the ball, then pulls in.",
+    "batArm": "Bat high, flat or slightly closed; hit through the ball.",
+    "recovery": "Ready for a lob coming back.",
+    "anticipation": "A lob with heavy topspin kicks forward: give yourself room."
+  },
+  "cues": [
+    "Move under the ball",
+    "Top of the bounce",
+    "Flat and through"
+  ],
+  "learningPath": [
+    {
+      "stage": "see",
+      "task": "Watch the turn and the flat hit.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along with a full turn.",
+      "passCheck": "3 sets of 10, then yes to all self-checks.",
+      "drillIds": [
+        "shadow-strokes"
+      ],
+      "selfChecks": [
+        "Did you turn back before hitting?",
+        "Was the bat flat at contact?",
+        "Did your weight finish forward?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "Smash easy high balls.",
+      "passCheck": "6 of 10 on the table.",
+      "drillIds": [
+        "smash-high-balls"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Smash to targets.",
+      "passCheck": "7 of 10 on the table.",
+      "drillIds": [
+        "smash-high-balls"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Drive the normal balls, smash the high ones.",
+      "passCheck": "6 of 10 high balls finished.",
+      "drillIds": [
+        "drive-or-smash",
+        "finish-the-point"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Finish-the-point game.",
+      "passCheck": "6 of 10 high balls finished.",
+      "drillIds": [
+        "finish-the-point"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: smashes on the table.",
+      "passCheck": "8 of 10.",
+      "drillIds": [
+        "smash-high-balls"
+      ]
+    }
+  ],
+  "gamePatterns": [
+    {
+      "situation": "Your opponent lobs from far back.",
+      "how": "Smash wide to the angles or into the body; don't smash at them twice in the same place.",
+      "drillId": "finish-the-point"
+    }
+  ],
+  "troubleshooting": [
+    {
+      "symptom": "Long",
+      "causes": [
+        "Bat open",
+        "Hitting too early on the way up"
+      ],
+      "fixes": [
+        "Keep the bat flat or a bit closed",
+        "Wait for the top of the bounce"
+      ],
+      "drillId": "smash-high-balls"
+    },
+    {
+      "symptom": "Into the net",
+      "causes": [
+        "Ball dropped too low",
+        "Hitting down too steeply"
+      ],
+      "fixes": [
+        "Move so you meet it higher",
+        "Hit through, not down"
+      ],
+      "drillId": "smash-high-balls"
+    },
+    {
+      "symptom": "I miss the high kicking balls",
+      "causes": [
+        "Too close to the table",
+        "Not moving"
+      ],
+      "fixes": [
+        "Step back for heavy lobs",
+        "Move feet first"
+      ],
+      "drillId": "lob-rally"
+    }
+  ],
+  "penholdNotes": "Same action; penholders can also use the wrist to angle the smash.",
+  "animationId": null
+}

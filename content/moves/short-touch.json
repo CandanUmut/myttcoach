@@ -1,0 +1,38 @@
+{
+  "id": "short-touch", "name": "Short touch", "skillId": "short-touch", "wing": "none", "levelMin": 2,
+  "summary": "Drop a short ball back short and low so your opponent cannot attack it.",
+  "whenToUse": "Against short serves and short pushes when you can't attack, or against a player who stands far back.",
+  "keyPoints": {
+    "stance": "Step in close with your right foot (left foot if left-handed).",
+    "bodyAction": "Lean in from the hips; stay low.",
+    "strokeLength": "Almost none: a soft touch.",
+    "timing": "Very early: just after the bounce.",
+    "tablePosition": "Over the table.",
+    "freeArm": "Out to the side.",
+    "batArm": "Bat open, grip soft. Let the ball touch the bat and drop.",
+    "recovery": "Step back to ready.",
+    "anticipation": "Heavy backspin needs a more open bat; no-spin needs a flatter bat."
+  },
+  "cues": ["Early, just after the bounce", "Soft hands", "Tiny touch, then step out"],
+  "learningPath": [
+    { "stage": "see", "task": "Watch how small the stroke is.", "passCheck": "You can say the three cues.", "drillIds": [] },
+    { "stage": "shadow", "task": "Follow-along: step in, touch, step out.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"],
+      "selfChecks": ["Did you step in close?", "Was the stroke tiny?", "Did you step back out?"] },
+    { "stage": "feel", "task": "Drop short balls back short.", "passCheck": "5 of 10 would bounce twice.", "drillIds": ["drop-short-multiball"] },
+    { "stage": "groove", "task": "Drop backspin balls short and low.", "passCheck": "6 of 10 would bounce twice.", "drillIds": ["drop-short-multiball"] },
+    { "stage": "mix", "task": "Short game duel.", "passCheck": "7 of 10 stay short.", "drillIds": ["short-game-duel"] },
+    { "stage": "use", "task": "Serve and receive points: drop the short serves.", "passCheck": "Win 3 points after a short drop.", "drillIds": ["serve-receive-game", "short-game-duel"] },
+    { "stage": "own", "task": "Test: short drops.", "passCheck": "7 of 10 would bounce twice.", "drillIds": ["drop-short-multiball"] }
+  ],
+  "gamePatterns": [
+    { "situation": "A short backspin serve and the server is ready to attack.", "how": "Drop it short to their forehand: they can't loop it.", "drillId": "serve-receive-game" },
+    { "situation": "A defender far from the table.", "how": "Drop short to pull them in, then attack deep.", "drillId": "short-game-duel" }
+  ],
+  "troubleshooting": [
+    { "symptom": "It goes long", "causes": ["Too much stroke", "Grip too tight"], "fixes": ["Just touch the ball", "Soften the grip"], "drillId": "drop-short-multiball" },
+    { "symptom": "It pops up", "causes": ["Bat too open", "Late contact"], "fixes": ["Close the bat a little", "Take it right after the bounce"], "drillId": "drop-short-multiball" },
+    { "symptom": "Into the net", "causes": ["Not open enough for backspin"], "fixes": ["Open the bat more against heavy backspin"], "drillId": "drop-short-multiball" }
+  ],
+  "penholdNotes": "Penholders have a natural feel for this; keep the wrist relaxed.",
+  "animationId": null
+}

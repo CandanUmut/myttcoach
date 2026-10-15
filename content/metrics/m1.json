@@ -1,0 +1,26 @@
+[
+  {
+    "id": "block-streak", "name": "Backhand blocks in a row", "unit": "in a row",
+    "howToMeasure": "Your partner, feeder or robot sends medium-fast topspin to your backhand. Count blocks that land. Best of three tries.",
+    "testDrillId": "bh-block-vs-topspin", "higherIsBetter": true, "skillId": "bh-block",
+    "levelTargets": { "1": 3, "2": 8, "3": 15, "4": 25, "5": 40 }
+  },
+  {
+    "id": "loop-topspin-streak", "name": "Forehand loops against a block, in a row", "unit": "in a row",
+    "howToMeasure": "Loop against a steady block or light topspin feed to your forehand. Count loops that land. Best of three tries.",
+    "testDrillId": "fh-loop-vs-block", "higherIsBetter": true, "skillId": "fh-loop-topspin",
+    "levelTargets": { "1": 1, "2": 3, "3": 6, "4": 12, "5": 20 }
+  },
+  {
+    "id": "bh-topspin-10", "name": "Backhand topspins against backspin", "unit": "out of 10",
+    "howToMeasure": "10 backspin balls to your backhand. Count the topspins that land.",
+    "testDrillId": "bh-topspin-vs-backspin", "higherIsBetter": true, "skillId": "bh-topspin",
+    "levelTargets": { "1": 1, "2": 3, "3": 6, "4": 8, "5": 9 }
+  },
+  {
+    "id": "flick-10", "name": "Forehand flicks on the table", "unit": "out of 10",
+    "howToMeasure": "10 short balls to your forehand. Count the flicks that land.",
+    "testDrillId": "fh-flick-short", "higherIsBetter": true, "skillId": "fh-flick",
+    "levelTargets": { "1": 1, "2": 3, "3": 5, "4": 7, "5": 8 }
+  }
+]

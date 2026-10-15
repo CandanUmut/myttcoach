@@ -1,0 +1,38 @@
+{
+  "id": "bh-block", "name": "Backhand block", "skillId": "bh-block", "wing": "BH", "levelMin": 2,
+  "summary": "Angle the bat, meet the ball early in front of the body, and let the ball's speed do the work.",
+  "whenToUse": "Against loops and fast topspin to your backhand, especially when you are close to the table.",
+  "keyPoints": {
+    "stance": "Square to the table, knees bent, weight forward.",
+    "bodyAction": "Almost none. Keep the head still and the body facing the ball.",
+    "strokeLength": "A few centimetres forward. No backswing.",
+    "timing": "On the rise, just after the bounce.",
+    "tablePosition": "Close: half a metre from the end line.",
+    "freeArm": "Relaxed, out to the side.",
+    "batArm": "Elbow in front, bat in front of the stomach, face closed over the ball.",
+    "recovery": "Reset the bat to the middle at once.",
+    "anticipation": "Heavy loop = more closed; fast flat drive = more open and firmer."
+  },
+  "cues": ["Bat in front of your stomach", "Take it on the rise", "Angle over the ball, no swing"],
+  "learningPath": [
+    { "stage": "see", "task": "Watch the block from the front. See how small the movement is.", "passCheck": "You can say the three cues.", "drillIds": [] },
+    { "stage": "shadow", "task": "Follow-along: bat in front, tiny forward push, reset.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"],
+      "selfChecks": ["Did the bat stay in front of your stomach?", "Was the face closed over the ball?", "Was there no backswing?"] },
+    { "stage": "feel", "task": "Block slow topspin to your backhand. Find the angle.", "passCheck": "7 of 10 on the table.", "drillIds": ["bh-block-vs-topspin"] },
+    { "stage": "groove", "task": "Block a steady loop until 15 in a row.", "passCheck": "15 in a row.", "drillIds": ["bh-block-vs-topspin"] },
+    { "stage": "mix", "task": "Block both wings, switching.", "passCheck": "12 in a row, both wings.", "drillIds": ["block-switch"] },
+    { "stage": "use", "task": "Loop-against-block points as the blocker.", "passCheck": "Win 3 points with your block.", "drillIds": ["loop-block-game"] },
+    { "stage": "own", "task": "Test: backhand blocks in a row.", "passCheck": "25 in a row.", "drillIds": ["bh-block-vs-topspin"] }
+  ],
+  "gamePatterns": [
+    { "situation": "Your opponent opens with a loop to your backhand.", "how": "Block wide to their forehand, then be ready for a wide ball to your backhand.", "drillId": "loop-block-game" },
+    { "situation": "A looper stands far back.", "how": "Soft block short over the net: they have to run in.", "drillId": "block-switch" }
+  ],
+  "troubleshooting": [
+    { "symptom": "The ball flies long", "causes": ["Face too open", "Grip too tight against a fast ball"], "fixes": ["Close the face more over the ball", "Soften the grip to absorb speed"], "drillId": "bh-block-vs-topspin" },
+    { "symptom": "The ball goes into the net", "causes": ["Face too closed for a light ball", "Taking it too late"], "fixes": ["Open the face a little", "Step in and take it on the rise"], "drillId": "bh-block-vs-topspin" },
+    { "symptom": "It feels like the ball hits me", "causes": ["Bat beside the body instead of in front", "Elbow tucked in"], "fixes": ["Bat in front of your stomach", "Elbow forward and a little out"], "drillId": "block-switch" }
+  ],
+  "penholdNotes": "Traditional penhold blocks on the forehand face with the wrist turned in; modern penholders can block on the reverse side like shakehand players.",
+  "animationId": null
+}

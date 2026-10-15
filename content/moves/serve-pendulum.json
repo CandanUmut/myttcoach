@@ -1,0 +1,153 @@
+{
+  "id": "serve-pendulum",
+  "name": "Forehand pendulum serve",
+  "skillId": "serve-pendulum",
+  "wing": "FH",
+  "levelMin": 1,
+  "summary": "The most common serve. One swing, four spins: backspin, sidespin, no-spin and topspin.",
+  "whenToUse": "As your main serve. Short backspin or no-spin stops attacks; long sidespin or topspin pushes your opponent back.",
+  "keyPoints": {
+    "stance": "Side-on in your backhand corner, left foot forward for right-handers (right foot if left-handed).",
+    "bodyAction": "Turn the shoulders back as you toss, then turn forward through contact.",
+    "strokeLength": "The bat swings like a pendulum from right to left (right-hander); the contact itself is short and fast.",
+    "timing": "Contact as the ball falls, low, just above table height.",
+    "tablePosition": "Close to the backhand corner, behind the end line.",
+    "freeArm": "Flat, open palm; toss nearly straight up at least 16 cm, then move the arm out of the way.",
+    "batArm": "Elbow up and back, wrist cocked. Brush under the ball for backspin, around the side for sidespin, behind it for no-spin, up the back for topspin.",
+    "recovery": "Step back into ready straight after contact.",
+    "anticipation": "Plan the third ball: where will their return probably go?"
+  },
+  "cues": [
+    "Legal toss: flat palm, 16 cm up",
+    "Brush where you want the spin",
+    "Low contact, then ready"
+  ],
+  "learningPath": [
+    {
+      "stage": "see",
+      "task": "Watch the toss and the swing at slow speed. Notice the contact point changes, the swing barely does.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along: toss and swing without hitting, then with a ball in the air.",
+      "passCheck": "3 sets of 10, then yes to all self-checks.",
+      "drillIds": [
+        "shadow-strokes",
+        "backspin-serve-practice"
+      ],
+      "selfChecks": [
+        "Was the ball on a flat, open palm?",
+        "Did it go up at least 16 cm, almost straight?",
+        "Did you hit it on the way down?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "Serve backspin; watch it stop or come back.",
+      "passCheck": "6 of 10 serves with clear backspin.",
+      "drillIds": [
+        "backspin-serve-practice"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Serve all four spins, 5 of each.",
+      "passCheck": "7 of 10 with the spin you meant.",
+      "drillIds": [
+        "pendulum-variations"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Short and long, mixed spins, to targets.",
+      "passCheck": "6 of 10 in the right zone.",
+      "drillIds": [
+        "short-long-serve-targets",
+        "short-serve-precision"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Serve and attack the third ball.",
+      "passCheck": "6 of 10 third balls on the table.",
+      "drillIds": [
+        "serve-receive-game",
+        "short-long-serve-targets"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: serves in the target zone.",
+      "passCheck": "8 of 10.",
+      "drillIds": [
+        "short-long-serve-targets"
+      ]
+    }
+  ],
+  "gamePatterns": [
+    {
+      "situation": "Your opponent loves to attack long serves.",
+      "how": "Serve short backspin or no-spin to their forehand, then attack the push.",
+      "drillId": "serve-third-ball"
+    },
+    {
+      "situation": "Your opponent pushes every short serve back well.",
+      "how": "Mix in a fast long sidespin to their backhand or elbow.",
+      "drillId": "short-long-serve-targets"
+    }
+  ],
+  "troubleshooting": [
+    {
+      "symptom": "My serve has no spin",
+      "causes": [
+        "Hitting through the ball",
+        "Slow bat at contact"
+      ],
+      "fixes": [
+        "Brush thinly, as if just grazing it",
+        "Accelerate right at contact"
+      ],
+      "drillId": "pendulum-variations"
+    },
+    {
+      "symptom": "My serve goes too high",
+      "causes": [
+        "Contact too high above the table",
+        "Bat too open"
+      ],
+      "fixes": [
+        "Let the ball drop near table height",
+        "Close the bat a little for no-spin and sidespin"
+      ],
+      "drillId": "short-serve-precision"
+    },
+    {
+      "symptom": "My short serve goes long",
+      "causes": [
+        "First bounce too far from the net",
+        "Too much forward"
+      ],
+      "fixes": [
+        "First bounce near the net on your side",
+        "More brush, less push"
+      ],
+      "drillId": "short-serve-precision"
+    },
+    {
+      "symptom": "The umpire might call my toss",
+      "causes": [
+        "Ball held in the fingers",
+        "Toss too low or thrown backward"
+      ],
+      "fixes": [
+        "Rest the ball on a flat palm",
+        "Toss nearly straight up, at least 16 cm"
+      ],
+      "drillId": "backspin-serve-practice"
+    }
+  ],
+  "penholdNotes": "Penholders serve with the same face and often get more wrist into the contact.",
+  "animationId": null
+}

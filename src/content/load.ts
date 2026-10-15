@@ -9,16 +9,22 @@ import goals from '../../content/goals.json';
 import templates from '../../content/templates.json';
 
 const moveFiles = import.meta.glob('../../content/moves/*.json', { eager: true, import: 'default' }) as Record<string, Move>;
+// Batch files: content/<kind>/*.json each hold an array, merged after the main file
+const batch = <T,>(files: Record<string, T[]>): T[] => Object.keys(files).sort().flatMap((k) => files[k]!);
+const skillBatches = batch(import.meta.glob('../../content/skills/*.json', { eager: true, import: 'default' }) as Record<string, Skill[]>);
+const drillBatches = batch(import.meta.glob('../../content/drills/*.json', { eager: true, import: 'default' }) as Record<string, Drill[]>);
+const tipBatches = batch(import.meta.glob('../../content/tips/*.json', { eager: true, import: 'default' }) as Record<string, Tip[]>);
+const metricBatches = batch(import.meta.glob('../../content/metrics/*.json', { eager: true, import: 'default' }) as Record<string, Metric[]>);
 
 export const content: Content = {
   version: meta.version,
-  skills: skills as unknown as Skill[],
+  skills: [...(skills as unknown as Skill[]), ...skillBatches],
   moves: Object.keys(moveFiles)
     .sort()
     .map((k) => moveFiles[k]!),
-  drills: drills as unknown as Drill[],
-  metrics: metrics as unknown as Metric[],
-  tips: tips as unknown as Tip[],
+  drills: [...(drills as unknown as Drill[]), ...drillBatches],
+  metrics: [...(metrics as unknown as Metric[]), ...metricBatches],
+  tips: [...(tips as unknown as Tip[]), ...tipBatches],
   styles: styles as unknown as Style[],
   goals: goals as unknown as Goal[],
   templates: templates as unknown as Templates,

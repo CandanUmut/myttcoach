@@ -1,0 +1,132 @@
+{
+  "id": "lob",
+  "name": "Lob",
+  "skillId": "lob",
+  "wing": "FH",
+  "levelMin": 3,
+  "summary": "A high, deep, topspin return from far back that keeps you in the point when attacked.",
+  "whenToUse": "When your opponent smashes or kills and you are far from the table.",
+  "keyPoints": {
+    "stance": "Far back, side-on, knees bent.",
+    "bodyAction": "Lift with the legs and turn; the stroke goes low to high.",
+    "strokeLength": "Long: from knee height to above the head.",
+    "timing": "As the ball drops, often below table height.",
+    "tablePosition": "Three or more metres back.",
+    "freeArm": "Balances the lift.",
+    "batArm": "Bat slightly closed, brushing up the back of the ball for topspin.",
+    "recovery": "Stay back and ready for the next smash.",
+    "anticipation": "Watch the smasher's bat; move early to the side they aim for."
+  },
+  "cues": [
+    "Far back, low to high",
+    "Brush up for topspin",
+    "Aim deep"
+  ],
+  "learningPath": [
+    {
+      "stage": "see",
+      "task": "Watch the lift from low to high.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along far back.",
+      "passCheck": "3 sets of 10, then yes to all self-checks.",
+      "drillIds": [
+        "shadow-strokes"
+      ],
+      "selfChecks": [
+        "Did you start low?",
+        "Did you finish above your head?",
+        "Did you stay back?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "Lob flat balls from far back.",
+      "passCheck": "5 of 10 land deep.",
+      "drillIds": [
+        "lob-rally"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Lob rally.",
+      "passCheck": "6 in a row.",
+      "drillIds": [
+        "lob-rally"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Lob, then counter when a ball comes weak.",
+      "passCheck": "6 of 10 sequences.",
+      "drillIds": [
+        "lob-and-counter",
+        "finish-the-point"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Finish-the-point game as the lobber.",
+      "passCheck": "Win 3 points from defense.",
+      "drillIds": [
+        "finish-the-point"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: lobs in a row.",
+      "passCheck": "8 in a row.",
+      "drillIds": [
+        "lob-rally"
+      ]
+    }
+  ],
+  "gamePatterns": [
+    {
+      "situation": "Your opponent starts smashing.",
+      "how": "Lob high and deep with spin to their backhand; the spin kicks and makes it hard to smash.",
+      "drillId": "finish-the-point"
+    }
+  ],
+  "troubleshooting": [
+    {
+      "symptom": "Short lobs get killed",
+      "causes": [
+        "Not enough height",
+        "Not enough forward"
+      ],
+      "fixes": [
+        "Lift higher",
+        "Aim for the end line"
+      ],
+      "drillId": "lob-rally"
+    },
+    {
+      "symptom": "Long",
+      "causes": [
+        "Too much forward",
+        "Bat open"
+      ],
+      "fixes": [
+        "More up than forward",
+        "Close the bat a little"
+      ],
+      "drillId": "lob-rally"
+    },
+    {
+      "symptom": "No spin",
+      "causes": [
+        "Pushing the ball"
+      ],
+      "fixes": [
+        "Brush up the back of the ball"
+      ],
+      "drillId": "lob-rally"
+    }
+  ],
+  "penholdNotes": "Same action with the forehand face.",
+  "animationId": null
+}

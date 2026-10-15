@@ -1,0 +1,226 @@
+[
+  {
+    "id": "shadow-warmup-strokes", "name": "Shadow stroke warm-up",
+    "purpose": "Wake up the strokes without a ball: slow, then match speed, all wings.",
+    "skills": [{ "id": "ready-position", "weight": 0.5 }, { "id": "fh-drive", "weight": 0.3 }, { "id": "bh-drive", "weight": 0.3 }],
+    "levelMin": 1, "levelMax": 5, "phase": "tableWarmup", "regularity": "regular",
+    "variants": [
+      { "setup": "shadow", "instructions": "One minute each: forehand, backhand, push, then your main attacking stroke. Start at half speed and finish at match speed. Recover to ready after every stroke." }
+    ],
+    "duration": { "min": 2, "default": 4, "max": 6 }, "intensity": 2, "impact": "low",
+    "success": { "type": "timed", "target": 4, "description": "4 strokes warmed up, back to ready every time." },
+    "coachingPoints": ["Slow and exact first", "Feel the turn of the body", "End every stroke in ready"],
+    "moveIds": ["fh-drive", "bh-drive", "bh-push"]
+  },
+  {
+    "id": "push-warmup", "name": "Push warm-up rally",
+    "purpose": "Soft hands and touch before the main work: easy push rallies.",
+    "skills": [{ "id": "bh-push", "weight": 0.6 }, { "id": "fh-push", "weight": 0.6 }, { "id": "ball-control", "weight": 0.3 }],
+    "levelMin": 1, "levelMax": 5, "phase": "tableWarmup", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Backhand push rally for one minute, forehand push rally for one minute, then any push anywhere." },
+      { "setup": "multiball", "instructions": "Gentle backspin balls, alternating sides. Push each one low.", "feederInstructions": "Light backspin, alternating sides, slow rhythm." },
+      { "setup": "robot", "instructions": "Robot on light backspin, alternating sides. Push each ball low." }
+    ],
+    "duration": { "min": 2, "default": 4, "max": 6 }, "intensity": 1, "impact": "low",
+    "success": { "type": "consecutive", "target": 20, "description": "20 low pushes in a row." },
+    "coachingPoints": ["Relaxed grip", "Low over the net", "Step in, step out"],
+    "moveIds": ["bh-push", "fh-push"]
+  },
+  {
+    "id": "fh-bh-warmup", "name": "Forehand-backhand warm-up",
+    "purpose": "Warm up both wings and the first small steps.",
+    "skills": [{ "id": "fh-drive", "weight": 0.5 }, { "id": "bh-drive", "weight": 0.5 }, { "id": "basic-footwork", "weight": 0.3 }],
+    "levelMin": 2, "levelMax": 5, "phase": "tableWarmup", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner blocks one to your forehand, one to your backhand, at an easy pace." },
+      { "setup": "multiball", "instructions": "Easy topspin alternating forehand and backhand.", "feederInstructions": "Easy topspin, alternate sides." },
+      { "setup": "robot", "instructions": "Robot oscillating at an easy pace between forehand and backhand." },
+      { "setup": "wall", "instructions": "Rebound board up. One forehand, one backhand, easy pace." }
+    ],
+    "duration": { "min": 2, "default": 4, "max": 6 }, "intensity": 2, "impact": "low",
+    "success": { "type": "consecutive", "target": 20, "description": "20 in a row." },
+    "coachingPoints": ["Easy pace first", "Bat back to the middle", "Small steps"],
+    "moveIds": ["fh-drive", "bh-drive"]
+  },
+  {
+    "id": "three-corners", "name": "Three targets: wide forehand, wide backhand, elbow",
+    "purpose": "Placement on purpose: hit the three targets that make opponents move most.",
+    "skills": [{ "id": "placement", "weight": 1 }, { "id": "fh-drive", "weight": 0.3 }, { "id": "bh-drive", "weight": 0.3 }],
+    "levelMin": 2, "levelMax": 5, "phase": "technique", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Put three targets on your partner's side: wide forehand, wide backhand, middle (their elbow). Call a target before each shot and hit it." },
+      { "setup": "multiball", "instructions": "Three targets on the far side. The feeder calls a target as each ball comes.", "feederInstructions": "Steady topspin; call 'forehand', 'backhand' or 'elbow' as you feed." },
+      { "setup": "robot", "instructions": "Three targets. Hit them in order: wide forehand, elbow, wide backhand. Repeat." },
+      { "setup": "wall", "instructions": "Three tape marks on the board: left, middle, right. Hit them in order." }
+    ],
+    "duration": { "min": 4, "default": 7, "max": 10 }, "intensity": 2, "impact": "low",
+    "success": { "type": "outOf", "target": 10, "of": 20, "description": "10 of 20 hit the called target." },
+    "coachingPoints": ["Aim with the body and bat angle", "Wide means wide: off the side line", "The elbow is the hardest place to defend"],
+    "moveIds": []
+  },
+  {
+    "id": "pace-spin-change", "name": "Change pace and spin",
+    "purpose": "Mix a slow, spinny ball into fast rallies to break the opponent's rhythm.",
+    "skills": [{ "id": "variation", "weight": 1 }, { "id": "fh-loop-topspin", "weight": 0.4 }], "levelMin": 3, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "Rally: every third ball must be clearly different: slow and spinny, or flat and fast. Then play games where a point won after a change counts 2." },
+      { "setup": "robot", "instructions": "Robot on steady topspin. Play two fast drives, then one slow, heavy loop. Count clean sets of three." },
+      { "setup": "multiball", "instructions": "Steady topspin feed. Fast, fast, slow-and-spinny. Repeat.", "feederInstructions": "Steady topspin, same spot, steady rhythm." }
+    ],
+    "duration": { "min": 4, "default": 8, "max": 12 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 7, "of": 10, "description": "7 of 10 sets with a clear change." },
+    "coachingPoints": ["The change must be obvious", "Slow balls need full spin", "Recover after the slow one: it can come back fast"],
+    "moveIds": ["fh-loop-topspin"]
+  },
+  {
+    "id": "vs-chopper-pattern", "name": "Playing a chopper",
+    "purpose": "Patience against backspin defence: spin, the middle, and a drop shot when they're far back.",
+    "skills": [{ "id": "vs-styles", "weight": 1 }, { "id": "fh-loop-backspin", "weight": 0.5 }, { "id": "short-touch", "weight": 0.3 }],
+    "levelMin": 3, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner chops (or pushes long from far back). Loop with spin to the middle; after 3 loops, try a drop shot. Games to 11." },
+      { "setup": "robot", "instructions": "Robot on heavy backspin, long, random sides. Loop with spin, not speed. Every fourth ball, step in and loop harder." },
+      { "setup": "multiball", "instructions": "Long heavy backspin to random sides. Loop each with spin; every fourth ball, go for a winner.", "feederInstructions": "Long, heavy backspin, random sides." }
+    ],
+    "duration": { "min": 5, "default": 9, "max": 14 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 7, "of": 10, "description": "7 of 10 loops against backspin land." },
+    "coachingPoints": ["Spin first; speed only on the loose ball", "Aim for the middle", "Bring them in with a drop shot"],
+    "moveIds": ["fh-loop-backspin"]
+  },
+  {
+    "id": "vs-blocker-pattern", "name": "Playing a blocker",
+    "purpose": "Give a blocker no pace to use: slow spinny loops, then the kill.",
+    "skills": [{ "id": "vs-styles", "weight": 1 }, { "id": "variation", "weight": 0.5 }], "levelMin": 3, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner only blocks. Open with slow, heavy loops to the wide corners; kill the first high block. Games to 11." },
+      { "setup": "robot", "instructions": "Robot on medium topspin to random sides. Loop slow and heavy twice, then a fast one." }
+    ],
+    "duration": { "min": 5, "default": 9, "max": 14 }, "intensity": 3, "impact": "low",
+    "success": { "type": "outOf", "target": 6, "of": 11, "description": "Win 6 of 11 points." },
+    "coachingPoints": ["Slow and heavy beats fast and flat here", "Use the wide angles", "Finish the first loose ball"],
+    "moveIds": ["fh-loop-topspin"]
+  },
+  {
+    "id": "agility-ladder", "name": "Quick feet ladder",
+    "purpose": "Fast, light feet with no jumping. Tape or chalk a ladder on the floor.",
+    "skills": [{ "id": "agility", "weight": 1 }, { "id": "basic-footwork", "weight": 0.4 }], "levelMin": 1, "levelMax": 5, "phase": "physical", "regularity": "regular",
+    "variants": [
+      { "setup": "shadow", "instructions": "A ladder of 8 squares (tape or imagined). Two feet in each square forward; one foot in each square forward; side steps through it. 3 rounds with 30 seconds rest." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 3, "impact": "low",
+    "success": { "type": "timed", "target": 3, "description": "3 clean rounds." },
+    "coachingPoints": ["Balls of the feet", "Arms help the rhythm", "Quality before speed"],
+    "moveIds": []
+  },
+  {
+    "id": "split-squat-jumps", "name": "Split squat jumps",
+    "purpose": "Explosive legs for the first step.",
+    "skills": [{ "id": "agility", "weight": 0.7 }, { "id": "physical-prep", "weight": 0.5 }], "levelMin": 3, "levelMax": 5, "phase": "physical", "regularity": "regular",
+    "variants": [
+      { "setup": "shadow", "instructions": "Lunge position, jump and switch legs in the air, land softly. 3 sets of 8 each side, 45 seconds rest." }
+    ],
+    "duration": { "min": 3, "default": 5, "max": 8 }, "intensity": 4, "impact": "high",
+    "lowImpactId": "lunge-walk",
+    "success": { "type": "timed", "target": 3, "description": "3 sets with soft landings." },
+    "coachingPoints": ["Land softly", "Front knee over the toes", "Stop if your knees complain"],
+    "moveIds": []
+  },
+  {
+    "id": "lunge-walk", "name": "Walking lunges with a turn",
+    "purpose": "Strong, stable legs and a mobile upper body, without jumping.",
+    "skills": [{ "id": "physical-prep", "weight": 0.7 }, { "id": "core-strength", "weight": 0.4 }], "levelMin": 1, "levelMax": 5, "phase": "physical", "regularity": "regular",
+    "variants": [
+      { "setup": "shadow", "instructions": "Walking lunges, turning the upper body toward the front leg each step. 2 sets of 10 each leg." }
+    ],
+    "duration": { "min": 3, "default": 5, "max": 8 }, "intensity": 2, "impact": "low",
+    "success": { "type": "timed", "target": 2, "description": "2 sets with steady balance." },
+    "coachingPoints": ["Long step, upright chest", "Turn from the middle", "Back knee close to the floor"],
+    "moveIds": []
+  },
+  {
+    "id": "shoulder-band-routine", "name": "Shoulder and wrist care",
+    "purpose": "Keep the playing arm healthy: small, slow, controlled.",
+    "skills": [{ "id": "shoulder-care", "weight": 1 }], "levelMin": 1, "levelMax": 5, "phase": "physical", "regularity": "regular",
+    "variants": [
+      { "setup": "shadow", "instructions": "With a light band or bottle: 15 external rotations, 15 internal rotations, 10 slow arm raises to the side, 15 wrist flexions and extensions, 15 forearm turns. Both arms." }
+    ],
+    "duration": { "min": 3, "default": 5, "max": 8 }, "intensity": 1, "impact": "low",
+    "success": { "type": "timed", "target": 1, "description": "The full routine, slow and controlled." },
+    "coachingPoints": ["Light weight is enough", "Slow on the way back", "Both arms, not just the playing arm"],
+    "moveIds": []
+  },
+  {
+    "id": "core-rotation", "name": "Core rotation circuit",
+    "purpose": "Link legs to arm: a strong, rotating middle.",
+    "skills": [{ "id": "core-strength", "weight": 1 }], "levelMin": 1, "levelMax": 5, "phase": "physical", "regularity": "regular",
+    "variants": [
+      { "setup": "shadow", "instructions": "2 rounds: 30 seconds dead bug, 30 seconds side plank each side, 12 slow standing trunk turns holding a bottle out in front, 30 seconds bird dog." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 2, "impact": "low",
+    "success": { "type": "timed", "target": 2, "description": "2 rounds with good form." },
+    "coachingPoints": ["Lower back stays still", "Breathe throughout", "Slow is better"],
+    "moveIds": []
+  },
+  {
+    "id": "nerves-routine", "name": "Handling nerves",
+    "purpose": "A plan for when your heart races: notice it, breathe, simplify.",
+    "skills": [{ "id": "handling-nerves", "weight": 1 }, { "id": "focus-routine", "weight": 0.5 }], "levelMin": 2, "levelMax": 5, "phase": "mental", "regularity": "regular",
+    "variants": [
+      { "setup": "shadow", "instructions": "Picture a close game at 9–9. Notice where you feel nervous. Do 3 slow out-breaths, pick one simple target for the next point (for example: 'serve short, attack the long push'), and say it once to yourself. Repeat 5 times." }
+    ],
+    "duration": { "min": 2, "default": 3, "max": 6 }, "intensity": 1, "impact": "low",
+    "success": { "type": "outOf", "target": 5, "of": 5, "description": "5 calm resets." },
+    "coachingPoints": ["Nerves are normal; they mean it matters", "Long out-breath", "One simple plan, not five"],
+    "moveIds": []
+  },
+  {
+    "id": "focus-cue-game", "name": "One cue per point",
+    "purpose": "Train attention: pick one cue before each point and judge only that.",
+    "skills": [{ "id": "focus-routine", "weight": 1 }], "levelMin": 1, "levelMax": 5, "phase": "mental", "regularity": "regular",
+    "variants": [
+      { "setup": "shadow", "instructions": "For 10 imaginary points: choose one cue (for example: 'watch their bat'), shadow the point, then rate yourself 1–3 only on that cue." },
+      { "setup": "partner", "instructions": "Play 10 points. Before each, say one cue out loud. After each, rate yourself 1–3 on that cue only, not on the score." }
+    ],
+    "duration": { "min": 2, "default": 4, "max": 8 }, "intensity": 1, "impact": "low",
+    "success": { "type": "outOf", "target": 7, "of": 10, "description": "7 of 10 points rated 2 or 3." },
+    "coachingPoints": ["One cue only", "Judge the cue, not the result", "Reset between points"],
+    "moveIds": []
+  },
+  {
+    "id": "visualisation", "name": "See it before you play it",
+    "purpose": "Rehearse your best patterns in your head: it helps them happen at the table.",
+    "skills": [{ "id": "focus-routine", "weight": 0.6 }, { "id": "handling-nerves", "weight": 0.5 }], "levelMin": 2, "levelMax": 5, "phase": "mental", "regularity": "regular",
+    "variants": [
+      { "setup": "shadow", "instructions": "Eyes closed, 2 minutes: picture your favourite serve and third-ball pattern 5 times, in real speed, from your own eyes. Feel the bat, hear the ball." }
+    ],
+    "duration": { "min": 2, "default": 3, "max": 5 }, "intensity": 1, "impact": "low",
+    "success": { "type": "outOf", "target": 5, "of": 5, "description": "5 clear rehearsals." },
+    "coachingPoints": ["Real speed", "From your own eyes", "Include the feeling of a good contact"],
+    "moveIds": []
+  },
+  {
+    "id": "cooldown-breathe", "name": "Cool-down with breathing",
+    "purpose": "Slow walk, stretches and a calm close to the session.",
+    "skills": [{ "id": "physical-prep", "weight": 0.4 }, { "id": "focus-routine", "weight": 0.3 }], "levelMin": 1, "levelMax": 5, "phase": "cooldown", "regularity": "regular",
+    "variants": [
+      { "setup": "shadow", "instructions": "One minute slow walk. Then hold each for 20–30 seconds: hip flexors, hamstrings, shoulders across the chest, forearm of the playing arm. Finish with 5 slow breaths and one thing you did well today." }
+    ],
+    "duration": { "min": 2, "default": 3, "max": 8 }, "intensity": 1, "impact": "low",
+    "success": { "type": "timed", "target": 1, "description": "Breathing calm, one good thing named." },
+    "coachingPoints": ["Hold, don't bounce", "Slow breaths", "Name one thing that went well"],
+    "moveIds": []
+  },
+  {
+    "id": "mobility-warmup", "name": "Mobility warm-up",
+    "purpose": "Open hips, spine and shoulders before playing.",
+    "skills": [{ "id": "physical-prep", "weight": 1 }, { "id": "shoulder-care", "weight": 0.3 }], "levelMin": 1, "levelMax": 5, "phase": "physicalWarmup", "regularity": "regular",
+    "variants": [
+      { "setup": "shadow", "instructions": "45 seconds each: march on the spot, hip circles, world's greatest stretch (lunge + reach) each side, thoracic turns, arm swings across and back, wrist and ankle circles, then 20 seconds of quick feet." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 2, "impact": "low",
+    "success": { "type": "timed", "target": 1, "description": "Loose and warm." },
+    "coachingPoints": ["Move through full, easy ranges", "No bouncing stretches", "Finish quick and light"],
+    "moveIds": []
+  }
+]

@@ -1,0 +1,125 @@
+[
+  {
+    "id": "two-one-drill", "name": "The 2-1 drill",
+    "purpose": "Backhand, forehand from the middle, forehand from the wide corner: a classic pattern for moving and turning.",
+    "skills": [{ "id": "basic-footwork", "weight": 1 }, { "id": "pivot", "weight": 0.4 }, { "id": "fh-drive", "weight": 0.3 }],
+    "levelMin": 3, "levelMax": 5, "phase": "footwork", "regularity": "regular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner blocks to your backhand, then your middle, then your wide forehand. You: backhand, forehand, forehand. Repeat." },
+      { "setup": "multiball", "instructions": "Backhand corner, middle, wide forehand. Backhand, then two forehands.", "feederInstructions": "Backhand, middle, forehand. Steady pace; faster when they're comfortable." },
+      { "setup": "robot", "instructions": "Robot in a 3-point pattern if it can: backhand, middle, forehand." }
+    ],
+    "duration": { "min": 5, "default": 8, "max": 12 }, "intensity": 4, "impact": "low",
+    "success": { "type": "consecutive", "target": 5, "description": "5 full cycles without a miss." },
+    "regressionId": "two-point-footwork", "progressionId": "falkenberg",
+    "coachingPoints": ["Side steps, stay low", "Turn the hips for each forehand", "Back to the middle every cycle"],
+    "moveIds": ["side-step", "fh-drive"],
+    "diagram": { "placements": [{ "zone": "bh", "depth": "long", "order": 1 }, { "zone": "mid", "depth": "long", "order": 2 }, { "zone": "fh", "depth": "long", "order": 3 }], "arrows": [] }
+  },
+  {
+    "id": "pivot-forehand", "name": "Pivot and forehand",
+    "purpose": "Step around the backhand corner and play a forehand from there.",
+    "skills": [{ "id": "pivot", "weight": 1 }, { "id": "fh-loop-backspin", "weight": 0.4 }], "levelMin": 3, "levelMax": 5, "phase": "footwork", "regularity": "regular",
+    "variants": [
+      { "setup": "multiball", "instructions": "One ball to your middle (forehand), one to your backhand corner (pivot, forehand). Repeat.", "feederInstructions": "Middle, then backhand corner. Give them time to recover." },
+      { "setup": "partner", "instructions": "Your partner blocks to the middle, then to your backhand corner. Play forehands from both, pivoting for the second." },
+      { "setup": "robot", "instructions": "Robot alternating middle and backhand corner. Forehand from both." },
+      { "setup": "shadow", "instructions": "No table: from ready, pivot (step back and around with the right foot, left foot if left-handed) and play a shadow forehand. 10 reps, rest, repeat." }
+    ],
+    "duration": { "min": 4, "default": 7, "max": 10 }, "intensity": 4, "impact": "low",
+    "success": { "type": "consecutive", "target": 8, "description": "8 pivots in a row with balanced finishes." },
+    "regressionId": "side-shuffle-shadow",
+    "coachingPoints": ["First step is back and around", "Turn sideways to the table", "Recover to the middle quickly"],
+    "moveIds": ["pivot-step"],
+    "diagram": { "placements": [{ "zone": "mid", "depth": "long", "order": 1 }, { "zone": "bh", "depth": "long", "order": 2 }], "arrows": [] }
+  },
+  {
+    "id": "crossover-wide", "name": "Cross-over to the wide forehand",
+    "purpose": "Reach a wide forehand with a cross-over step when a side step is not enough.",
+    "skills": [{ "id": "crossover", "weight": 1 }, { "id": "fh-drive", "weight": 0.3 }], "levelMin": 3, "levelMax": 5, "phase": "footwork", "regularity": "regular",
+    "variants": [
+      { "setup": "multiball", "instructions": "One ball to your backhand corner, then one very wide to your forehand. Cross-over and play the forehand.", "feederInstructions": "Backhand corner, then wide forehand (off the side if you can)." },
+      { "setup": "partner", "instructions": "Your partner plays backhand, then very wide forehand. Cross-over for the wide one." },
+      { "setup": "robot", "instructions": "Robot alternating backhand corner and wide forehand." },
+      { "setup": "shadow", "instructions": "No table: markers 2 metres apart. From the left marker, cross-over to the right and play a shadow forehand. 8 reps each side." }
+    ],
+    "duration": { "min": 4, "default": 6, "max": 10 }, "intensity": 4, "impact": "low",
+    "success": { "type": "consecutive", "target": 6, "description": "6 balanced cross-overs in a row." },
+    "regressionId": "two-point-footwork",
+    "coachingPoints": ["Push off the left foot, cross with the right (opposite if left-handed)", "Play the shot as the foot lands", "Recover with a side step"],
+    "moveIds": ["crossover-step"]
+  },
+  {
+    "id": "in-and-out", "name": "In and out",
+    "purpose": "Move in for a short ball and back out for a long one without losing balance.",
+    "skills": [{ "id": "in-out", "weight": 1 }, { "id": "fh-push", "weight": 0.3 }, { "id": "fh-drive", "weight": 0.3 }],
+    "levelMin": 2, "levelMax": 5, "phase": "footwork", "regularity": "regular",
+    "variants": [
+      { "setup": "multiball", "instructions": "A short ball (push it), then a long ball (drive or loop it). Repeat.", "feederInstructions": "Short backspin, then long topspin. Same side." },
+      { "setup": "partner", "instructions": "Your partner plays short, then long. Push the short one, attack the long one." },
+      { "setup": "robot", "instructions": "If your robot can vary length: short, then long. Push, then attack." },
+      { "setup": "shadow", "instructions": "No table: step in with your right foot (left foot if left-handed), shadow push, push off back, shadow drive. 10 reps, rest, repeat." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 3, "impact": "low",
+    "success": { "type": "consecutive", "target": 8, "description": "8 in-out pairs in a row." },
+    "coachingPoints": ["Step in with the playing-side foot", "Push off it to get back", "Stay low the whole time"],
+    "moveIds": ["side-step"]
+  },
+  {
+    "id": "random-middle-elbow", "name": "Middle and elbow",
+    "purpose": "Balls to your playing elbow and the middle: decide forehand or backhand fast.",
+    "skills": [{ "id": "basic-footwork", "weight": 0.8 }, { "id": "bh-block", "weight": 0.3 }, { "id": "fh-drive", "weight": 0.3 }],
+    "levelMin": 3, "levelMax": 5, "phase": "footwork", "regularity": "irregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Your partner blocks randomly to your middle and elbow. Move and choose: small step for the forehand, or backhand." },
+      { "setup": "multiball", "instructions": "Random balls to your middle and elbow.", "feederInstructions": "Random between their playing elbow and the middle. No pattern." },
+      { "setup": "robot", "instructions": "Robot random over the middle third of the table." }
+    ],
+    "duration": { "min": 4, "default": 7, "max": 10 }, "intensity": 4, "impact": "low",
+    "success": { "type": "outOf", "target": 14, "of": 20, "description": "14 of 20 back on the table." },
+    "regressionId": "random-fh-bh",
+    "coachingPoints": ["Decide early", "Small step out of the way for the forehand", "Never get stuck in between"],
+    "moveIds": []
+  },
+  {
+    "id": "shadow-footwork-patterns", "name": "Shadow footwork patterns",
+    "purpose": "Footwork patterns without a table: side steps, pivots and cross-overs with shadow strokes.",
+    "skills": [{ "id": "basic-footwork", "weight": 1 }, { "id": "agility", "weight": 0.4 }], "levelMin": 1, "levelMax": 5, "phase": "footwork", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "shadow", "instructions": "30 seconds each, 15 seconds rest: side step forehand-backhand; in-and-out; pivot forehand; cross-over and back. Shadow a stroke at every step." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 3, "impact": "low",
+    "success": { "type": "timed", "target": 4, "description": "4 patterns, low the whole time." },
+    "coachingPoints": ["Feet move before the arm", "Stay at the same height", "Breathe out on each stroke"],
+    "moveIds": ["side-step", "pivot-step", "crossover-step"]
+  },
+  {
+    "id": "falkenberg-random", "name": "Falkenberg, then random",
+    "purpose": "The Falkenberg pattern for a few cycles, then one random ball: stay alert.",
+    "skills": [{ "id": "basic-footwork", "weight": 1 }, { "id": "pivot", "weight": 0.4 }, { "id": "crossover", "weight": 0.3 }],
+    "levelMin": 4, "levelMax": 5, "phase": "footwork", "regularity": "irregular",
+    "variants": [
+      { "setup": "partner", "instructions": "Two Falkenberg cycles, then your partner plays the next ball anywhere. Play it out." },
+      { "setup": "multiball", "instructions": "Two Falkenberg cycles, then one random ball.", "feederInstructions": "Backhand, backhand, forehand twice, then any spot." },
+      { "setup": "robot", "instructions": "Robot in Falkenberg pattern with a random ball if it supports it." }
+    ],
+    "duration": { "min": 5, "default": 8, "max": 12 }, "intensity": 5, "impact": "low",
+    "success": { "type": "consecutive", "target": 4, "description": "4 sets without a miss." },
+    "regressionId": "falkenberg",
+    "coachingPoints": ["Recover fully after each ball", "Expect anything after the pattern", "Low and light on your feet"],
+    "moveIds": ["pivot-step", "crossover-step"]
+  },
+  {
+    "id": "wall-footwork", "name": "Rebound board footwork",
+    "purpose": "Move between forehand and backhand against the rebound board.",
+    "skills": [{ "id": "basic-footwork", "weight": 1 }, { "id": "fh-drive", "weight": 0.3 }, { "id": "bh-drive", "weight": 0.3 }],
+    "levelMin": 1, "levelMax": 5, "phase": "footwork", "regularity": "semiIrregular",
+    "variants": [
+      { "setup": "wall", "instructions": "Rebound board up. Aim alternately left and right of the board's centre so you must move: forehand, side step, backhand, side step." }
+    ],
+    "duration": { "min": 3, "default": 6, "max": 10 }, "intensity": 3, "impact": "low",
+    "success": { "type": "consecutive", "target": 12, "description": "12 in a row, moving every ball." },
+    "coachingPoints": ["Small, quick steps", "Recover between shots", "Ball in front of you every time"],
+    "moveIds": ["side-step"]
+  }
+]

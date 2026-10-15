@@ -1,0 +1,37 @@
+{
+  "id": "serve-reverse-pendulum", "name": "Reverse pendulum serve", "skillId": "serve-reverse", "wing": "FH", "levelMin": 3,
+  "summary": "The pendulum swing reversed: sidespin that kicks the other way.",
+  "whenToUse": "To mix with your normal pendulum serve so the receiver can't settle on one spin direction.",
+  "keyPoints": {
+    "stance": "Side-on or slightly open, in the backhand corner.",
+    "bodyAction": "Turn with the swing; knees bent to keep the contact low.",
+    "strokeLength": "The bat swings from left to right across the body (right-hander).",
+    "timing": "Contact as the ball falls, near table height.",
+    "tablePosition": "Backhand corner, behind the end line.",
+    "freeArm": "Legal toss, then out of the way.",
+    "batArm": "Elbow up, bat face turned out; contact on the left side of the ball (right side if left-handed).",
+    "recovery": "Step back into ready quickly; the return often goes cross-court.",
+    "anticipation": "The return tends to go to your forehand side: be ready for it."
+  },
+  "cues": ["Elbow up, bat turned out", "Brush the far side of the ball", "Low, then ready"],
+  "learningPath": [
+    { "stage": "see", "task": "Watch the reverse swing from the front.", "passCheck": "You can say the three cues.", "drillIds": [] },
+    { "stage": "shadow", "task": "Follow-along: toss and reverse swing.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes", "reverse-pendulum-practice"],
+      "selfChecks": ["Was the elbow up?", "Did the bat swing left to right (right-hander)?", "Was contact low?"] },
+    { "stage": "feel", "task": "Serve reverse sidespin; watch the kick.", "passCheck": "5 of 10 with clear sidespin.", "drillIds": ["reverse-pendulum-practice"] },
+    { "stage": "groove", "task": "Short reverse serves to a target.", "passCheck": "6 of 10 short with sidespin.", "drillIds": ["reverse-pendulum-practice"] },
+    { "stage": "mix", "task": "Alternate normal and reverse pendulum, hiding which is coming.", "passCheck": "5 of 10 misread.", "drillIds": ["serve-disguise"] },
+    { "stage": "use", "task": "Serve and attack the third ball.", "passCheck": "6 of 10 third balls on the table.", "drillIds": ["serve-third-ball", "serve-receive-game"] },
+    { "stage": "own", "task": "Test: reverse serves on target.", "passCheck": "7 of 10.", "drillIds": ["reverse-pendulum-practice"] }
+  ],
+  "gamePatterns": [
+    { "situation": "Your normal sidespin serve is being read.", "how": "Switch to the reverse: the return comes out the other side, so prepare your third ball there.", "drillId": "serve-third-ball" }
+  ],
+  "troubleshooting": [
+    { "symptom": "No sidespin", "causes": ["Contact behind the ball", "Bat not turned out"], "fixes": ["Brush the far side of the ball", "Turn the face out before contact"], "drillId": "reverse-pendulum-practice" },
+    { "symptom": "Goes long", "causes": ["Too much forward swing"], "fixes": ["Brush more across, less forward"], "drillId": "reverse-pendulum-practice" },
+    { "symptom": "Feels awkward", "causes": ["Elbow too low"], "fixes": ["Lift the elbow to shoulder height"], "drillId": "reverse-pendulum-practice" }
+  ],
+  "penholdNotes": "Penholders turn the wrist further; the contact idea is the same.",
+  "animationId": null
+}

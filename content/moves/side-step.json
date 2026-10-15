@@ -1,0 +1,37 @@
+{
+  "id": "side-step", "name": "Side step", "skillId": "basic-footwork", "wing": "none", "levelMin": 1,
+  "summary": "Small side steps that keep you balanced and facing the ball.",
+  "whenToUse": "For almost every ball that is not right at you: a short distance to the side.",
+  "keyPoints": {
+    "stance": "Ready stance: feet wider than shoulders, knees bent.",
+    "bodyAction": "Push off the foot further from where you are going; the other foot moves first.",
+    "strokeLength": "Footwork only: the stroke happens as the step finishes.",
+    "timing": "Start moving as soon as you read the direction of the ball.",
+    "tablePosition": "Wherever the ball takes you; come back to the middle.",
+    "freeArm": "Up and in front for balance.",
+    "batArm": "Bat stays in front while you move.",
+    "recovery": "Side step back toward the middle after each shot.",
+    "anticipation": "Watch the opponent's bat: it tells you the direction early."
+  },
+  "cues": ["Push off the far foot", "Feet never cross", "Same height the whole time"],
+  "learningPath": [
+    { "stage": "see", "task": "Watch the feet from above.", "passCheck": "You can say the three cues.", "drillIds": [] },
+    { "stage": "shadow", "task": "Side steps between two markers.", "passCheck": "4 rounds staying low, then yes to the self-checks.", "drillIds": ["side-shuffle-shadow"],
+      "selfChecks": ["Did your feet stay apart?", "Did your head stay at the same height?", "Did you push off the far foot?"] },
+    { "stage": "feel", "task": "Two-point footwork at an easy pace.", "passCheck": "8 forehands in a row.", "drillIds": ["two-point-footwork", "wall-footwork"] },
+    { "stage": "groove", "task": "Two-point footwork until 12 in a row.", "passCheck": "12 in a row.", "drillIds": ["two-point-footwork"] },
+    { "stage": "mix", "task": "In and out, and side to side.", "passCheck": "8 pairs in a row.", "drillIds": ["shadow-footwork-patterns", "in-and-out"] },
+    { "stage": "use", "task": "Random forehand or backhand.", "passCheck": "14 of 20.", "drillIds": ["random-fh-bh", "robot-random-match"] },
+    { "stage": "own", "task": "Test: two-point footwork.", "passCheck": "20 in a row.", "drillIds": ["two-point-footwork"] }
+  ],
+  "gamePatterns": [
+    { "situation": "A wide ball to your forehand in a rally.", "how": "Two quick side steps, play, two side steps back to the middle.", "drillId": "two-point-footwork" }
+  ],
+  "troubleshooting": [
+    { "symptom": "I'm late to the ball", "causes": ["Starting to move too late", "Big slow steps"], "fixes": ["Move as soon as you read the direction", "Small, quick steps"], "drillId": "side-shuffle-shadow" },
+    { "symptom": "I lose balance", "causes": ["Feet too close or crossing", "Standing up as you move"], "fixes": ["Keep feet wide", "Stay at the same height"], "drillId": "side-shuffle-shadow" },
+    { "symptom": "I don't get back", "causes": ["Admiring the shot"], "fixes": ["Step back to the middle every time"], "drillId": "two-point-footwork" }
+  ],
+  "penholdNotes": "The same for all grips.",
+  "animationId": null
+}

@@ -45,7 +45,7 @@
     "duration": { "min": 3, "default": 5, "max": 10 }, "intensity": 1, "impact": "low",
     "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 short with clear sidespin." },
     "regressionId": "pendulum-variations",
-    "coachingPoints": ["Elbow up, bat swings from left to right (right-hander)", "Contact on the left side of the ball", "Bend the knees to keep it low"],
+    "coachingPoints": ["Elbow up, bat swings from left to right (right to left if left-handed)", "Contact on the left side of the ball (right side if left-handed)", "Bend the knees to keep it low"],
     "moveIds": ["serve-reverse-pendulum"]
   },
   {

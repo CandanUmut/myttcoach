@@ -18,7 +18,8 @@ export interface MoveAnimation {
   loop: boolean;
   phases: { name: string; t: number }[];
   keys: AnimKey[];
-  ball?: { contactT: number; spin: 'topspin' | 'backspin' | 'sidespin' | 'none'; from: [number, number, number]; to: [number, number, number]; bounce?: [number, number, number] };
+  /** Ball path. For a serve, `from` is the palm (the toss goes up from there) and `bounce` is the first bounce on the server's own side. */
+  ball?: { contactT: number; spin: 'topspin' | 'backspin' | 'sidespin' | 'none'; from: [number, number, number]; to: [number, number, number]; bounce?: [number, number, number]; serve?: boolean };
   cues?: { t: number; text: string }[];
   footwork?: boolean;
   /** Best default view, e.g. 'front' for backhand strokes the side view hides. */

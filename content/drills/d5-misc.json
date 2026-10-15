@@ -123,7 +123,7 @@
     "duration": { "min": 3, "default": 5, "max": 8 }, "intensity": 4, "impact": "high",
     "lowImpactId": "lunge-walk",
     "success": { "type": "timed", "target": 3, "description": "3 sets with soft landings." },
-    "coachingPoints": ["Land softly", "Front knee over the toes", "Stop if your knees complain"],
+    "coachingPoints": ["Land softly", "Front knee in line with the toes, not caving in", "Stop if your knees complain"],
     "moveIds": []
   },
   {

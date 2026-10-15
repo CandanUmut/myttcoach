@@ -9,7 +9,7 @@
   "keyPoints": {
     "stance": "Side-on in your backhand corner, left foot forward for right-handers (right foot if left-handed).",
     "bodyAction": "Turn the shoulders back as you toss, then turn forward through contact.",
-    "strokeLength": "The bat swings like a pendulum from right to left (right-hander); the contact itself is short and fast.",
+    "strokeLength": "The bat swings like a pendulum from right to left (left to right if left-handed); the contact itself is short and fast.",
     "timing": "Contact as the ball falls, low, just above table height.",
     "tablePosition": "Close to the backhand corner, behind the end line.",
     "freeArm": "Flat, open palm; toss nearly straight up at least 16 cm, then move the arm out of the way.",
@@ -149,5 +149,5 @@
     }
   ],
   "penholdNotes": "Penholders serve with the same face and often get more wrist into the contact.",
-  "animationId": null
+  "animationId": "serve-pendulum"
 }

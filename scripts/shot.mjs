@@ -8,8 +8,9 @@ const [outDir, size, ...routes] = process.argv.slice(2);
 const [w, h] = size.split('x').map(Number);
 mkdirSync(outDir, { recursive: true });
 const port = 4199;
-const srv = spawn('npx', ['vite', 'preview', '--port', String(port), '--strictPort'], { stdio: 'ignore' });
-await new Promise((r) => setTimeout(r, 2500));
+// DEV=1 uses the dev server (no build needed; slower first load)
+const srv = spawn('npx', process.env.DEV === '1' ? ['vite', '--port', String(port), '--strictPort'] : ['vite', 'preview', '--port', String(port), '--strictPort'], { stdio: 'ignore', detached: true });
+await new Promise((r) => setTimeout(r, process.env.DEV === '1' ? 4000 : 2500));
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--use-gl=swiftshader', '--enable-webgl', '--ignore-gpu-blocklist'] });
 const dark = process.env.DARK === '1';
 const ctx = await browser.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 2, colorScheme: dark ? 'dark' : 'light', hasTouch: true, isMobile: w < 700 });
@@ -31,4 +32,4 @@ for (const r of routes) {
   console.log(file);
 }
 await browser.close();
-srv.kill();
+process.kill(-srv.pid); // the whole group: npx and vite

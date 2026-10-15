@@ -46,7 +46,7 @@
     "duration": { "min": 4, "default": 6, "max": 10 }, "intensity": 4, "impact": "low",
     "success": { "type": "consecutive", "target": 6, "description": "6 balanced cross-overs in a row." },
     "regressionId": "two-point-footwork",
-    "coachingPoints": ["Push off the left foot, cross with the right (opposite if left-handed)", "Play the shot as the foot lands", "Recover with a side step"],
+    "coachingPoints": ["Left foot crosses in front of the right (right foot in front of the left if left-handed)", "Play the shot as the foot lands", "Recover with a side step"],
     "moveIds": ["crossover-step"]
   },
   {
@@ -100,7 +100,7 @@
     "levelMin": 4, "levelMax": 5, "phase": "footwork", "regularity": "irregular",
     "variants": [
       { "setup": "partner", "instructions": "Two Falkenberg cycles, then your partner plays the next ball anywhere. Play it out." },
-      { "setup": "multiball", "instructions": "Two Falkenberg cycles, then one random ball.", "feederInstructions": "Backhand, backhand, forehand twice, then any spot." },
+      { "setup": "multiball", "instructions": "Two Falkenberg cycles, then one random ball.", "feederInstructions": "Backhand corner, backhand corner, wide forehand. Two cycles, then one ball to any spot." },
       { "setup": "robot", "instructions": "Robot in Falkenberg pattern with a random ball if it supports it." }
     ],
     "duration": { "min": 5, "default": 8, "max": 12 }, "intensity": 5, "impact": "low",

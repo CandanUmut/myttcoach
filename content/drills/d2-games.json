@@ -5,7 +5,7 @@
     "skills": [{ "id": "fh-loop-topspin", "weight": 0.7 }, { "id": "bh-block", "weight": 0.6 }, { "id": "fh-block", "weight": 0.4 }],
     "levelMin": 3, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
     "variants": [
-      { "setup": "partner", "instructions": "The server pushes long, the receiver loops, then play the point out. Games to 7, then swap roles." },
+      { "setup": "partner", "instructions": "One player serves short backspin; the other pushes long. The server loops, the receiver blocks, play it out. Games to 7, then swap." },
       { "setup": "multiball", "instructions": "The feeder sends one long backspin, then blocks anything you loop. Play it out like a point: 7 points, count wins.", "feederInstructions": "First ball long backspin, then block every loop back to a random spot." },
       { "setup": "robot", "instructions": "Robot: one backspin, then topspin to random spots. Loop the first, then keep looping or block. Count how many 4-ball sequences you finish." }
     ],
@@ -35,8 +35,8 @@
     "skills": [{ "id": "counter-loop", "weight": 1 }, { "id": "fh-loop-topspin", "weight": 0.5 }],
     "levelMin": 4, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
     "variants": [
-      { "setup": "partner", "instructions": "Start with a push, the other loops, you counter-loop. Play it out. Games to 7, then swap." },
-      { "setup": "robot", "instructions": "Robot on heavy topspin to random sides, stand back. Counter-loop and count rallies of 4 or more." }
+      { "setup": "partner", "instructions": "Your partner serves, you push long, they loop, you counter-loop. Play it out. Games to 7, then swap." },
+      { "setup": "robot", "instructions": "Robot on heavy topspin to random sides, stand back. Counter-loop and count sets of 4 counter-loops on the table." }
     ],
     "duration": { "min": 5, "default": 9, "max": 14 }, "intensity": 5, "impact": "low",
     "success": { "type": "outOf", "target": 4, "of": 7, "description": "Win 4 of 7 points." },
@@ -78,7 +78,7 @@
     "levelMin": 3, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
     "variants": [
       { "setup": "partner", "instructions": "Your partner attacks with loops; you chop. When a ball sits up, attack it. Games to 11." },
-      { "setup": "robot", "instructions": "Robot on random topspin; every few balls set it to a high ball (or step in on a short one) and attack." }
+      { "setup": "robot", "instructions": "Programmable robot: 4–6 topspin balls to random sides, then one high or short ball. Chop the topspin, attack the last ball." }
     ],
     "duration": { "min": 5, "default": 9, "max": 15 }, "intensity": 4, "impact": "low",
     "success": { "type": "outOf", "target": 5, "of": 10, "description": "Win 5 of 10 points." },
@@ -135,7 +135,7 @@
     "skills": [{ "id": "serve-basics", "weight": 0.6 }, { "id": "receive-basics", "weight": 0.6 }, { "id": "third-ball", "weight": 0.4 }],
     "levelMin": 1, "levelMax": 5, "phase": "matchPlay", "regularity": "game",
     "variants": [
-      { "setup": "partner", "instructions": "Each player serves 5 times in a row. Points end after 4 balls: whoever is ahead at the 4th ball wins. Games to 11." }
+      { "setup": "partner", "instructions": "Each player serves 5 in a row. Play every point out as in a match. A point won within the first 4 balls counts 2. Games to 11." }
     ],
     "duration": { "min": 5, "default": 8, "max": 14 }, "intensity": 3, "impact": "low",
     "success": { "type": "outOf", "target": 6, "of": 11, "description": "Win 6 of 11." },

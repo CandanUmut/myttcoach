@@ -1,5 +1,9 @@
 {
-  "id": "fh-loop-topspin", "name": "Forehand loop against topspin", "skillId": "fh-loop-topspin", "wing": "FH", "levelMin": 3,
+  "id": "fh-loop-topspin",
+  "name": "Forehand loop against topspin",
+  "skillId": "fh-loop-topspin",
+  "wing": "FH",
+  "levelMin": 3,
   "summary": "Topspin on a topspin ball: a more forward swing that closes over the ball.",
   "whenToUse": "Against a block or a drive to your forehand when you have time to swing. It keeps the pressure on.",
   "keyPoints": {
@@ -11,28 +15,125 @@
     "freeArm": "Balances the turn; pulls in as you rotate.",
     "batArm": "Relaxed, elbow a little bent. Bat closed, about 45 degrees forward.",
     "recovery": "Reset fast; against a block the ball comes back quickly.",
-    "anticipation": "A block has little spin of its own: aim lower and swing forward."
+    "anticipation": "A block comes back with topspin and little speed of its own: aim lower and swing forward."
   },
-  "cues": ["Close the bat over the ball", "Swing forward, not up", "Turn and recover"],
+  "cues": [
+    "Close the bat over the ball",
+    "Swing forward, not up",
+    "Turn and recover"
+  ],
   "learningPath": [
-    { "stage": "see", "task": "Compare it with the loop against backspin: see how much more forward the swing is.", "passCheck": "You can say the three cues.", "drillIds": [] },
-    { "stage": "shadow", "task": "Follow-along: turn, swing forward, finish at head height.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"],
-      "selfChecks": ["Did the swing go forward more than up?", "Was the bat closed?", "Did your weight move to the front foot?"] },
-    { "stage": "feel", "task": "Loop light topspin balls to one spot.", "passCheck": "6 of 10 on the table.", "drillIds": ["fh-loop-vs-block"] },
-    { "stage": "groove", "task": "Loop against a steady block until 10 in a row.", "passCheck": "10 in a row.", "drillIds": ["fh-loop-vs-block"] },
-    { "stage": "mix", "task": "Open against backspin, then loop the block that comes back.", "passCheck": "7 of 10 sequences.", "drillIds": ["push-then-loop", "fh-loop-vs-block"] },
-    { "stage": "use", "task": "Loop-against-block points as the attacker.", "passCheck": "Win 4 of 7 points.", "drillIds": ["loop-block-game"] },
-    { "stage": "own", "task": "Test: loops against a block in a row.", "passCheck": "12 in a row.", "drillIds": ["fh-loop-vs-block"] }
+    {
+      "stage": "see",
+      "task": "Compare it with the loop against backspin: see how much more forward the swing is.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along: turn, swing forward, finish at head height.",
+      "passCheck": "3 sets of 10, then yes to all self-checks.",
+      "drillIds": [
+        "shadow-strokes"
+      ],
+      "selfChecks": [
+        "Did the swing go forward more than up?",
+        "Was the bat closed?",
+        "Did your weight move to the front foot?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "Loop light topspin balls to one spot.",
+      "passCheck": "6 of 10 on the table.",
+      "drillIds": [
+        "fh-loop-vs-block"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Loop against a steady block until 10 in a row.",
+      "passCheck": "10 in a row.",
+      "drillIds": [
+        "fh-loop-vs-block"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Open against backspin, then loop the block that comes back.",
+      "passCheck": "7 of 10 sequences.",
+      "drillIds": [
+        "push-then-loop",
+        "fh-loop-vs-block"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Loop-against-block points as the attacker.",
+      "passCheck": "Win 4 of 7 points.",
+      "drillIds": [
+        "loop-block-game"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: loops against a block in a row.",
+      "passCheck": "12 in a row.",
+      "drillIds": [
+        "fh-loop-vs-block"
+      ]
+    }
   ],
   "gamePatterns": [
-    { "situation": "You opened with a loop and they block it back.", "how": "Loop again with a little more speed to the other corner or the elbow.", "drillId": "loop-block-game" },
-    { "situation": "A slow, high topspin from a defender.", "how": "Step in and loop through it: forward and fast, aim deep.", "drillId": "fh-loop-vs-block" }
+    {
+      "situation": "You opened with a loop and they block it back.",
+      "how": "Loop again with a little more speed to the other corner or the elbow.",
+      "drillId": "loop-block-game"
+    },
+    {
+      "situation": "A soft block that sits up in the middle of the table.",
+      "how": "Step in and loop through it: forward and fast to a corner.",
+      "drillId": "fh-loop-vs-block"
+    }
   ],
   "troubleshooting": [
-    { "symptom": "The ball goes long", "causes": ["Bat too open", "Swinging up like against backspin"], "fixes": ["Close the bat over the ball", "Swing forward"], "drillId": "fh-loop-vs-block" },
-    { "symptom": "The ball goes into the net", "causes": ["Too closed against a slow ball", "Contact too late and low"], "fixes": ["Open a little against slow balls", "Meet it at the top of the bounce"], "drillId": "fh-loop-vs-block" },
-    { "symptom": "I can't do two in a row", "causes": ["No recovery after the first loop", "Standing too close"], "fixes": ["Reset to ready after each loop", "Take half a step back"], "drillId": "two-point-footwork" }
+    {
+      "symptom": "The ball goes long",
+      "causes": [
+        "Bat too open",
+        "Swinging up like against backspin"
+      ],
+      "fixes": [
+        "Close the bat over the ball",
+        "Swing forward"
+      ],
+      "drillId": "fh-loop-vs-block"
+    },
+    {
+      "symptom": "The ball goes into the net",
+      "causes": [
+        "Too closed against a slow ball",
+        "Contact too late and low"
+      ],
+      "fixes": [
+        "Open a little against slow balls",
+        "Meet it at the top of the bounce"
+      ],
+      "drillId": "fh-loop-vs-block"
+    },
+    {
+      "symptom": "I can't do two in a row",
+      "causes": [
+        "No recovery after the first loop",
+        "Standing too close"
+      ],
+      "fixes": [
+        "Reset to ready after each loop",
+        "Take half a step back"
+      ],
+      "drillId": "two-point-footwork"
+    }
   ],
   "penholdNotes": "Same body action; penholders often close the face with a little more wrist.",
-  "animationId": null
+  "animationId": "fh-loop-topspin"
 }

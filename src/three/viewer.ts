@@ -73,6 +73,7 @@ export class MoveViewer {
   private onVis = () => this.loop();
   private lefty = false;
   private preset: CameraPreset = 'side';
+  private focus = { x: 0, z: 0 };
   private disposed = false;
   onFrame: ((s: ViewerState) => void) | null = null;
   onLoop: (() => void) | null = null;
@@ -157,6 +158,10 @@ export class MoveViewer {
   updateKeys(anim: MoveAnimation) {
     this.anim = anim;
     this.resolved = resolveKeys(anim, JOINT_NAMES);
+    // Frame the camera on where this move is played (chops and lobs stand far back)
+    const n = this.resolved.length || 1;
+    this.focus.x = this.resolved.reduce((s, k) => s + k.root.x, 0) / n;
+    this.focus.z = this.resolved.reduce((s, k) => s + k.root.z, 0) / n;
     this.trail.clear();
     if (anim.ball) {
       this.poseAt(anim.ball.contactT);
@@ -210,24 +215,26 @@ export class MoveViewer {
   setCamera(p: CameraPreset) {
     this.preset = p;
     const side = this.lefty ? -1 : 1;
-    const target = new THREE.Vector3(BASE.x * side, 0.95, BASE.z + 0.15);
+    const fx = BASE.x + this.focus.x;
+    const fz = BASE.z + this.focus.z;
+    const target = new THREE.Vector3(fx * side, 0.95, fz + 0.15);
     let pos: THREE.Vector3;
     switch (p) {
       case 'front':
         // three-quarter front, from beside the table, so the whole body shows
-        pos = new THREE.Vector3((BASE.x + 1.7) * side, 1.55, BASE.z + 2.6);
+        pos = new THREE.Vector3((fx + 1.7) * side, 1.55, fz + 2.6);
         target.y = 0.85;
         break;
       case 'top':
-        pos = new THREE.Vector3(BASE.x * side, 3.6, BASE.z + 0.6);
+        pos = new THREE.Vector3(fx * side, 3.6, fz + 0.6);
         target.y = 0.4;
         break;
       case 'eyes':
-        pos = new THREE.Vector3(BASE.x * side, 1.62, BASE.z - 0.55);
+        pos = new THREE.Vector3(fx * side, 1.62, fz - 0.55);
         target.set(0, 0.8, 0.6);
         break;
       default:
-        pos = new THREE.Vector3(-2.35 * side, 1.3, BASE.z + 0.5);
+        pos = new THREE.Vector3((fx - 2.57) * side, 1.3, fz + 0.5);
     }
     this.camera.position.copy(pos);
     this.controls.target.copy(target);
@@ -319,7 +326,25 @@ export class MoveViewer {
     const tOut = Math.min(1, c + 0.3);
     const t = this.t;
     const g = this.ball.group;
-    if (t < tIn || t > tOut) {
+    if (b.serve) {
+      // toss: up from the palm and down to the bat; then first bounce on own side, over the net
+      const tossStart = Math.max(0, c - 0.45);
+      if (t < tossStart || t > tOut) g.visible = false;
+      else if (t <= c) {
+        g.visible = true;
+        const s = (t - tossStart) / Math.max(1e-3, c - tossStart);
+        g.position.copy(this.from).lerp(this.contact, s);
+        g.position.y += Math.sin(Math.PI * s) * 0.32 + (1 - s) * 0;
+        this.ball.arrows.visible = false;
+      } else {
+        g.visible = true;
+        const s = (t - c) / Math.max(1e-3, tOut - c);
+        if (s < 0.4) this.arc(this.contact, this.bounce, s / 0.4, 0.04, g.position);
+        else this.arc(this.bounce, this.to, (s - 0.4) / 0.6, 0.14, g.position);
+        this.ball.arrows.visible = b.spin !== 'none';
+        if (this.playing) this.ball.arrows.rotateOnAxis(this.zAxis, 0.25);
+      }
+    } else if (t < tIn || t > tOut) {
       g.visible = false;
     } else if (t <= c) {
       g.visible = true;

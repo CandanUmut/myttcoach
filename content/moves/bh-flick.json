@@ -1,5 +1,9 @@
 {
-  "id": "bh-flick", "name": "Backhand flick", "skillId": "bh-flick", "wing": "BH", "levelMin": 3,
+  "id": "bh-flick",
+  "name": "Backhand flick",
+  "skillId": "bh-flick",
+  "wing": "BH",
+  "levelMin": 3,
   "summary": "Attack a short ball with the backhand over the table. The banana flick adds sidespin.",
   "whenToUse": "Against short serves and pushes to your backhand or the middle. At level 4 and up, the banana flick can be used even against heavier backspin.",
   "keyPoints": {
@@ -13,25 +17,117 @@
     "recovery": "Step back to ready at once.",
     "anticipation": "Against backspin brush up the back of the ball; for a banana flick, brush around the side."
   },
-  "cues": ["Elbow high and forward", "Cock the wrist toward you", "Flick out at the top"],
+  "cues": [
+    "Elbow high and forward",
+    "Cock the wrist toward you",
+    "Flick out at the top"
+  ],
   "learningPath": [
-    { "stage": "see", "task": "Watch the wrist cock back, then flick out.", "passCheck": "You can say the three cues.", "drillIds": [] },
-    { "stage": "shadow", "task": "Follow-along: step in, cock, flick, step out.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"],
-      "selfChecks": ["Was the elbow up and forward?", "Did the wrist cock back first?", "Did you step out after?"] },
-    { "stage": "feel", "task": "Flick short no-spin balls to the backhand.", "passCheck": "6 of 10 on the table.", "drillIds": ["bh-flick-short"] },
-    { "stage": "groove", "task": "Flick short backspin balls.", "passCheck": "6 of 10 on the table.", "drillIds": ["bh-flick-short"] },
-    { "stage": "mix", "task": "Drop short or flick, depending on the ball.", "passCheck": "7 of 10 good choices.", "drillIds": ["short-game-duel"] },
-    { "stage": "use", "task": "Flick the receive.", "passCheck": "6 of 10 flicks land.", "drillIds": ["flick-receive-game"] },
-    { "stage": "own", "task": "Test: backhand flicks out of 10.", "passCheck": "7 of 10.", "drillIds": ["bh-flick-short"] }
+    {
+      "stage": "see",
+      "task": "Watch the wrist cock back, then flick out.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along: step in, cock, flick, step out.",
+      "passCheck": "3 sets of 10, then yes to all self-checks.",
+      "drillIds": [
+        "shadow-strokes"
+      ],
+      "selfChecks": [
+        "Was the elbow up and forward?",
+        "Did the bat tip point down and in before the flick?",
+        "Did you step out after?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "Flick short no-spin balls to the backhand.",
+      "passCheck": "6 of 10 on the table.",
+      "drillIds": [
+        "bh-flick-short"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Flick short backspin balls.",
+      "passCheck": "6 of 10 on the table.",
+      "drillIds": [
+        "bh-flick-short"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Drop short or flick, depending on the ball.",
+      "passCheck": "7 of 10 good choices.",
+      "drillIds": [
+        "short-game-duel"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Flick the receive. At level 4+, use the banana flick against short backspin to your backhand or middle.",
+      "passCheck": "6 of 10 flicks land.",
+      "drillIds": [
+        "flick-receive-game"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: backhand flicks out of 10.",
+      "passCheck": "7 of 10.",
+      "drillIds": [
+        "bh-flick-short"
+      ]
+    }
   ],
   "gamePatterns": [
-    { "situation": "A short serve to your middle or backhand.", "how": "Backhand flick to their wide forehand or elbow, then expect a block.", "drillId": "flick-receive-game" }
+    {
+      "situation": "A short serve to your middle or backhand.",
+      "how": "Backhand flick to their wide forehand or elbow, then expect a block.",
+      "drillId": "flick-receive-game"
+    }
   ],
   "troubleshooting": [
-    { "symptom": "Into the net", "causes": ["Not enough lift against backspin", "Taking it too late"], "fixes": ["Open the face and brush up", "Step in earlier"], "drillId": "bh-flick-short" },
-    { "symptom": "No speed", "causes": ["Wrist not cocked", "Arm does the work"], "fixes": ["Cock the wrist back fully", "Let the wrist whip"], "drillId": "bh-flick-short" },
-    { "symptom": "Long", "causes": ["Face too open", "Too much arm"], "fixes": ["Close the face against light spin", "Keep the stroke short"], "drillId": "bh-flick-short" }
+    {
+      "symptom": "Into the net",
+      "causes": [
+        "Not enough lift against backspin",
+        "Taking it too late"
+      ],
+      "fixes": [
+        "Open the face and brush up",
+        "Step in earlier"
+      ],
+      "drillId": "bh-flick-short"
+    },
+    {
+      "symptom": "No speed",
+      "causes": [
+        "Wrist not cocked",
+        "Arm does the work"
+      ],
+      "fixes": [
+        "Cock the wrist back fully",
+        "Let the wrist whip"
+      ],
+      "drillId": "bh-flick-short"
+    },
+    {
+      "symptom": "Long",
+      "causes": [
+        "Face too open",
+        "Too much arm"
+      ],
+      "fixes": [
+        "Close the face against light spin",
+        "Keep the stroke short"
+      ],
+      "drillId": "bh-flick-short"
+    }
   ],
   "penholdNotes": "With penhold, use the reverse side for the backhand flick.",
-  "animationId": null
+  "animationId": "bh-flick"
 }

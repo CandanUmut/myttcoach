@@ -1,11 +1,15 @@
 {
-  "id": "serve-backhand", "name": "Backhand serve", "skillId": "serve-backhand", "wing": "BH", "levelMin": 2,
+  "id": "serve-backhand",
+  "name": "Backhand serve",
+  "skillId": "serve-backhand",
+  "wing": "BH",
+  "levelMin": 2,
   "summary": "A compact serve from in front of the body: easy to learn, quick to recover from.",
   "whenToUse": "From the middle or backhand side when you want to be close and ready for a fast third ball.",
   "keyPoints": {
     "stance": "Square to the table, near the middle of the end line.",
     "bodyAction": "Small turn back with the toss, then forward.",
-    "strokeLength": "Short: from the left side of the body across to the front (right-hander).",
+    "strokeLength": "Short: from the left side of the body across to the front (from the right side if left-handed).",
     "timing": "Contact as the ball falls, in front of the body, near table height.",
     "tablePosition": "Middle or backhand side, close to the table.",
     "freeArm": "Legal toss in front of you, then away.",
@@ -13,25 +17,112 @@
     "recovery": "You are already close to ready: just reset the bat.",
     "anticipation": "Plan for a fast return to your backhand."
   },
-  "cues": ["Ball in front of your body", "Elbow leads, wrist snaps", "Reset at once"],
+  "cues": [
+    "Ball in front of your body",
+    "Elbow leads, wrist snaps",
+    "Reset at once"
+  ],
   "learningPath": [
-    { "stage": "see", "task": "Watch the elbow lead and the wrist snap.", "passCheck": "You can say the three cues.", "drillIds": [] },
-    { "stage": "shadow", "task": "Follow-along: toss in front, compact swing.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes", "bh-serve-practice"],
-      "selfChecks": ["Was the toss legal and in front?", "Did the elbow lead?", "Did you reset straight away?"] },
-    { "stage": "feel", "task": "Backhand backspin serves.", "passCheck": "5 of 10 with clear backspin.", "drillIds": ["bh-serve-practice"] },
-    { "stage": "groove", "task": "Short backspin and long sidespin backhand serves.", "passCheck": "6 of 10 where you aimed.", "drillIds": ["bh-serve-practice"] },
-    { "stage": "mix", "task": "Short and long to targets.", "passCheck": "6 of 10 in the right zone.", "drillIds": ["short-long-serve-targets"] },
-    { "stage": "use", "task": "Serve and receive points.", "passCheck": "Win 6 of 11.", "drillIds": ["serve-receive-game"] },
-    { "stage": "own", "task": "Test: backhand serves on target.", "passCheck": "7 of 10.", "drillIds": ["bh-serve-practice"] }
+    {
+      "stage": "see",
+      "task": "Watch the elbow lead and the wrist snap.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along: toss in front, compact swing.",
+      "passCheck": "3 sets of 10, then yes to all self-checks.",
+      "drillIds": [
+        "shadow-strokes",
+        "bh-serve-practice"
+      ],
+      "selfChecks": [
+        "Was the toss legal and in front?",
+        "Did the elbow lead?",
+        "Did you reset straight away?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "Backhand backspin serves.",
+      "passCheck": "5 of 10 with clear backspin.",
+      "drillIds": [
+        "bh-serve-practice"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Short backspin and long sidespin backhand serves.",
+      "passCheck": "6 of 10 where you aimed.",
+      "drillIds": [
+        "bh-serve-practice"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Short and long to targets.",
+      "passCheck": "6 of 10 in the right zone.",
+      "drillIds": [
+        "short-long-serve-targets"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Serve and receive points.",
+      "passCheck": "Win 6 of 11.",
+      "drillIds": [
+        "serve-receive-game"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: backhand serves on target.",
+      "passCheck": "7 of 10.",
+      "drillIds": [
+        "bh-serve-practice"
+      ]
+    }
   ],
   "gamePatterns": [
-    { "situation": "You are a close-to-table backhand player.", "how": "Short backhand serve, then block or punch the third ball with your backhand.", "drillId": "serve-receive-game" }
+    {
+      "situation": "You are a close-to-table backhand player.",
+      "how": "Short backhand serve, then block or punch the third ball with your backhand.",
+      "drillId": "serve-receive-game"
+    }
   ],
   "troubleshooting": [
-    { "symptom": "No spin", "causes": ["Stiff wrist"], "fixes": ["Let the wrist snap at contact"], "drillId": "bh-serve-practice" },
-    { "symptom": "Too high", "causes": ["Contact high above the table"], "fixes": ["Let the ball drop, bend the knees"], "drillId": "bh-serve-practice" },
-    { "symptom": "Hidden toss", "causes": ["Body blocks the ball"], "fixes": ["Toss in front and keep it visible"], "drillId": "bh-serve-practice" }
+    {
+      "symptom": "No spin",
+      "causes": [
+        "Stiff wrist"
+      ],
+      "fixes": [
+        "Let the wrist snap at contact"
+      ],
+      "drillId": "bh-serve-practice"
+    },
+    {
+      "symptom": "Too high",
+      "causes": [
+        "Contact high above the table"
+      ],
+      "fixes": [
+        "Let the ball drop, bend the knees"
+      ],
+      "drillId": "bh-serve-practice"
+    },
+    {
+      "symptom": "Hidden toss",
+      "causes": [
+        "Body blocks the ball"
+      ],
+      "fixes": [
+        "Toss in front and keep it visible"
+      ],
+      "drillId": "bh-serve-practice"
+    }
   ],
   "penholdNotes": "Penholders usually serve forehand; a backhand serve with the reverse side is possible.",
-  "animationId": null
+  "animationId": "serve-backhand"
 }

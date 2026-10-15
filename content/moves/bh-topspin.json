@@ -1,5 +1,9 @@
 {
-  "id": "bh-topspin", "name": "Backhand topspin", "skillId": "bh-topspin", "wing": "BH", "levelMin": 3,
+  "id": "bh-topspin",
+  "name": "Backhand topspin",
+  "skillId": "bh-topspin",
+  "wing": "BH",
+  "levelMin": 3,
   "summary": "A spinny backhand driven by forearm and wrist from in front of the body.",
   "whenToUse": "To open against a long push to your backhand, or to keep topspin pressure in a backhand rally.",
   "keyPoints": {
@@ -13,26 +17,123 @@
     "recovery": "Bat back in front of the body.",
     "anticipation": "Against backspin lift more; against topspin close the bat and go forward."
   },
-  "cues": ["Elbow forward, bat below the ball", "Cock the wrist, then whip", "Contact in front"],
+  "cues": [
+    "Elbow forward, bat below the ball",
+    "Cock the wrist, then whip",
+    "Contact in front"
+  ],
   "learningPath": [
-    { "stage": "see", "task": "Watch from the front: see the wrist cock back before contact.", "passCheck": "You can say the three cues.", "drillIds": [] },
-    { "stage": "shadow", "task": "Follow-along: drop the bat, cock the wrist, whip up and forward.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"],
-      "selfChecks": ["Did the elbow stay forward?", "Did the wrist cock back first?", "Did the bat finish at eye level?"] },
-    { "stage": "feel", "task": "Slow backspin to the backhand, one at a time.", "passCheck": "5 of 10 on the table.", "drillIds": ["bh-topspin-vs-backspin"] },
-    { "stage": "groove", "task": "Backhand topspin rally against a block.", "passCheck": "15 in a row.", "drillIds": ["bh-topspin-rally", "bh-topspin-vs-backspin"] },
-    { "stage": "mix", "task": "Open with the backhand, then switch to the forehand.", "passCheck": "7 of 10 sequences.", "drillIds": ["fh-bh-alternate", "push-then-drive"] },
-    { "stage": "use", "task": "Open-up game: open with the backhand when the ball is long.", "passCheck": "6 of 10 openings land.", "drillIds": ["open-up-game"] },
-    { "stage": "own", "task": "Test: backhand topspins against backspin.", "passCheck": "8 of 10 on the table.", "drillIds": ["bh-topspin-vs-backspin"] }
+    {
+      "stage": "see",
+      "task": "Watch from the front: see the wrist cock back before contact.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along: drop the bat, cock the wrist, whip up and forward.",
+      "passCheck": "3 sets of 10, then yes to all self-checks.",
+      "drillIds": [
+        "shadow-strokes"
+      ],
+      "selfChecks": [
+        "Did the elbow stay forward?",
+        "Did the wrist cock back first?",
+        "Did the bat finish at eye level?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "Slow backspin to the backhand, one at a time.",
+      "passCheck": "5 of 10 on the table.",
+      "drillIds": [
+        "bh-topspin-vs-backspin"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Backhand topspin rally against a block.",
+      "passCheck": "15 in a row.",
+      "drillIds": [
+        "bh-topspin-rally",
+        "bh-topspin-vs-backspin"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Backhand topspin and forehand alternately against a block, then 2 backhands, 1 forehand.",
+      "passCheck": "7 of 10 sequences.",
+      "drillIds": [
+        "fh-bh-alternate"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Open-up game: open with the backhand when the ball is long.",
+      "passCheck": "6 of 10 openings land.",
+      "drillIds": [
+        "open-up-game"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: backhand topspins against backspin.",
+      "passCheck": "8 of 10 on the table.",
+      "drillIds": [
+        "bh-topspin-vs-backspin"
+      ]
+    }
   ],
   "gamePatterns": [
-    { "situation": "A long push to your backhand.", "how": "Open with a spinny backhand topspin to their backhand, then expect a block.", "drillId": "open-up-game" },
-    { "situation": "Backhand-to-backhand rally.", "how": "Topspin cross-court, then change down the line when they step over.", "drillId": "bh-topspin-rally" }
+    {
+      "situation": "A long push to your backhand.",
+      "how": "Open with a spinny backhand topspin to their backhand, then expect a block.",
+      "drillId": "open-up-game"
+    },
+    {
+      "situation": "Backhand-to-backhand rally.",
+      "how": "Topspin cross-court, then change down the line when they step over.",
+      "drillId": "bh-topspin-rally"
+    }
   ],
   "troubleshooting": [
-    { "symptom": "Into the net against backspin", "causes": ["Not lifting enough", "Bat too closed"], "fixes": ["Start the bat lower", "Open the face a little and brush up"], "drillId": "bh-topspin-vs-backspin" },
-    { "symptom": "Long against a block", "causes": ["Lifting like against backspin", "Too much wrist"], "fixes": ["Close the bat and go forward", "Shorter wrist action"], "drillId": "bh-topspin-rally" },
-    { "symptom": "Weak, no spin", "causes": ["Wrist stays stiff", "Contact beside the body"], "fixes": ["Cock the wrist, then whip", "Move so the ball is in front"], "drillId": "bh-topspin-vs-backspin" }
+    {
+      "symptom": "Into the net against backspin",
+      "causes": [
+        "Not lifting enough",
+        "Bat too closed"
+      ],
+      "fixes": [
+        "Start the bat lower",
+        "Open the face a little and brush up"
+      ],
+      "drillId": "bh-topspin-vs-backspin"
+    },
+    {
+      "symptom": "Long against a block",
+      "causes": [
+        "Lifting like against backspin",
+        "Too much wrist"
+      ],
+      "fixes": [
+        "Close the bat and go forward",
+        "Shorter wrist action"
+      ],
+      "drillId": "bh-topspin-rally"
+    },
+    {
+      "symptom": "Weak, no spin",
+      "causes": [
+        "Wrist stays stiff",
+        "Contact beside the body"
+      ],
+      "fixes": [
+        "Cock the wrist, then whip",
+        "Move so the ball is in front"
+      ],
+      "drillId": "bh-topspin-vs-backspin"
+    }
   ],
   "penholdNotes": "Modern penholders play this on the reverse side with a similar wrist action.",
-  "animationId": null
+  "animationId": "bh-topspin"
 }

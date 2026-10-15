@@ -1,11 +1,15 @@
 {
-  "id": "counter-loop", "name": "Counter-loop", "skillId": "counter-loop", "wing": "FH", "levelMin": 4,
+  "id": "counter-loop",
+  "name": "Counter-loop",
+  "skillId": "counter-loop",
+  "wing": "FH",
+  "levelMin": 4,
   "summary": "Loop your opponent's loop back from a step or two behind the table.",
   "whenToUse": "When your opponent loops and you have stepped back: instead of blocking, answer with your own topspin.",
   "keyPoints": {
     "stance": "Wide and low, right foot back (left foot if left-handed).",
     "bodyAction": "Full turn of hips and shoulders, legs push, body rotates through the ball.",
-    "strokeLength": "Long and mostly forward, finishing above the head.",
+    "strokeLength": "Long and mostly forward, finishing in front of the forehead.",
     "timing": "After the top of the bounce, as the ball starts to drop.",
     "tablePosition": "One to two metres from the end line.",
     "freeArm": "Wide for balance, then pulls in to speed up the turn.",
@@ -13,25 +17,118 @@
     "recovery": "Step back into position; the rally continues at distance.",
     "anticipation": "Read their loop: heavy and slow means more time; fast and flat means shorter swing."
   },
-  "cues": ["Give yourself room", "Over the top of the ball", "Legs and hips first"],
+  "cues": [
+    "Give yourself room",
+    "Over the top of the ball",
+    "Legs and hips first"
+  ],
   "learningPath": [
-    { "stage": "see", "task": "Watch from the side: the swing is long and forward, and the player is far back.", "passCheck": "You can say the three cues.", "drillIds": [] },
-    { "stage": "shadow", "task": "Follow-along from two metres back.", "passCheck": "3 sets of 10, then yes to all self-checks.", "drillIds": ["shadow-strokes"],
-      "selfChecks": ["Were you a step or two back?", "Did the legs start the swing?", "Did the bat close over the ball?"] },
-    { "stage": "feel", "task": "Counter heavy, slow topspin from a feed.", "passCheck": "5 of 10 on the table.", "drillIds": ["counter-loop-rally"] },
-    { "stage": "groove", "task": "Loop-to-loop rally.", "passCheck": "6 counter-loops in a row.", "drillIds": ["counter-loop-rally"] },
-    { "stage": "mix", "task": "Loop against a block, then counter when they loop back.", "passCheck": "6 of 10 sequences.", "drillIds": ["block-switch", "counter-loop-rally"] },
-    { "stage": "use", "task": "Counter-loop points.", "passCheck": "Win 4 of 7 points.", "drillIds": ["counter-loop-game"] },
-    { "stage": "own", "task": "Test: counter-loop rally.", "passCheck": "8 in a row.", "drillIds": ["counter-loop-rally"] }
+    {
+      "stage": "see",
+      "task": "Watch from the side: the swing is long and forward, and the player is far back.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Follow-along from two metres back.",
+      "passCheck": "3 sets of 10, then yes to all self-checks.",
+      "drillIds": [
+        "shadow-strokes"
+      ],
+      "selfChecks": [
+        "Were you a step or two back?",
+        "Did the legs start the swing?",
+        "Did the bat close over the ball?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "Counter heavy, slow topspin from a feed.",
+      "passCheck": "5 of 10 on the table.",
+      "drillIds": [
+        "counter-loop-rally"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Loop-to-loop rally.",
+      "passCheck": "6 counter-loops in a row.",
+      "drillIds": [
+        "counter-loop-rally"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Open with a loop against a long push, then counter-loop when your partner loops back.",
+      "passCheck": "6 of 10 sequences.",
+      "drillIds": [
+        "push-then-loop",
+        "counter-loop-rally"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Counter-loop points.",
+      "passCheck": "Win 4 of 7 points.",
+      "drillIds": [
+        "counter-loop-game"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: counter-loop rally.",
+      "passCheck": "8 in a row.",
+      "drillIds": [
+        "counter-loop-rally"
+      ]
+    }
   ],
   "gamePatterns": [
-    { "situation": "Your opponent opens with a loop to your forehand and you are a step back.", "how": "Counter-loop cross-court with spin, then step back in.", "drillId": "counter-loop-game" }
+    {
+      "situation": "Your opponent opens with a loop to your forehand and you are a step back.",
+      "how": "Counter-loop cross-court with spin, then step back in.",
+      "drillId": "counter-loop-game"
+    }
   ],
   "troubleshooting": [
-    { "symptom": "The ball goes long", "causes": ["Too open", "Hitting through instead of over"], "fixes": ["Close the bat", "Brush over the top of the ball"], "drillId": "counter-loop-rally" },
-    { "symptom": "I'm rushed", "causes": ["Too close to the table", "Late backswing"], "fixes": ["Step back first", "Start the turn as soon as you see the loop"], "drillId": "counter-loop-rally" },
-    { "symptom": "No power", "causes": ["Arm only", "Weight stays back"], "fixes": ["Push with the back leg", "Finish on the front foot"], "drillId": "fh-loop-vs-block" }
+    {
+      "symptom": "The ball goes long",
+      "causes": [
+        "Too open",
+        "Hitting through instead of over"
+      ],
+      "fixes": [
+        "Close the bat",
+        "Brush over the top of the ball"
+      ],
+      "drillId": "counter-loop-rally"
+    },
+    {
+      "symptom": "I'm rushed",
+      "causes": [
+        "Too close to the table",
+        "Late backswing"
+      ],
+      "fixes": [
+        "Step back first",
+        "Start the turn as soon as you see the loop"
+      ],
+      "drillId": "counter-loop-rally"
+    },
+    {
+      "symptom": "No power",
+      "causes": [
+        "Arm only",
+        "Weight stays back"
+      ],
+      "fixes": [
+        "Push with the back leg",
+        "Finish on the front foot"
+      ],
+      "drillId": "fh-loop-vs-block"
+    }
   ],
   "penholdNotes": "Same body action. Keep the wrist firm; distance needs body power, not wrist.",
-  "animationId": null
+  "animationId": "counter-loop"
 }

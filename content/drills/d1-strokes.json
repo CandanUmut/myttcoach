@@ -10,7 +10,7 @@
     ],
     "duration": { "min": 4, "default": 7, "max": 12 }, "intensity": 2, "impact": "low",
     "success": { "type": "consecutive", "target": 15, "description": "15 blocks in a row." },
-    "metricId": "block-streak", "progressionId": "block-switch", "regressionId": "fh-drive-crosscourt",
+    "progressionId": "block-switch", "regressionId": "fh-drive-crosscourt",
     "coachingPoints": ["Bat in front, slightly closed", "Meet it early, just after the bounce", "Short, firm push forward; no backswing"],
     "moveIds": ["fh-block"], "diagram": { "placements": [{ "zone": "fh", "depth": "long", "order": 1 }], "arrows": [] }
   },
@@ -134,7 +134,7 @@
     ],
     "duration": { "min": 4, "default": 7, "max": 10 }, "intensity": 2, "impact": "low",
     "success": { "type": "outOf", "target": 6, "of": 10, "description": "6 of 10 flicks on the table." },
-    "metricId": "flick-10", "regressionId": "bh-push-diagonal",
+    "regressionId": "bh-push-diagonal",
     "coachingPoints": ["Elbow high and forward", "Wrist cocks back, then flicks out", "Contact at the top of the bounce, over the table"],
     "moveIds": ["bh-flick"], "diagram": { "placements": [{ "zone": "bh", "depth": "short", "order": 1 }], "arrows": [] }
   },

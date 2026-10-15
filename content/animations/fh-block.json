@@ -1,0 +1,152 @@
+{
+  "id": "fh-block",
+  "duration": 0.95,
+  "loop": true,
+  "phases": [
+    {
+      "name": "Ready",
+      "t": 0
+    },
+    {
+      "name": "Backswing",
+      "t": 0.35
+    },
+    {
+      "name": "Contact",
+      "t": 0.6
+    },
+    {
+      "name": "Follow-through",
+      "t": 0.78
+    },
+    {
+      "name": "Recover",
+      "t": 0.9
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "joints": {
+        "body.bend": 8,
+        "body.turn": 5,
+        "torso.bend": 16,
+        "torso.turn": 10,
+        "head.nod": -12,
+        "head.turn": -8,
+        "r_leg.raise": 26,
+        "l_leg.raise": 42,
+        "r_leg.straddle": 13,
+        "l_leg.straddle": 11,
+        "r_leg.turn": 12,
+        "l_leg.turn": 5,
+        "r_knee.bend": 50,
+        "l_knee.bend": 46,
+        "r_ankle.bend": 32,
+        "l_ankle.bend": 12,
+        "r_arm.raise": 35,
+        "r_arm.straddle": 12,
+        "r_arm.turn": -40,
+        "r_elbow.bend": 85,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 25,
+        "r_wrist.bend": 0,
+        "l_arm.raise": 40,
+        "l_arm.straddle": 15,
+        "l_arm.turn": -25,
+        "l_elbow.bend": 90
+      },
+      "root": {
+        "x": 0,
+        "z": 0.18,
+        "turn": 0
+      }
+    },
+    {
+      "t": 0.35,
+      "joints": {
+        "torso.turn": 16,
+        "r_arm.raise": 28,
+        "r_arm.straddle": 10,
+        "r_arm.turn": 40,
+        "r_elbow.bend": 88,
+        "r_wrist.turn": -20,
+        "r_wrist.tilt": 30
+      }
+    },
+    {
+      "t": 0.6,
+      "joints": {
+        "torso.turn": 10,
+        "r_arm.raise": 32,
+        "r_arm.turn": 42,
+        "r_elbow.bend": 82,
+        "r_wrist.turn": -24
+      }
+    },
+    {
+      "t": 0.78,
+      "joints": {
+        "r_arm.raise": 34,
+        "r_elbow.bend": 78
+      }
+    },
+    {
+      "t": 1,
+      "joints": {
+        "r_arm.raise": 35,
+        "r_arm.straddle": 12,
+        "r_arm.turn": -40,
+        "r_elbow.bend": 85,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 25
+      },
+      "root": {
+        "x": 0,
+        "z": 0.18,
+        "turn": 0
+      }
+    }
+  ],
+  "ball": {
+    "contactT": 0.6,
+    "spin": "topspin",
+    "from": [
+      0.45,
+      1.05,
+      1.25
+    ],
+    "bounce": [
+      -0.2,
+      0.786,
+      -0.75
+    ],
+    "to": [
+      0.5,
+      0.786,
+      1.0
+    ]
+  },
+  "cues": [
+    {
+      "t": 0,
+      "text": "Bat in front"
+    },
+    {
+      "t": 0.3,
+      "text": "No backswing"
+    },
+    {
+      "t": 0.56,
+      "text": "Meet it on the rise"
+    },
+    {
+      "t": 0.74,
+      "text": "Close the face over the ball"
+    },
+    {
+      "t": 0.9,
+      "text": "Reset"
+    }
+  ]
+}

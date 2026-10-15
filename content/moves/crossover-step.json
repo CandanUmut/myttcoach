@@ -1,10 +1,14 @@
 {
-  "id": "crossover-step", "name": "Cross-over step", "skillId": "crossover", "wing": "none", "levelMin": 3,
+  "id": "crossover-step",
+  "name": "Cross-over step",
+  "skillId": "crossover",
+  "wing": "none",
+  "levelMin": 3,
   "summary": "A big step across to reach a very wide forehand.",
   "whenToUse": "When the ball goes so wide to your forehand that side steps are too slow, often after a pivot.",
   "keyPoints": {
     "stance": "From ready or from the backhand corner after a pivot.",
-    "bodyAction": "Push off the left foot (right foot if left-handed), cross the right foot over in front, turn the body as you go.",
+    "bodyAction": "Weight onto the right foot (left foot if left-handed), then swing the left foot (right foot if left-handed) across in front of it toward the wide forehand, turning the hips as you go.",
     "strokeLength": "Footwork only; play the forehand as the crossing foot lands.",
     "timing": "Go early: the step takes time.",
     "tablePosition": "From the backhand side to the wide forehand.",
@@ -13,25 +17,116 @@
     "recovery": "Side steps back toward the middle.",
     "anticipation": "Expect the wide ball after you pivot."
   },
-  "cues": ["Push off, cross over", "Hit as the foot lands", "Side step back"],
+  "cues": [
+    "Push off, cross over",
+    "Hit as the foot lands",
+    "Side step back"
+  ],
   "learningPath": [
-    { "stage": "see", "task": "Watch the feet from above.", "passCheck": "You can say the three cues.", "drillIds": [] },
-    { "stage": "shadow", "task": "Cross-over between markers with a shadow forehand.", "passCheck": "8 reps each side, then yes to the self-checks.", "drillIds": ["crossover-wide", "shadow-footwork-patterns"],
-      "selfChecks": ["Did the foot cross in front?", "Did you play as it landed?", "Did you recover with side steps?"] },
-    { "stage": "feel", "task": "Backhand corner, then wide forehand, slowly.", "passCheck": "5 balanced cross-overs.", "drillIds": ["crossover-wide"] },
-    { "stage": "groove", "task": "Cross-over drill at match pace.", "passCheck": "6 in a row.", "drillIds": ["crossover-wide"] },
-    { "stage": "mix", "task": "Falkenberg pattern.", "passCheck": "5 cycles.", "drillIds": ["shadow-footwork-patterns", "falkenberg"] },
-    { "stage": "use", "task": "Falkenberg, then random.", "passCheck": "4 sets.", "drillIds": ["falkenberg-random", "random-fh-bh"] },
-    { "stage": "own", "task": "Test: cross-over drill.", "passCheck": "8 in a row.", "drillIds": ["crossover-wide"] }
+    {
+      "stage": "see",
+      "task": "Watch the feet from above.",
+      "passCheck": "You can say the three cues.",
+      "drillIds": []
+    },
+    {
+      "stage": "shadow",
+      "task": "Cross-over between markers with a shadow forehand.",
+      "passCheck": "8 reps each side, then yes to the self-checks.",
+      "drillIds": [
+        "crossover-wide",
+        "shadow-footwork-patterns"
+      ],
+      "selfChecks": [
+        "Did the foot cross in front?",
+        "Did you play as it landed?",
+        "Did you recover with side steps?"
+      ]
+    },
+    {
+      "stage": "feel",
+      "task": "Backhand corner, then wide forehand, slowly.",
+      "passCheck": "5 balanced cross-overs.",
+      "drillIds": [
+        "crossover-wide"
+      ]
+    },
+    {
+      "stage": "groove",
+      "task": "Cross-over drill at match pace.",
+      "passCheck": "6 in a row.",
+      "drillIds": [
+        "crossover-wide"
+      ]
+    },
+    {
+      "stage": "mix",
+      "task": "Falkenberg pattern.",
+      "passCheck": "5 cycles.",
+      "drillIds": [
+        "shadow-footwork-patterns",
+        "falkenberg"
+      ]
+    },
+    {
+      "stage": "use",
+      "task": "Falkenberg, then random.",
+      "passCheck": "4 sets.",
+      "drillIds": [
+        "falkenberg-random",
+        "random-fh-bh"
+      ]
+    },
+    {
+      "stage": "own",
+      "task": "Test: cross-over drill.",
+      "passCheck": "8 in a row.",
+      "drillIds": [
+        "crossover-wide"
+      ]
+    }
   ],
   "gamePatterns": [
-    { "situation": "You pivot to play a forehand from the backhand corner and the ball comes back wide to your forehand.", "how": "Cross-over, play a safe forehand cross-court, side step back.", "drillId": "falkenberg" }
+    {
+      "situation": "You pivot to play a forehand from the backhand corner and the ball comes back wide to your forehand.",
+      "how": "Cross-over, play a safe forehand cross-court, side step back.",
+      "drillId": "falkenberg"
+    }
   ],
   "troubleshooting": [
-    { "symptom": "I can't reach it", "causes": ["Starting too late", "Side steps instead of crossing"], "fixes": ["Move as soon as you see the wide ball", "Commit to the cross-over"], "drillId": "crossover-wide" },
-    { "symptom": "I fall away", "causes": ["Hitting before landing"], "fixes": ["Land, then hit"], "drillId": "crossover-wide" },
-    { "symptom": "Stuck wide after", "causes": ["No recovery"], "fixes": ["Two side steps back to the middle"], "drillId": "crossover-wide" }
+    {
+      "symptom": "I can't reach it",
+      "causes": [
+        "Starting too late",
+        "Side steps instead of crossing"
+      ],
+      "fixes": [
+        "Move as soon as you see the wide ball",
+        "Commit to the cross-over"
+      ],
+      "drillId": "crossover-wide"
+    },
+    {
+      "symptom": "I fall away",
+      "causes": [
+        "Hitting before landing"
+      ],
+      "fixes": [
+        "Land, then hit"
+      ],
+      "drillId": "crossover-wide"
+    },
+    {
+      "symptom": "Stuck wide after",
+      "causes": [
+        "No recovery"
+      ],
+      "fixes": [
+        "Two side steps back to the middle"
+      ],
+      "drillId": "crossover-wide"
+    }
   ],
   "penholdNotes": "The same for all grips.",
-  "animationId": null
+  "animationId": "crossover-step"
 }

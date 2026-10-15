@@ -1,0 +1,182 @@
+{
+  "id": "serve-backhand",
+  "duration": 2.0,
+  "loop": true,
+  "phases": [
+    {
+      "name": "Ready",
+      "t": 0
+    },
+    {
+      "name": "Toss",
+      "t": 0.3
+    },
+    {
+      "name": "Backswing",
+      "t": 0.45
+    },
+    {
+      "name": "Contact",
+      "t": 0.62
+    },
+    {
+      "name": "Follow-through",
+      "t": 0.78
+    },
+    {
+      "name": "Recover",
+      "t": 0.9
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "joints": {
+        "body.bend": 8,
+        "body.turn": 0,
+        "torso.bend": 18,
+        "torso.turn": 0,
+        "head.nod": -14,
+        "r_leg.raise": 34,
+        "l_leg.raise": 36,
+        "r_leg.straddle": 13,
+        "l_leg.straddle": 13,
+        "r_leg.turn": 8,
+        "l_leg.turn": 8,
+        "r_knee.bend": 50,
+        "l_knee.bend": 50,
+        "r_ankle.bend": 24,
+        "l_ankle.bend": 22,
+        "r_arm.raise": 42,
+        "r_arm.straddle": 18,
+        "r_arm.turn": -70,
+        "r_elbow.bend": 100,
+        "r_wrist.bend": 5,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 38,
+        "l_arm.raise": 55,
+        "l_arm.straddle": 8,
+        "l_arm.turn": 0,
+        "l_elbow.bend": 95,
+        "l_wrist.turn": 60
+      },
+      "root": {
+        "x": 0.05,
+        "z": 0.25,
+        "turn": 0
+      }
+    },
+    {
+      "t": 0.3,
+      "joints": {
+        "l_arm.raise": 95,
+        "l_elbow.bend": 70
+      }
+    },
+    {
+      "t": 0.45,
+      "joints": {
+        "r_arm.raise": 45,
+        "r_arm.straddle": 15,
+        "r_arm.turn": -88,
+        "r_elbow.bend": 115,
+        "r_wrist.bend": 35,
+        "r_wrist.turn": -20,
+        "r_wrist.tilt": 25,
+        "l_arm.raise": 70,
+        "l_elbow.bend": 95
+      }
+    },
+    {
+      "t": 0.62,
+      "joints": {
+        "r_arm.raise": 19,
+        "r_arm.straddle": 44,
+        "r_arm.turn": -62,
+        "r_elbow.bend": 108,
+        "r_wrist.bend": -20,
+        "r_wrist.turn": -38,
+        "r_wrist.tilt": 18,
+        "l_arm.raise": 30,
+        "l_arm.straddle": 30
+      }
+    },
+    {
+      "t": 0.78,
+      "joints": {
+        "r_arm.raise": 45,
+        "r_arm.straddle": 15,
+        "r_arm.turn": -50,
+        "r_elbow.bend": 90,
+        "r_wrist.turn": -35,
+        "r_wrist.tilt": 25
+      }
+    },
+    {
+      "t": 1,
+      "joints": {
+        "r_arm.raise": 42,
+        "r_arm.straddle": 18,
+        "r_arm.turn": -70,
+        "r_elbow.bend": 100,
+        "r_wrist.bend": 5,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 38,
+        "l_arm.raise": 55,
+        "l_arm.straddle": 8
+      },
+      "root": {
+        "x": 0.05,
+        "z": 0.25,
+        "turn": 0
+      }
+    }
+  ],
+  "ball": {
+    "contactT": 0.62,
+    "spin": "backspin",
+    "serve": true,
+    "from": [
+      0.62,
+      1.02,
+      -1.3
+    ],
+    "bounce": [
+      0.15,
+      0.786,
+      -0.45
+    ],
+    "to": [
+      -0.15,
+      0.786,
+      0.45
+    ]
+  },
+  "cues": [
+    {
+      "t": 0,
+      "text": "Square, ball in front"
+    },
+    {
+      "t": 0.25,
+      "text": "Legal toss"
+    },
+    {
+      "t": 0.42,
+      "text": "Elbow leads"
+    },
+    {
+      "t": 0.58,
+      "text": "Wrist snaps at contact"
+    },
+    {
+      "t": 0.75,
+      "text": "Short finish"
+    },
+    {
+      "t": 0.9,
+      "text": "Reset"
+    }
+  ],
+  "camera": "front"
+}

@@ -1,0 +1,181 @@
+{
+  "id": "bh-chop",
+  "duration": 1.7,
+  "loop": true,
+  "phases": [
+    {
+      "name": "Ready",
+      "t": 0
+    },
+    {
+      "name": "Backswing",
+      "t": 0.35
+    },
+    {
+      "name": "Contact",
+      "t": 0.6
+    },
+    {
+      "name": "Follow-through",
+      "t": 0.78
+    },
+    {
+      "name": "Recover",
+      "t": 0.9
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "joints": {
+        "body.bend": 8,
+        "body.turn": 0,
+        "torso.bend": 18,
+        "torso.turn": 0,
+        "head.nod": -14,
+        "r_leg.raise": 34,
+        "l_leg.raise": 36,
+        "r_leg.straddle": 13,
+        "l_leg.straddle": 13,
+        "r_leg.turn": 8,
+        "l_leg.turn": 8,
+        "r_knee.bend": 50,
+        "l_knee.bend": 50,
+        "r_ankle.bend": 24,
+        "l_ankle.bend": 22,
+        "r_arm.raise": 42,
+        "r_arm.straddle": 18,
+        "r_arm.turn": -70,
+        "r_elbow.bend": 100,
+        "r_wrist.bend": 5,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 38,
+        "l_arm.raise": 30,
+        "l_arm.straddle": 20,
+        "l_arm.turn": -20,
+        "l_elbow.bend": 85
+      },
+      "root": {
+        "x": 0,
+        "z": -1.3,
+        "turn": 0
+      }
+    },
+    {
+      "t": 0.35,
+      "joints": {
+        "body.turn": -35,
+        "torso.turn": -25,
+        "r_leg.raise": 50,
+        "l_leg.raise": 10,
+        "l_knee.bend": 45,
+        "r_ankle.bend": 8,
+        "l_ankle.bend": 43,
+        "r_arm.raise": 49,
+        "r_arm.straddle": -32,
+        "r_arm.turn": -80,
+        "r_elbow.bend": 95,
+        "r_wrist.bend": -13,
+        "r_wrist.turn": -47,
+        "r_wrist.tilt": 14
+      }
+    },
+    {
+      "t": 0.6,
+      "joints": {
+        "torso.turn": -12,
+        "r_knee.bend": 58,
+        "l_knee.bend": 58,
+        "r_ankle.bend": 16,
+        "l_ankle.bend": 50,
+        "r_arm.raise": 32,
+        "r_arm.straddle": 12,
+        "r_arm.turn": -55,
+        "r_elbow.bend": 85,
+        "r_wrist.bend": -35,
+        "r_wrist.turn": -50,
+        "r_wrist.tilt": 25
+      }
+    },
+    {
+      "t": 0.78,
+      "joints": {
+        "torso.bend": 26,
+        "torso.turn": -4,
+        "r_arm.raise": 40,
+        "r_arm.straddle": 15,
+        "r_arm.turn": -60,
+        "r_elbow.bend": 40,
+        "r_wrist.turn": -45
+      }
+    },
+    {
+      "t": 1,
+      "joints": {
+        "body.turn": 0,
+        "torso.bend": 18,
+        "torso.turn": 0,
+        "r_leg.raise": 34,
+        "l_leg.raise": 36,
+        "r_knee.bend": 50,
+        "l_knee.bend": 50,
+        "r_ankle.bend": 24,
+        "l_ankle.bend": 22,
+        "r_arm.raise": 42,
+        "r_arm.straddle": 18,
+        "r_arm.turn": -70,
+        "r_elbow.bend": 100,
+        "r_wrist.bend": 5,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 38
+      },
+      "root": {
+        "x": 0,
+        "z": -1.3,
+        "turn": 0
+      }
+    }
+  ],
+  "ball": {
+    "contactT": 0.6,
+    "spin": "backspin",
+    "from": [
+      -0.45,
+      1.0,
+      1.25
+    ],
+    "bounce": [
+      0.3,
+      0.786,
+      -1.0
+    ],
+    "to": [
+      -0.5,
+      0.786,
+      1.0
+    ]
+  },
+  "cues": [
+    {
+      "t": 0,
+      "text": "Ready, far back"
+    },
+    {
+      "t": 0.3,
+      "text": "Bat up by the shoulder"
+    },
+    {
+      "t": 0.56,
+      "text": "Down and forward under the ball"
+    },
+    {
+      "t": 0.74,
+      "text": "Long finish"
+    },
+    {
+      "t": 0.9,
+      "text": "Back to the middle"
+    }
+  ],
+  "camera": "front"
+}

@@ -1,0 +1,174 @@
+{
+  "id": "bh-flick",
+  "duration": 1.4,
+  "loop": true,
+  "phases": [
+    {
+      "name": "Ready",
+      "t": 0
+    },
+    {
+      "name": "Step in, cock the wrist",
+      "t": 0.38
+    },
+    {
+      "name": "Contact",
+      "t": 0.56
+    },
+    {
+      "name": "Follow-through",
+      "t": 0.7
+    },
+    {
+      "name": "Recover",
+      "t": 0.9
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "joints": {
+        "body.bend": 8,
+        "body.turn": 0,
+        "torso.bend": 18,
+        "torso.turn": 0,
+        "head.nod": -14,
+        "r_leg.raise": 34,
+        "l_leg.raise": 36,
+        "r_leg.straddle": 13,
+        "l_leg.straddle": 13,
+        "r_leg.turn": 8,
+        "l_leg.turn": 8,
+        "r_knee.bend": 50,
+        "l_knee.bend": 50,
+        "r_ankle.bend": 24,
+        "l_ankle.bend": 22,
+        "r_arm.raise": 42,
+        "r_arm.straddle": 18,
+        "r_arm.turn": -70,
+        "r_elbow.bend": 100,
+        "r_wrist.bend": 5,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 38,
+        "l_arm.raise": 30,
+        "l_arm.straddle": 20,
+        "l_arm.turn": -20,
+        "l_elbow.bend": 85
+      },
+      "root": {
+        "x": 0,
+        "z": 0.05,
+        "turn": 0
+      }
+    },
+    {
+      "t": 0.38,
+      "joints": {
+        "torso.bend": 28,
+        "r_leg.raise": 45,
+        "l_leg.raise": 15,
+        "r_knee.bend": 55,
+        "l_knee.bend": 56,
+        "r_ankle.bend": 18,
+        "l_ankle.bend": 49,
+        "r_arm.raise": 110,
+        "r_arm.straddle": 5,
+        "r_arm.turn": -86,
+        "r_elbow.bend": 125,
+        "r_wrist.bend": 75,
+        "r_wrist.turn": -14,
+        "r_wrist.tilt": -8
+      },
+      "root": {
+        "z": 0.3
+      }
+    },
+    {
+      "t": 0.56,
+      "joints": {
+        "r_arm.raise": 56,
+        "r_arm.straddle": 26,
+        "r_arm.turn": -72,
+        "r_elbow.bend": 108,
+        "r_wrist.bend": 10,
+        "r_wrist.turn": 20,
+        "r_wrist.tilt": 20
+      }
+    },
+    {
+      "t": 0.7,
+      "joints": {
+        "r_arm.raise": 62,
+        "r_arm.turn": -58,
+        "r_elbow.bend": 100,
+        "r_wrist.bend": -30,
+        "r_wrist.turn": 35
+      }
+    },
+    {
+      "t": 1,
+      "joints": {
+        "torso.bend": 18,
+        "r_leg.raise": 34,
+        "l_leg.raise": 36,
+        "r_knee.bend": 50,
+        "l_knee.bend": 50,
+        "r_ankle.bend": 24,
+        "l_ankle.bend": 22,
+        "r_arm.raise": 42,
+        "r_arm.straddle": 18,
+        "r_arm.turn": -70,
+        "r_wrist.bend": 5,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 38
+      },
+      "root": {
+        "x": 0,
+        "z": 0.05,
+        "turn": 0
+      }
+    }
+  ],
+  "ball": {
+    "contactT": 0.56,
+    "spin": "topspin",
+    "from": [
+      -0.3,
+      0.95,
+      1.2
+    ],
+    "bounce": [
+      0.25,
+      0.786,
+      -0.4
+    ],
+    "to": [
+      -0.45,
+      0.786,
+      1.0
+    ]
+  },
+  "cues": [
+    {
+      "t": 0,
+      "text": "Ready"
+    },
+    {
+      "t": 0.32,
+      "text": "Elbow high, wrist cocked"
+    },
+    {
+      "t": 0.53,
+      "text": "Flick out at the top"
+    },
+    {
+      "t": 0.68,
+      "text": "Short finish"
+    },
+    {
+      "t": 0.88,
+      "text": "Step back out"
+    }
+  ],
+  "camera": "front"
+}

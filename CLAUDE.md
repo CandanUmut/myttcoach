@@ -18,6 +18,8 @@ Decisions in `PROGRESS.md` override `BUILD_PROMPT.md` where they differ.
 - `npm test` — unit tests (engine, content validation, goal curve, animations)
 - `npm run build` — validate content, typecheck, build to `dist/`
 - `npm run e2e` — Playwright flows + screenshots (uses /opt/pw-browsers chromium)
+- `python3 scripts/anim-gen/gen_anims.py` — regenerate the 21 generated animations (4 are hand-tuned); `scripts/anim-gen/solve.py` solves arm poses from `targets.json`
+- `scripts/anim-shots.sh <id> <dir> <t...>` — review renders; `npx vite-node scripts/probe-anim.ts <file> <t>` — measure a pose
 
 ## Layout
 `content/` JSON content · `src/engine` pure program engine · `src/content` types/loaders/validation ·

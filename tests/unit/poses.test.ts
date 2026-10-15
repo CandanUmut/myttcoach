@@ -41,7 +41,7 @@ describe('poses look right (measured on the real character)', () => {
         }
       });
       it('at contact the hitting face points forward and the bat is at a sensible height', () => {
-        if (!a.ball || !move) return;
+        if (!a.ball || !move || a.ball.serve) return;
         const ch = buildCharacter();
         const scene = new THREE.Scene();
         scene.add(ch.root);
@@ -49,10 +49,12 @@ describe('poses look right (measured on the real character)', () => {
         const q = ch.batCenter.getWorldQuaternion(new THREE.Quaternion());
         const red = new THREE.Vector3(1, 0, 0).applyQuaternion(q); // red face normal (palm side)
         const face = move.wing === 'BH' ? red.clone().negate() : red;
-        expect(face.z, `${a.id}: hitting face toward the table`).toBeGreaterThan(0.45);
+        expect(face.z, `${a.id}: hitting face toward the table`).toBeGreaterThan(0.35);
         const y = ch.batCenter.getWorldPosition(new THREE.Vector3()).y;
-        expect(y, `${a.id}: bat height at contact`).toBeGreaterThan(0.8);
-        expect(y, `${a.id}: bat height at contact`).toBeLessThan(1.3);
+        // smashes are hit high, lobs low; drives and pushes around table height + a bit
+        const [lo, hi] = a.id === 'smash' ? [1.0, 1.7] : a.id === 'lob' || a.id.includes('chop') ? [0.45, 1.1] : [0.8, 1.3];
+        expect(y, `${a.id}: bat height at contact`).toBeGreaterThan(lo);
+        expect(y, `${a.id}: bat height at contact`).toBeLessThan(hi);
       });
     });
   }

@@ -1,0 +1,189 @@
+{
+  "id": "serve-tomahawk",
+  "duration": 2.2,
+  "loop": true,
+  "phases": [
+    {
+      "name": "Ready",
+      "t": 0
+    },
+    {
+      "name": "Toss",
+      "t": 0.3
+    },
+    {
+      "name": "Backswing",
+      "t": 0.45
+    },
+    {
+      "name": "Contact",
+      "t": 0.62
+    },
+    {
+      "name": "Follow-through",
+      "t": 0.78
+    },
+    {
+      "name": "Recover",
+      "t": 0.9
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "joints": {
+        "body.bend": 8,
+        "body.turn": 25,
+        "torso.bend": 16,
+        "torso.turn": 8,
+        "head.nod": -12,
+        "head.turn": -20,
+        "r_leg.raise": 12,
+        "l_leg.raise": 46,
+        "r_leg.straddle": 13,
+        "l_leg.straddle": 11,
+        "r_leg.turn": 12,
+        "l_leg.turn": 5,
+        "r_knee.bend": 42,
+        "l_knee.bend": 40,
+        "r_ankle.bend": 38,
+        "l_ankle.bend": 2,
+        "r_arm.raise": 35,
+        "r_arm.straddle": 12,
+        "r_arm.turn": -40,
+        "r_elbow.bend": 85,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 25,
+        "r_wrist.bend": 0,
+        "l_arm.raise": 55,
+        "l_arm.straddle": 8,
+        "l_arm.turn": 0,
+        "l_elbow.bend": 95,
+        "l_wrist.turn": 60
+      },
+      "root": {
+        "x": 0.25,
+        "z": 0.25,
+        "turn": 0
+      }
+    },
+    {
+      "t": 0.3,
+      "joints": {
+        "l_arm.raise": 95,
+        "l_elbow.bend": 70
+      }
+    },
+    {
+      "t": 0.45,
+      "joints": {
+        "r_knee.bend": 48,
+        "l_knee.bend": 44,
+        "r_ankle.bend": 44,
+        "l_ankle.bend": 6,
+        "r_arm.raise": 18,
+        "r_arm.straddle": 9,
+        "r_arm.turn": 28,
+        "r_elbow.bend": 150,
+        "r_wrist.turn": 40,
+        "r_wrist.tilt": 50,
+        "r_wrist.bend": 4,
+        "l_arm.raise": 70,
+        "l_elbow.bend": 95
+      }
+    },
+    {
+      "t": 0.62,
+      "joints": {
+        "r_arm.raise": -34,
+        "r_arm.straddle": -1,
+        "r_arm.turn": -9,
+        "r_elbow.bend": 106,
+        "r_wrist.turn": -1,
+        "r_wrist.bend": 20,
+        "l_arm.raise": 30,
+        "l_arm.straddle": 30
+      }
+    },
+    {
+      "t": 0.78,
+      "joints": {
+        "r_arm.raise": -15,
+        "r_arm.straddle": -30,
+        "r_arm.turn": -40,
+        "r_elbow.bend": 59,
+        "r_wrist.turn": 9,
+        "r_wrist.tilt": 49,
+        "r_wrist.bend": -12
+      }
+    },
+    {
+      "t": 1,
+      "joints": {
+        "r_knee.bend": 42,
+        "l_knee.bend": 40,
+        "r_ankle.bend": 38,
+        "l_ankle.bend": 2,
+        "r_arm.raise": 35,
+        "r_arm.straddle": 12,
+        "r_elbow.bend": 85,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 25,
+        "r_wrist.bend": 0,
+        "l_arm.raise": 55,
+        "l_arm.straddle": 8
+      },
+      "root": {
+        "x": 0.25,
+        "z": 0.25,
+        "turn": 0
+      }
+    }
+  ],
+  "ball": {
+    "contactT": 0.62,
+    "spin": "sidespin",
+    "serve": true,
+    "from": [
+      0.62,
+      1.02,
+      -1.3
+    ],
+    "bounce": [
+      0.15,
+      0.786,
+      -0.45
+    ],
+    "to": [
+      -0.15,
+      0.786,
+      0.45
+    ]
+  },
+  "cues": [
+    {
+      "t": 0,
+      "text": "Ball on a flat palm"
+    },
+    {
+      "t": 0.25,
+      "text": "Legal toss"
+    },
+    {
+      "t": 0.42,
+      "text": "Bat tip up, elbow high"
+    },
+    {
+      "t": 0.58,
+      "text": "Brush the bat-hand side of the ball"
+    },
+    {
+      "t": 0.75,
+      "text": "Down and forward, like an axe"
+    },
+    {
+      "t": 0.9,
+      "text": "Back to ready"
+    }
+  ]
+}

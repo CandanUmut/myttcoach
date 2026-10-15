@@ -151,3 +151,7 @@
 .slider.is-set span { font-weight: 800; }
 .editor__json { min-height: 200px; font-family: ui-monospace, monospace; font-size: 12px; padding: var(--s3); }
 .sheet .dialog__body { padding: var(--s3); }
+
+.stage--now { border-color: var(--accent); border-width: 2px; }
+.selfcheck { display: grid; gap: var(--s2); padding: var(--s2) 0; border-bottom: 1px solid var(--line); }
+.dialog .viewer__stage { aspect-ratio: 1 / 1; }

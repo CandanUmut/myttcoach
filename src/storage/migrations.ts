@@ -6,6 +6,8 @@ type Migration = (d: Record<string, unknown>) => Record<string, unknown>;
 const migrations: Record<number, Migration> = {
   // 0 -> 1: data written before versioning; fill in the new collections
   0: (d) => ({ ...d, journal: d.journal ?? [], serveLab: d.serveLab ?? [], dismissed: d.dismissed ?? [] }),
+  // 1 -> 2: learning-stage passes recorded outside sessions
+  1: (d) => ({ ...d, stagePasses: d.stagePasses ?? [] }),
 };
 
 export function migrate(raw: Record<string, unknown>): AppData {

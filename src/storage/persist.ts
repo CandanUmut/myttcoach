@@ -3,7 +3,7 @@ import { migrate } from './migrations';
 import { emptyData, SCHEMA_VERSION, type AppData } from './schema';
 
 const LS_KEY = 'thirdball:v1';
-const IDB_KEYS = ['program', 'logs', 'overrides', 'results', 'journal', 'serveLab', 'dismissed'] as const;
+const IDB_KEYS = ['program', 'logs', 'overrides', 'results', 'journal', 'serveLab', 'dismissed', 'stagePasses'] as const;
 type IdbKey = (typeof IDB_KEYS)[number];
 
 let store: ReturnType<typeof createStore> | null = null;

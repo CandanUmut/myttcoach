@@ -1,6 +1,7 @@
 import type { MetricResult, Profile, Program, SessionLog } from '../engine/types';
+import type { StageId } from '../content/types';
 
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 
 export interface Settings {
   theme: 'auto' | 'light' | 'dark';
@@ -41,6 +42,13 @@ export interface AppData {
   journal: JournalEntry[];
   serveLab: ServeLabEntry[];
   dismissed: string[]; // ids of banners the player dismissed
+  stagePasses: StagePass[]; // learning stages passed outside a session (e.g. "I've watched it")
+}
+
+export interface StagePass {
+  moveId: string;
+  stage: StageId;
+  date: string;
 }
 
 export function emptyData(): AppData {
@@ -55,5 +63,6 @@ export function emptyData(): AppData {
     journal: [],
     serveLab: [],
     dismissed: [],
+    stagePasses: [],
   };
 }

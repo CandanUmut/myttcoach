@@ -8,6 +8,7 @@ import { STAGES } from '../../content/types';
 import { pickVariant } from '../components/DrillCard';
 import { Dialog } from '../components/Controls';
 import { MoveViewer } from '../components/MoveViewer';
+import { Troubleshoot } from './MoveScreen';
 import { data, logBySession, logSession, program, setSettings, today } from '../state';
 import { flatItems } from '../sessionInfo';
 import { navigate } from '../router';
@@ -301,6 +302,9 @@ function DrillView({
   const move = it.learn ? byId.move.get(it.learn.moveId) : drill?.moveIds.map((m) => byId.move.get(m)).find((m) => m?.animationId);
   const variant = drill ? drill.variants.find((v) => v.setup === it.setup) ?? pickVariant(drill, [it.setup]) : null;
   const title = drill ? drill.name : common.watchMove(move?.name ?? '');
+  const learnStage = it.learn ? byId.move.get(it.learn.moveId)?.learningPath.find((l) => l.stage === it.learn!.stage) : undefined;
+  const helpMove = it.learn ? byId.move.get(it.learn.moveId) : drill?.moveIds.map((m) => byId.move.get(m)).find((m) => m && m.troubleshooting.length);
+  const [helping, setHelping] = useState(false);
   const counted = !!it.metricId || drill?.success.type === 'consecutive' || drill?.success.type === 'outOf';
 
   useEffect(() => {
@@ -366,6 +370,12 @@ function DrillView({
         </div>
       </dl>
       {it.metricId ? <p class="callout">{T.testNote}</p> : null}
+      {it.learn && learnStage ? (
+        <div class="note">
+          <span class="note__who">{stageNames[it.learn.stage]}</span>
+          <p>{learnStage.task}</p>
+        </div>
+      ) : null}
 
       {variant ? (
         <details class="player__how" open={showText} onToggle={(e) => setShowText((e.target as HTMLDetailsElement).open)}>
@@ -379,10 +389,31 @@ function DrillView({
           ) : null}
         </details>
       ) : null}
-      {move?.animationId ? (
-        <Button kind="quiet" icon="watch" onClick={() => setWatching(true)}>
-          {T.watch}
-        </Button>
+      <div class="row row--wrap">
+        {move?.animationId ? (
+          <Button kind="quiet" icon="watch" onClick={() => setWatching(true)}>
+            {T.watch}
+          </Button>
+        ) : null}
+        {helpMove ? (
+          <Button kind="quiet" icon="netball" onClick={() => setHelping(true)}>
+            {learnText.wrongInSession}
+          </Button>
+        ) : null}
+      </div>
+      {helping && helpMove ? (
+        <Dialog
+          open
+          title={helpMove.name}
+          onClose={() => setHelping(false)}
+          actions={
+            <Button kind="quiet" onClick={() => setHelping(false)}>
+              {common.close}
+            </Button>
+          }
+        >
+          <Troubleshoot move={helpMove} />
+        </Dialog>
       ) : null}
       {watching && move?.animationId ? (
         <Dialog

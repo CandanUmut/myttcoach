@@ -35,7 +35,15 @@ export function Learn() {
                     </span>
                   </div>
                   {mode === 'learn' || prog.learnOrder.includes(id) ? (
-                    <BounceStepper steps={STAGES.map((s) => stageShort[s]!)} current={Math.min(6, st)} doneCount={Math.min(7, st)} />
+                    <>
+                      <BounceStepper steps={STAGES.map((s) => stageShort[s]!)} current={Math.min(6, st)} doneCount={Math.min(7, st)} />
+                      {!owned ? (
+                        <p class="muted">
+                          <strong>{T.nextStep}: </strong>
+                          {mv.learningPath[Math.min(6, st)]!.task}
+                        </p>
+                      ) : null}
+                    </>
                   ) : (
                     <p class="muted">{mv.summary}</p>
                   )}

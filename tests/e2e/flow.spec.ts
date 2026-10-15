@@ -56,3 +56,26 @@ test('new player: onboarding to plan, then log a drill', async ({ page }) => {
   await page.getByRole('link', { name: 'Plan', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Your plan' })).toBeVisible();
 });
+
+test('learning path: pass a stage from the move page', async ({ page }) => {
+  await page.goto('./');
+  await page.evaluate(() => {
+    localStorage.setItem('thirdball:v1', JSON.stringify({ schemaVersion: 2, profile: {
+      name: 'Kim', hand: 'R', grip: 'shakehand', level: 2, style: 'balanced', goals: ['consistency'], moves: [{ id: 'bh-push', mode: 'learn' }],
+      workoutTypes: [], setups: ['partner'], schedule: { days: [0,1,2,3,4,5,6], time: null, length: 30, weeks: 4, startDate: '2026-01-05' },
+      lowImpact: false, voice: 'calm', regenCount: 0 }, settings: { theme: 'light', sound: false, readCues: false } }));
+  });
+  await page.reload();
+  await page.goto('./#/learn/bh-push');
+  await expect(page.getByRole('heading', { name: 'See it' })).toBeVisible();
+  await page.getByRole('button', { name: "I've watched it" }).click();
+  await expect(page.getByRole('heading', { name: 'Shadow it' })).toBeVisible();
+  const pass = page.getByRole('button', { name: 'I passed this stage' });
+  await expect(pass).toBeDisabled();
+  for (const g of await page.locator('.selfcheck').all()) await g.getByRole('radio', { name: 'Yes' }).click();
+  await expect(pass).toBeEnabled();
+  await pass.click();
+  await expect(page.getByRole('heading', { name: 'Feel it' })).toBeVisible();
+  await page.goto('./#/learn');
+  await expect(page.getByText('Feel it').first()).toBeVisible();
+});

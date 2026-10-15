@@ -8,7 +8,13 @@ import type { Change, Felt, Profile, Program, SessionLog } from './types';
  * Turn logs into engine state: drill swaps (with plain reasons) and
  * the real learning stage of each move. Pure and deterministic.
  */
-export function deriveState(logs: SessionLog[], profile: Profile, content: Content, program: Program): EngineState {
+export function deriveState(
+  logs: SessionLog[],
+  profile: Profile,
+  content: Content,
+  program: Program,
+  passes: { moveId: string; stage: string }[] = [],
+): EngineState {
   const drills = new Map(content.drills.map((d) => [d.id, d]));
   const hist = new Map<string, { felt?: Felt; hit?: boolean }[]>();
   const changes: Change[] = [];
@@ -57,6 +63,11 @@ export function deriveState(logs: SessionLog[], profile: Profile, content: Conte
       }
     }
   }
+  // stages passed outside a session (the move page's "What's next" button)
+  for (const p of passes) {
+    const si = STAGES.indexOf(p.stage as never);
+    if (si >= 0) stageOf[p.moveId] = Math.max(stageOf[p.moveId] ?? 0, si + 1);
+  }
   const learnedSkills = Object.entries(stageOf)
     .filter(([, s]) => s >= 7)
     .map(([m]) => content.moves.find((x) => x.id === m)?.skillId)
@@ -69,10 +80,16 @@ export function deriveState(logs: SessionLog[], profile: Profile, content: Conte
  * never change; only later sessions do. Returns the new program and the
  * changes that are new since the old program.
  */
-export function adaptProgram(program: Program, logs: SessionLog[], profile: Profile, content: Content): { program: Program; newChanges: Change[] } {
-  if (!logs.length) return { program, newChanges: [] };
-  const k = Math.max(...logs.map((l) => l.sessionIndex)) + 1;
-  const state = deriveState(logs, profile, content, program);
+export function adaptProgram(
+  program: Program,
+  logs: SessionLog[],
+  profile: Profile,
+  content: Content,
+  passes: { moveId: string; stage: string }[] = [],
+): { program: Program; newChanges: Change[] } {
+  if (!logs.length && !passes.length) return { program, newChanges: [] };
+  const k = logs.length ? Math.max(...logs.map((l) => l.sessionIndex)) + 1 : 0;
+  const state = deriveState(logs, profile, content, program, passes);
   const next = generateProgram(profile, content, { past: program.sessions.slice(0, k), state });
   const key = (c: Change) => `${c.atSession}:${c.fromDrillId}>${c.toDrillId}`;
   const old = new Set(program.changes.map(key));

@@ -5,7 +5,11 @@ import { STAGES } from '../../content/types';
 import { Icon } from '../../design/icons';
 import { BounceStepper, Button } from '../../design/components';
 import { Backdrop } from '../../design/backgrounds';
-import { common, keyPointNames, moveText as T, stageNames, stageShort } from '../../strings/en';
+import { common, keyPointNames, learnText as L, moveText as T, stageNames, stageShort } from '../../strings/en';
+import { passStage, profile, program, updateProfile } from '../state';
+import { drillFits } from '../../engine/generate';
+import { celebrate } from '../../design/motion';
+import { Segmented } from '../components/Controls';
 import { back } from '../router';
 import { MoveViewer } from '../components/MoveViewer';
 
@@ -37,50 +41,7 @@ export function MoveScreen({ moveId, stageIndex = 0 }: { moveId: string; stageIn
           </ol>
         </section>
 
-        <section class="stack">
-          <h2 class="section-title">{T.path}</h2>
-          <BounceStepper steps={STAGES.map((s) => stageShort[s]!)} current={stage} doneCount={stageIndex} onPick={setStage} />
-          <div class="panel stage">
-            <h3>{stageNames[st.stage]}</h3>
-            <p>{st.task}</p>
-            <p class="stage__pass">
-              <Icon name="check" size={20} />
-              <span>
-                <strong>{T.passCheck}: </strong>
-                {st.passCheck}
-              </span>
-            </p>
-            {st.selfChecks ? (
-              <div class="stack stack--s">
-                <span class="drill__label">{T.selfChecks}</span>
-                <ul class="checks">
-                  {st.selfChecks.map((c) => (
-                    <li>{c}</li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-            {st.drillIds.length ? (
-              <div class="rows">
-                {st.drillIds.map((id) => {
-                  const d = byId.drill.get(id)!;
-                  return (
-                    <a class="rowlink" href={`#/library/drill/${d.id}`}>
-                      <span class="rowlink__icon">
-                        <Icon name="session" />
-                      </span>
-                      <span class="rowlink__main">
-                        <span class="rowlink__title">{d.name}</span>
-                        <span class="rowlink__sub">{d.success.description}</span>
-                      </span>
-                      <Icon name="forward" size={20} />
-                    </a>
-                  );
-                })}
-              </div>
-            ) : null}
-          </div>
-        </section>
+        <LearningPath move={move} current={stageIndex} viewing={stage} setViewing={setStage} />
 
         <section class="stack stack--s">
           <h2 class="section-title">{T.when}</h2>
@@ -112,6 +73,107 @@ export function MoveScreen({ moveId, stageIndex = 0 }: { moveId: string; stageIn
         ) : null}
       </div>
     </div>
+  );
+}
+
+function LearningPath({ move, current, viewing, setViewing }: { move: Move; current: number; viewing: number; setViewing: (n: number) => void }) {
+  const p = profile.value;
+  const owned = current >= 7;
+  const st = move.learningPath[viewing]!;
+  const [checks, setChecks] = useState<(boolean | null)[]>([null, null, null]);
+  const inPlan = !!p && (program.value?.learnOrder.includes(move.id) || p.moves.some((m) => m.id === move.id));
+  const usable = st.drillIds.map((id) => byId.drill.get(id)!).filter((d) => !p || drillFits(d, p, 1));
+  const pass = () => {
+    passStage(move.id, st.stage);
+    const next = STAGES[viewing + 1];
+    celebrate(next ? L.passedToast(stageNames[next]!.toLowerCase()) : L.ownedToast(move.name));
+    setChecks([null, null, null]);
+    if (viewing < 6) setViewing(viewing + 1);
+  };
+  const allYes = checks.every((c) => c === true);
+  return (
+    <section class="stack">
+      <h2 class="section-title">{T.path}</h2>
+      <BounceStepper steps={STAGES.map((s) => stageShort[s]!)} current={Math.min(6, viewing)} doneCount={Math.min(7, current)} onPick={setViewing} />
+      <div class={`panel stage${viewing === current ? ' stage--now' : ''}`}>
+        <div class="row row--between">
+          <h3>{stageNames[st.stage]}</h3>
+          {viewing < current ? <span class="tag tag--good">{L.doneStage}</span> : null}
+        </div>
+        <p>{st.task}</p>
+        <p class="stage__pass">
+          <Icon name="check" size={20} />
+          <span>
+            <strong>{T.passCheck}: </strong>
+            {st.passCheck}
+          </span>
+        </p>
+        {st.selfChecks ? (
+          <div class="stack stack--s">
+            <span class="drill__label">{T.selfChecks}</span>
+            {st.selfChecks.map((c, i) => (
+              <div class="selfcheck">
+                <span>{c}</span>
+                <Segmented
+                  label={c}
+                  value={checks[i] === true ? 'y' : checks[i] === false ? 'n' : null}
+                  onChange={(v) => setChecks(checks.map((x, k) => (k === i ? v === 'y' : x)))}
+                  options={[{ value: 'y', label: L.yes }, { value: 'n', label: L.notYet }]}
+                />
+              </div>
+            ))}
+          </div>
+        ) : null}
+        {usable.length ? (
+          <div class="rows">
+            {usable.map((d) => (
+              <a class="rowlink" href={`#/library/drill/${d.id}`}>
+                <span class="rowlink__icon">
+                  <Icon name="session" />
+                </span>
+                <span class="rowlink__main">
+                  <span class="rowlink__sub">{L.practice}</span>
+                  <span class="rowlink__title">{d.name}</span>
+                </span>
+                <Icon name="forward" size={20} />
+              </a>
+            ))}
+          </div>
+        ) : null}
+        {p && inPlan && !owned ? (
+          viewing === current ? (
+            <div class="stack stack--s">
+              {st.selfChecks && !allYes ? <p class="muted small">{L.answerAll}</p> : null}
+              <Button big wide icon="check" disabled={!!st.selfChecks && !allYes} onClick={pass}>
+                {st.stage === 'see' ? L.watched : L.markPassed}
+              </Button>
+            </div>
+          ) : viewing > current ? (
+            <div class="stack stack--s">
+              <p class="muted small">{L.comesAfter(stageNames[STAGES[current]!]!)}</p>
+              <Button kind="quiet" onClick={pass}>
+                {L.alreadyCan}
+              </Button>
+            </div>
+          ) : null
+        ) : null}
+        {p && !inPlan ? (
+          <div class="stack stack--s">
+            <p class="muted small">{L.notInPlan}</p>
+            <Button
+              kind="quiet"
+              icon="plus"
+              onClick={() => {
+                updateProfile({ ...p, moves: [...p.moves, { id: move.id, mode: 'learn' }] }, true);
+                celebrate(L.addedToPlan(move.name));
+              }}
+            >
+              {L.addToPlan}
+            </Button>
+          </div>
+        ) : null}
+      </div>
+    </section>
   );
 }
 

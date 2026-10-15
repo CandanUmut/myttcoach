@@ -4,6 +4,7 @@ import { generateProgram } from '../engine/generate';
 import { adaptProgram, deriveState } from '../engine/adapt';
 import { sessionDates } from '../engine/schedule';
 import type { Change, MetricResult, Profile, Session, SessionLog } from '../engine/types';
+import type { StageId } from '../content/types';
 import { clearAll, loadAll, saveIdb, saveLocal } from '../storage/persist';
 import { emptyData, type AppData, type JournalEntry, type ServeLabEntry, type Settings } from '../storage/schema';
 
@@ -41,7 +42,7 @@ export const logBySession = computed(() => new Map(data.value.logs.map((l) => [l
 export const engineState = computed(() => {
   const d = data.value;
   if (!d.program || !d.profile) return { stageOf: {}, changes: [], learnedSkills: [] };
-  return deriveState(d.logs, d.profile, content, d.program);
+  return deriveState(d.logs, d.profile, content, d.program, d.stagePasses);
 });
 
 /** Next session not done yet, in plan order. */
@@ -78,7 +79,7 @@ function update(patch: Partial<AppData>) {
   const next = { ...data.value, ...patch };
   data.value = next;
   if ('profile' in patch || 'settings' in patch) saveLocal(next);
-  for (const k of ['program', 'logs', 'overrides', 'results', 'journal', 'serveLab', 'dismissed'] as const) {
+  for (const k of ['program', 'logs', 'overrides', 'results', 'journal', 'serveLab', 'dismissed', 'stagePasses'] as const) {
     if (k in patch) void saveIdb(k, next[k] as never);
   }
 }
@@ -99,7 +100,7 @@ export function clearPlayerDrafts() {
 export function createPlan(p: Profile) {
   const prog = generateProgram(p, content);
   clearPlayerDrafts();
-  update({ profile: p, program: prog, logs: [], overrides: {}, results: [] });
+  update({ profile: p, program: prog, logs: [], overrides: {}, results: [], stagePasses: [] });
 }
 
 /** Profile edit: past sessions and logs stay; future sessions are rebuilt. */
@@ -110,7 +111,7 @@ export function updateProfile(p: Profile, regenerate: boolean) {
     return;
   }
   const k = d.logs.length ? Math.max(...d.logs.map((l) => l.sessionIndex)) + 1 : 0;
-  const state = d.profile ? deriveState(d.logs, p, content, d.program) : undefined;
+  const state = d.profile ? deriveState(d.logs, p, content, d.program, d.stagePasses) : undefined;
   const prog = generateProgram(p, content, { past: d.program.sessions.slice(0, k), state });
   clearPlayerDrafts();
   const overrides = Object.fromEntries(Object.entries(d.overrides).filter(([id]) => Number(id.slice(1)) < k));
@@ -135,9 +136,18 @@ export function logSession(log: SessionLog): Change[] {
       if (metric) results.push({ metricId: metric.id, date: log.date, value: it.count, source: 'log', sessionId: log.sessionId });
     }
   }
-  const { program: prog, newChanges } = adaptProgram(d.program, logs, d.profile, content);
+  const { program: prog, newChanges } = adaptProgram(d.program, logs, d.profile, content, d.stagePasses);
   update({ logs, results, program: prog });
   return newChanges;
+}
+
+/** Mark a learning stage as passed outside a session; future sessions move to the next stage. */
+export function passStage(moveId: string, stage: StageId) {
+  const d = data.value;
+  if (!d.program || !d.profile) return;
+  const stagePasses = [...d.stagePasses, { moveId, stage, date: today.value }];
+  const { program: prog } = adaptProgram(d.program, d.logs, d.profile, content, stagePasses);
+  update({ stagePasses, program: prog });
 }
 
 export function moveSession(id: string, date: string) {

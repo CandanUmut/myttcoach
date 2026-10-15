@@ -106,6 +106,26 @@ describe('adaptation', () => {
   });
 });
 
+describe('stage passes outside a session', () => {
+  it('a manual pass moves the plan on, and future sessions use the next stage', () => {
+    const learner: Profile = { ...p, moves: [{ id: 'bh-push', mode: 'learn' }] };
+    const pr = generateProgram(learner, content);
+    const passes = [{ moveId: 'bh-push', stage: 'see' }, { moveId: 'bh-push', stage: 'shadow' }];
+    const st = deriveState([], learner, content, pr, passes);
+    expect(st.stageOf['bh-push']).toBe(2);
+    const next = adaptProgram(pr, [], learner, content, passes).program;
+    const first = next.sessions[0]!.blocks.flatMap((b) => b.items).find((it) => it.learn);
+    expect(first?.learn?.stage).toBe('feel');
+  });
+  it('passing every stage owns the move', () => {
+    const learner: Profile = { ...p, moves: [{ id: 'bh-push', mode: 'learn' }] };
+    const pr = generateProgram(learner, content);
+    const passes = ['see', 'shadow', 'feel', 'groove', 'mix', 'use', 'own'].map((stage) => ({ moveId: 'bh-push', stage }));
+    const st = deriveState([], learner, content, pr, passes);
+    expect(st.learnedSkills).toContain('bh-push');
+  });
+});
+
 describe('schedule', () => {
   const prog = generateProgram(intermediatePartner, content); // Tue, Thu, Sat from 2026-10-20
   it('follows the training days when nothing is missed', () => {

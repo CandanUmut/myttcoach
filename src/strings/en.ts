@@ -101,6 +101,7 @@ export const moveText = {
 };
 
 export const drillText = {
+  diagramLabel: 'Table diagram showing where the ball goes',
   target: 'Target',
   coachingPoints: 'Coaching points',
   feeder: 'For the feeder',

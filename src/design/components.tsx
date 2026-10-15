@@ -4,6 +4,7 @@
 */
 import type { ComponentChildren, JSX } from 'preact';
 import { Icon, type IconName } from './icons';
+import { drillText } from '../strings/en';
 
 /* ---------- Buttons ---------- */
 
@@ -246,7 +247,7 @@ export function TableDiagram({
   };
   const pts = [...placements].sort((a, b) => a.order - b.order);
   return (
-    <svg class="table-diagram" viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Table diagram showing where the ball goes">
+    <svg class="table-diagram" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={drillText.diagramLabel}>
       <rect x={x0} y={y0} width={tw} height={th} rx="3" class="table-diagram__surface" />
       <path d={`M${x0 + tw / 2} ${y0} V${y0 + th}`} class="table-diagram__centre" />
       <path d={`M${x0 - 6} ${y0 + th / 2} H${x0 + tw + 6}`} class="table-diagram__net" />

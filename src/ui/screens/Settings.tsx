@@ -1,5 +1,6 @@
 import { useRef, useState } from 'preact/hooks';
 import { content } from '../../content/load';
+import { Icon } from '../../design/icons';
 import { Button, PlyDivider } from '../../design/components';
 import { Backdrop } from '../../design/backgrounds';
 import { common, settingsText as T } from '../../strings/en';
@@ -136,6 +137,13 @@ export function Settings() {
           <h2 class="section-title">{T.about}</h2>
           <p class="muted">{T.aboutBody}</p>
           <p class="muted small">{T.version(content.version)}</p>
+          <a class="rowlink" href="https://candanumut.github.io/showcase/" rel="noopener">
+            <span class="rowlink__main">
+              <span class="rowlink__title">{T.moreApps}</span>
+              <span class="rowlink__sub">{T.moreAppsSub}</span>
+            </span>
+            <Icon name="forward" size={20} />
+          </a>
           <a class="muted small" href="#/styleboard">
             {T.styleboard}
           </a>

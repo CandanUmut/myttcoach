@@ -574,6 +574,8 @@ export const progressText = {
 };
 
 export const settingsText = {
+  moreApps: 'More free apps by the same developer',
+  moreAppsSub: 'Focus tools, games and more. All free, no account.',
   title: 'Settings',
   profile: 'Profile',
   editProfile: 'Edit profile and plan',

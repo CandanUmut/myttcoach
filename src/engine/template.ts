@@ -91,7 +91,14 @@ export function allocate(
   const giveAway = (p: Phase) => {
     const v = m.get(p) ?? 0;
     m.delete(p);
-    const to = fallback.find((f) => f !== p && available.has(f) && m.has(f)) ?? fallback.find((f) => f !== p && available.has(f));
+    // spread freed time over the main blocks that remain, in proportion to their size
+    const main = [...m.entries()].filter(([q]) => available.has(q) && !PROTECTED.includes(q) && q !== 'mental');
+    const sum = main.reduce((a, [, x]) => a + x, 0);
+    if (main.length && sum > 0) {
+      for (const [q, x] of main) m.set(q, x + (v * x) / sum);
+      return;
+    }
+    const to = fallback.find((f) => f !== p && available.has(f));
     if (to) m.set(to, (m.get(to) ?? 0) + v);
   };
   for (const p of [...m.keys()]) if (!available.has(p)) giveAway(p);

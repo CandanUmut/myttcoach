@@ -27,6 +27,8 @@ export function sessionDates(
   // the first open slot must also be after the last done session
   const lastDone = [...done.values()].sort().pop();
   if (lastDone && lastDone >= cursor) cursor = addDays(lastDone, 1);
+  // dates the player picked by hand are taken, so nothing else lands on them
+  const taken = new Set(Object.entries(overrides).filter(([id, o]) => o >= today && !done.has(id)).map(([, o]) => o));
   for (const s of program.sessions) {
     const d = done.get(s.id);
     if (d) {
@@ -38,7 +40,8 @@ export function sessionDates(
       out[s.id] = o;
       continue;
     }
-    const date = nextDay(cursor);
+    let date = nextDay(cursor);
+    while (taken.has(date)) date = nextDay(addDays(date, 1));
     out[s.id] = date;
     cursor = addDays(date, 1);
   }

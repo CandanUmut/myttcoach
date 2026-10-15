@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { content } from '../../src/content/load';
-import { generateProgram, playerSetups } from '../../src/engine/generate';
+import { drillFits, generateProgram, playerSetups } from '../../src/engine/generate';
 import { mulberry32 } from '../../src/engine/prng';
 import type { Profile } from '../../src/engine/types';
 import type { GoalId, Level, Setup, StyleId, WorkoutType } from '../../src/content/types';
@@ -148,8 +148,8 @@ describe('constraints over 500 seeded profiles', () => {
             if (!it.drillId || !prev.has(it.drillId) || it.focus) continue;
             // allowed only when no other drill could fill this block
             const alternatives = content.drills.filter(
-              (d) => d.phase === b.phase && d.id !== it.drillId && p.level >= d.levelMin && p.level <= d.levelMax &&
-                d.variants.some((v) => playerSetups(p).includes(v.setup)) && (!p.lowImpact || d.impact === 'low') &&
+              (d) => d.phase === b.phase && d.id !== it.drillId && drillFits(d, p) &&
+                (playerSetups(p).some((x) => x !== 'shadow') || d.variants.some((v) => v.setup === 'shadow')) &&
                 !ss[k - 1]!.blocks.some((bb) => bb.items.some((x) => x.drillId === d.id)) &&
                 !ss[k]!.blocks.some((bb) => bb.items.some((x) => x.drillId === d.id)),
             );
@@ -169,6 +169,42 @@ describe('constraints over 500 seeded profiles', () => {
             expect(si).toBeGreaterThanOrEqual((last.get(it.learn.moveId) ?? 0) - 1);
             last.set(it.learn.moveId, Math.max(si, last.get(it.learn.moveId) ?? 0));
           }
+    });
+  });
+});
+
+describe('more properties over the same 500 profiles', () => {
+  it('no drill appears twice in one session', () => {
+    programs.forEach((prog, i) => {
+      for (const s of prog.sessions) {
+        const ids = s.blocks.flatMap((b) => b.items.map((it) => it.drillId)).filter(Boolean);
+        expect(new Set(ids).size, `profile ${i} ${s.id}`).toBe(ids.length);
+      }
+    });
+  });
+  it('drill minutes stay within each drill\'s range (almost always)', () => {
+    let out = 0;
+    let total = 0;
+    programs.forEach((prog) => {
+      for (const s of prog.sessions)
+        for (const b of s.blocks)
+          for (const it of b.items) {
+            if (!it.drillId) continue;
+            const d = drills.get(it.drillId)!;
+            total++;
+            if (it.minutes < d.duration.min - 1 || it.minutes > d.duration.max + 2) out++;
+          }
+    });
+    console.log(`drill minutes outside min-1..max+2: ${out} of ${total}`);
+    expect(out / total).toBeLessThan(0.03);
+  });
+  it('every chosen learn move gets a learning slot when the plan is long enough', () => {
+    profiles.forEach((p, i) => {
+      const prog = programs[i]!;
+      const learn = prog.learnOrder;
+      if (prog.sessions.length < learn.length * 12) return;
+      const seen = new Set(prog.sessions.flatMap((s) => s.blocks.flatMap((b) => b.items.map((it) => it.learn?.moveId))).filter(Boolean));
+      for (const m of p.moves.filter((x) => x.mode === 'learn')) expect(seen.has(m.id), `profile ${i}: ${m.id}`).toBe(true);
     });
   });
 });

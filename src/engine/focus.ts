@@ -94,6 +94,14 @@ export function learnOrder(profile: Profile, content: Content, focus: FocusEntry
     const mv = moveOfSkill(f.skillId);
     if (mv && !wanted.includes(mv.id) && !profile.moves.some((m) => m.id === mv.id)) wanted.push(mv.id);
   }
+  // Beginner stroke order first (FH drive → BH drive → BH push → FH push), then by level and id
+  const BASE = ['ready-stance', 'fh-drive', 'bh-drive', 'bh-push', 'fh-push'];
+  const rank = (id: string) => {
+    const i = BASE.indexOf(id);
+    const mv = content.moves.find((m) => m.id === id);
+    return i >= 0 ? i : 100 + (mv?.levelMin ?? 5) * 10;
+  };
+  wanted.sort((a, b) => rank(a) - rank(b) || a.localeCompare(b));
   const order: string[] = [];
   const visiting = new Set<string>();
   const visit = (mid: string) => {

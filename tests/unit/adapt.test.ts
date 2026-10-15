@@ -69,6 +69,21 @@ describe('adaptation', () => {
     expect(st.changes[0]!.reason).toBe('Swapped Forehand drive, cross-court for Easy feed, first contact: the target was missed 3 times in a row, so we step back first.');
   });
 
+  it('progression, then regression, then progression again resolves to the latest swap', () => {
+    const A = 'fh-drive-crosscourt';
+    const B = 'fh-drive-targets';
+    const changes = [
+      { atSession: 2, fromDrillId: A, toDrillId: B, reason: 'up' },
+      { atSession: 4, fromDrillId: B, toDrillId: A, reason: 'down' },
+      { atSession: 6, fromDrillId: A, toDrillId: B, reason: 'up again' },
+    ];
+    const pr = generateProgram(p, content, { state: { stageOf: {}, changes, learnedSkills: [] } });
+    const uses = (k: number, id: string) => pr.sessions[k]!.blocks.some((b) => b.items.some((it) => it.drillId === id && !it.learn && !it.metricId));
+    for (let k = 2; k < 4; k++) expect(uses(k, A), `s${k}`).toBe(false);
+    for (let k = 4; k < 6; k++) expect(uses(k, B), `s${k}`).toBe(false);
+    for (let k = 6; k < pr.sessions.length; k++) expect(uses(k, A), `s${k}`).toBe(false);
+  });
+
   it('one easy session is not enough to change anything', () => {
     const st = deriveState([logFor(prog, drillId, 0, 'easy', true)], p, content, prog);
     expect(st.changes).toHaveLength(0);

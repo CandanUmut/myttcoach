@@ -56,7 +56,7 @@ export function drillFits(d: Drill, profile: Profile, relaxLevel = 0): boolean {
   const L = profile.level;
   if (L < d.levelMin - relaxLevel || L > d.levelMax + relaxLevel) return false;
   if (profile.lowImpact && d.impact === 'high') return false;
-  if (profile.ageBand === '65+' && d.intensity >= 5) return false;
+  if (profile.ageBand === '65+' && (d.impact === 'high' || d.intensity >= 5)) return false;
   const setups = playerSetups(profile);
   return d.variants.some((v) => setups.includes(v.setup));
 }
@@ -103,26 +103,41 @@ export function generateProgram(profile: Profile, content: Content, opts: Genera
   }
 
   const themes = weekThemes(profile);
+  const days = [...new Set(profile.schedule.days)];
+  const perWeek = Math.max(1, days.length);
+  const total = profile.schedule.weeks * perWeek;
+
+  // Assessment: last session of every Apply week. When a tournament taper takes
+  // the last week, its test moves to the end of the week before.
   const testWeeks = new Set<number>();
   {
     const raw = weekThemes({ ...profile, goals: profile.goals.filter((g) => g !== 'tournament') });
     raw.forEach((w, i) => {
       if (w.theme === 'apply') testWeeks.add(i);
     });
+    const last = themes.length - 1;
+    if (themes[last]?.theme === 'taper' && testWeeks.has(last)) {
+      testWeeks.delete(last);
+      if (last > 0) testWeeks.add(last - 1);
+    }
   }
-  const days = [...new Set(profile.schedule.days)];
-  const perWeek = Math.max(1, days.length);
-  const total = profile.schedule.weeks * perWeek;
 
-  // Swap map from adaptation (later swaps override earlier ones)
+  // Swaps from adaptation, applied in time order: a later change can undo an earlier one
   const swapAt = (id: string, idx: number): string => {
+    const map = new Map<string, string>();
+    for (const c of state.changes) {
+      if (c.atSession > idx) continue;
+      map.set(c.fromDrillId, c.toDrillId);
+      map.delete(c.toDrillId);
+    }
     let cur = id;
-    for (let hop = 0; hop < 4; hop++) {
-      const c = [...state.changes].reverse().find((x) => x.fromDrillId === cur && x.atSession <= idx);
-      if (!c) break;
-      const to = drills.get(c.toDrillId);
-      if (!to || !drillFits(to, profile, 1)) break;
-      cur = c.toDrillId;
+    const seen = new Set([id]);
+    while (map.has(cur)) {
+      const nx = map.get(cur)!;
+      const to = drills.get(nx);
+      if (seen.has(nx) || !to || !drillFits(to, profile, 1)) break;
+      seen.add(nx);
+      cur = nx;
     }
     return cur;
   };
@@ -137,19 +152,17 @@ export function generateProgram(profile: Profile, content: Content, opts: Genera
   let rotation = 0;
   const skillOfMove = (mid: string) => moves.get(mid)?.skillId;
   const activeMoves = (): string[] => {
+    // Without a table every move stops at the shadow stage, so all of them take turns
+    if (noTable) return order.filter((m) => (stage[m] ?? 0) < 7);
     const act: string[] = [];
     for (const mid of order) {
       if ((stage[mid] ?? 0) >= 7) continue;
-      if (noTable) {
-        act.push(mid); // without a table every move stays at the shadow stage
-      } else {
-        const pre = skills.get(skillOfMove(mid) ?? '')?.prerequisites ?? [];
-        const blocked = pre.some((p) => {
-          const pm = order.find((x) => skillOfMove(x) === p);
-          return pm && (stage[pm] ?? 0) < 3;
-        });
-        if (!blocked) act.push(mid);
-      }
+      const pre = skills.get(skillOfMove(mid) ?? '')?.prerequisites ?? [];
+      const blocked = pre.some((p) => {
+        const pm = order.find((x) => skillOfMove(x) === p);
+        return pm && (stage[pm] ?? 0) < 3;
+      });
+      if (!blocked) act.push(mid);
       if (act.length >= 2) break;
     }
     return act;
@@ -159,13 +172,17 @@ export function generateProgram(profile: Profile, content: Content, opts: Genera
   const history: string[][] = [];
   const tipHistory: (string | null)[] = [];
   const useCount = new Map<string, number>();
+  const lastUsed = new Map<string, number>();
   const past = opts.past ?? [];
   for (const s of past) {
     sessions.push(s);
     const ids = s.blocks.flatMap((b) => b.items.map((i) => i.drillId).filter((x): x is string => !!x));
     history.push(ids);
     tipHistory.push(s.tipId);
-    for (const id of ids) useCount.set(id, (useCount.get(id) ?? 0) + 1);
+    for (const id of ids) {
+      useCount.set(id, (useCount.get(id) ?? 0) + 1);
+      lastUsed.set(id, s.index);
+    }
   }
 
   for (let idx = past.length; idx < total; idx++) {
@@ -191,28 +208,32 @@ export function generateProgram(profile: Profile, content: Content, opts: Genera
         wsum += sk.weight;
       }
       s /= Math.max(1, wsum);
+      const focus = isFocusDrill(d);
       if (d.moveIds.some((m) => chosenMoves.has(m))) s += 1.5;
       if (!useCount.has(d.id)) s += 0.4;
-      if (prev.has(d.id)) s -= isFocusDrill(d) ? 1.2 : 2;
-      else if (recent2.has(d.id)) s -= isFocusDrill(d) ? 0.4 : 1.2;
-      else if (recent4.has(d.id)) s -= isFocusDrill(d) ? 0 : 0.5;
+      if (prev.has(d.id)) s -= focus ? 1.2 : 2;
+      else if (recent2.has(d.id)) s -= focus ? 0.4 : 1.2;
+      else if (recent4.has(d.id)) s -= focus ? 0 : 0.5;
+      // focus drills come back every 2–3 sessions
+      const lu = lastUsed.get(d.id);
+      if (focus && lu !== undefined && idx - lu >= 3) s += 0.8;
       // Players with a table should use it: shadow-only drills are a last resort at the table
       if (!noTable && TABLE_PHASES.includes(d.phase) && !d.variants.some((v) => v.setup !== 'shadow' && setups.includes(v.setup))) s -= 2;
       s += regularityBonus(theme, d.regularity);
-      if (theme === 'taper' && d.intensity >= 4) s -= 1;
+      if (profile.ageBand === '65+' && d.intensity >= 4) s -= 0.8;
       return s;
     };
 
-    const candidates = (phase: Phase, strictOnly = false): Drill[] => {
+    const candidates = (phase: Phase): Drill[] => {
       const regs = allowedRegularity(theme);
       const base = content.drills.filter((d) => d.phase === phase && !used.has(d.id) && (!noTable || d.variants.some((v) => v.setup === 'shadow')));
+      const calm = (d: Drill) => theme !== 'taper' || d.intensity < 4;
+      // Regular picks never leave the player's level. If nothing fits, the block's time goes elsewhere.
       const tries: ((d: Drill) => boolean)[] = [
-        (d) => drillFits(d, profile) && regs.includes(d.regularity) && (!prev.has(d.id) || isFocusDrill(d)),
+        (d) => drillFits(d, profile) && calm(d) && regs.includes(d.regularity) && (!prev.has(d.id) || isFocusDrill(d)),
         (d) => drillFits(d, profile) && (!prev.has(d.id) || isFocusDrill(d)),
         (d) => drillFits(d, profile), // repeat at the right level rather than leave the level
       ];
-      // Regular picks never leave the player's level. If nothing fits, the block's time goes elsewhere.
-      void strictOnly;
       for (const t of tries) {
         const c = base.filter(t);
         if (c.length) return c;
@@ -255,131 +276,161 @@ export function generateProgram(profile: Profile, content: Content, opts: Genera
       return T.reasonKeep(skills.get(top.id)!.name);
     };
 
-    const pick = (phase: Phase, strictOnly = false): Drill | undefined => {
+    const pick = (phase: Phase, left: number): Drill | undefined => {
       // Adaptation swaps replace a drill everywhere in the future, before scoring
       const seen = new Set<string>();
       const c: Drill[] = [];
-      for (const d of candidates(phase, strictOnly)) {
+      for (const d of candidates(phase)) {
         const sw = drills.get(swapAt(d.id, idx))!;
         if (used.has(sw.id) || seen.has(sw.id)) continue;
         seen.add(sw.id);
         c.push(sw);
       }
-      return pickBest(c, score, rng);
+      // prefer drills whose minimum fits the time left
+      const fits = c.filter((d) => d.duration.min <= left);
+      return pickBest(fits.length ? fits : c, score, rng);
     };
 
-    const fill = (phase: Phase, minutes: number, items: DrillItem[]) => {
+    /** Fill a block with drills, each within its own min..max. Returns minutes that found no drill. */
+    const fill = (phase: Phase, minutes: number, items: DrillItem[]): number => {
       let left = minutes;
-      let guard = 0;
-      while (left > 0 && guard < 3) {
-        guard++;
-        // a second drill in the same block must be at the player's level; otherwise the first one runs longer
-        const d = pick(phase, items.length > 0);
+      for (let guard = 0; left > 0 && guard < 5; guard++) {
+        const d = pick(phase, left);
         if (!d) break;
-        const remainingAfter = left - d.duration.min;
-        let m: number;
-        if (left > d.duration.max && remainingAfter >= 3 && guard < 3) {
-          m = Math.min(d.duration.max, Math.max(d.duration.min, Math.round(left * 0.55)));
-        } else m = left;
+        let m = Math.min(d.duration.max, left);
+        const rest = left - m;
+        // don't leave a stub too short for another drill
+        if (rest > 0 && rest < 3) m = m - (3 - rest) >= d.duration.min ? m - (3 - rest) : left;
         items.push(makeItem(d, phase, m));
         left -= m;
       }
-      if (left > 0 && items.length) items[items.length - 1]!.minutes += left;
-      return left > 0 && !items.length ? left : 0;
+      return left;
     };
 
-    // Blocks
+    // ----- Learning slot: decided first so its drill is reserved -----
     const plan = allocate(profile, content, available, theme);
-    const blocks: Block[] = [];
+    const learnItems: DrillItem[] = [];
+    let learnPhase: Phase | null = null;
     let learnNote: { move: string; stage: StageId; task: string; isNew: boolean } | null = null;
-
-    if (isTest) {
-      const tests = pickTests();
-      const testMinutes = plan.filter((b) => b.phase === 'technique' || b.phase === 'footwork').reduce((a, b) => a + b.minutes, 0);
-      for (const b of plan) {
-        if (b.phase === 'footwork' && tests.length) continue;
-        if (b.phase === 'technique' && tests.length) {
-          const items: DrillItem[] = [];
-          const share = Math.floor(testMinutes / tests.length);
-          tests.forEach((t, i) => {
-            const d = drills.get(t.testDrillId)!;
-            const m = i === tests.length - 1 ? testMinutes - share * (tests.length - 1) : share;
-            items.push(makeItem(d, d.phase, m, { reason: T.reasonTest(t.name.toLowerCase()), metricId: t.id, focus: true }));
+    const techMinutes = plan.find((b) => b.phase === 'technique')?.minutes ?? 0;
+    if (!isTest && order.length && techMinutes >= 4) {
+      const act = activeMoves();
+      if (act.length) {
+        const mid = act[rotation % act.length]!;
+        rotation++;
+        const st = Math.min(6, stage[mid] ?? 0);
+        const stId = STAGES[st]!;
+        const mv = moves.get(mid)!;
+        const lp = mv.learningPath[st]!;
+        if (stId === 'see') {
+          learnPhase = 'technique';
+          const learnMin = techMinutes >= 10 ? Math.round(techMinutes * 0.6) : techMinutes;
+          const w = Math.min(3, learnMin);
+          learnItems.push({
+            kind: 'watch', drillId: null, setup: 'shadow', minutes: w, target: lp.passCheck, cue: mv.cues[0]!,
+            reason: T.reasonWatch(mv.name), focus: true, learn: { moveId: mid, stage: 'see' },
           });
-          blocks.push({ phase: 'technique', minutes: testMinutes, items });
-          continue;
-        }
-        const items: DrillItem[] = [];
-        const rest = fill(b.phase, b.minutes, items);
-        if (rest) continue;
-        blocks.push({ phase: b.phase, minutes: b.minutes, items });
-      }
-    } else {
-      for (const b of plan) {
-        const items: DrillItem[] = [];
-        let minutes = b.minutes;
-        if (b.phase === 'technique' && order.length && minutes >= 4) {
-          const act = activeMoves();
-          if (act.length) {
-            const mid = act[rotation % act.length]!;
-            rotation++;
-            const st = Math.min(6, stage[mid] ?? 0);
-            const stId = STAGES[st]!;
-            const mv = moves.get(mid)!;
-            const lp = mv.learningPath[st]!;
-            const learnMin = minutes >= 10 ? Math.round(minutes * 0.6) : minutes;
-            if (stId === 'see') {
-              const w = Math.min(3, learnMin);
-              items.push({
-                kind: 'watch', drillId: null, setup: 'shadow', minutes: w, target: lp.passCheck, cue: mv.cues[0]!,
-                reason: T.reasonWatch(mv.name), focus: true, learn: { moveId: mid, stage: 'see' },
-              });
-              const sh = drills.get('shadow-strokes');
-              if (sh && learnMin - w >= 2) {
-                items.push(makeItem(sh, 'technique', learnMin - w, { reason: T.reasonLearn(mv.name, 2, stageLabel('shadow')), learn: { moveId: mid, stage: 'shadow' }, focus: true, target: mv.learningPath[1]!.passCheck }));
-              } else if (learnMin - w > 0) items[0]!.minutes += learnMin - w;
-            } else {
-              let d = lp.drillIds.map((x) => drills.get(x)!).find((x) => drillFits(x, profile, 1) && !used.has(x.id) && (!noTable || x.variants.some((v) => v.setup === 'shadow')));
-              let reason = T.reasonLearn(mv.name, st + 1, stageLabel(stId));
-              if (!d) {
-                d = drills.get('shadow-strokes');
-                reason = T.reasonNoSetup(mv.name);
-              }
-              if (d) {
-                const sw = swapAt(d.id, idx);
-                const dd = drills.get(sw) ?? d;
-                items.push(makeItem(dd, 'technique', learnMin, { reason, learn: { moveId: mid, stage: stId }, focus: true, target: lp.passCheck }));
-              }
-            }
-            const isNew = (atStage[mid] ?? 0) === 0;
-            learnNote = { move: mv.name, stage: stId, task: lp.task, isNew };
-            // planned pace
-            atStage[mid] = (atStage[mid] ?? 0) + 1;
-            const cap = noTable ? 1 : 7; // no table: see, then shadow for good
-            if ((atStage[mid] ?? 0) >= PER_STAGE[stId] && (stage[mid] ?? 0) < cap) {
-              stage[mid] = (stage[mid] ?? 0) + 1;
-              atStage[mid] = 0;
-            }
-            minutes -= items.reduce((a, i) => a + i.minutes, 0);
+          const sh = drills.get('shadow-strokes');
+          if (sh && learnMin - w >= sh.duration.min) {
+            learnItems.push(makeItem(sh, 'technique', Math.min(sh.duration.max, learnMin - w), { reason: T.reasonLearn(mv.name, 2, stageLabel('shadow')), learn: { moveId: mid, stage: 'shadow' }, focus: true, target: mv.learningPath[1]!.passCheck }));
+          }
+        } else {
+          let d = lp.drillIds.map((x) => drills.get(x)!).find((x) => drillFits(x, profile, 1) && (!noTable || x.variants.some((v) => v.setup === 'shadow')));
+          let reason = T.reasonLearn(mv.name, st + 1, stageLabel(stId));
+          if (!d) {
+            d = drills.get('shadow-strokes');
+            reason = T.reasonNoSetup(mv.name);
+          }
+          if (d) {
+            const dd = drills.get(swapAt(d.id, idx)) ?? d;
+            // the drill goes in the block of its own phase when the session has it, else technique
+            learnPhase = plan.some((b) => b.phase === dd.phase) ? dd.phase : 'technique';
+            const bm = plan.find((b) => b.phase === learnPhase)!.minutes;
+            const want = bm >= 10 ? Math.round(bm * 0.6) : bm;
+            const m = Math.max(Math.min(dd.duration.min, bm), Math.min(dd.duration.max, want));
+            learnItems.push(makeItem(dd, learnPhase, m, { reason, learn: { moveId: mid, stage: stId }, focus: true, target: lp.passCheck }));
           }
         }
-        if (minutes > 0) {
-          const rest = fill(b.phase, minutes, items);
-          if (rest && items.length) items[items.length - 1]!.minutes += rest;
-          else if (rest && !items.length) continue;
+        const isNew = (atStage[mid] ?? 0) === 0;
+        learnNote = { move: mv.name, stage: stId, task: lp.task, isNew };
+        // planned pace
+        atStage[mid] = (atStage[mid] ?? 0) + 1;
+        const cap = noTable ? 1 : 7; // no table: see, then shadow for good
+        if ((atStage[mid] ?? 0) >= PER_STAGE[stId] && (stage[mid] ?? 0) < cap) {
+          stage[mid] = (stage[mid] ?? 0) + 1;
+          atStage[mid] = 0;
         }
-        if (items.length) blocks.push({ phase: b.phase, minutes: items.reduce((a, i) => a + i.minutes, 0), items });
       }
     }
 
-    // Make sure the session adds up exactly (a dropped block gives its time to technique or the largest block)
-    const sum = blocks.reduce((a, b) => a + b.minutes, 0);
-    const diff = profile.schedule.length - sum;
-    if (diff !== 0 && blocks.length) {
-      const target = blocks.find((b) => b.phase === 'technique') ?? [...blocks].sort((a, b) => b.minutes - a.minutes)[0]!;
-      target.minutes += diff;
-      target.items[target.items.length - 1]!.minutes += diff;
+    // ----- Tests: reserved first so warm-ups don't take the same drill -----
+    const testMinutes = plan.filter((b) => b.phase === 'technique' || b.phase === 'footwork').reduce((a, b) => a + b.minutes, 0);
+    const tests = isTest ? pickTests().slice(0, Math.max(1, Math.floor(testMinutes / 5))) : [];
+    for (const t of tests) used.add(t.testDrillId);
+
+    // ----- Blocks -----
+    const blocks: Block[] = [];
+    let slack = 0;
+    for (const b of plan) {
+      const items: DrillItem[] = [];
+      let minutes = b.minutes;
+      if (tests.length && b.phase === 'footwork') continue; // its time is in the test block
+      if (tests.length && b.phase === 'technique') {
+        minutes = testMinutes;
+        const n = tests.length;
+        for (const t of tests) {
+          const d = drills.get(t.testDrillId)!;
+          const m = Math.min(minutes, Math.max(d.duration.min, Math.min(d.duration.max, Math.floor(testMinutes / n))));
+          used.delete(d.id);
+          items.push(makeItem(d, d.phase, m, { reason: T.reasonTest(t.name.toLowerCase()), metricId: t.id, focus: true }));
+          minutes -= m;
+        }
+      }
+      if (b.phase === learnPhase) {
+        for (const li of learnItems) {
+          const m = Math.min(li.minutes, minutes);
+          items.push({ ...li, minutes: m });
+          minutes -= m;
+        }
+      }
+      if (minutes > 0) slack += fill(b.phase, minutes, items);
+      const kept = items.filter((i) => i.minutes > 0);
+      if (kept.length) blocks.push({ phase: b.phase, minutes: kept.reduce((a, i) => a + i.minutes, 0), items: kept });
     }
+
+    // ----- Time fit: the session adds up exactly to the chosen length -----
+    slack = profile.schedule.length - blocks.reduce((a, bl) => a + bl.minutes, 0);
+    if (slack !== 0 && blocks.length) {
+      const pref: Phase[] = ['technique', 'footwork', 'matchPlay', 'serve', 'receive', 'physical', 'tableWarmup', 'physicalWarmup', 'mental', 'cooldown'];
+      const all = pref.flatMap((ph) => blocks.filter((bl) => bl.phase === ph).flatMap((bl) => bl.items.map((it) => ({ bl, it }))));
+      const maxOf = (it: DrillItem) => (it.drillId ? drills.get(it.drillId)!.duration.max : 5);
+      // first, into items that still have room
+      for (const { bl, it } of all) {
+        if (slack <= 0) break;
+        const room = maxOf(it) - it.minutes;
+        if (room <= 0) continue;
+        const add = Math.min(room, slack);
+        it.minutes += add;
+        bl.minutes += add;
+        slack -= add;
+      }
+      // then, if nothing has room, spread over the biggest items
+      for (let k = 0; slack > 0 && all.length; k++) {
+        const { bl, it } = all[k % all.length]!;
+        it.minutes += 1;
+        bl.minutes += 1;
+        slack -= 1;
+      }
+      // over-full (negative slack can't happen, but keep the total exact)
+      for (let k = all.length - 1; slack < 0 && k >= 0; k--) {
+        const { bl, it } = all[k]!;
+        const take = Math.min(it.minutes - 1, -slack);
+        it.minutes -= take;
+        bl.minutes -= take;
+        slack += take;
+      }
+    }
+    for (const bl of blocks) for (const it of bl.items) if (it.drillId) lastUsed.set(it.drillId, idx);
 
     // Focus skills of the session
     const skillMinutes = new Map<string, number>();

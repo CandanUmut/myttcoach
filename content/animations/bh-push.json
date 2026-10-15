@@ -1,0 +1,171 @@
+{
+  "id": "bh-push",
+  "duration": 1.6,
+  "loop": true,
+  "phases": [
+    {
+      "name": "Ready",
+      "t": 0
+    },
+    {
+      "name": "Step in, backswing",
+      "t": 0.38
+    },
+    {
+      "name": "Contact",
+      "t": 0.56
+    },
+    {
+      "name": "Follow-through",
+      "t": 0.7
+    },
+    {
+      "name": "Recover",
+      "t": 1
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "root": {
+        "x": 0,
+        "z": 0.05,
+        "turn": 0
+      },
+      "joints": {
+        "body.bend": 8,
+        "torso.bend": 18,
+        "head.nod": -14,
+        "r_leg.raise": 34,
+        "l_leg.raise": 36,
+        "r_leg.straddle": 13,
+        "l_leg.straddle": 13,
+        "r_leg.turn": 8,
+        "l_leg.turn": 8,
+        "r_knee.bend": 50,
+        "l_knee.bend": 50,
+        "r_ankle.bend": 24,
+        "l_ankle.bend": 22,
+        "r_arm.raise": 42,
+        "r_arm.straddle": 18,
+        "r_arm.turn": -70,
+        "r_elbow.bend": 100,
+        "r_wrist.bend": 5,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 38,
+        "l_arm.raise": 30,
+        "l_arm.straddle": 20,
+        "l_arm.turn": -20,
+        "l_elbow.bend": 85
+      }
+    },
+    {
+      "t": 0.38,
+      "root": {
+        "z": 0.2
+      },
+      "joints": {
+        "torso.bend": 26,
+        "torso.turn": -6,
+        "r_leg.raise": 58,
+        "r_knee.bend": 62,
+        "r_ankle.bend": 14,
+        "l_leg.raise": 22,
+        "l_knee.bend": 46,
+        "l_ankle.bend": 26,
+        "r_arm.raise": 42,
+        "r_arm.turn": -84,
+        "r_elbow.bend": 108,
+        "r_wrist.bend": 15,
+        "r_wrist.turn": -40,
+        "r_wrist.tilt": 30
+      }
+    },
+    {
+      "t": 0.56,
+      "joints": {
+        "torso.turn": 0,
+        "r_arm.raise": 40,
+        "r_arm.turn": -66,
+        "r_elbow.bend": 98,
+        "r_wrist.bend": 5,
+        "r_wrist.turn": -45,
+        "r_wrist.tilt": 28
+      }
+    },
+    {
+      "t": 0.7,
+      "joints": {
+        "r_arm.raise": 34,
+        "r_arm.turn": -50,
+        "r_elbow.bend": 90,
+        "r_wrist.bend": 0,
+        "r_wrist.turn": -45,
+        "r_wrist.tilt": 24
+      }
+    },
+    {
+      "t": 1,
+      "root": {
+        "z": 0.05
+      },
+      "joints": {
+        "torso.bend": 18,
+        "torso.turn": 0,
+        "r_leg.raise": 34,
+        "r_knee.bend": 50,
+        "r_ankle.bend": 24,
+        "l_leg.raise": 36,
+        "l_knee.bend": 50,
+        "l_ankle.bend": 22,
+        "r_arm.raise": 42,
+        "r_arm.turn": -70,
+        "r_elbow.bend": 100,
+        "r_wrist.bend": 5,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 38
+      }
+    }
+  ],
+  "ball": {
+    "contactT": 0.56,
+    "spin": "backspin",
+    "from": [
+      -0.3,
+      0.95,
+      1.2
+    ],
+    "bounce": [
+      0.25,
+      0.786,
+      -0.45
+    ],
+    "to": [
+      -0.35,
+      0.786,
+      0.85
+    ]
+  },
+  "cues": [
+    {
+      "t": 0,
+      "text": "Ready, square to the table"
+    },
+    {
+      "t": 0.32,
+      "text": "Step in, open the face"
+    },
+    {
+      "t": 0.53,
+      "text": "Forward and under, early"
+    },
+    {
+      "t": 0.68,
+      "text": "Short finish"
+    },
+    {
+      "t": 0.9,
+      "text": "Step back to ready"
+    }
+  ]
+}

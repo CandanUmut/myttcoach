@@ -1,0 +1,114 @@
+{
+  "id": "ready-stance",
+  "duration": 2.4,
+  "loop": true,
+  "phases": [
+    {
+      "name": "Ready",
+      "t": 0
+    },
+    {
+      "name": "Split step",
+      "t": 0.45
+    },
+    {
+      "name": "Land and settle",
+      "t": 0.62
+    },
+    {
+      "name": "Ready",
+      "t": 1
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "root": {
+        "x": 0,
+        "z": 0,
+        "turn": 0
+      },
+      "joints": {
+        "body.bend": 8,
+        "torso.bend": 18,
+        "head.nod": -14,
+        "r_leg.raise": 30,
+        "l_leg.raise": 40,
+        "r_leg.straddle": 12,
+        "l_leg.straddle": 12,
+        "r_leg.turn": 10,
+        "l_leg.turn": 8,
+        "r_knee.bend": 50,
+        "l_knee.bend": 50,
+        "r_ankle.bend": 28,
+        "l_ankle.bend": 18,
+        "r_arm.raise": 35,
+        "r_arm.straddle": 12,
+        "r_arm.turn": -40,
+        "r_elbow.bend": 85,
+        "r_wrist.turn": 0,
+        "r_wrist.tilt": 25,
+        "l_arm.raise": 35,
+        "l_arm.straddle": 14,
+        "l_elbow.bend": 85,
+        "l_arm.turn": -30
+      }
+    },
+    {
+      "t": 0.4,
+      "joints": {
+        "r_knee.bend": 46,
+        "l_knee.bend": 46,
+        "r_ankle.bend": 25,
+        "l_ankle.bend": 15
+      }
+    },
+    {
+      "t": 0.5,
+      "joints": {
+        "r_knee.bend": 32,
+        "l_knee.bend": 32,
+        "r_leg.raise": 22,
+        "l_leg.raise": 30,
+        "r_ankle.bend": 18,
+        "l_ankle.bend": 8
+      }
+    },
+    {
+      "t": 0.62,
+      "joints": {
+        "r_knee.bend": 58,
+        "l_knee.bend": 58,
+        "r_leg.raise": 34,
+        "l_leg.raise": 44,
+        "r_ankle.bend": 32,
+        "l_ankle.bend": 22
+      }
+    },
+    {
+      "t": 1,
+      "joints": {
+        "r_knee.bend": 50,
+        "l_knee.bend": 50,
+        "r_leg.raise": 30,
+        "l_leg.raise": 40,
+        "r_ankle.bend": 28,
+        "l_ankle.bend": 18
+      }
+    }
+  ],
+  "cues": [
+    {
+      "t": 0,
+      "text": "Feet wide, knees soft"
+    },
+    {
+      "t": 0.45,
+      "text": "A small hop as they hit"
+    },
+    {
+      "t": 0.62,
+      "text": "Weight forward, bat in front"
+    }
+  ]
+}

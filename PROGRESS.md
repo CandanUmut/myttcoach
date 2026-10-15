@@ -9,8 +9,8 @@ Live site: https://candanumut.github.io/myttcoach/
 | 1 Design system and style board | done (live look: Blade; style board at #/styleboard) |
 | 2 Content model and seed content | done (seed: 14 skills, 6 moves, 32 drills, 7 metrics, 32 tips) |
 | 3 Engine, adaptation, goal curve | done (33 tests; samples in docs/sample-programs.md) |
-| 4 Core screens | not started |
-| 5 3D player | not started |
+| 4 Core screens | done (critic fixes applied) |
+| 5 3D player | done: cute code-built character, viewer, follow-along, pose editor (#/dev/poses), 4 animations |
 | 6 Learning path wiring | not started |
 | 7 Full content library + animations | not started |
 | 8 Proposed features | not started |
@@ -31,3 +31,6 @@ Live site: https://candanumut.github.io/myttcoach/
 - 2026-10-15 — Engine: drill score is Σ(skill weight × focus weight) normalised by total skill weight (otherwise multi-skill drills always win). Regular picks never leave the player's level; if nothing fits a block, its time goes to technique. Learning stages follow a planned pace (see 1 session, other stages 2, own 1) and re-plan from real passes after each log. Max 2 moves learned at once; dependents start when prerequisites reach Groove.
 - 2026-10-15 — Assessment = last session of every Apply week (end of each 4-week block); tests use the goal metric first, then focus-skill metrics (max 3).
 - Known gap: with the small seed library some phases have few drills at some levels (variety is low). Phase 7 adds a coverage test (every phase × level × setup has drills).
+- 2026-10-15 — Phase 4 UX critic fixes applied (results de-duplicated per session, resume at first open drill, drafts cleared on plan change, iOS audio unlock, sticky player controls, edit-mode cancel/save without auto-lowering level, collapsed done weeks).
+- 2026-10-15 — 3D: one shared WebGL renderer, Three.js lazy-loaded (separate ~150 KB gzip chunk). Toon shading + inverted-hull outline. Left-handers: the player group is mirrored (scale.x = −1), same effect as swapping l/r and negating turn/tilt. Feet are ground-locked each frame. Joint conventions are documented in src/three/joints.ts. Review shots: `scripts/anim-shots.sh <id> <dir> <t...>` (route #/dev/shot/:id/:t/:cam).
+- 2026-10-15 — Owner asked for no stops between phases, so the animation review gate is done by screenshots + critic; the owner can give feedback any time and the pose editor makes fixes quick.

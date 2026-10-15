@@ -15,6 +15,8 @@ import { Library } from './screens/Library';
 import { Progress } from './screens/Progress';
 import { Settings } from './screens/Settings';
 import { BallMoment } from '../design/motion';
+import { DevShot } from './screens/DevShot';
+import { PoseEditor } from './screens/PoseEditor';
 import { engineState } from './state';
 
 function Routes() {
@@ -23,6 +25,8 @@ function Routes() {
   // Always available
   if ((m = match('/styleboard'))) return <StyleBoard />;
   if ((m = match('/styleboard/:dir'))) return <StyleBoard only={m.dir} />;
+  if (match('/dev/poses')) return <PoseEditor />;
+  if ((m = match('/dev/shot/:id/:t/:cam'))) return <DevShot id={m.id!} t={Number(m.t)} cam={m.cam as never} />;
   if ((m = match('/onboarding/:step'))) return <Onboarding step={Number(m.step) || 1} edit={query.value.edit === '1' && !!profile.value} />;
   if ((m = match('/library/drill/:id'))) return <DrillScreen drillId={m.id!} />;
   if ((m = match('/learn/:moveId'))) {

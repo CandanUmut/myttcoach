@@ -594,3 +594,37 @@ export const controlsText = {
   settings: 'Settings',
   and: 'and',
 };
+
+export const viewerText = {
+  loading: 'Loading the 3D player…',
+  noWebgl: 'Your device cannot show the 3D player. The key points and cues below describe the move.',
+  play: 'Play',
+  pause: 'Pause',
+  speed: 'Speed',
+  nextPhase: 'Next phase',
+  scrub: 'Move through the stroke',
+  cameras: { front: 'Front', side: 'Side', top: 'Top', eyes: 'Your eyes' } as Record<string, string>,
+  camera: 'View',
+  info: 'About this demo',
+  infoBody: 'The 3D player shows the shape, timing and body use of the move. It does not show every fine wrist detail. Demos are for shakehand grip; penhold notes are in the text.',
+  lefty: 'Shown left-handed, to match you.',
+  follow: 'Follow along',
+  followHint: 'Copy the player without a ball. One rep per loop; the beep marks each start.',
+  reps: (n: number) => (n === 1 ? '1 rep' : `${n} reps`),
+  stopFollow: 'Stop',
+  spinLegend: { topspin: 'Topspin', backspin: 'Backspin', sidespin: 'Sidespin', none: 'No spin' } as Record<string, string>,
+};
+
+export const devText = {
+  title: 'Pose editor',
+  camera: 'Camera',
+  play: 'Play',
+  pause: 'Pause',
+  addKey: 'Add key here',
+  removeKey: 'Remove key',
+  keyTime: 'Key time',
+  group: 'Joints',
+  copy: 'Copy JSON',
+  copied: 'Copied',
+  json: 'Animation JSON',
+};

@@ -97,3 +97,57 @@
   .drill__body { flex-direction: column; }
   .drill__body .table-diagram { align-self: center; }
 }
+
+/* 3D viewer */
+.viewer { display: grid; gap: var(--s3); }
+.viewer__stage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-blade);
+  overflow: hidden;
+  background: var(--surface-2);
+  touch-action: none;
+}
+.viewer__stage canvas { display: block; }
+.viewer--bare .viewer__stage { border-radius: 0; aspect-ratio: auto; height: 100dvh; }
+.viewer__loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--text-2); }
+.viewer__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px var(--s3);
+  min-height: 2.6em;
+}
+.viewer__caption strong { font-family: var(--font-display); font-size: var(--t-l); }
+.viewer__caption span { font-size: var(--t-s); }
+.viewer__reps {
+  position: absolute;
+  top: var(--s3);
+  right: var(--s3);
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--c-ball);
+  color: #1f1b18;
+  font-weight: 800;
+}
+.viewer__controls { display: grid; gap: var(--s3); }
+.viewer__row { display: flex; gap: var(--s2); align-items: center; }
+.viewer__row .segmented { flex: 1; }
+.viewer__row--small { justify-content: space-between; flex-wrap: wrap; }
+.viewer__scrub { position: relative; padding: 6px 0; }
+.viewer__scrub input[type='range'] { width: 100%; height: 40px; accent-color: var(--c-ball); }
+.viewer__marks { position: absolute; left: 10px; right: 10px; top: 0; height: 8px; pointer-events: none; }
+.viewer__marks span { position: absolute; width: 4px; height: 10px; border-radius: 2px; background: var(--line-strong); transform: translateX(-2px); }
+.viewer__marks span.is-on { background: var(--accent); }
+.viewer__follow { display: flex; gap: var(--s3); align-items: center; justify-content: space-between; }
+.viewer--fail { padding: var(--s5); border-radius: var(--r-blade); background: var(--surface-2); color: var(--text-2); }
+.spin { display: inline-flex; gap: 6px; align-items: center; font-weight: 700; font-size: var(--t-s); }
+.spin--topspin { color: #c45a10; }
+.spin--backspin { color: var(--table); }
+.devshot { position: fixed; inset: 0; }
+.editor__stage { position: sticky; top: 0; z-index: 2; height: 42dvh; margin: calc(-1 * var(--s5)) calc(-1 * var(--s4)) var(--s3); background: var(--surface-2); }
+.slider { display: grid; gap: 2px; font-size: var(--t-s); }
+.slider input { width: 100%; height: 36px; accent-color: var(--c-ball); }
+.slider.is-set span { font-weight: 800; }
+.editor__json { min-height: 200px; font-family: ui-monospace, monospace; font-size: 12px; padding: var(--s3); }
+.sheet .dialog__body { padding: var(--s3); }

@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from 'preact/hooks';
 import { byId } from '../../content/load';
 import type { Change, Felt, ItemLog, SessionLog } from '../../engine/types';
 import { ArcProgress, Button } from '../../design/components';
-import { Icon } from '../../design/icons';
 import { celebrate } from '../../design/motion';
 import { common, learnText, phaseNames, playerText as T, stageNames } from '../../strings/en';
 import { STAGES } from '../../content/types';
 import { pickVariant } from '../components/DrillCard';
 import { Dialog } from '../components/Controls';
+import { MoveViewer } from '../components/MoveViewer';
 import { data, logBySession, logSession, program, setSettings, today } from '../state';
 import { flatItems } from '../sessionInfo';
 import { navigate } from '../router';
@@ -294,6 +294,7 @@ function DrillView({
   const [running, setRunning] = useState(false);
   const [count, setCount] = useState(0);
   const [showText, setShowText] = useState(true);
+  const [watching, setWatching] = useState(it.kind === 'watch');
   const endAt = useRef(0);
   const settings = data.value.settings;
   const drill = it.drillId ? byId.drill.get(it.drillId) : null;
@@ -378,11 +379,24 @@ function DrillView({
           ) : null}
         </details>
       ) : null}
-      {move?.animationId || it.kind === 'watch' ? (
-        <a class="btn btn--quiet" href={`#/learn/${move!.id}`}>
-          <Icon name="watch" size={22} />
-          <span>{T.watch}</span>
-        </a>
+      {move?.animationId ? (
+        <Button kind="quiet" icon="watch" onClick={() => setWatching(true)}>
+          {T.watch}
+        </Button>
+      ) : null}
+      {watching && move?.animationId ? (
+        <Dialog
+          open
+          title={move.name}
+          onClose={() => setWatching(false)}
+          actions={
+            <Button kind="quiet" onClick={() => setWatching(false)}>
+              {common.close}
+            </Button>
+          }
+        >
+          <MoveViewer animationId={move.animationId} follow={it.learn?.stage === 'shadow'} />
+        </Dialog>
       ) : null}
 
       {counted ? (

@@ -7,6 +7,7 @@ import { BounceStepper, Button } from '../../design/components';
 import { Backdrop } from '../../design/backgrounds';
 import { common, keyPointNames, moveText as T, stageNames, stageShort } from '../../strings/en';
 import { back } from '../router';
+import { MoveViewer } from '../components/MoveViewer';
 
 export function MoveScreen({ moveId, stageIndex = 0 }: { moveId: string; stageIndex?: number }) {
   const move = byId.move.get(moveId);
@@ -25,7 +26,7 @@ export function MoveScreen({ moveId, stageIndex = 0 }: { moveId: string; stageIn
           <p class="muted">{move.summary}</p>
         </header>
 
-        <MoveViewerSlot move={move} />
+        <MoveViewerSlot move={move} follow={st.stage === 'shadow' && stage === stageIndex} />
 
         <section class="cues" aria-label={T.cues}>
           <h2 class="section-title">{T.cues}</h2>
@@ -114,11 +115,12 @@ export function MoveScreen({ moveId, stageIndex = 0 }: { moveId: string; stageIn
   );
 }
 
-function MoveViewerSlot({ move }: { move: Move }) {
+function MoveViewerSlot({ move, follow }: { move: Move; follow: boolean }) {
+  if (move.animationId) return <MoveViewer key={`${move.animationId}-${follow}`} animationId={move.animationId} follow={follow} />;
   return (
     <div class="viewer-slot">
       <Icon name="learn" size={40} />
-      <p>{move.animationId ? T.watch : T.animationPending}</p>
+      <p>{T.animationPending}</p>
     </div>
   );
 }

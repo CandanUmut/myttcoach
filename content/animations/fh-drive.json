@@ -1,0 +1,199 @@
+{
+  "id": "fh-drive",
+  "duration": 1.3,
+  "loop": true,
+  "phases": [
+    {
+      "name": "Ready",
+      "t": 0
+    },
+    {
+      "name": "Backswing",
+      "t": 0.35
+    },
+    {
+      "name": "Contact",
+      "t": 0.6
+    },
+    {
+      "name": "Follow-through",
+      "t": 0.78
+    },
+    {
+      "name": "Recover",
+      "t": 1
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "root": {
+        "x": 0,
+        "z": 0,
+        "turn": 0
+      },
+      "joints": {
+        "body.bend": 8,
+        "body.turn": 5,
+        "torso.bend": 16,
+        "torso.turn": 10,
+        "head.nod": -12,
+        "head.turn": -8,
+        "r_leg.raise": 26,
+        "l_leg.raise": 42,
+        "r_leg.straddle": 13,
+        "l_leg.straddle": 11,
+        "r_leg.turn": 12,
+        "l_leg.turn": 5,
+        "r_knee.bend": 50,
+        "l_knee.bend": 46,
+        "r_ankle.bend": 32,
+        "l_ankle.bend": 12,
+        "r_arm.raise": 12,
+        "r_arm.straddle": 30,
+        "r_arm.turn": 45,
+        "r_elbow.bend": 85,
+        "r_wrist.turn": -10,
+        "r_wrist.tilt": 15,
+        "r_wrist.bend": 0,
+        "l_arm.raise": 40,
+        "l_arm.straddle": 15,
+        "l_arm.turn": -25,
+        "l_elbow.bend": 90
+      }
+    },
+    {
+      "t": 0.35,
+      "joints": {
+        "body.turn": 18,
+        "torso.turn": 42,
+        "torso.tilt": 6,
+        "head.turn": -40,
+        "r_knee.bend": 58,
+        "l_knee.bend": 40,
+        "r_ankle.bend": 38,
+        "l_ankle.bend": 8,
+        "r_arm.raise": -8,
+        "r_arm.straddle": 40,
+        "r_arm.turn": 70,
+        "r_elbow.bend": 92,
+        "r_wrist.turn": -15,
+        "r_wrist.tilt": 0,
+        "l_arm.raise": 55,
+        "l_arm.straddle": 10,
+        "l_arm.turn": -35,
+        "l_elbow.bend": 95
+      }
+    },
+    {
+      "t": 0.6,
+      "joints": {
+        "body.turn": 2,
+        "torso.turn": 0,
+        "torso.tilt": 0,
+        "head.turn": 0,
+        "r_knee.bend": 46,
+        "l_knee.bend": 50,
+        "r_ankle.bend": 28,
+        "l_ankle.bend": 16,
+        "r_arm.raise": 22,
+        "r_arm.straddle": 32,
+        "r_arm.turn": 62,
+        "r_elbow.bend": 88,
+        "r_wrist.turn": -18,
+        "r_wrist.tilt": 12,
+        "l_arm.raise": 35,
+        "l_arm.straddle": 25,
+        "l_arm.turn": -10,
+        "l_elbow.bend": 80
+      }
+    },
+    {
+      "t": 0.78,
+      "joints": {
+        "body.turn": -10,
+        "torso.turn": -32,
+        "torso.tilt": -4,
+        "head.turn": 20,
+        "r_knee.bend": 42,
+        "l_knee.bend": 54,
+        "r_ankle.bend": 22,
+        "l_ankle.bend": 22,
+        "r_arm.raise": 80,
+        "r_arm.straddle": 18,
+        "r_arm.turn": 35,
+        "r_elbow.bend": 118,
+        "r_wrist.turn": -10,
+        "r_wrist.tilt": 20,
+        "l_arm.raise": 25,
+        "l_arm.straddle": 30,
+        "l_arm.turn": 0,
+        "l_elbow.bend": 70
+      }
+    },
+    {
+      "t": 1,
+      "joints": {
+        "body.turn": 5,
+        "torso.turn": 10,
+        "torso.tilt": 0,
+        "head.turn": -8,
+        "r_knee.bend": 50,
+        "l_knee.bend": 46,
+        "r_ankle.bend": 32,
+        "l_ankle.bend": 12,
+        "r_arm.raise": 12,
+        "r_arm.straddle": 30,
+        "r_arm.turn": 45,
+        "r_elbow.bend": 85,
+        "r_wrist.turn": -10,
+        "r_wrist.tilt": 15,
+        "l_arm.raise": 40,
+        "l_arm.straddle": 15,
+        "l_arm.turn": -25,
+        "l_elbow.bend": 90
+      }
+    }
+  ],
+  "ball": {
+    "contactT": 0.6,
+    "spin": "topspin",
+    "from": [
+      0.45,
+      1.0,
+      1.25
+    ],
+    "bounce": [
+      -0.2,
+      0.786,
+      -0.75
+    ],
+    "to": [
+      0.5,
+      0.786,
+      1.0
+    ]
+  },
+  "cues": [
+    {
+      "t": 0,
+      "text": "Ready, bat in front"
+    },
+    {
+      "t": 0.3,
+      "text": "Turn, then hit"
+    },
+    {
+      "t": 0.56,
+      "text": "Top of the bounce, in front"
+    },
+    {
+      "t": 0.74,
+      "text": "Finish near your forehead"
+    },
+    {
+      "t": 0.92,
+      "text": "Back to ready"
+    }
+  ]
+}

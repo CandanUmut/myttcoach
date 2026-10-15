@@ -4,6 +4,8 @@ A personal, rule-based table tennis training app. Pick your level, goals, style,
 the app builds a program that is yours, teaches each move step by step with an animated 3D player,
 and tracks your progress against a goal curve. No AI, no server, no accounts — everything stays on your device.
 
+![Screens](docs/screens.png)
+
 Live: https://candanumut.github.io/myttcoach/ — works offline after the first visit and can be added to the home screen.
 
 ## What's inside

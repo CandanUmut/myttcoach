@@ -209,6 +209,14 @@ describe('more properties over the same 500 profiles', () => {
   });
 });
 
+describe('focus', () => {
+  it('style alone never adds prerequisites or extra moves to learn', () => {
+    const prog = generateProgram({ ...intermediatePartner, level: 2, style: 'allRoundAttacker', goals: ['consistency'], moves: [{ id: 'bh-push', mode: 'learn' }, { id: 'fh-drive', mode: 'learn' }] }, content);
+    expect(prog.learnOrder).toEqual(['fh-drive', 'bh-push']);
+    expect(prog.focus.filter((f) => f.addedBecause)).toEqual([]);
+  });
+});
+
 describe('sample profiles', () => {
   it('beginner without a table gets only shadow work and no table phases', () => {
     const p = generateProgram(beginnerNoTable, content);

@@ -26,6 +26,7 @@ export function buildFocus(profile: Profile, content: Content, learnedSkills: Se
   const skills = new Map(content.skills.map((s) => [s.id, s]));
   const w = new Map<string, number>();
   const chosen = new Set<string>();
+  const asked = new Set<string>(); // skills the player asked for (goals or moves), not just style
   for (const s of content.skills) if (eligible(s, profile.level)) w.set(s.id, BASE);
 
   profile.goals.slice(0, 3).forEach((gid, i) => {
@@ -35,6 +36,7 @@ export function buildFocus(profile: Profile, content: Content, learnedSkills: Se
       const sk = skills.get(sid);
       if (!sk || !eligible(sk, profile.level)) continue;
       w.set(sid, (w.get(sid) ?? 0) + val * RANK[i]!);
+      asked.add(sid);
     }
   });
 
@@ -42,6 +44,7 @@ export function buildFocus(profile: Profile, content: Content, learnedSkills: Se
     const mv = content.moves.find((x) => x.id === m.id);
     if (!mv) continue;
     chosen.add(mv.skillId);
+    asked.add(mv.skillId);
     w.set(mv.skillId, (w.get(mv.skillId) ?? 0) + (m.mode === 'learn' ? LEARN_BONUS : IMPROVE_BONUS));
   }
 
@@ -53,7 +56,7 @@ export function buildFocus(profile: Profile, content: Content, learnedSkills: Se
   const out: FocusEntry[] = [];
   const added = new Map<string, string>();
   // Add missing prerequisites of every skill with real focus (above base)
-  const focusIds = [...w.entries()].filter(([, v]) => v > BASE + 1e-9).map(([k]) => k);
+  const focusIds = [...asked];
   const addPrereqs = (sid: string, depth: number) => {
     const sk = skills.get(sid);
     if (!sk || depth > 6) return;

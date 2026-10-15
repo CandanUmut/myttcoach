@@ -6,3 +6,6 @@ screenshots
 *.local
 .DS_Store
 tests/e2e/__screenshots__
+
+# temporary helper scripts
+scripts/_tmp-*
